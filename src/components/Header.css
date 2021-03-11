@@ -1,0 +1,24 @@
+.header {
+  border-bottom: 1px solid white;
+  display : flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.plus {
+  border-radius: 50%;
+  height : 35px;
+  width: 35px;
+  background-color: rgb(54, 90, 209);
+  border: none;
+  color : white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  font-weight: bold;
+}
