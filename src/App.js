@@ -1,10 +1,15 @@
-import './App.css';
+import Home from './screen/Home'
 
-function App() {
+import './App.css'
+import Footer from './components/Footer'
+
+const App = () => {
   return (
-    <div className="App">
+    <div className='App'>
+      <Home />
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

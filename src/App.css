@@ -1,3 +1,8 @@
-.App {
+.App{
+  display: flex;
+  justify-content: center;
   text-align: center;
+  background:linear-gradient(to bottom, #85a8bf, #ffffff);
+  min-height: 100vh;
 }
+
