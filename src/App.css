@@ -1,5 +1,6 @@
 .App{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
   background:linear-gradient(to bottom, #85a8bf, #ffffff);

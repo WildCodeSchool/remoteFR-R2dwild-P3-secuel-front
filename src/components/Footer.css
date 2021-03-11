@@ -5,4 +5,5 @@
   width: 561px;
   height: 405px;
   background-size: cover;
+  z-index: 0;
 }
