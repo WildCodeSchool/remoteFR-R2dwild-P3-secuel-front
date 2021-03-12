@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-// import { Link } from 'react-router-dom'
-
-// import CreateUser from './components/CreateUser'
+import { Link } from 'react-router-dom'
 
 import './Header.css'
 import logo_elan from '../data/images/logo_elan.png'
@@ -13,19 +11,30 @@ const Header = () => {
   const handleClick = () => {
     setbgPlus(!bgPlus)
   }
+  const [bgUser, setbgUser] = useState(true)
+  const handleUser = () => {
+    setbgUser(!bgUser)
+  }
   return (
     <div className='header'>
       <img src={logo_elan} alt='logo' className='logo' />
       {/* <div className='plus' onClick={handleClick} style={{backgroundColor:`${ bgPlus ? 'blue' : 'grey'}`}>+</div> */}
       <div className='userField'>
-        <button
+        <Link
+          to={{ pathname: '/CreateUser' }}
           className='plus'
           onClick={handleClick}
-          style={{ backgroundColor: `${bgPlus ? 'blue' : 'grey'}` }}
+          style={{ color: `${bgPlus ? 'white' : 'grey'}` }}
         >
           +
-        </button>
-        <img src={user} alt='logoUser' className='logoUser' />
+        </Link>
+        <img
+          src={user}
+          alt='logoUser'
+          className='logoUser'
+          onClick={handleUser}
+          style={{ borderBottom: `${bgUser ? '2px solid white' : 'none'}` }}
+        />
         <img src={userGreen} alt='logoUser' className='logoUser' />
       </div>
     </div>
