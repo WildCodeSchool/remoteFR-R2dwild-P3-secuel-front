@@ -22,3 +22,22 @@
   font-size: 30px;
   font-weight: bold;
 }
+
+/* .plus :hover {
+  background-color: rgb(174, 181, 204);
+  color : black;
+} */
+
+.userField {
+  opacity: 0.5;
+  display : flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.logoUser {
+  height : 35px;
+  width: 35px; 
+  padding-left: 10px;
+}
