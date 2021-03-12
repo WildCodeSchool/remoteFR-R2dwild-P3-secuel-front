@@ -1,35 +1,88 @@
+import { useState } from 'react'
+
 import eventArray from '../data/fakejson/fakedata.json'
 
 import './Events.css'
+import MiniEvent from './MiniEvent'
 const Events = () => {
+  const [hidden1, setHidden1] = useState(true)
+  const handleClick1 = () => setHidden1(!hidden1)
+  const [hidden2, setHidden2] = useState(true)
+  const handleClick2 = () => setHidden2(!hidden2)
+  const [hidden3, setHidden3] = useState(true)
+  const handleClick3 = () => setHidden3(!hidden3)
+  const [hidden4, setHidden4] = useState(true)
+  const handleClick4 = () => setHidden4(!hidden4)
   return (
     <div className='events'>
-      {eventArray.map(event => (
-        <div className='card' key={event.Nom + event.date + event['Type acte']}>
-          <p className='titreCard'>{event['N Sécurité sociale']}</p>
-          <p>
-            <span>Date acte :</span> {event['date acte médicale']}
-          </p>
-          <p>
-            <span>Assuré :</span> {event.Nom} {event['prénom']}
-          </p>
-          <p>
-            <span>Acte :</span> {event['Type acte']}
-          </p>
-          <p>
-            <span>Spécialiste : </span>
-            {event['Nom professionnel de santé']}
-          </p>
-          <p>
-            <span>Montant payé :</span>
-            {event['Montant Payé']}
-          </p>
-          <p>
-            <span>Montant remboursé :</span>
-            {event['Montant remboursé'] ? event['Montant remboursé'] : 0}
-          </p>
-        </div>
-      ))}
+      <div id='insured1' onClick={handleClick1}>
+        <h1>Jean Dupont</h1>
+        {hidden1 ? (
+          <p>Voir les actes</p>
+        ) : (
+          eventArray
+            .filter(event => event['prénom'] === 'Jean')
+            .map(event => (
+              <MiniEvent
+                acteType={event['Type acte']}
+                eventDate={event['date acte médicale']}
+                status={event['Statut du dossier']}
+                key={event.Nom + event.date + event['Type acte']}
+              />
+            ))
+        )}
+      </div>
+      <div id='insured2' onClick={handleClick2}>
+        <h1>Lucas Dupont</h1>
+        {hidden2 ? (
+          <p>Voir les actes</p>
+        ) : (
+          eventArray
+            .filter(event => event['prénom'] === 'Lucas')
+            .map(event => (
+              <MiniEvent
+                acteType={event['Type acte']}
+                eventDate={event['date acte médicale']}
+                status={event['Statut du dossier']}
+                key={event.Nom + event.date + event['Type acte']}
+              />
+            ))
+        )}
+      </div>
+      <div id='insured3' onClick={handleClick3}>
+        <h1>Marie Dupont</h1>
+        {hidden3 ? (
+          <p>Voir les actes</p>
+        ) : (
+          eventArray
+            .filter(event => event['prénom'] === 'Marie')
+            .map(event => (
+              <MiniEvent
+                acteType={event['Type acte']}
+                eventDate={event['date acte médicale']}
+                status={event['Statut du dossier']}
+                key={event.Nom + event.date + event['Type acte']}
+              />
+            ))
+        )}
+      </div>
+      <div id='insured4' onClick={handleClick4}>
+        <h1>Léa Dupont</h1>
+        {hidden4 ? (
+          <p>Voir les actes</p>
+        ) : (
+          eventArray
+            .filter(event => event['prénom'] === 'Lea')
+            .map(event => (
+              <MiniEvent
+                acteType={event['Type acte']}
+                eventDate={event['date acte médicale']}
+                status={event['Statut du dossier']}
+                key={event.Nom + event.date + event['Type acte']}
+              />
+            ))
+        )}
+      </div>
     </div>
   )
 }
