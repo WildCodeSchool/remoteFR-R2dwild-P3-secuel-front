@@ -1,8 +1,8 @@
 .App{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   text-align: center;
+  align-items: center;
   background:linear-gradient(to bottom, #85a8bf, #ffffff);
   min-height: 100vh;
 }
