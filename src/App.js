@@ -4,13 +4,15 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Home from './screen/Home'
 import Message from './screen/Message'
+import Navbar from './components/Navbar'
 import Notification from './screen/Notification'
 import Params from './screen/Params'
 
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
 
 import './App.css'
-import Navbar from './components/Navbar'
+
+
 
 const App = () => {
   return (
