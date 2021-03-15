@@ -1,0 +1,20 @@
+.navicon{
+  margin-bottom:40px;
+  width: 200vh;
+  display: flex;
+  justify-content: space-around;
+  background:white;
+  align-items: center;
+}
+.iconNavbar{
+  width:30px;
+}
+.iconBtn{
+  border:none;
+  background:none;
+  display: flex;
+  width:auto;
+  align-items: center;
+  outline:none;
+  cursor: pointer;
+}
