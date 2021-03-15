@@ -9,11 +9,13 @@ import Events from './components/Events'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import CreateUser from './screen/CreateUser'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
     <div className='App'>
       <Header />
+      <Navbar />
       <Home />
       <Events />
       <Footer />
