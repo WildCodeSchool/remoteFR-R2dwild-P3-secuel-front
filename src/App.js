@@ -9,11 +9,9 @@ import Navbar from './components/Navbar'
 import Notification from './screen/Notification'
 import Params from './screen/Params'
 
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import './App.css'
-
-
 
 const App = () => {
   return (
