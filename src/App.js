@@ -1,14 +1,15 @@
-import React from 'react'
+import Analyse from './screen/Analyse'
+import CreateUser from './screen/CreateUser'
+import Footer from './components/Footer'
+import Header from './components/Header'
 import Home from './screen/Home'
+import Message from './screen/Message'
+import Notification from './screen/Notification'
+import Params from './screen/Params'
 
 import { Switch, Route } from 'react-router-dom'
 
 import './App.css'
-
-import Events from './components/Events'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import CreateUser from './screen/CreateUser'
 import Navbar from './components/Navbar'
 
 const App = () => {
@@ -16,13 +17,15 @@ const App = () => {
     <div className='App'>
       <Header />
       <Navbar />
-      <Home />
-      <Events />
-      <Footer />
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/CreateUser' component={CreateUser} />
+        <Route path='/message' component={Message} />
+        <Route path='/notification' component={Notification} />
+        <Route path='/analyse' component={Analyse} />
+        <Route path='/params' component={Params} />
       </Switch>
+      <Footer />
     </div>
   )
 }
