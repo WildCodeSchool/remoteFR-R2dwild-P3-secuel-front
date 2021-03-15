@@ -17,11 +17,13 @@ const Header = () => {
   }
   return (
     <div className='header'>
-      <img src={logo_elan} alt='logo' className='logo' />
+      <Link to='/'>
+        <img src={logo_elan} alt='logo' className='logo' />
+      </Link>
       {/* <div className='plus' onClick={handleClick} style={{backgroundColor:`${ bgPlus ? 'blue' : 'grey'}`}>+</div> */}
       <div className='userField'>
         <Link
-          to={{ pathname: '/CreateUser' }}
+          to='/CreateUser'
           className='plus'
           onClick={handleClick}
           style={{ color: `${bgPlus ? 'white' : 'grey'}` }}
