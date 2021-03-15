@@ -1,7 +1,7 @@
 import React from 'react'
 import Home from './screen/Home'
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import './App.css'
 
@@ -12,22 +12,15 @@ import CreateUser from './screen/CreateUser'
 
 const App = () => {
   return (
-    <div>
-      <div className='App'>
-        <Header />
-        <Home />
-        <Events />
-        <Footer />
-      </div>
-
-      <div>
-        <Router>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/CreateUser' component={CreateUser} />
-          </Switch>
-        </Router>
-      </div>
+    <div className='App'>
+      <Header />
+      <Home />
+      <Events />
+      <Footer />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route path='/CreateUser' component={CreateUser} />
+      </Switch>
     </div>
   )
 }
