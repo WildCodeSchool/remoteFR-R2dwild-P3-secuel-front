@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const MiniEvent = insured => {
   return (
-    <Link to={`/event/${insured.id}`}>
+    <Link to={`/event/${insured.id}`} className='link'>
       <div className='card'>
         <p>
           <span>Date acte :</span> {insured.eventDate}
