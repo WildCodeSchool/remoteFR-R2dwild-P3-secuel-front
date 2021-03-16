@@ -14,9 +14,9 @@ const Form = () => {
   }
 
   const handleChange = e => {
-    e.target.name === 'title'
+    e.target.name === 'name'
       ? setAccountName(e.target.value)
-      : e.target.name === 'poster'
+      : e.target.name === 'email'
       ? setLogin(e.target.value)
       : setPassword(e.target.value)
   }
@@ -41,38 +41,38 @@ const Form = () => {
         <fieldset>
           <legend>Informations</legend>
           <div className='form-data'>
-            <label htmlFor='title'>
+            <label htmlFor='name'>
               Nom<span> * </span>
             </label>
             <input
               type='text'
-              id='title'
-              name='title'
+              id='name'
+              name='name'
               onChange={handleChange}
               required
               value={accountName}
             />
           </div>
           <div className='form-data'>
-            <label htmlFor='poster'>
+            <label htmlFor='email'>
               Email<span> * </span>
             </label>
             <input
               type='text'
-              id='poster'
-              name='poster'
+              id='email'
+              name='email'
               onChange={handleChange}
               required
               value={login}
             />
           </div>
           <div className='form-data'>
-            <label htmlFor='comment'>
+            <label htmlFor='password'>
               Mot de passe<span> * </span>
             </label>
-            <textarea
-              id='comment'
-              name='comment'
+            <input
+              id='password'
+              name='password'
               onChange={handleChange}
               required
               value={password}
