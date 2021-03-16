@@ -1,8 +1,9 @@
 import acte from '../data/fakejson/fakedata.json'
+import Donut from './Donut.js'
 
-const DetailEvent = test => {
+const DetailEvent = Acte => {
   const insured = acte.filter(
-    medevent => medevent.id === parseInt(test.match.params.id)
+    medevent => medevent.id === parseInt(Acte.match.params.id)
   )[0]
   return (
     <div className='card'>
@@ -28,6 +29,9 @@ const DetailEvent = test => {
         <span>Montant remboursé: </span>
         {insured['Montant remboursé'] ? insured['Montant remboursé'] : 0}
       </p>
+      {/* <div className='donutField'> */}
+      <Donut />
+      {/* </div> */}
     </div>
   )
 }
