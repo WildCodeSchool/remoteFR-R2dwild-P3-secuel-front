@@ -1,0 +1,88 @@
+.NotifBody {
+  background-color: white;
+  opacity: 0.8;
+  width: 80%;
+  height: auto;
+}
+
+.NotifNumber {
+  border: 2px solid black;
+  padding : 5px;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 30px;
+  letter-spacing: 10px;
+  font-weight: bold;
+}
+
+.StarNText {
+  list-style-type: none;
+  font-size: large;
+  width: 200px;
+}
+
+.Star {
+  font-size: 30px ;
+}
+
+.TextLegend {
+  font-size: 15px;
+  margin: 0px;
+}
+
+.Vignette {
+  font-size: xx-large;
+  position : relative;
+  left : -460px;
+  top: -25px
+  }
+
+.LegendRaw {
+  border: 2px solid red;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding : 5px;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ }
+
+.NotifList {
+  border: 2px solid darkslategrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding : 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  height: auto;
+  background-color: white;
+}
+
+table, tr,td, th {
+  border: 1px solid black;
+  font-size: small;
+}
+
+table {
+  width: 98%;
+  border-collapse: collapse;
+}
+
+.NotifListHeader {
+  list-style-type: none;
+  justify-content: left;
+  margin-top: 0px;
+  padding-top: 0px;
+}

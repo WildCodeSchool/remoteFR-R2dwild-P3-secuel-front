@@ -3,14 +3,11 @@ import iconMessage from '../data/images/chat-bubble.png'
 import iconCloche from '../data/images/bell.png'
 import iconAnalyse from '../data/images/analysis.png'
 import iconParametre from '../data/images/parametres.png'
-import React, { useState } from 'react'
-import DatePicker from 'react-datepicker'
+
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-import 'react-datepicker/dist/react-datepicker.css'
-
 const Navbar = () => {
-  const [startDate, setStartDate] = useState(new Date())
   return (
     <div className='Navbar'>
       <div className='navicon'>
@@ -32,7 +29,6 @@ const Navbar = () => {
           Paramètres
         </Link>
       </div>
-      <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
     </div>
   )
 }

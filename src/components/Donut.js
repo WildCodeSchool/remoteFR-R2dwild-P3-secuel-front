@@ -1,4 +1,3 @@
-// import { getDefaultNormalizer } from '@testing-library/dom'
 import React from 'react'
 import { Doughnut } from 'react-chartjs-2'
 import 'chartjs-plugin-datalabels'
