@@ -1,0 +1,7 @@
+.footer {
+  background: no-repeat center url("../data/images/background1.png");
+  bottom: 0;
+  width: 561px;
+  height: 405px;
+  background-size: cover;
+}

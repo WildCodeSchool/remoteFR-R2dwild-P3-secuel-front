@@ -1,0 +1,8 @@
+.createUserBody {
+    background-color : black;
+    height : 400px;
+    width: 400px;
+    color : red;
+    justify-content: center;
+    margin : auto;
+}
