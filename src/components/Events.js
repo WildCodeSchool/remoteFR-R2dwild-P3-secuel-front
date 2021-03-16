@@ -27,7 +27,8 @@ const Events = () => {
                 acteType={event['Type acte']}
                 eventDate={event['date acte médicale']}
                 status={event['Statut du dossier']}
-                key={event.Nom + event.date + event['Type acte']}
+                key={event.id}
+                id={event.id}
               />
             ))
         )}
@@ -44,7 +45,8 @@ const Events = () => {
                 acteType={event['Type acte']}
                 eventDate={event['date acte médicale']}
                 status={event['Statut du dossier']}
-                key={event.Nom + event.date + event['Type acte']}
+                key={event.id}
+                id={event.id}
               />
             ))
         )}
@@ -61,7 +63,8 @@ const Events = () => {
                 acteType={event['Type acte']}
                 eventDate={event['date acte médicale']}
                 status={event['Statut du dossier']}
-                key={event.Nom + event.date + event['Type acte']}
+                key={event.id}
+                id={event.id}
               />
             ))
         )}
@@ -78,7 +81,8 @@ const Events = () => {
                 acteType={event['Type acte']}
                 eventDate={event['date acte médicale']}
                 status={event['Statut du dossier']}
-                key={event.Nom + event.date + event['Type acte']}
+                key={event.id}
+                id={event.id}
               />
             ))
         )}
