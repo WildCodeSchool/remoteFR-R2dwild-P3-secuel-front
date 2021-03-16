@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import DatePicker from 'react-datepicker'
 
+import eventArray from '../data/fakejson/fakedata.json'
+
 import 'react-datepicker/dist/react-datepicker.css'
 import './Notification.css'
 
