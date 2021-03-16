@@ -1,10 +1,11 @@
 import React from 'react'
 import Home from './screen/Home'
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import './App.css'
 
+import Donut from './components/Donut'
 import Events from './components/Events'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -18,15 +19,11 @@ const App = () => {
         <Home />
         <Events />
         <Footer />
-      </div>
-
-      <div>
-        <Router>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/CreateUser' component={CreateUser} />
-          </Switch>
-        </Router>
+        <Donut />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          {/* <Route path='/CreateUser' component={CreateUser} /> */}
+        </Switch>
       </div>
     </div>
   )
