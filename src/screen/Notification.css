@@ -1,6 +1,6 @@
 .NotifBody {
-  background-color: white;
-  opacity: 0.8;
+  /* background-color: white;
+  opacity: 0.8; */
   width: 80%;
   height: auto;
 }
@@ -8,9 +8,9 @@
 .NotifNumber {
   border: 2px solid black;
   padding : 5px;
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 90%;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -36,9 +36,6 @@
 
 .Vignette {
   font-size: xx-large;
-  position : relative;
-  left : -460px;
-  top: -25px
   }
 
 .LegendRaw {
@@ -47,13 +44,19 @@
   align-items: flex-start;
   justify-content: center;
   padding : 5px;
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 90%;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
  }
+
+.NotifHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 .NotifList {
   border: 2px solid darkslategrey;
@@ -63,9 +66,9 @@
   padding : 5px;
   margin-top: 5px;
   margin-bottom: 10px;
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 90%;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
   height: auto;
   background-color: white;
 }
@@ -82,7 +85,7 @@ table {
 
 .NotifListHeader {
   list-style-type: none;
-  justify-content: left;
   margin-top: 0px;
-  padding-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
 }

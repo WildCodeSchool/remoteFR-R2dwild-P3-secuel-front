@@ -2,7 +2,7 @@ Elan project
 
 Health care insurance management application
 
-*******************Setting requirements :*******************
+********************Setting requirements :*******************
 
     Pour l'affichage des graphiques
     Chart.js =>
@@ -11,14 +11,6 @@ Health care insurance management application
 
     + npm install chartjs-plugin-datalabels --save
     https://chartjs-plugin-datalabels.netlify.app/
-
-
-
-
-
-
-
-
 
 *************************************************************
 

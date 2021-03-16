@@ -13,7 +13,7 @@ const Notification = () => {
       <h2>Profil</h2>
       <h1>Mathieu Bard</h1>
       <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
-      <div className='NotifNumber'>Vous avez XXXXX notification(s)</div>
+      <div className='NotifNumber'>Vous avez X notification(s)</div>
       {/* Légende des vignettes  */}
       <ul className='LegendRaw'>
         <ul className='StarNText'>
@@ -32,18 +32,19 @@ const Notification = () => {
         </ul>
       </ul>
       <section className='NotifList'>
-        {/* Pour ajouter une icone de statut sur l'évenement  */}
-        <div className='Vignette'>🔴</div>
-
-        {/* Informations d'entête de la notification */}
-        <ul className='NotifListHeader'>
-          <li>Notification du XXXXX</li>
-          <li>
-            Vous avez reçu le paiement de XX de votre mutuelle le XX/XX/XX pour
-            :
-          </li>
-          <li>Bénéficiaire: XXXXX</li>
-        </ul>
+        <section className='NotifHeader'>
+          {/* Pour ajouter une icone de statut sur l'évenement  */}
+          <div className='Vignette'>🔴</div>
+          {/* Informations d'entête de la notification */}
+          <ul className='NotifListHeader'>
+            <li>Notification du XXXXX</li>
+            <li>
+              Vous avez reçu le paiement de XX de votre mutuelle le XX/XX/XX
+              pour :
+            </li>
+            <li>Bénéficiaire: XXXXX</li>
+          </ul>
+        </section>
         {/* Tableau des données détaillées de remboursement(s) */}
         <table>
           <thead>
