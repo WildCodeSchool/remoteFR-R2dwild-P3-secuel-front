@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import DatePicker from 'react-datepicker'
 
 import eventArray from '../data/fakejson/fakedata.json'
-
+console.log(typeof eventArray[0]['Montant remboursé'])
 import 'react-datepicker/dist/react-datepicker.css'
 import './Notification.css'
 
@@ -50,12 +50,20 @@ const Notification = () => {
           <div className='Vignette'>🔴</div>
           {/* Informations d'entête de la notification */}
           <ul className='NotifListHeader'>
-            <li>Notification du XXXXX</li>
+            <li>Notification du XX/XX/XXXX</li>
             <li>
-              Vous avez reçu le paiement de XX de votre mutuelle le XX/XX/XX
+              Vous avez reçu le paiement de{' '}
+              <span style={{ color: 'blue' }}>{eventArray[0]['Payeur']}</span>{' '}
+              le{' '}
+              <span style={{ color: 'blue' }}>
+                {eventArray[0]['date de remboursement']}
+              </span>{' '}
               pour :
             </li>
-            <li>Bénéficiaire: XXXXX</li>
+            <li>
+              Bénéficiaire:{' '}
+              <span style={{ color: 'blue' }}>{eventArray[0]['prénom']}</span>
+            </li>
           </ul>
         </section>
         {/* Tableau des données détaillées de remboursement(s) */}
@@ -74,14 +82,48 @@ const Notification = () => {
           </thead>
           <tbody>
             <tr>
-              <td>XX/XX/XX</td>
-              <td>XXXXXXXX</td>
-              <td>XXXX XXXX XXXXXXXXXXX</td>
-              <td>XX €</td>
-              <td>XXXXXXX</td>
-              <td>XX,XX €</td>
-              <td>XX/XX/XX</td>
-              <td>XX €</td>
+              <td>
+                <span style={{ color: 'blue' }}>
+                  {eventArray[0]['date acte médicale']}
+                </span>
+              </td>
+              <td>
+                <span style={{ color: 'blue' }}>
+                  {eventArray[0]['Type acte']}
+                </span>
+              </td>
+              <td>
+                <span style={{ color: 'blue' }}>
+                  {eventArray[0]['Nom professionnel de santé']}
+                </span>
+              </td>
+              <td>
+                <span style={{ color: 'blue' }}>
+                  {eventArray[0]['Montant Payé']}€
+                </span>
+              </td>
+              <td>
+                <span style={{ color: 'blue' }}>
+                  {eventArray[0]['Statut du dossier']}
+                </span>
+              </td>
+              <td>
+                <span style={{ color: 'blue' }}>
+                  {eventArray[0]['Montant remboursé']}€
+                </span>
+              </td>
+              <td>
+                <span style={{ color: 'blue' }}>
+                  {eventArray[0]['date de remboursement']}
+                </span>
+              </td>
+              <td>
+                <span style={{ color: 'blue' }}>
+                  {parseInt(eventArray[0]['Montant Payé']) -
+                    parseInt(eventArray[0]['Montant remboursé'])}
+                  €
+                </span>
+              </td>
             </tr>
           </tbody>
         </table>

@@ -2,6 +2,8 @@ import React from 'react'
 import { Doughnut } from 'react-chartjs-2'
 import 'chartjs-plugin-datalabels'
 
+import eventArray from '../data/fakejson/fakedata.json'
+
 import './Donut.css'
 
 export default function Donut(label) {
@@ -12,7 +14,7 @@ export default function Donut(label) {
         'Mutuelle 1',
         'Non remboursé'
       ]
-    : ['Remboursement(s) en attente', 'Sécurité Sociale', 'Mutuelle 1']
+    : ['Remboursement(s) en attente', 'Montant remboursé']
 
   return (
     <Doughnut
@@ -22,8 +24,12 @@ export default function Donut(label) {
         datasets: [
           {
             label: 'montants remboursés en euros',
-            data: ['0', '20', '3'],
-            backgroundColor: ['#ffb703', '#8ecae6', '#219ebc'],
+            data: [
+              parseInt(eventArray[0]['Montant Payé']),
+              parseInt(eventArray[0]['Montant Payé']) -
+                parseInt(eventArray[0]['Montant remboursé'])
+            ],
+            backgroundColor: ['#ffb703', '#8ecae6'],
             borderColor: 'white',
             hoverBorderColor: 'grey',
             borderWidth: 2,
