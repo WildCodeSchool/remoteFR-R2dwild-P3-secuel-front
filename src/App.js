@@ -5,16 +5,26 @@ import DetailEvent from './components/DetailEvent'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Home from './screen/Home'
+import Login from './components/Login'
 import Message from './screen/Message'
 import Navbar from './components/Navbar'
 import Notification from './screen/Notification'
 import Params from './screen/Params'
-
 import { Switch, Route } from 'react-router-dom'
+import useToken from './components/useToken'
 
 import './App.css'
 
 const App = () => {
+  const { token, setToken } = useToken()
+
+  if (!token) {
+    return (
+      <div className='App'>
+        <Login setToken={setToken} />
+      </div>
+    )
+  }
   return (
     <div className='App'>
       <Header />
