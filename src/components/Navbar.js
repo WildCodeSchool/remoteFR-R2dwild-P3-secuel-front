@@ -31,6 +31,10 @@ const Navbar = () => {
           <img src={iconParametre} id='iconParametre' className='iconNavbar' />
           Paramètres
         </Link>
+        <Link to='/admin' className='iconBtn'>
+          <img src={iconParametre} className='iconNavbar' />
+          Administration
+        </Link>
       </div>
       <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
     </div>

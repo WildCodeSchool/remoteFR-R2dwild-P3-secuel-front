@@ -1,3 +1,4 @@
+import Admin from './screen/Admin'
 import Analyse from './screen/Analyse'
 import CreateUser from './screen/CreateUser'
 import DetailEvent from './components/DetailEvent'
@@ -26,6 +27,7 @@ const App = () => {
         <Route path='/analyse' component={Analyse} />
         <Route path='/params' component={Params} />
         <Route path='/event/:id' component={DetailEvent} />
+        <Route path='/admin' component={Admin} />
       </Switch>
       <Footer />
     </div>
