@@ -57,7 +57,7 @@ export default function Donut(label) {
       width={500}
       // devicePixelRatio={1}
       options={{
-        responsive: false,
+        responsive: true,
         title: {
           display: false,
           text: 'Remboursements',
@@ -66,7 +66,7 @@ export default function Donut(label) {
           fontSize: 30
         },
         legend: {
-          position: 'right'
+          position: 'bottom'
         }
       }}
     />
