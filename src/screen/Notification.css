@@ -36,7 +36,8 @@
 
 .Vignette {
   font-size: xx-large;
-  }
+  margin-right: 50px;
+}
 
 .LegendRaw {
   border: 2px solid red;

@@ -8,14 +8,25 @@ import './Notification.css'
 
 const Notification = () => {
   const [startDate, setStartDate] = useState(new Date())
+
   return (
     // Body du composant
     <div className='NotifBody'>
       <h1>Vos Notifications</h1>
       <h2>Profil</h2>
-      <h1>Mathieu Bard</h1>
+      <h1>
+        <span style={{ color: 'blue' }}>
+          {eventArray[0]['prénom'] + '   ' + eventArray[0]['Nom']}
+        </span>
+      </h1>
       <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
-      <div className='NotifNumber'>Vous avez X notification(s)</div>
+      <div className='NotifNumber'>
+        Vous avez{' '}
+        <span style={{ color: 'blue' }}>
+          {eventArray.filter(data => data['prénom'] === 'Jean').length}{' '}
+        </span>
+        notification(s)
+      </div>
       {/* Légende des vignettes  */}
       <ul className='LegendRaw'>
         <ul className='StarNText'>
