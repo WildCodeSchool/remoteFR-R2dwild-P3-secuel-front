@@ -21,11 +21,11 @@ const Notification = () => {
       </h1>
       <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
       <div className='NotifNumber'>
-        Vous avez{' '}
+        Vous avez 
         <span style={{ color: 'blue' }}>
-          {eventArray.filter(data => data['prénom'] === 'Jean').length}{' '}
+          {eventArray.filter(data => data['prénom'] === 'Jean').length}
         </span>
-        notification(s)
+         notification(s)
       </div>
       {/* Légende des vignettes  */}
       <ul className='LegendRaw'>

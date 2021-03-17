@@ -1,5 +1,5 @@
 .header {
-  border-bottom: 1px solid white;
+  /* border-bottom: 1px solid white; */
   display : flex;
   width: 100%;
   justify-content: space-between;
@@ -10,7 +10,7 @@
 .logo {
   height: 50px;
   width: auto;
-}
+} 
 
 .plus {
   text-decoration: none;

@@ -6,13 +6,16 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
-  background:white;
   align-items: center;
+  box-shadow: 1px 1px 1px #707070;
+  /* padding-bottom:5px; */
 }
 .iconNavbar{
-  width:30px;
+  width:25px;
 }
 .iconBtn{
+  padding-bottom:5px;
+  overflow: hidden;
   border:none;
   background:none;
   display: flex;
@@ -20,4 +23,10 @@
   align-items: center;
   outline:none;
   cursor: pointer;
+  text-decoration: none;
+  color:white;
+}
+
+.selected{
+  border-bottom: 3px solid #4472C4;
 }
