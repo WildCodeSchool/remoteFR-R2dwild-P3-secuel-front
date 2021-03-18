@@ -57,14 +57,15 @@ export default function Donut(label) {
         width={500}
         // devicePixelRatio={1}
         options={{
+          animation: { animateScale: true },
           responsive: true,
-          title: {
-            display: false,
-            text: 'Remboursements',
-            fontColor: 'black',
-            position: 'top',
-            fontSize: 30
-          },
+          // title: {
+          //   display: false,
+          //   text: 'Remboursements',
+          //   fontColor: 'black',
+          //   position: 'top',
+          //   fontSize: 30
+          // },
           legend: {
             position: 'bottom',
             labels: {

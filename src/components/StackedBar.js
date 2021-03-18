@@ -5,6 +5,7 @@ import './StackedBar.css'
 
 function StackedBar() {
   const [data, setData] = useState({})
+  // const style = { color: 'white' }
 
   useEffect(() => {
     setData({
@@ -14,39 +15,56 @@ function StackedBar() {
         'Podologue',
         'Orthodontiste',
         'Dermatologue',
-        'imagerie'
+        'Imagerie'
       ],
       datasets: [
         {
           barPercentage: 0.5,
-          barThickness: 6,
-          maxBarThickness: 8,
+          barThickness: 40,
+          maxBarThickness: 40,
           label: 'Remboursement sécu',
           data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: 'rgb(255, 99, 132)'
+          backgroundColor: '#71B340',
+          datalabels: {
+            color: 'white'
+          }
         },
         {
           barPercentage: 0.5,
-          barThickness: 6,
-          maxBarThickness: 8,
+          barThickness: 40,
+          maxBarThickness: 40,
           label: 'Remboursement mutuelle',
-          data: [2, 3, 20, 5, 1, 4],
-          backgroundColor: 'rgb(54, 162, 235)'
+          data: [2, 3, 20, 150, 1, 4],
+          backgroundColor: '#F77F00',
+          boderColor: 'white',
+          datalabels: {
+            color: 'white'
+          }
         },
         {
           barPercentage: 0.5,
-          barThickness: 6,
-          maxBarThickness: 8,
+          barThickness: 40,
+          maxBarThickness: 40,
           label: 'Reste à charge',
           data: [3, 10, 13, 15, 22, 30],
-          backgroundColor: 'rgb(75, 192, 192)'
+          backgroundColor: '#D62828',
+          datalabels: {
+            color: 'white'
+          }
         }
       ]
     })
   }, [])
 
   const options = {
+    // animation: { animateScale: true },
     maintainAspectRatio: false,
+    // plugins: {
+    //   tooltip: {
+    //     mode: 'index',
+    //     intersect: false
+    //   }
+    // },
     scales: {
       yAxes: [
         {
@@ -63,11 +81,17 @@ function StackedBar() {
       ]
     }
   }
+  const legend = {
+    position: 'bottom',
+    labeles: {
+      fontSize: 11
+    }
+  }
 
   return (
     <div className='bar'>
-      <h1 className='title'>Synthèse Remboursements année X</h1>
-      <Bar data={data} options={options} />
+      <h1 className='title'>Vos remboursements cette année</h1>
+      <Bar data={data} options={options} legend={legend} />
     </div>
   )
 }
