@@ -58,3 +58,25 @@
   justify-content: center;
   width: 100%;
 }
+
+.notificationICon {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.notificationICon .badge {
+  position: absolute;
+  justify-content: center;
+  top: -10px;
+  right: -50px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  background: #D62828;
+  border: 2px solid #A3BDCE ;
+  color: white;
+}

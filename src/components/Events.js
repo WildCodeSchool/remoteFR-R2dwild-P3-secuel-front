@@ -16,7 +16,12 @@ const Events = () => {
   return (
     <div className='events'>
       <div id='insured1' onClick={handleClick1}>
-        <h1 className='nomAssure'>Jean Dupont</h1>
+        <div className='notificationICon'>
+          <h1 className='nomAssure'>Jean Dupont</h1>
+          <span className='badge'>
+            {eventArray.filter(data => data['prénom'] === 'Jean').length}
+          </span>
+        </div>
         {hidden1 ? (
           <p className='voirActes'>Voir les actes</p>
         ) : (
@@ -34,7 +39,12 @@ const Events = () => {
         )}
       </div>
       <div id='insured2' onClick={handleClick2}>
-        <h1 className='nomAssure'>Lucas Dupont</h1>
+        <div className='notificationICon'>
+          <h1 className='nomAssure'>Lucas Dupont</h1>
+          <span className='badge'>
+            {eventArray.filter(data => data['prénom'] === 'Lucas').length}
+          </span>
+        </div>
         {hidden2 ? (
           <p className='voirActes'>Voir les actes</p>
         ) : (
@@ -52,7 +62,12 @@ const Events = () => {
         )}
       </div>
       <div id='insured3' onClick={handleClick3}>
-        <h1 className='nomAssure'>Marie Dupont</h1>
+        <div className='notificationICon'>
+          <h1 className='nomAssure'>Marie Dupont</h1>
+          <span className='badge'>
+            {eventArray.filter(data => data['prénom'] === 'Marie').length}
+          </span>
+        </div>
         {hidden3 ? (
           <p className='voirActes'>Voir les actes</p>
         ) : (
@@ -70,7 +85,12 @@ const Events = () => {
         )}
       </div>
       <div id='insured4' onClick={handleClick4}>
-        <h1 className='nomAssure'>Léa Dupont</h1>
+        <div className='notificationICon'>
+          <h1 className='nomAssure'>Léa Dupont</h1>
+          <span className='badge'>
+            {eventArray.filter(data => data['prénom'] === 'Lea').length}
+          </span>
+        </div>
         {hidden4 ? (
           <p className='voirActes'>Voir les actes</p>
         ) : (

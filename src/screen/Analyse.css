@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 .analyseBody {
+  border: 2px solid #003049;
+  padding : 10px;
+  margin: auto;
   height: 70%;
-  width: 70%;
+  width: 50%;
   justify-content: center;
   align-items: center;
   background-color: white;
-  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 h1 {
@@ -19,7 +22,8 @@ h1 {
 
 h2 {
 font-family: 'Roboto', sans-serif;
-font-size: 18px;
+font-weight: bolder;
+font-size: 20px;
 color: #003049;
 }
 
@@ -32,7 +36,8 @@ h3 {
   p {
     font-family: 'Roboto', sans-serif;
   font-style: normal;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: bolder;
   color: #003049;
   }
 
@@ -46,6 +51,8 @@ h3 {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
 }
-.Donut{
-  width: 200px;
+.analyse{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
