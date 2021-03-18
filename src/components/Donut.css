@@ -1,7 +1,6 @@
-/* .Donut {
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  width: 100px;
-}  */
+.Donut {
+position: relative;
+height: 60%;
+width: 60%;
+} 
 

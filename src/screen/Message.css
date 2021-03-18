@@ -1,0 +1,7 @@
+.message table,td,th{
+  padding: 5px;
+  border-collapse: collapse;
+  background: white;
+  border: slategrey 1px solid;
+  color: black;
+}

@@ -34,19 +34,23 @@
   margin-bottom: 10px;
 }
 #insured1{
-  background-color: rgb(13, 219, 185);
+  /* background-color: rgb(13, 219, 185); */
+  background-color: #219EBC;
   border-radius: 20px;
 }
 #insured2{
-  background-color: rgb(223, 208, 5);
+  /* background-color: rgb(223, 208, 5); */
+  background-color: #FCBF49;
   border-radius: 20px;
 }
 #insured3{
-  background-color: rgb(216, 69, 69);
+  /* background-color: rgb(216, 69, 69); */
+  background-color: #71B340;
   border-radius: 20px;
 }
 #insured4{
-  background-color: rgb(214, 95, 204);
+  /* background-color: rgb(214, 95, 204); */
+  background-color: #7EA8BE;
   border-radius: 20px;
 }
 .link{
