@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 import './Header.css'
 import logo_elan from '../data/images/logo_elan.png'
@@ -17,9 +17,27 @@ const Header = () => {
   }
   return (
     <div className='header'>
-      <Link to='/'>
-        <img src={logo_elan} alt='logo' className='logo' />
-      </Link>
+      <div className='navicon'>
+        <Link to='/'>
+          <img src={logo_elan} alt='logo' className='logo' />
+        </Link>
+        <NavLink to='/message' className='iconBtn' activeClassName='selected'>
+          Messages
+        </NavLink>
+        <NavLink
+          to='/notification'
+          className='iconBtn'
+          activeClassName='selected'
+        >
+          Notifications
+        </NavLink>
+        <NavLink to='/analyse' className='iconBtn' activeClassName='selected'>
+          Analyse
+        </NavLink>
+        <NavLink to='/params' className='iconBtn' activeClassName='selected'>
+          Paramètres
+        </NavLink>
+      </div>
       {/* <div className='plus' onClick={handleClick} style={{backgroundColor:`${ bgPlus ? 'blue' : 'grey'}`}>+</div> */}
       <div className='userField'>
         <Link

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import eventArray from '../data/fakejson/fakedata.json'
+import Welcome from './Welcome'
 
 import './Events.css'
 import MiniEvent from './MiniEvent'
@@ -15,6 +16,7 @@ const Events = () => {
   const handleClick4 = () => setHidden4(!hidden4)
   return (
     <div className='events'>
+      <Welcome />
       <div id='insured1' onClick={handleClick1}>
         <h1 className='nomAssure'>Jean Dupont</h1>
         {hidden1 ? (

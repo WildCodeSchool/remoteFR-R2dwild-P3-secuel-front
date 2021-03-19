@@ -3,6 +3,9 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
-  background:linear-gradient(to bottom, #85a8bf, #ffffff);
+  background: url("./data/images/unknown.png"), linear-gradient(#85a8bf, rgba(255, 255, 255, 0));
+  background-size:cover;
+  background-position:center;
+  background-attachment: fixed;
   min-height: 100vh;
 }

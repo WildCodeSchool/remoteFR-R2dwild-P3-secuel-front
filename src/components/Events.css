@@ -2,8 +2,11 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  width: 90%;
+  width: 100%;
+  justify-content: center;
+  height: auto;
+  padding-bottom:20px;
+  
 }
 .card {
   display: flex;
@@ -12,11 +15,12 @@
   align-items: center;
   width: 80%;
   border-radius: 10px;
-  margin: 20px;
+  margin: 5px;
   background-color: white;
   padding: 1.3rem;
   z-index: 55555;
-  flex-wrap:wrap
+  flex-wrap:wrap;
+
 }
 .card p {
   margin: 0px;
@@ -30,27 +34,45 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  margin-bottom: 10px;
+  width: 40%;
+  margin: 10px;
+  border-radius: 20px;
+  overflow: scroll;
+  min-height: 0;
+  max-height: 300px;
 }
 #insured1{
   background-color: rgb(13, 219, 185);
-  border-radius: 20px;
 }
 #insured2{
   background-color: rgb(223, 208, 5);
-  border-radius: 20px;
 }
 #insured3{
   background-color: rgb(216, 69, 69);
-  border-radius: 20px;
 }
 #insured4{
   background-color: rgb(214, 95, 204);
-  border-radius: 20px;
 }
 .link{
   display: flex;
   justify-content: center;
   width: 100%;
+}
+.nomAssure{
+  font-weight: 300;
+}
+
+@media (max-width: 600px) {
+  #insured1,#insured2,#insured3,#insured4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 10px;
+    border-radius: 20px;
+    overflow: scroll;
+    min-height: 0;
+    max-height: 300px;
+  }
 }
