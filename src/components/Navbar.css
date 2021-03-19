@@ -1,14 +1,10 @@
-.Navbar{
-  width: 100%;
-}
+/* 
 .navicon{
   margin-bottom:40px;
-  width: 100%;
+  width: 50%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  box-shadow: 1px 1px 1px #707070;
-  /* padding-bottom:5px; */
 }
 .iconNavbar{
   width:25px;
@@ -24,9 +20,9 @@
   outline:none;
   cursor: pointer;
   text-decoration: none;
-  color:white;
+  color:#4472C4;
 }
 
 .selected{
   border-bottom: 3px solid #4472C4;
-}
+} */

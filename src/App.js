@@ -1,11 +1,9 @@
 import Analyse from './screen/Analyse'
 import CreateUser from './screen/CreateUser'
 import DetailEvent from './components/DetailEvent'
-import Footer from './components/Footer'
 import Header from './components/Header'
 import Home from './screen/Home'
 import Message from './screen/Message'
-import Navbar from './components/Navbar'
 import Notification from './screen/Notification'
 import Params from './screen/Params'
 
@@ -17,7 +15,7 @@ const App = () => {
   return (
     <div className='App'>
       <Header />
-      <Navbar />
+      {/* <Navbar /> */}
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/CreateUser' component={CreateUser} />
@@ -27,7 +25,7 @@ const App = () => {
         <Route path='/params' component={Params} />
         <Route path='/event/:id' component={DetailEvent} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

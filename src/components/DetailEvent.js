@@ -1,6 +1,8 @@
 import acte from '../data/fakejson/fakedata.json'
 import Donut from './Donut.js'
 import './DetailEvent.css'
+import fleche from '../data/images/fleche.png'
+import { Link } from 'react-router-dom'
 
 const DetailEvent = Acte => {
   const insured = acte.filter(
@@ -8,6 +10,11 @@ const DetailEvent = Acte => {
   )[0]
   return (
     <div className='card'>
+      <div>
+        <Link to='/'>
+          <img src={fleche} />
+        </Link>
+      </div>
       <p className='titreCard'>{insured['N Sécurité sociale']}</p>
       <p>
         <span className='infoCard'>Date acte: </span>{' '}
