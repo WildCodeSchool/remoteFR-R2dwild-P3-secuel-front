@@ -34,8 +34,8 @@ function StackedBar() {
           barThickness: 40,
           maxBarThickness: 40,
           label: 'Remboursement mutuelle',
-          data: [2, 3, 20, 150, 1, 4],
-          backgroundColor: '#F77F00',
+          data: [2, 3, 20, 45, 1, 4],
+          backgroundColor: '#568731',
           boderColor: 'white',
           datalabels: {
             color: 'white'
@@ -58,7 +58,7 @@ function StackedBar() {
 
   const options = {
     // animation: { animateScale: true },
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     // plugins: {
     //   tooltip: {
     //     mode: 'index',

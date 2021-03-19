@@ -32,7 +32,7 @@
   justify-content: center;
   width: 100%;
   margin-bottom: 10px;
-}
+  }
 #insured1{
   /* background-color: rgb(13, 219, 185); */
   background-color: #219EBC;
@@ -60,17 +60,16 @@
 }
 
 .notificationICon {
-  color: white;
-  text-decoration: none;
   position: relative;
   display: inline-block;
+  width: 100%;
 }
 
 .notificationICon .badge {
   position: absolute;
   justify-content: center;
   top: -10px;
-  right: -50px;
+  left: 98%;
   height: 30px;
   width: 30px;
   display: flex;
