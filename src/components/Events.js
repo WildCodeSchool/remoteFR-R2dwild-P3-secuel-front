@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 import eventArray from '../data/fakejson/fakedata.json'
 import Welcome from './Welcome'
@@ -6,6 +8,9 @@ import Welcome from './Welcome'
 import './Events.css'
 import MiniEvent from './MiniEvent'
 const Events = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 })
+  }, [])
   const [hidden1, setHidden1] = useState(true)
   const handleClick1 = () => setHidden1(!hidden1)
   const [hidden2, setHidden2] = useState(true)
@@ -20,7 +25,7 @@ const Events = () => {
       <div id='insured1' onClick={handleClick1}>
         <div className='notificationICon'>
           <h1 className='nomAssure'>Jean Dupont</h1>
-          <span className='badge'>
+          <span data-aos='zoom-in' data-aos-duration='800' className='badge'>
             {eventArray.filter(data => data['prénom'] === 'Jean').length}
           </span>
         </div>
@@ -43,7 +48,7 @@ const Events = () => {
       <div id='insured2' onClick={handleClick2}>
         <div className='notificationICon'>
           <h1 className='nomAssure'>Lucas Dupont</h1>
-          <span className='badge'>
+          <span data-aos='zoom-in' data-aos-duration='800' className='badge'>
             {eventArray.filter(data => data['prénom'] === 'Lucas').length}
           </span>
         </div>
@@ -63,10 +68,15 @@ const Events = () => {
             ))
         )}
       </div>
-      <div id='insured3' onClick={handleClick3}>
+      <div
+        id='insured3'
+        data-aos='zoom-in'
+        data-aos-duration='800'
+        onClick={handleClick3}
+      >
         <div className='notificationICon'>
           <h1 className='nomAssure'>Marie Dupont</h1>
-          <span className='badge'>
+          <span data-aos='zoom-in' data-aos-duration='800' className='badge'>
             {eventArray.filter(data => data['prénom'] === 'Marie').length}
           </span>
         </div>
@@ -89,7 +99,7 @@ const Events = () => {
       <div id='insured4' onClick={handleClick4}>
         <div className='notificationICon'>
           <h1 className='nomAssure'>Léa Dupont</h1>
-          <span className='badge'>
+          <span data-aos='zoom-in' data-aos-duration='800' className='badge'>
             {eventArray.filter(data => data['prénom'] === 'Lea').length}
           </span>
         </div>
