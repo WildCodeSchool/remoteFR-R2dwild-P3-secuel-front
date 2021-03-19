@@ -66,6 +66,7 @@
 }
 
 .notificationICon .badge {
+  animation: jello-horizontal 0.9s 1 both;
   position: absolute;
   justify-content: center;
   top: -10px;
@@ -78,6 +79,30 @@
   background: #D62828;
   border: 2px solid #A3BDCE ;
   color: white;
+}
+
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 .nomAssure{

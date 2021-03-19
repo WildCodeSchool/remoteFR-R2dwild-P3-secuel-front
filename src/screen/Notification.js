@@ -125,7 +125,7 @@ const Notification = () => {
                 </span>
               </td>
               <td>
-                <span style={{ color: '#FCBF49' }}>
+                <span style={{ color: '#FCBF49', fontWeight: 'bolder' }}>
                   {parseInt(eventArray[0]['Montant Payé']) -
                     parseInt(eventArray[0]['Montant remboursé'])}
                   €
