@@ -15,29 +15,31 @@ const Analyse = () => {
   const handleSelect = e => setSelect(e.target.value)
 
   return (
-    <div className='analyse'>
-      {/* Votre mutuelle actuelle ne vous rembourse pas totalement vos actes de
+    <>
+      <div className='analyse'>
+        {/* Votre mutuelle actuelle ne vous rembourse pas totalement vos actes de
       podologies, <a href='https://apgis.com/'>APGIS</a> propose de meilleur
       remboursement pour ces actes. */}
-      <select>
-        <option value='' onChange={handleSelect}>
-          Tous les assurés
-        </option>
-        <option value='Jean' onChange={handleSelect}>
-          Jean Dupont
-        </option>
-        <option value='Lucas' onChange={handleSelect}>
-          Lucas Dupont
-        </option>
-        <option value='Marie' onChange={handleSelect}>
-          Marie Dupont
-        </option>
-        <option value='Lea' onChange={handleSelect}>
-          Léa Dupont
-        </option>
-      </select>
+        <select>
+          <option value='' onChange={handleSelect}>
+            Tous les assurés
+          </option>
+          <option value='Jean' onChange={handleSelect}>
+            Jean Dupont
+          </option>
+          <option value='Lucas' onChange={handleSelect}>
+            Lucas Dupont
+          </option>
+          <option value='Marie' onChange={handleSelect}>
+            Marie Dupont
+          </option>
+          <option value='Lea' onChange={handleSelect}>
+            Léa Dupont
+          </option>
+        </select>
+      </div>
       <StackedBar />
-    </div>
+    </>
   )
 }
 export default Analyse

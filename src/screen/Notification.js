@@ -12,7 +12,7 @@ const Notification = () => {
   return (
     // Body du composant
     <div className='NotifBody'>
-      <h1>Vos Notifications</h1>
+      <h1 id='titreNotif'>Vos Notifications</h1>
       <h2>Profil</h2>
       <h1>
         <span style={{ color: 'blue' }}>

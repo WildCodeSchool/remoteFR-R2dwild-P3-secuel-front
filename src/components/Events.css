@@ -37,9 +37,9 @@
   width: 40%;
   margin: 10px;
   border-radius: 20px;
-  overflow: scroll;
+  /* overflow: scroll; */
   min-height: 0;
-  max-height: 300px;
+  /* max-height: 300px; */
 }
 #insured1{
   background-color: #219EBC;
@@ -58,6 +58,28 @@
   justify-content: center;
   width: 100%;
 }
+
+.notificationICon {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.notificationICon .badge {
+  position: absolute;
+  justify-content: center;
+  top: -10px;
+  left: 98%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  background: #D62828;
+  border: 2px solid #A3BDCE ;
+  color: white;
+}
+
 .nomAssure{
   font-weight: 300;
 }
@@ -71,8 +93,8 @@
     width: 80%;
     margin: 10px;
     border-radius: 20px;
-    overflow: scroll;
+    /* overflow: scroll; */
     min-height: 0;
-    max-height: 300px;
+    /* max-height: 300px; */
   }
 }

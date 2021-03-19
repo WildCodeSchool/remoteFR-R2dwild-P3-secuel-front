@@ -1,6 +1,6 @@
 .header {
   /* border-bottom: 1px solid white; */
-  display : flex;
+  display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
@@ -10,64 +10,82 @@
 .logo {
   height: 50px;
   width: auto;
-} 
+}
 
-.plus {
+/* .plus {
   text-decoration: none;
   color : white;
   font-family: 'Courier New', Courier, monospace;
   vertical-align : center;
   font-size: 30px;
   font-weight: bold;
-}
+} */
 
 /* .plus :hover {
   background-color: rgb(174, 181, 204);
   color : black;
 } */
 
-.userField {
+/* .userField {
   display : flex;
   align-items: flex-start;
   margin-right:10px;
-}
+} */
 
 .logoUser {
-  height : 30px;
-  width: 30px; 
+  height: 30px;
+  width: 30px;
   padding-left: 5px;
   padding-right: 5px;
   justify-content: center;
 }
-.navicon{
-  margin-bottom:40px;
-  margin-left:10px;
+
+.navicon {
+  margin-bottom: 40px;
+  margin-left: 10px;
   width: 40%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top:10px;
-  font-size:12px;
+  margin-top: 10px;
+  font-size: 12px;
   font-weight: bold;
   /* padding-bottom:5px; */
 }
-.iconNavbar{
-  width:25px;
-}
-.iconBtn{
-  padding-bottom:5px;
-  overflow: hidden;
-  border:none;
-  background:none;
-  display: flex;
-  width:auto;
-  align-items: center;
-  outline:none;
-  cursor: pointer;
-  text-decoration: none;
-  color:#4472C4;
+
+.iconNavbar {
+  width: 25px;
 }
 
-.selected{
+.iconBtn {
+  padding-bottom: 5px;
+  overflow: hidden;
+  border: none;
+  background: none;
+  display: flex;
+  width: auto;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: #4472C4;
+}
+
+.selected {
   border-bottom: 3px solid #4472C4;
+}
+
+@media (max-width: 600px) {
+  .navicon {
+    margin-bottom: 40px;
+    margin-left: 10px;
+    width: 95%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: bold;
+  }
 }

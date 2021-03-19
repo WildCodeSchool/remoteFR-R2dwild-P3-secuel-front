@@ -6,7 +6,7 @@ const Message = () => {
       <p>3 nouveaux messages</p>
       <table>
         <thead>
-          <tr>
+          <tr id='headTable'>
             <th>
               <input type='checkbox' disabled />
             </th>
@@ -17,7 +17,7 @@ const Message = () => {
             <th>date ▼</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id='bodyTable'>
           <tr>
             <td>
               <input type='checkbox' />

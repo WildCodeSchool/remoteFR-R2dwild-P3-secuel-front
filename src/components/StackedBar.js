@@ -24,7 +24,7 @@ function StackedBar() {
           maxBarThickness: 40,
           label: 'Remboursement sécu',
           data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: '#71B340',
+          backgroundColor: '#8ecae6',
           datalabels: {
             color: 'white'
           }
@@ -34,8 +34,8 @@ function StackedBar() {
           barThickness: 40,
           maxBarThickness: 40,
           label: 'Remboursement mutuelle',
-          data: [2, 3, 20, 45, 1, 4],
-          backgroundColor: '#568731',
+          data: [2, 3, 20, 35, 1, 4],
+          backgroundColor: '#257EA7',
           boderColor: 'white',
           datalabels: {
             color: 'white'
@@ -46,8 +46,8 @@ function StackedBar() {
           barThickness: 40,
           maxBarThickness: 40,
           label: 'Reste à charge',
-          data: [3, 10, 13, 15, 22, 30],
-          backgroundColor: '#D62828',
+          data: [3, 10, 13, 5, 22, 30],
+          backgroundColor: '#ffb703',
           datalabels: {
             color: 'white'
           }
@@ -57,8 +57,8 @@ function StackedBar() {
   }, [])
 
   const options = {
-    // animation: { animateScale: true },
-    maintainAspectRatio: true,
+    animation: { easing: 'easeInCubic', duration: 1500 },
+    maintainAspectRatio: false,
     // plugins: {
     //   tooltip: {
     //     mode: 'index',
@@ -68,6 +68,10 @@ function StackedBar() {
     scales: {
       yAxes: [
         {
+          // scaleLabel: {
+          //   display: true,
+          //   labelString: '€'
+          // },
           stacked: true,
           ticks: {
             beginAtZero: true
@@ -83,16 +87,19 @@ function StackedBar() {
   }
   const legend = {
     position: 'bottom',
-    labeles: {
-      fontSize: 11
+    labels: {
+      fontSize: 12
     }
   }
 
   return (
-    <div className='bar'>
+    <>
       <h1 className='title'>Vos remboursements cette année</h1>
-      <Bar data={data} options={options} legend={legend} />
-    </div>
+      <div className='bar'>
+        {/* <p className='label'>€</p> */}
+        <Bar data={data} options={options} legend={legend} />
+      </div>
+    </>
   )
 }
 
