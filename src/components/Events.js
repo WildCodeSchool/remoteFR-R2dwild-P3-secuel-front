@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import eventArray from '../data/fakejson/fakedata.json'
+import Welcome from './Welcome'
 
 import './Events.css'
 import MiniEvent from './MiniEvent'
@@ -15,10 +16,11 @@ const Events = () => {
   const handleClick4 = () => setHidden4(!hidden4)
   return (
     <div className='events'>
+      <Welcome />
       <div id='insured1' onClick={handleClick1}>
-        <h1>Jean Dupont</h1>
+        <h1 className='nomAssure'>Jean Dupont</h1>
         {hidden1 ? (
-          <p>Voir les actes</p>
+          <p className='voirActes'>Voir les actes</p>
         ) : (
           eventArray
             .filter(event => event['prénom'] === 'Jean')
@@ -34,9 +36,9 @@ const Events = () => {
         )}
       </div>
       <div id='insured2' onClick={handleClick2}>
-        <h1>Lucas Dupont</h1>
+        <h1 className='nomAssure'>Lucas Dupont</h1>
         {hidden2 ? (
-          <p>Voir les actes</p>
+          <p className='voirActes'>Voir les actes</p>
         ) : (
           eventArray
             .filter(event => event['prénom'] === 'Lucas')
@@ -52,9 +54,9 @@ const Events = () => {
         )}
       </div>
       <div id='insured3' onClick={handleClick3}>
-        <h1>Marie Dupont</h1>
+        <h1 className='nomAssure'>Marie Dupont</h1>
         {hidden3 ? (
-          <p>Voir les actes</p>
+          <p className='voirActes'>Voir les actes</p>
         ) : (
           eventArray
             .filter(event => event['prénom'] === 'Marie')
@@ -70,9 +72,9 @@ const Events = () => {
         )}
       </div>
       <div id='insured4' onClick={handleClick4}>
-        <h1>Léa Dupont</h1>
+        <h1 className='nomAssure'>Léa Dupont</h1>
         {hidden4 ? (
-          <p>Voir les actes</p>
+          <p className='voirActes'>Voir les actes</p>
         ) : (
           eventArray
             .filter(event => event['prénom'] === 'Lea')
