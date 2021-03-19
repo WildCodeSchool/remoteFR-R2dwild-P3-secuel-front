@@ -22,9 +22,7 @@ const Notification = () => {
       <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
       <div className='NotifNumber'>
         Vous avez
-        <span style={{ color: 'blue' }}>
-          {eventArray.filter(data => data['prénom'] === 'Jean').length}
-        </span>
+        {eventArray.filter(data => data['prénom'] === 'Jean').length}
         notification(s)
       </div>
       {/* Légende des vignettes  */}
@@ -58,10 +56,9 @@ const Notification = () => {
               <span style={{ color: 'blue' }}>
                 {eventArray[0]['date de remboursement']}
               </span>{' '}
-              pour :
-            </li>
-            <li>
-              Bénéficiaire:{' '}
+              pour :{/* </li>
+            <li> */}
+              {/* Bénéficiaire:{' '} */}
               <span style={{ color: 'blue' }}>{eventArray[0]['prénom']}</span>
             </li>
           </ul>
@@ -74,6 +71,36 @@ const Notification = () => {
               <th>Type acte</th>
               <th>Nom professionnel de santé</th>
               <th>Montant Payé par le bénéficiaire</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span style={{ color: '#003049' }}>
+                  {eventArray[0]['date acte médicale']}
+                </span>
+              </td>
+              <td>
+                <span style={{ color: '#003049' }}>
+                  {eventArray[0]['Type acte']}
+                </span>
+              </td>
+              <td>
+                <span style={{ color: '#003049' }}>
+                  {eventArray[0]['Nom professionnel de santé']}
+                </span>
+              </td>
+              <td>
+                <span style={{ color: '#003049' }}>
+                  {eventArray[0]['Montant Payé']}€
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <thead>
+            <tr>
               <th>Statut du dossier </th>
               <th>Montant remboursé par la Sécurité Sociale</th>
               <th>Date de remboursement Sécurité Sociale</th>
@@ -83,42 +110,22 @@ const Notification = () => {
           <tbody>
             <tr>
               <td>
-                <span style={{ color: 'blue' }}>
-                  {eventArray[0]['date acte médicale']}
-                </span>
-              </td>
-              <td>
-                <span style={{ color: 'blue' }}>
-                  {eventArray[0]['Type acte']}
-                </span>
-              </td>
-              <td>
-                <span style={{ color: 'blue' }}>
-                  {eventArray[0]['Nom professionnel de santé']}
-                </span>
-              </td>
-              <td>
-                <span style={{ color: 'blue' }}>
-                  {eventArray[0]['Montant Payé']}€
-                </span>
-              </td>
-              <td>
-                <span style={{ color: 'blue' }}>
+                <span style={{ color: '#003049' }}>
                   {eventArray[0]['Statut du dossier']}
                 </span>
               </td>
               <td>
-                <span style={{ color: 'blue' }}>
+                <span style={{ color: '#003049' }}>
                   {eventArray[0]['Montant remboursé']}€
                 </span>
               </td>
               <td>
-                <span style={{ color: 'blue' }}>
+                <span style={{ color: '#003049' }}>
                   {eventArray[0]['date de remboursement']}
                 </span>
               </td>
               <td>
-                <span style={{ color: 'blue' }}>
+                <span style={{ color: '#FCBF49' }}>
                   {parseInt(eventArray[0]['Montant Payé']) -
                     parseInt(eventArray[0]['Montant remboursé'])}
                   €
