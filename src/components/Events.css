@@ -67,6 +67,7 @@
 
 .notificationICon .badge {
   position: absolute;
+  animation-iteration-count: 3;
   justify-content: center;
   top: -10px;
   left: 91%;
