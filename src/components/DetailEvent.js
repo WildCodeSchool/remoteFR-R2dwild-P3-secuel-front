@@ -1,8 +1,10 @@
-import acte from '../data/fakejson/fakedata.json'
 import Donut from './Donut.js'
-import './DetailEvent.css'
-import fleche from '../data/images/fleche.png'
 import { Link } from 'react-router-dom'
+
+import './DetailEvent.css'
+
+import acte from '../data/fakejson/fakedata.json'
+import fleche from '../data/images/fleche.png'
 
 const DetailEvent = Acte => {
   const insured = acte.filter(
@@ -39,9 +41,8 @@ const DetailEvent = Acte => {
         <span className='infoCard'>Montant remboursé: </span>
         {insured['Montant remboursé'] ? insured['Montant remboursé'] : 0}
       </p>
-      {/* <div className='donutField'> */}
+
       <Donut />
-      {/* </div> */}
     </div>
   )
 }

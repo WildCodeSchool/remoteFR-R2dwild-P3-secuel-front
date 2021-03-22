@@ -95,10 +95,8 @@
     width: 80%;
     margin: 10px;
     border-radius: 20px;
-    /* overflow: scroll; */
     min-height: 0;
-    /* max-height: 300px; */
-  }
+}
 }
 .hidden{
   max-height: 150px;

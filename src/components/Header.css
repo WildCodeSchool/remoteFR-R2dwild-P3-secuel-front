@@ -1,5 +1,4 @@
 .header {
-  /* border-bottom: 1px solid white; */
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -12,26 +11,6 @@
   width: auto;
 }
 
-/* .plus {
-  text-decoration: none;
-  color : white;
-  font-family: 'Courier New', Courier, monospace;
-  vertical-align : center;
-  font-size: 30px;
-  font-weight: bold;
-} */
-
-/* .plus :hover {
-  background-color: rgb(174, 181, 204);
-  color : black;
-} */
-
-/* .userField {
-  display : flex;
-  align-items: flex-start;
-  margin-right:10px;
-} */
-
 .logoUser {
   height: 30px;
   width: 30px;
@@ -40,7 +19,7 @@
   justify-content: center;
 }
 
-.navicon {
+.navIcon {
   margin-bottom: 40px;
   margin-left: 10px;
   width: 40%;
@@ -50,7 +29,6 @@
   margin-top: 10px;
   font-size: 12px;
   font-weight: bold;
-  /* padding-bottom:5px; */
 }
 
 .iconNavbar {
@@ -76,7 +54,7 @@
 }
 
 @media (max-width: 600px) {
-  .navicon {
+  .navIcon {
     margin-bottom: 40px;
     margin-left: 10px;
     width: 95%;

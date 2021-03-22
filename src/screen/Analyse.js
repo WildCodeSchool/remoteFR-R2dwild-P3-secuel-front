@@ -1,5 +1,4 @@
 import StackedBar from '../components/StackedBar'
-
 import { useState } from 'react'
 
 import './Analyse.css'

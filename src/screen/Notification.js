@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
 import DatePicker from 'react-datepicker'
+import React, { useState } from 'react'
 
 import eventArray from '../data/fakejson/fakedata.json'
-console.log(typeof eventArray[0]['Montant remboursé'])
+
 import 'react-datepicker/dist/react-datepicker.css'
 import './Notification.css'
 
@@ -11,7 +11,7 @@ const Notification = () => {
 
   return (
     // Body du composant
-    <div className='NotifBody'>
+    <div className='notifBody'>
       <h1 id='titreNotif'>Vos Notifications</h1>
       <h2>Profil</h2>
       <h1>
@@ -20,34 +20,34 @@ const Notification = () => {
         </span>
       </h1>
       <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
-      <div className='NotifNumber'>
+      <div className='notifNumber'>
         Vous avez
         {eventArray.filter(data => data['prénom'] === 'Jean').length}
         notification(s)
       </div>
       {/* Légende des vignettes  */}
-      <ul className='LegendRaw'>
-        <ul className='StarNText'>
-          <li className='Star'>🟢</li>{' '}
-          <li className='TextLegend'>Tout va bien !</li>
+      <ul className='legendRaw'>
+        <ul className='starNText'>
+          <li className='star'>🟢</li>{' '}
+          <li className='textLegend'>Tout va bien !</li>
         </ul>
-        <ul className='StarNText'>
-          <li className='Star'>🟡</li>
-          <li className='TextLegend'>
+        <ul className='starNText'>
+          <li className='star'>🟡</li>
+          <li className='textLegend'>
             C&apos;est un peu long donc voyons ce qu&apos;il se passe
           </li>
         </ul>
-        <ul className='StarNText'>
-          <li className='Star'>🔴</li>{' '}
-          <li className='TextLegend'>Il y a un petit soucis</li>
+        <ul className='starNText'>
+          <li className='star'>🔴</li>{' '}
+          <li className='textLegend'>Il y a un petit soucis</li>
         </ul>
       </ul>
-      <section className='NotifList'>
-        <section className='NotifHeader'>
+      <section className='notifList'>
+        <section className='notifHeader'>
           {/* Pour ajouter une icone de statut sur l'évenement  */}
-          <div className='Vignette'>🔴</div>
+          <div className='vignette'>🔴</div>
           {/* Informations d'entête de la notification */}
-          <ul className='NotifListHeader'>
+          <ul className='notifListHeader'>
             <li>Notification du XX/XX/XXXX</li>
             <li>
               Vous avez reçu le paiement de{' '}
@@ -56,9 +56,7 @@ const Notification = () => {
               <span style={{ color: 'blue' }}>
                 {eventArray[0]['date de remboursement']}
               </span>{' '}
-              pour :{/* </li>
-            <li> */}
-              {/* Bénéficiaire:{' '} */}
+              pour :
               <span style={{ color: 'blue' }}>{eventArray[0]['prénom']}</span>
             </li>
           </ul>
