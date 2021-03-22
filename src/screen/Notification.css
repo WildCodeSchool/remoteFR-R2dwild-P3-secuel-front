@@ -5,23 +5,35 @@
   height: auto;
 }
 
+#titreNotif{
+background-color:#0C75B7;
+color:white;
+font-size:20px;
+font-weight:bolder;
+height:35px;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+padding-left:10px;
+}
+
 .NotifNumber {
   padding : 5px;
-  margin-left: 10%;
-  margin-right: 10%;
-  width: 80%;
+  /* margin-left: 10%;
+  margin-right: 10%; */
+  width: 90%;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  font-size: 30px;
-  letter-spacing: 10px;
-  font-weight: bold;
+  margin: 0px;
+  font-size: 20px;
+  /* letter-spacing: 10px; */
 }
 
 .StarNText {
   list-style-type: none;
-  font-size: large;
-  width: 200px;
+  /* font-size: large; */
+  width: 33%;
+  padding: 0px
 }
 
 .Star {
@@ -43,9 +55,9 @@
   align-items: flex-start;
   justify-content: center;
   padding : 5px;
-  margin-left: 10%;
+  /* margin-left: 10%; */
   margin-right: 10%;
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -58,23 +70,31 @@
 }
 
 .NotifList {
-  border: 2px solid darkslategrey;
+  /* border: 2px solid darkslategrey; */
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding : 5px;
   margin-top: 5px;
   margin-bottom: 10px;
-  margin-left: 10%;
+  /* margin-left: 10%; */
   margin-right: 10%;
-  width: 80%;
+  width: 100%;
   height: auto;
   background-color: white;
+  border-radius: 20px;
 }
 
-table, tr,td, th {
-  border: 1px solid black;
+table, tr, td, th {
+  border: 1px solid #003049;
   font-size: small;
+}
+
+th {
+  background-color: #003049;
+  color: white;
+  border: 1px solid white
 }
 
 table {

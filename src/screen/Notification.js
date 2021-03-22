@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import DatePicker from 'react-datepicker'
 
 import eventArray from '../data/fakejson/fakedata.json'
-
+console.log(typeof eventArray[0]['Montant remboursé'])
 import 'react-datepicker/dist/react-datepicker.css'
 import './Notification.css'
 
@@ -12,7 +12,7 @@ const Notification = () => {
   return (
     // Body du composant
     <div className='NotifBody'>
-      <h1>Vos Notifications</h1>
+      <h1 id='titreNotif'>Vos Notifications</h1>
       <h2>Profil</h2>
       <h1>
         <span style={{ color: 'blue' }}>
@@ -22,9 +22,7 @@ const Notification = () => {
       <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
       <div className='NotifNumber'>
         Vous avez
-        <span style={{ color: 'blue' }}>
-          {eventArray.filter(data => data['prénom'] === 'Jean').length}
-        </span>
+        {eventArray.filter(data => data['prénom'] === 'Jean').length}
         notification(s)
       </div>
       {/* Légende des vignettes  */}
@@ -50,12 +48,19 @@ const Notification = () => {
           <div className='Vignette'>🔴</div>
           {/* Informations d'entête de la notification */}
           <ul className='NotifListHeader'>
-            <li>Notification du XXXXX</li>
+            <li>Notification du XX/XX/XXXX</li>
             <li>
-              Vous avez reçu le paiement de XX de votre mutuelle le XX/XX/XX
-              pour :
+              Vous avez reçu le paiement de{' '}
+              <span style={{ color: 'blue' }}>{eventArray[0]['Payeur']}</span>{' '}
+              le{' '}
+              <span style={{ color: 'blue' }}>
+                {eventArray[0]['date de remboursement']}
+              </span>{' '}
+              pour :{/* </li>
+            <li> */}
+              {/* Bénéficiaire:{' '} */}
+              <span style={{ color: 'blue' }}>{eventArray[0]['prénom']}</span>
             </li>
-            <li>Bénéficiaire: XXXXX</li>
           </ul>
         </section>
         {/* Tableau des données détaillées de remboursement(s) */}
@@ -66,6 +71,36 @@ const Notification = () => {
               <th>Type acte</th>
               <th>Nom professionnel de santé</th>
               <th>Montant Payé par le bénéficiaire</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span style={{ color: '#003049' }}>
+                  {eventArray[0]['date acte médicale']}
+                </span>
+              </td>
+              <td>
+                <span style={{ color: '#003049' }}>
+                  {eventArray[0]['Type acte']}
+                </span>
+              </td>
+              <td>
+                <span style={{ color: '#003049' }}>
+                  {eventArray[0]['Nom professionnel de santé']}
+                </span>
+              </td>
+              <td>
+                <span style={{ color: '#003049' }}>
+                  {eventArray[0]['Montant Payé']}€
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <thead>
+            <tr>
               <th>Statut du dossier </th>
               <th>Montant remboursé par la Sécurité Sociale</th>
               <th>Date de remboursement Sécurité Sociale</th>
@@ -74,14 +109,28 @@ const Notification = () => {
           </thead>
           <tbody>
             <tr>
-              <td>XX/XX/XX</td>
-              <td>XXXXXXXX</td>
-              <td>XXXX XXXX XXXXXXXXXXX</td>
-              <td>XX €</td>
-              <td>XXXXXXX</td>
-              <td>XX,XX €</td>
-              <td>XX/XX/XX</td>
-              <td>XX €</td>
+              <td>
+                <span style={{ color: '#003049' }}>
+                  {eventArray[0]['Statut du dossier']}
+                </span>
+              </td>
+              <td>
+                <span style={{ color: '#003049' }}>
+                  {eventArray[0]['Montant remboursé']}€
+                </span>
+              </td>
+              <td>
+                <span style={{ color: '#003049' }}>
+                  {eventArray[0]['date de remboursement']}
+                </span>
+              </td>
+              <td>
+                <span style={{ color: '#FCBF49', fontWeight: 'bolder' }}>
+                  {parseInt(eventArray[0]['Montant Payé']) -
+                    parseInt(eventArray[0]['Montant remboursé'])}
+                  €
+                </span>
+              </td>
             </tr>
           </tbody>
         </table>

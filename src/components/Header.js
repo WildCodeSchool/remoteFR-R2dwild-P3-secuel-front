@@ -1,20 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 import './Header.css'
 import logo_elan from '../data/images/logo_elan.png'
-import user from '../data/images/user.svg'
-import userGreen from '../data/images/userGreen.svg'
 
 const Header = () => {
-  const [bgPlus, setbgPlus] = useState(true)
-  const handleClick = () => {
-    setbgPlus(!bgPlus)
-  }
-  const [bgUser, setbgUser] = useState(true)
-  const handleUser = () => {
-    setbgUser(!bgUser)
-  }
+  // const [bgPlus, setbgPlus] = useState(true)
+  // const handleClick = () => {
+  //   setbgPlus(!bgPlus)
+  // }
+  // const [bgUser, setbgUser] = useState(true)
+  // const handleUser = () => {
+  //   setbgUser(!bgUser)
+  // }
   return (
     <div className='header'>
       <div className='navicon'>
@@ -39,7 +37,7 @@ const Header = () => {
         </NavLink>
       </div>
       {/* <div className='plus' onClick={handleClick} style={{backgroundColor:`${ bgPlus ? 'blue' : 'grey'}`}>+</div> */}
-      <div className='userField'>
+      {/* <div className='userField'>
         <Link
           to='/CreateUser'
           className='plus'
@@ -56,7 +54,7 @@ const Header = () => {
           style={{ borderBottom: `${bgUser ? '2px solid white' : 'none'}` }}
         />
         <img src={userGreen} alt='logoUser' className='logoUser' />
-      </div>
+      </div> */}
     </div>
   )
 }
