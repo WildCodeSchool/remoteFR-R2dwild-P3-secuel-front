@@ -100,3 +100,6 @@
     /* max-height: 300px; */
   }
 }
+.hidden{
+  max-height: 150px;
+}

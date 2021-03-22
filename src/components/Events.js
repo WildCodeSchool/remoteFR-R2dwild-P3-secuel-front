@@ -22,7 +22,11 @@ const Events = () => {
   return (
     <div className='events'>
       <Welcome />
-      <div id='insured1' onClick={handleClick1}>
+      <div
+        id='insured1'
+        onClick={handleClick1}
+        className={hidden1 ? 'hidden' : 'show'}
+      >
         <div className='notificationICon'>
           <h1 className='nomAssure'>Jean Dupont</h1>
           <span
@@ -50,7 +54,11 @@ const Events = () => {
             ))
         )}
       </div>
-      <div id='insured2' onClick={handleClick2}>
+      <div
+        id='insured2'
+        onClick={handleClick2}
+        className={hidden2 ? 'hidden' : 'show'}
+      >
         <div className='notificationICon'>
           <h1 className='nomAssure'>Lucas Dupont</h1>
           <span
@@ -78,7 +86,11 @@ const Events = () => {
             ))
         )}
       </div>
-      <div id='insured3' onClick={handleClick3}>
+      <div
+        id='insured3'
+        onClick={handleClick3}
+        className={hidden3 ? 'hidden' : 'show'}
+      >
         <div className='notificationICon'>
           <h1 className='nomAssure'>Marie Dupont</h1>
           <span
@@ -106,7 +118,11 @@ const Events = () => {
             ))
         )}
       </div>
-      <div id='insured4' onClick={handleClick4}>
+      <div
+        id='insured4'
+        onClick={handleClick4}
+        className={hidden4 ? 'hidden' : 'show'}
+      >
         <div className='notificationICon'>
           <h1 className='nomAssure'>Léa Dupont</h1>
           <span
