@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react'
 import Aos from 'aos'
+import { useState, useEffect } from 'react'
+import Welcome from './Welcome'
+import MiniEvent from './MiniEvent'
+
 import 'aos/dist/aos.css'
+import './Events.css'
 
 import eventArray from '../data/fakejson/fakedata.json'
-import Welcome from './Welcome'
 
-import './Events.css'
-import MiniEvent from './MiniEvent'
 const Events = () => {
   useEffect(() => {
     Aos.init({ duration: 2000 })

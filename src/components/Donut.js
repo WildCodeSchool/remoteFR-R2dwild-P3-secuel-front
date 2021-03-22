@@ -1,10 +1,10 @@
-import React from 'react'
 import { Doughnut } from 'react-chartjs-2'
 import 'chartjs-plugin-datalabels'
-
-import eventArray from '../data/fakejson/fakedata.json'
+import React from 'react'
 
 import './Donut.css'
+
+import eventArray from '../data/fakejson/fakedata.json'
 
 export default function Donut(label) {
   const array = label.nonrembours
@@ -17,7 +17,7 @@ export default function Donut(label) {
     : ['Remboursement(s) en attente', 'Montant remboursé']
 
   return (
-    <div className='Donut'>
+    <div className='donut'>
       <Doughnut
         data={{
           labels: array,
@@ -55,17 +55,10 @@ export default function Donut(label) {
         }}
         height={500}
         width={500}
-        // devicePixelRatio={1}
         options={{
           animation: { animateScale: true },
           responsive: true,
-          // title: {
-          //   display: false,
-          //   text: 'Remboursements',
-          //   fontColor: 'black',
-          //   position: 'top',
-          //   fontSize: 30
-          // },
+
           legend: {
             position: 'bottom',
             labels: {

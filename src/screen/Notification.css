@@ -1,4 +1,4 @@
-.NotifBody {
+.notifBody {
   /* background-color: white;
   opacity: 0.8; */
   width: 80%;
@@ -17,7 +17,7 @@ align-items: center;
 padding-left:10px;
 }
 
-.NotifNumber {
+.notifNumber {
   padding : 5px;
   /* margin-left: 10%;
   margin-right: 10%; */
@@ -29,33 +29,32 @@ padding-left:10px;
   /* letter-spacing: 10px; */
 }
 
-.StarNText {
+.starNText {
   list-style-type: none;
   /* font-size: large; */
   width: 33%;
   padding: 0px
 }
 
-.Star {
+.star {
   font-size: 30px ;
 }
 
-.TextLegend {
+.textLegend {
   font-size: 15px;
   margin: 0px;
 }
 
-.Vignette {
+.vignette {
   font-size: xx-large;
   margin-right: 50px;
 }
 
-.LegendRaw {
+.legendRaw {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   padding : 5px;
-  /* margin-left: 10%; */
   margin-right: 10%;
   width: 100%;
   display: flex;
@@ -63,14 +62,13 @@ padding-left:10px;
   justify-content: space-between;
  }
 
-.NotifHeader {
+.notifHeader {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.NotifList {
-  /* border: 2px solid darkslategrey; */
+.notifList {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,7 +76,6 @@ padding-left:10px;
   padding : 5px;
   margin-top: 5px;
   margin-bottom: 10px;
-  /* margin-left: 10%; */
   margin-right: 10%;
   width: 100%;
   height: auto;
@@ -102,7 +99,7 @@ table {
   border-collapse: collapse;
 }
 
-.NotifListHeader {
+.notifListHeader {
   list-style-type: none;
   margin-top: 0px;
   margin-bottom: 0px;
