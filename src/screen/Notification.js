@@ -28,7 +28,7 @@ const Notification = () => {
       {/* Légende des vignettes  */}
       <ul className='legendRaw'>
         <ul className='starNText'>
-          <li className='star'>🟢</li>{' '}
+          <li className='starGreen'></li>{' '}
           <li className='textLegend'>Tout va bien !</li>
         </ul>
         <ul className='starNText'>

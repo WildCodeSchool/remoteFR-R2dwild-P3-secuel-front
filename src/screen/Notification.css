@@ -40,6 +40,13 @@ padding-left:10px;
   font-size: 30px ;
 }
 
+.starGreen {
+  height : 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: blue;
+}
+
 .textLegend {
   font-size: 15px;
   margin: 0px;
