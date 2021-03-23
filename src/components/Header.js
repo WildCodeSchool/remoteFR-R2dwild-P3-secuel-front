@@ -28,6 +28,9 @@ const Header = () => {
         <NavLink to='/params' className='iconBtn' activeClassName='selected'>
           Paramètres
         </NavLink>
+        <NavLink to='/admin' className='iconBtn' activeClassName='selected'>
+          Administration
+        </NavLink>
       </div>
     </div>
   )
