@@ -35,7 +35,7 @@ const Form = () => {
   }
 
   return (
-    <div className='Form'>
+    <div className='form'>
       <h1>Création de compte</h1>
       <form onSubmit={submitForm}>
         <fieldset>

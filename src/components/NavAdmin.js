@@ -1,23 +1,35 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const NavAdmin = () => {
   return (
     <div className='navadmin'>
       <ul>
         <li>
-          <Link to='/message' className='adminlink'>
+          <NavLink
+            to='/message'
+            className='adminlink'
+            activeClassName='selected'
+          >
             Gérer assuré
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to='/notification' className='adminlink'>
+          <NavLink
+            to='/notification'
+            className='adminlink'
+            activeClassName='selected'
+          >
             Gérer Notifications
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to='/analyse' className='adminlink'>
+          <NavLink
+            to='/analyse'
+            className='adminlink'
+            activeClassName='selected'
+          >
             Gérer acte médical
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </div>

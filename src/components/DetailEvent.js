@@ -1,5 +1,10 @@
-import acte from '../data/fakejson/fakedata.json'
 import Donut from './Donut.js'
+import { Link } from 'react-router-dom'
+
+import './DetailEvent.css'
+
+import acte from '../data/fakejson/fakedata.json'
+import fleche from '../data/images/fleche.png'
 
 const DetailEvent = Acte => {
   const insured = acte.filter(
@@ -7,31 +12,37 @@ const DetailEvent = Acte => {
   )[0]
   return (
     <div className='card'>
+      <div>
+        <Link to='/'>
+          <img src={fleche} />
+        </Link>
+      </div>
       <p className='titreCard'>{insured['N Sécurité sociale']}</p>
       <p>
-        <span>Date acte: </span> {insured['date acte médicale']}
+        <span className='infoCard'>Date acte: </span>{' '}
+        {insured['date acte médicale']}
       </p>
       <p>
-        <span>Assuré: </span> {insured.Nom} {insured['prénom']}
+        <span className='infoCard'> Assuré: </span> {insured.Nom}{' '}
+        {insured['prénom']}
       </p>
       <p>
-        <span>Acte: </span> {insured['Type acte']}
+        <span className='infoCard'>Acte: </span> {insured['Type acte']}
       </p>
       <p>
-        <span>Spécialiste: </span>
+        <span className='infoCard'>Spécialiste: </span>
         {insured['Nom professionnel de santé']}
       </p>
       <p>
-        <span>Montant payé: </span>
+        <span className='infoCard'>Montant payé: </span>
         {insured['Montant Payé']}
       </p>
       <p>
-        <span>Montant remboursé: </span>
+        <span className='infoCard'>Montant remboursé: </span>
         {insured['Montant remboursé'] ? insured['Montant remboursé'] : 0}
       </p>
-      {/* <div className='donutField'> */}
+
       <Donut />
-      {/* </div> */}
     </div>
   )
 }

@@ -1,22 +1,25 @@
 import { Link } from 'react-router-dom'
 
+import './MiniEvent.css'
+
 const MiniEvent = insured => {
   return (
     <Link to={`/event/${insured.id}`} className='link'>
       <div className='card'>
         <p>
-          <span>Date acte :</span> {insured.eventDate}
+          <span className='infoMiniEvents'>Date acte :</span>{' '}
+          {insured.eventDate}
         </p>
         <p>
-          <span>Acte :</span> {insured.acteType}
+          <span className='infoMiniEvents'>Acte :</span> {insured.acteType}
         </p>
         {insured.status === 'Traité' ? (
           <p>
-            <span>Status remboursement</span> 🟢
+            <span className='infoMiniEvents'>Status remboursement</span> 🟢
           </p>
         ) : (
           <p>
-            <span>Status remboursement</span> 🔴
+            <span className='infoMiniEvents'>Status remboursement</span> 🔴
           </p>
         )}
       </div>

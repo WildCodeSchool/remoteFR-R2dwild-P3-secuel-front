@@ -1,28 +1,28 @@
-.Form {
+.form {
   width: 500px;
   margin: 0 auto;
   text-align: left;
 }
 
-.Form h1 {
+.form h1 {
   text-align: center;
 }
 
-.Form .form-data {
+.form .form-data {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 5px 0;
 }
 
-.Form .form-data label {
+.form .form-data label {
   display: inline-block;
   width: 110px;
   margin-right: 10px;
   text-align: center;
 }
 
-.Form .form-data input:not([type="submit"]), textarea {
+.form .form-data input:not([type="submit"]), textarea {
   flex-grow: 1;
   border-radius: 5px;
 }
