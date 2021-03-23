@@ -2,12 +2,12 @@ import { NavLink } from 'react-router-dom'
 
 const NavAdmin = () => {
   return (
-    <div className='navadmin'>
+    <div className='navAdmin'>
       <ul>
         <li>
           <NavLink
             to='/message'
-            className='adminlink'
+            className='adminLink'
             activeClassName='selected'
           >
             Gérer assuré
@@ -16,7 +16,7 @@ const NavAdmin = () => {
         <li>
           <NavLink
             to='/notification'
-            className='adminlink'
+            className='adminLink'
             activeClassName='selected'
           >
             Gérer Notifications
@@ -25,7 +25,7 @@ const NavAdmin = () => {
         <li>
           <NavLink
             to='/analyse'
-            className='adminlink'
+            className='adminLink'
             activeClassName='selected'
           >
             Gérer acte médical
