@@ -8,7 +8,16 @@ import './Notification.css'
 
 const Notification = () => {
   const [startDate, setStartDate] = useState(new Date())
-
+  const statusNotif = () => {
+    eventArray
+      .filter(data => data['prénom'] === 'Jean')
+      .filter(data => data['ENVOI DE NOTIFICATION']) != null
+      ? eventArray
+          .filter(data => data['prénom'] === 'Jean')
+          .filter(data => data['ENVOI DE NOTIFICATION']).length
+      : null
+  }
+  console.log({ statusNotif })
   return (
     // Body du composant
     <div className='notifBody'>
@@ -21,31 +30,39 @@ const Notification = () => {
       </h1>
       <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
       <div className='notifNumber'>
-        Vous avez
-        {eventArray.filter(data => data['prénom'] === 'Jean').length}
+        Vous avez {'   '}
+        {statusNotif}
+        {'   '}
         notification(s)
       </div>
       {/* Légende des vignettes  */}
       <ul className='legendRaw'>
         <ul className='starNText'>
-          <li className='starGreen'></li>{' '}
+          <li className='starGreen'></li>
           <li className='textLegend'>Tout va bien !</li>
         </ul>
         <ul className='starNText'>
-          <li className='star'>🟡</li>
+          <li className='starYellow'></li>
           <li className='textLegend'>
             C&apos;est un peu long donc voyons ce qu&apos;il se passe
           </li>
         </ul>
         <ul className='starNText'>
-          <li className='star'>🔴</li>{' '}
+          <li className='starRed'></li>
           <li className='textLegend'>Il y a un petit soucis</li>
         </ul>
       </ul>
       <section className='notifList'>
         <section className='notifHeader'>
           {/* Pour ajouter une icone de statut sur l'évenement  */}
-          <div className='vignette'>🔴</div>
+          {eventArray
+            .filter(data => data['prénom'] === 'Jean')
+            .filter(data => data['ENVOI DE NOTIFICATION']) != null ? (
+            <div className='starGreen'></div>
+          ) : (
+            <div className='starRed'></div>
+          )}
+
           {/* Informations d'entête de la notification */}
           <ul className='notifListHeader'>
             <li>Notification du XX/XX/XXXX</li>
