@@ -32,7 +32,8 @@ const Events = () => {
           <h1 className='nomAssure'>Jean Dupont</h1>
           {eventArray.filter(
             data =>
-              data['prénom'] === 'Jean' && data['Statut du dossier'] != 'Traité'
+              data['prénom'] === 'Jean' &&
+              data['Statut du dossier'] !== 'Traité'
           ).length === 0 ? null : (
             <span
               data-aos='zoom-in'
@@ -76,7 +77,7 @@ const Events = () => {
           {eventArray.filter(
             data =>
               data['prénom'] === 'Lucas' &&
-              data['Statut du dossier'] != 'Traité'
+              data['Statut du dossier'] !== 'Traité'
           ).length === 0 ? null : (
             <span
               data-aos='zoom-in'
@@ -120,7 +121,7 @@ const Events = () => {
           {eventArray.filter(
             data =>
               data['prénom'] === 'Marie' &&
-              data['Statut du dossier'] != 'Traité'
+              data['Statut du dossier'] !== 'Traité'
           ).length === 0 ? null : (
             <span
               data-aos='zoom-in'
@@ -163,7 +164,7 @@ const Events = () => {
           <h1 className='nomAssure'>Léa Dupont</h1>
           {eventArray.filter(
             data =>
-              data['prénom'] === 'Lea' && data['Statut du dossier'] != 'Traité'
+              data['prénom'] === 'Lea' && data['Statut du dossier'] !== 'Traité'
           ).length === 0 ? null : (
             <span
               data-aos='zoom-in'
