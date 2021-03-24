@@ -13,7 +13,7 @@ const FormAdminPros = () => {
 
   const handleChange = e => {
     
-       setName(e.target.value)
+       setLastName(e.target.value)
       
   }
 
