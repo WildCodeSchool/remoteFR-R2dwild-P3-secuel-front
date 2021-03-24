@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import DatePicker from 'react-datepicker'
 import { addMonths } from 'date-fns'
-import './Calendrier.css'
-import Cal from '../data/images/Calendrier.png'
 
+import './Calendrier.css'
 import 'react-datepicker/dist/react-datepicker.css'
+
+import Cal from '../data/images/Calendrier.png'
 
 const Calendrier = () => {
   const [startDate, setStartDate] = useState(addMonths(new Date(), -6))
