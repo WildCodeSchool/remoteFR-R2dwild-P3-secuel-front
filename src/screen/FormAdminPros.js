@@ -35,7 +35,7 @@ const FormAdminPros = () => {
           <legend>information sur le professionnel : </legend>
           <div className='form-data'>
             <label htmlFor='name'>
-              Nom<span> * </span>
+              Nom du médecin <span> * </span>
             </label>
             <input
               type='text'

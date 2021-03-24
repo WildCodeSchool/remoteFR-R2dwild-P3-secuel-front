@@ -51,7 +51,7 @@ const FormAdminRefund = () => {
           <legend>information sur le Remboursement : </legend>
           <div className='form-data'>
             <label htmlFor='amount'>
-              Nom<span> * </span>
+              Montant du remboursement<span> * </span>
             </label>
             <input
               type='number' 
@@ -64,7 +64,7 @@ const FormAdminRefund = () => {
           </div>
           <div className='form-data'>
             <label htmlFor='date'>
-              Nom<span> * </span>
+              Date du remboursement<span> * </span>
             </label>
             <input
               type='date'
@@ -77,7 +77,7 @@ const FormAdminRefund = () => {
           </div>
           <div className='form-data'>
             <label htmlFor='institute'>
-              Nom<span> * </span>
+              Institut auteur du remboursement<span> * </span>
             </label>
             <input
               type='text'
@@ -90,7 +90,7 @@ const FormAdminRefund = () => {
           </div>
           <div className='form-data'>
             <label htmlFor='medical-act'>
-              Nom<span> * </span>
+              Acte médical concerné<span> * </span>
             </label>
             <input
               type='text'

@@ -59,7 +59,7 @@ const FormAdminInsured = () => {
           <legend>information de l'assuré : </legend>
           <div className='form-data'>
             <label htmlFor='lastname'>
-              Nom<span> * </span>
+              Nom de famille <span> * </span>
             </label>
             <input
               type='text'
@@ -72,7 +72,7 @@ const FormAdminInsured = () => {
           </div>
           <div className='form-data'>
             <label htmlFor='firstname'>
-              Nom<span> * </span>
+              Prénom<span> * </span>
             </label>
             <input
               type='text'
@@ -85,7 +85,7 @@ const FormAdminInsured = () => {
           </div>
           <div className='form-data'>
             <label htmlFor='numsecu'>
-              Nom<span> * </span>
+              Numéro de sécurité sociale<span> * </span>
             </label>
             <input
               type='text'
@@ -98,7 +98,7 @@ const FormAdminInsured = () => {
           </div>
           <div className='form-data'>
             <label htmlFor='email'>
-              Nom<span> * </span>
+              email<span> * </span>
             </label>
             <input
               type='text'
@@ -111,7 +111,7 @@ const FormAdminInsured = () => {
           </div>
           <div className='form-data'>
             <label htmlFor='tel'>
-              Nom<span> * </span>
+              Téléphone<span> * </span>
             </label>
             <input
               type='text'
@@ -124,7 +124,7 @@ const FormAdminInsured = () => {
           </div>
           <div className='form-data'>
             <label htmlFor='password'>
-              Nom<span> * </span>
+              Password<span> * </span>
             </label>
             <input
               type='text'
@@ -137,7 +137,7 @@ const FormAdminInsured = () => {
           </div>
           <div className='form-data'>
             <label htmlFor='birth-date'>
-              Nom<span> * </span>
+              Date de naissance<span> * </span>
             </label>
             <input
               type='text'
