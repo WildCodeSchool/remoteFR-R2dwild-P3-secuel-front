@@ -8,21 +8,21 @@
   text-align: center;
 }
 
-.form .form-data {
+.form .formData {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 5px 0;
 }
 
-.form .form-data label {
+.form .formData label {
   display: inline-block;
   width: 110px;
   margin-right: 10px;
   text-align: center;
 }
 
-.form .form-data input:not([type="submit"]), textarea {
+.form .formData input:not([type="submit"]) {
   flex-grow: 1;
   border-radius: 5px;
 }
@@ -33,4 +33,15 @@ fieldset {
 
 span {
   color: red;
+}
+.form{
+  margin: auto;
+}
+.formTitle{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.formTitle .bigLogo{
+  width: 20%;
 }

@@ -1,7 +1,9 @@
 import axios from 'axios'
 import { useState } from 'react'
+import { useHistory } from 'react-router'
 
 import './Form.css'
+import logo from '../data/images/logo_elan.png'
 
 const Form = () => {
   const [accountName, setAccountName] = useState('')
@@ -12,6 +14,8 @@ const Form = () => {
     Login: login,
     Password: password
   }
+
+  const nextPage = useHistory()
 
   const handleChange = e => {
     e.target.name === 'name'
@@ -26,21 +30,25 @@ const Form = () => {
     axios
       .post('http://localhost:3000/Account', allPost)
       .then(res => {
-        alert(`${res.data} !`)
+        console.log(`${res.data} !`)
       })
       .catch(e => {
         console.error(e)
-        alert(`Erreur lors de la création : ${e.message}`)
+        console.log(`Erreur lors de la création : ${e.message}`)
       })
+    nextPage.push('/next')
   }
 
   return (
     <div className='form'>
-      <h1>Création de compte</h1>
+      <div className='formTitle'>
+        <img src={logo} className='bigLogo' />
+        <h1>Création de compte</h1>
+      </div>
       <form onSubmit={submitForm}>
         <fieldset>
           <legend>Informations</legend>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='name'>
               Nom<span> * </span>
             </label>
@@ -53,7 +61,7 @@ const Form = () => {
               value={accountName}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='email'>
               Email<span> * </span>
             </label>
@@ -66,7 +74,7 @@ const Form = () => {
               value={login}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='password'>
               Mot de passe<span> * </span>
             </label>
@@ -80,9 +88,9 @@ const Form = () => {
           </div>
           <hr />
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
-          <div className='form-data'>
+          <div className='formData'>
             <input type='submit' value='Envoyer' />
           </div>
         </fieldset>
