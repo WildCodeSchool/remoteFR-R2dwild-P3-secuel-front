@@ -20,6 +20,7 @@ const Events = () => {
   const handleClick3 = () => setHidden3(!hidden3)
   const [hidden4, setHidden4] = useState(true)
   const handleClick4 = () => setHidden4(!hidden4)
+
   return (
     <div className='events'>
       <Welcome />
@@ -30,7 +31,7 @@ const Events = () => {
       >
         <div className='notificationICon'>
           <h1 className='nomAssure'>Jean Dupont</h1>
-          {eventArray.filter(data => data['prénom'] === 'XXX').length ===
+          {eventArray.filter(data => data['prénom'] === 'xx').length ===
           0 ? null : (
             <span
               data-aos='zoom-in'
@@ -38,7 +39,13 @@ const Events = () => {
               data-aos-offset='20'
               className='badge'
             >
-              {eventArray.filter(data => data['prénom'] === 'Jean').length}
+              {
+                eventArray.filter(
+                  data =>
+                    data['prénom'] === 'Jean' &&
+                    data['Statut du dossier'] != 'Traité'
+                ).length
+              }
             </span>
           )}
         </div>
@@ -65,15 +72,31 @@ const Events = () => {
       >
         <div className='notificationICon'>
           <h1 className='nomAssure'>Lucas Dupont</h1>
-          {eventArray.filter(data => data['prénom'] === 'Lucas').length ===
-          0 ? null : (
+          {eventArray.filter(
+            data =>
+              data['prénom'] === 'Lucas' &&
+              data['Statut du dossier'] != 'Traité'
+          ).length === 0 ? null : (
             <span
               data-aos='zoom-in'
               data-aos-duration='800'
               data-aos-offset='20'
               className='badge'
             >
-              {eventArray.filter(data => data['prénom'] === 'Lucas').length}
+              {console.log(
+                eventArray.filter(
+                  data =>
+                    data['prénom'] === 'Lucas' &&
+                    data['Statut du dossier'] != 'Traité'
+                ).length
+              )}
+              {
+                eventArray.filter(
+                  data =>
+                    data['prénom'] === 'Lucas' &&
+                    data['Statut du dossier'] != 'Traité'
+                ).length
+              }
             </span>
           )}
         </div>
@@ -108,7 +131,13 @@ const Events = () => {
               data-aos-offset='20'
               className='badge'
             >
-              {eventArray.filter(data => data['prénom'] === 'Marie').length}
+              {
+                eventArray.filter(
+                  data =>
+                    data['prénom'] === 'Marie' &&
+                    data['Statut du dossier'] != 'Traité'
+                ).length
+              }
             </span>
           )}
         </div>
