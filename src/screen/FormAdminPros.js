@@ -5,16 +5,13 @@ import './FormAdminPros.css'
 
 const FormAdminPros = () => {
   const [name, setName] = useState('')
-  
+
   const allPost = {
-    pro_name : name
-    
+    pro_name: name
   }
 
   const handleChange = e => {
-    
-       setLastName(e.target.value)
-      
+    setName(e.target.value)
   }
 
   const submitForm = e => {
@@ -61,4 +58,4 @@ const FormAdminPros = () => {
   )
 }
 
-export default FormAdminPros ;
+export default FormAdminPros

@@ -12,14 +12,13 @@ const FormAdminInsured = () => {
   const [password, setPassword] = useState('')
   const [birthDate, setBirthDate] = useState('')
   const allPost = {
-    lastname : lastName,
+    lastname: lastName,
     firstname: firstName,
     social_security_num: numSecu,
-    email : email,
-    tel : tel,
-    Password : password,
-    birth_date : birthDate
-
+    email: email,
+    tel: tel,
+    Password: password,
+    birth_date: birthDate
   }
 
   const handleChange = e => {
@@ -148,7 +147,6 @@ const FormAdminInsured = () => {
               value={birthDate}
             />
           </div>
-         
 
           <p>
             <span> * </span> required.
@@ -162,4 +160,4 @@ const FormAdminInsured = () => {
   )
 }
 
-export default FormAdminInsured ;
+export default FormAdminInsured
