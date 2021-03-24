@@ -1,23 +1,23 @@
 import axios from 'axios'
 import { useState } from 'react'
 
-import './FormAdminPros.css'
+import './Form.css'
 
-const FormAdminPros = () => {
-  const [name, setName] = useState('')
+const FormAdminSpeciality = () => {
+  const [speciality, setSpeciality] = useState('')
 
-  const allPost = {
-    pro_name: name
+  const spePost = {
+    specialiti_name: speciality
   }
 
   const handleChange = e => {
-    setName(e.target.value)
+    e.target.name === 'speciality' ? setSpeciality(e.target.value) : null
   }
 
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/pros', allPost)
+      .post('http://localhost:3000/notifications', spePost)
       .then(res => {
         alert(`${res.data} !`)
       })
@@ -29,23 +29,24 @@ const FormAdminPros = () => {
 
   return (
     <div className='form'>
-      <h1>Création d'un professionnel de santé'</h1>
+      <h1>Création de compte</h1>
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>information sur le professionnel : </legend>
+          <legend>Informations</legend>
           <div className='form-data'>
-            <label htmlFor='name'>
-              Nom<span> * </span>
+            <label htmlFor='speciality'>
+              Type de message<span> * </span>
             </label>
             <input
               type='text'
-              id='name'
-              name='name'
+              id='speciality'
+              name='speciality'
               onChange={handleChange}
               required
-              value={name}
+              value={speciality}
             />
           </div>
+          <hr />
           <p>
             <span> * </span> required.
           </p>
@@ -58,4 +59,4 @@ const FormAdminPros = () => {
   )
 }
 
-export default FormAdminPros
+export default FormAdminSpeciality

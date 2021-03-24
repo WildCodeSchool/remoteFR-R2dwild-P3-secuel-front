@@ -1,13 +1,14 @@
+/* eslint-disable react/no-unescaped-entities */
 import axios from 'axios'
 import { useState } from 'react'
 
-import './FormAdminPros.css'
+import './FormAdminHealthInsurance.css'
 
-const FormAdminPros = () => {
+const FormAdminHealthInsurance = () => {
   const [name, setName] = useState('')
 
   const allPost = {
-    pro_name: name
+    insurance_name: name
   }
 
   const handleChange = e => {
@@ -17,7 +18,7 @@ const FormAdminPros = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/pros', allPost)
+      .post('localhost:3000/health_insurance', allPost)
       .then(res => {
         alert(`${res.data} !`)
       })
@@ -29,10 +30,10 @@ const FormAdminPros = () => {
 
   return (
     <div className='form'>
-      <h1>Création d'un professionnel de santé'</h1>
+      <h1>Création d'un institut</h1>
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>information sur le professionnel : </legend>
+          <legend>information sur l'institut : </legend>
           <div className='form-data'>
             <label htmlFor='name'>
               Nom<span> * </span>
@@ -58,4 +59,4 @@ const FormAdminPros = () => {
   )
 }
 
-export default FormAdminPros
+export default FormAdminHealthInsurance
