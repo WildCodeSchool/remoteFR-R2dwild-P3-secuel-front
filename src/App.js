@@ -7,17 +7,21 @@ import Home from './screen/Home'
 import Message from './screen/Message'
 import Notification from './screen/Notification'
 import Params from './screen/Params'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 
 import './App.css'
+import Intro from './screen/Intro'
 
-const App = () => {
+const App = withRouter(({ location }) => {
   return (
     <div className='App'>
-      <Header />
+      {location.pathname !== '/' && location.pathname !== '/subscribe' && (
+        <Header />
+      )}
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/CreateUser' component={CreateUser} />
+        <Route exact path='/' component={Intro} />
+        <Route path='/subscribe' component={CreateUser} />
+        <Route path='/home' component={Home} />
         <Route path='/message' component={Message} />
         <Route path='/notification' component={Notification} />
         <Route path='/analyse' component={Analyse} />
@@ -27,6 +31,6 @@ const App = () => {
       </Switch>
     </div>
   )
-}
+})
 
 export default App
