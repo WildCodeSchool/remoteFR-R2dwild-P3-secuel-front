@@ -30,15 +30,23 @@ const Events = () => {
       >
         <div className='notificationICon'>
           <h1 className='nomAssure'>Jean Dupont</h1>
-          {eventArray.filter(data => data['prénom'] === 'XXX').length ===
-          0 ? null : (
+          {eventArray.filter(
+            data =>
+              data['prénom'] === 'Jean' && data['Statut du dossier'] != 'Traité'
+          ).length === 0 ? null : (
             <span
               data-aos='zoom-in'
               data-aos-duration='800'
               data-aos-offset='20'
               className='badge'
             >
-              {eventArray.filter(data => data['prénom'] === 'Jean').length}
+              {
+                eventArray.filter(
+                  data =>
+                    data['prénom'] === 'Jean' &&
+                    data['Statut du dossier'] !== 'Traité'
+                ).length
+              }
             </span>
           )}
         </div>
@@ -65,15 +73,24 @@ const Events = () => {
       >
         <div className='notificationICon'>
           <h1 className='nomAssure'>Lucas Dupont</h1>
-          {eventArray.filter(data => data['prénom'] === 'Lucas').length ===
-          0 ? null : (
+          {eventArray.filter(
+            data =>
+              data['prénom'] === 'Lucas' &&
+              data['Statut du dossier'] != 'Traité'
+          ).length === 0 ? null : (
             <span
               data-aos='zoom-in'
               data-aos-duration='800'
               data-aos-offset='20'
               className='badge'
             >
-              {eventArray.filter(data => data['prénom'] === 'Lucas').length}
+              {
+                eventArray.filter(
+                  data =>
+                    data['prénom'] === 'Lucas' &&
+                    data['Statut du dossier'] !== 'Traité'
+                ).length
+              }
             </span>
           )}
         </div>
@@ -100,15 +117,24 @@ const Events = () => {
       >
         <div className='notificationICon'>
           <h1 className='nomAssure'>Marie Dupont</h1>
-          {eventArray.filter(data => data['prénom'] === 'Marie').length ===
-          0 ? null : (
+          {eventArray.filter(
+            data =>
+              data['prénom'] === 'Marie' &&
+              data['Statut du dossier'] != 'Traité'
+          ).length === 0 ? null : (
             <span
               data-aos='zoom-in'
               data-aos-duration='800'
               data-aos-offset='20'
               className='badge'
             >
-              {eventArray.filter(data => data['prénom'] === 'Marie').length}
+              {
+                eventArray.filter(
+                  data =>
+                    data['prénom'] === 'Marie' &&
+                    data['Statut du dossier'] !== 'Traité'
+                ).length
+              }
             </span>
           )}
         </div>
@@ -135,15 +161,23 @@ const Events = () => {
       >
         <div className='notificationICon'>
           <h1 className='nomAssure'>Léa Dupont</h1>
-          {eventArray.filter(data => data['prénom'] === 'Lea').length ===
-          0 ? null : (
+          {eventArray.filter(
+            data =>
+              data['prénom'] === 'Lea' && data['Statut du dossier'] != 'Traité'
+          ).length === 0 ? null : (
             <span
               data-aos='zoom-in'
               data-aos-duration='800'
               data-aos-offset='20'
               className='badge'
             >
-              {eventArray.filter(data => data['prénom'] === 'Lea').length}
+              {
+                eventArray.filter(
+                  data =>
+                    data['prénom'] === 'Lea' &&
+                    data['Statut du dossier'] !== 'Traité'
+                ).length
+              }
             </span>
           )}
         </div>
