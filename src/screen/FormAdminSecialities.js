@@ -35,7 +35,7 @@ const FormAdminSpeciality = () => {
           <legend>Informations</legend>
           <div className='form-data'>
             <label htmlFor='speciality'>
-              Type de message<span> * </span>
+              Nom de la spécialité <span> * </span>
             </label>
             <input
               type='text'

@@ -36,7 +36,7 @@ const FormAdminHealthInsurance = () => {
           <legend>information sur l'institut : </legend>
           <div className='form-data'>
             <label htmlFor='name'>
-              Nom<span> * </span>
+              Nom de l'institut<span> * </span>
             </label>
             <input
               type='text'
