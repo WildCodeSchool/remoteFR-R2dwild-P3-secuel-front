@@ -1,34 +1,28 @@
-import DatePicker from 'react-datepicker'
-import React, { useState } from 'react'
-
 import eventArray from '../data/fakejson/fakedata.json'
 
 import 'react-datepicker/dist/react-datepicker.css'
 import './Notification.css'
 
 const Notification = () => {
-  const [startDate, setStartDate] = useState(new Date())
-  const statusNotif = () => {
-    eventArray
-      .filter(data => data['prénom'] === 'Jean')
-      .filter(data => data['ENVOI DE NOTIFICATION']) != null
-      ? eventArray
-          .filter(data => data['prénom'] === 'Jean')
-          .filter(data => data['ENVOI DE NOTIFICATION']).length
-      : null
-  }
-  console.log({ statusNotif })
+  const statusNotif =
+    eventArray.filter(
+      data => data['prénom'] === 'Lucas' && data['ENVOI DE NOTIFICATION']
+    ) != ''
+      ? eventArray.filter(
+          data => data['prénom'] === 'Lucas' && data['ENVOI DE NOTIFICATION']
+        ).length
+      : 'aucune'
+
   return (
     // Body du composant
     <div className='notifBody'>
       <h1 id='titreNotif'>Vos Notifications</h1>
-      <h2>Profil</h2>
       <h1>
         <span style={{ color: 'blue' }}>
           {eventArray[0]['prénom'] + '   ' + eventArray[0]['Nom']}
         </span>
       </h1>
-      <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
+
       <div className='notifNumber'>
         Vous avez {'   '}
         {statusNotif}
