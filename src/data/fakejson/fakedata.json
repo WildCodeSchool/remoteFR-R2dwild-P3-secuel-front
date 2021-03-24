@@ -13,7 +13,7 @@
    "Montant remboursé": "20",
    "date de remboursement": "18/02/2021",
    "RECUPERATION TYPE INCIDENT": "-",
-   "ENVOI DE NOTIFICATION": ""
+   "ENVOI DE NOTIFICATION": "1"
  },
  {
    "id": 2,
@@ -77,7 +77,7 @@
    "Montant remboursé": "15,56",
    "date de remboursement": "15/10/2020",
    "RECUPERATION TYPE INCIDENT": "-",
-   "ENVOI DE NOTIFICATION": ""
+   "ENVOI DE NOTIFICATION": "1"
  },
  {
    "id": 6,
@@ -93,7 +93,7 @@
    "Montant remboursé": "3,64",
    "date de remboursement": "05/02/2020",
    "RECUPERATION TYPE INCIDENT": "-",
-   "ENVOI DE NOTIFICATION": ""
+   "ENVOI DE NOTIFICATION": "1"
  },
  {
    "id": 7,
@@ -269,7 +269,7 @@
    "Montant remboursé": " 23,00 ",
    "date de remboursement": "15/10/2020",
    "RECUPERATION TYPE INCIDENT": "-",
-   "ENVOI DE NOTIFICATION": ""
+   "ENVOI DE NOTIFICATION": "1"
  },
  {
    "id": 18,
@@ -365,7 +365,7 @@
    "Montant remboursé": "",
    "date de remboursement": "",
    "RECUPERATION TYPE INCIDENT": "-",
-   "ENVOI DE NOTIFICATION": ""
+   "ENVOI DE NOTIFICATION": "1"
  },
  {
    "id": 24,

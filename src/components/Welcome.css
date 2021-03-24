@@ -24,10 +24,16 @@
   background-color:#0C75B7;
   height:35px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding-left:10px;
   color:white;
+}
+
+#whiteCal{
+  height:25px;
+  margin-right:10px;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
@@ -44,7 +50,7 @@
     background-color:#0C75B7;
     height:35px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding-left:10px;
     color:white;
