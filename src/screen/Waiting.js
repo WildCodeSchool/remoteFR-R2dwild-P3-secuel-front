@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import './Waiting.css'
+import profil from '../data/images/profil.jpg'
 
 const Waiting = () => {
   return (
@@ -11,6 +12,7 @@ const Waiting = () => {
           numéro
         </span>
       </p>
+      <img src={profil} alt='avatar' className='profil' />
       <p>
         <span>Un code de sécurité</span> sera envoyé pour confirmer
         l&apos;accord d&apos;utiliser ce numéro

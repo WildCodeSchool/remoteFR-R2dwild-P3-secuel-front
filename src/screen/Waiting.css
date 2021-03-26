@@ -23,3 +23,8 @@
   padding: 0.6rem;
   border-radius: 0.6rem;
 }
+.profil{
+  box-shadow: 0 0 2px #BE9B07;
+  width: 15%;
+  border-radius: 50%;
+}
