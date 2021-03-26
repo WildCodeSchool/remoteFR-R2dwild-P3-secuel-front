@@ -1,8 +1,18 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import './AddSecu.css'
 
 const AddSecu = visitor => {
+  const [numSecu, setNumSecu] = useState('')
+  const [idSecu, setIdSecu] = useState('')
+
+  const handleChange = e => {
+    e.target.id === 'secu'
+      ? (setNumSecu(e.target.value), visitor.setSecu(e.target.value))
+      : setIdSecu(e.target.value)
+  }
+
   return (
     <div className='addSecu'>
       <p>
@@ -21,6 +31,7 @@ const AddSecu = visitor => {
         type='text'
         required
         placeholder='Numéro sécurité sociale'
+        onChange={handleChange}
       />
       <label htmlFor='idSecu'>
         Identifiant de votre compte Sécurité Sociale *
@@ -30,8 +41,13 @@ const AddSecu = visitor => {
         type='text'
         required
         placeholder='Indentifiant sécurité sociale'
+        onChange={handleChange}
       />
-      <Link to='/waiting'>Valider</Link>
+      {numSecu === '' || idSecu === '' ? (
+        <p className='forbidden'>Validez</p>
+      ) : (
+        <Link to='/waiting'>Valider</Link>
+      )}
     </div>
   )
 }

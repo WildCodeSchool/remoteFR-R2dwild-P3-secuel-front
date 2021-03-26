@@ -5,7 +5,7 @@ import { useHistory } from 'react-router'
 import './Form.css'
 import logo from '../data/images/logo_elan.png'
 
-const Form = () => {
+const Form = visitor => {
   const [accountName, setAccountName] = useState('')
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
@@ -36,7 +36,8 @@ const Form = () => {
         console.error(e)
         console.log(`Erreur lors de la création : ${e.message}`)
       })
-    nextPage.push('/next')
+    visitor.setVisitor(accountName)
+    nextPage.push('/thanks')
   }
 
   return (

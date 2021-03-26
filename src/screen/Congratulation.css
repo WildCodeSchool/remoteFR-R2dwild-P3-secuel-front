@@ -1,4 +1,4 @@
-.addSecu{
+.congratulation{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,31 +9,19 @@
   border-radius:5px;
   margin: auto;
 }
-.addSecu span{
+.congratulation span{
   color: #4472C4;
   font-weight: bold;
 }
-.addSecu a{
+.link a{
+  margin-top: 2rem;
   font-weight: bold;
   text-decoration: none;
   color: #ffffff;
   background: #BE9B07;
   padding: 0.6rem;
   border-radius: 0.6rem;
-  margin-top: 2rem;
 }
-.addSecu label, .addSecu input{
+.addsecu a {
   color: #BE9B07;
-}
-.addSecu input{
-  box-shadow: 0 0 2px #BE9B07;
-}
-.forbidden{
-  margin-top: 2rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: #ffffff;
-  background: #BE9B07;
-  padding: 0.6rem;
-  border-radius: 0.6rem;
 }
