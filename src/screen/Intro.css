@@ -57,3 +57,15 @@
   border: 3px solid #BE9B07;
   border-radius: 3px;
 }
+.connect button{
+  margin: 1rem;
+  border: none;
+  text-decoration: none;
+  color: #ffffff;
+  background: #4472C4;
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+}
+.connect p, .connect a{
+  color: #BE9B07;
+}
