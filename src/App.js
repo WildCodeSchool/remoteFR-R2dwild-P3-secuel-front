@@ -10,7 +10,6 @@ import Params from './screen/Params'
 import { Switch, Route, withRouter } from 'react-router-dom'
 
 import './App.css'
-import Intro from './screen/Intro'
 
 const App = withRouter(({ location }) => {
   return (
