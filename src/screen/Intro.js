@@ -60,6 +60,7 @@ const Intro = () => {
         </p>
       </div>
       <div className='bottom'>
+        <p className='straight'></p>
         <p>
           Intéressé(e) ? Créez votre compte en quelques clics et surtout en
           moins de 3 minutes
