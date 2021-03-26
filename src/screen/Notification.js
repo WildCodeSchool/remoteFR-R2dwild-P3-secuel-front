@@ -24,7 +24,7 @@ const Notification = () => {
         <h1 id='titreNotif'>Vos Notifications</h1>
         <h1>
           <span style={{ color: 'blue' }}>
-            {eventArray[0]['prénom'] + '   ' + eventArray[0]['Nom']}
+            {eventArray[10]['prénom'] + '   ' + eventArray[10]['Nom']}
           </span>
         </h1>
 
@@ -63,7 +63,7 @@ const Notification = () => {
           </div> */}
         <div>
           {eventArray
-            .filter(data => data['prénom'] === 'Lea')
+            .filter(data => data['prénom'] === 'Lucas')
             .map(a => (
               <NotificationCompo {...a} key={a.id} />
             ))}

@@ -25,26 +25,26 @@ export default function NotificationCompo() {
       <div className='barGreen'>
         <div className='dateRemboursement'>
           {/* <span style={{ color: 'grey' }}> */}
-          {eventArray[0]['date de remboursement']}
+          {eventArray['date de remboursement']}
           {/* </span>{' '} */}
         </div>
         <div>
           <span style={{ fontWeight: 'bold', color: 'black' }}>
-            {eventArray[3]['prénom']}
+            {eventArray['prénom']}
           </span>{' '}
           a obtenu un remboursement de{'    '}
           <span style={{ fontWeight: 'bold', color: 'black' }}>
-            {eventArray[0]['Payeur']}
+            {eventArray['Payeur']}
           </span>
           {'    '}
           pour la dépense de {'    '}
           <span style={{ fontWeight: 'bold', color: 'black' }}>
-            {eventArray[0]['Type acte']}
+            {eventArray['Type acte']}
           </span>
           {'    '}
           avec {'    '}
           <span style={{ fontWeight: 'bold', color: 'black' }}>
-            {eventArray[0]['Nom professionnel de santé']}
+            {eventArray['Nom professionnel de santé']}
           </span>
         </div>
       </div>
