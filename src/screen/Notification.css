@@ -1,0 +1,131 @@
+
+#titreNotif{
+background-color:#0C75B7;
+color:white;
+font-size:20px;
+font-weight:bolder;
+height:35px;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+padding-left:10px;
+}
+
+.notifNumber {
+  padding : 5px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  font-size: 20px;
+}
+
+.starNText {
+  list-style-type: none;
+  width: 33%;
+  padding: 0px;
+}
+
+.starGreen {
+  height : 30px;
+  width: 30px;
+  margin: auto;
+  padding: 0px;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgb(38, 197, 38);
+}
+
+.starYellow {
+  height : 30px;
+  width: 30px;
+  margin: auto;
+  padding: 0px;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgb(248, 143, 6);
+}
+
+.starRed {
+  height : 30px;
+  width: 30px;
+  margin: auto;
+  padding: 0px;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgb(212, 20, 20);
+}
+.textLegend {
+  font-size: 15px;
+  margin: 0px;
+}
+
+.vignette {
+  font-size: xx-large;
+  margin-right: 50px;
+}
+
+.legendRaw {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding : 5px;
+  margin-right: 10%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ }
+
+/* .notifHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+} */
+
+
+.notifList {
+  display: flex;
+  flex-direction: raw;
+  justify-content: center;
+  height: 20px;
+  width: auto;
+  background-color: white;
+  border-left: 6px solid green;
+  padding: 10px;
+}
+
+/* .notifList :hover{
+  background-color: red;
+} */
+.containerNotif :hover {
+  background-color: rgb(241, 241, 241);
+}
+
+table, tr, td, th {
+  border: 1px solid #003049;
+  font-size: small;
+}
+
+th {
+  background-color: #003049;
+  color: white;
+  border: 1px solid white
+}
+
+table {
+  width: 98%;
+  border-collapse: collapse;
+}
+
+.notifListHeader {
+  list-style-type: none;
+  width: 100%;
+  padding: 0px;
+}
+
+.dateRemboursement {
+  margin: auto;
+  text-align: right; 
+  color : grey
+}
