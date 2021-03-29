@@ -1,0 +1,42 @@
+.addMutu{
+  align-items: center;
+  background: white;
+  border-radius:5px;
+  color: #4472C4;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding-bottom: 2rem;
+  width: 90%;
+}
+.addMutu a{
+  background: #BE9B07;
+  border-radius: 0.6rem;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 2rem;
+  padding: 0.6rem;
+  text-decoration: none;
+  width:150px;
+}
+.addMutu input{
+  border:1px solid #BE9B07;
+  margin-top:5px;
+  outline:none;
+}
+.addMutu label, .addMutu input{
+  color: #BE9B07;
+}
+.addMutu span{
+  color: #4472C4;
+  font-weight: bold;
+}
+.forbidden{
+  background: #BE9B07;
+  border-radius: 0.6rem;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 2rem;
+  padding: 0.6rem;
+  text-decoration: none;
+}
