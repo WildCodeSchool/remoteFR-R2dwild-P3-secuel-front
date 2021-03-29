@@ -30,7 +30,7 @@ const AddSecu = visitor => {
         id='secu'
         type='text'
         required
-        placeholder='Numéro sécurité sociale'
+        placeholder='Ex: 2 960691 688 998 '
         onChange={handleChange}
       />
       <label htmlFor='idSecu'>
@@ -40,11 +40,11 @@ const AddSecu = visitor => {
         id='idSecu'
         type='text'
         required
-        placeholder='Indentifiant sécurité sociale'
+        placeholder='Code Ameli'
         onChange={handleChange}
       />
       {numSecu === '' || idSecu === '' ? (
-        <p className='forbidden'>Validez</p>
+        <p className='forbidden'>Valider</p>
       ) : (
         <Link to='/waiting'>Valider</Link>
       )}

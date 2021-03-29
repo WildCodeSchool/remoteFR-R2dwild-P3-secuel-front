@@ -58,6 +58,15 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+@media (max-width: 1000px){
+#titreCalendar{
+  display:none
+}
+.divCalendrier{
+  background:none;
+}
+}
 @media (max-width: 600px) {
   .divCalendrier{
     display:flex;

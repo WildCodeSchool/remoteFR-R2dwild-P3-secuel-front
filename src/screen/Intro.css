@@ -12,10 +12,10 @@
 .login h1{
   font-weight: bold;
   color: #4472C4;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.login p{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.login input{
+  border:1px solid #BE9B07;
+  outline:none;
 }
 .why{
   width: 90%;

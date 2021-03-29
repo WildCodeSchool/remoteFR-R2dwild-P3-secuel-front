@@ -60,6 +60,7 @@ const App = withRouter(({ location }) => {
         <Route path='/params' component={Params} />
         <Route path='/event/:id' component={DetailEvent} />
         <Route path='/admin' component={Admin} />
+        <Route path='/form' component={Form} />
       </Switch>
     </div>
   )

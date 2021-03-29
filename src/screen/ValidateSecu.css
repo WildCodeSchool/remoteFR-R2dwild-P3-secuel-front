@@ -24,7 +24,8 @@
   border-radius: 0.6rem;
 }
 .validateSecu input{
-  box-shadow: 0 0 2px #BE9B07;
+  border:1px solid #BE9B07;
+  outline: none;
 }
 .forbidden{
   width: 150px;
