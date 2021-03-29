@@ -1,5 +1,6 @@
 import NavAdmin from './components/NavAdmin'
 import Form from './screen/Form'
+import FormAdminAccount from './screen/FormAdminAccount'
 import FormAdminMedicalEvent from './screen/FormAdminMedicalEvent'
 import FormAdminHealthInsurance from './screen/FormAdminHealthInsurance'
 import FormAdminInsured from './screen/FormAdminInsured'
@@ -71,7 +72,7 @@ const App = withRouter(({ location }) => {
         <Route path='/params' component={Params} />
         <Route path='/event/:id' component={DetailEvent} />
         <Route path='/admin/medicalevent' component={FormAdminMedicalEvent} />
-        <Route path='/admin/Form' component={Form} />
+        <Route path='/admin/Form' component={FormAdminAccount} />
 
         <Route
           path='/admin/FormAdminHealthInsurance'

@@ -1,12 +1,11 @@
 import axios from 'axios'
 import { useState } from 'react'
-import { useHistory } from 'react-router'
-import FlecheGold from '../data/images/Flechegold.png'
 
 import './Form.css'
 import logo from '../data/images/logo_elan.png'
 
-const Form = visitor => {
+const FormAdminAccount = () => {
+  const [message, setMessage] = useState(null)
   const [accountName, setAccountName] = useState('')
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
@@ -15,8 +14,6 @@ const Form = visitor => {
     Login: login,
     Password: password
   }
-
-  const nextPage = useHistory()
 
   const handleChange = e => {
     e.target.name === 'name'
@@ -31,26 +28,22 @@ const Form = visitor => {
     axios
       .post('http://localhost:3000/Account', allPost)
       .then(res => {
-        console.log(`${res.data} !`)
+        console.log(res.data)
+        setMessage(res.data)
       })
       .catch(e => {
         console.error(e)
-        console.log(`Erreur lors de la création : ${e.message}`)
+        setMessage(`Erreur lors de la création : ${e.message}`)
       })
-    visitor.setVisitor(accountName)
-    nextPage.push('/thanks')
   }
 
   return (
     <div className='form'>
       <img src={logo} className='bigLogo' />
       <div className='formTitle'>
-        <a href='Javascript:history.go(-1)'>
-          <img src={FlecheGold} id='flechegold' />
-        </a>
         <h1 id='titreForm'> Création de compte</h1>
       </div>
-      <p id='connaissance'>Commençons par faire connaissance</p>
+      {message ? <p>{message}</p> : null}
       <p id='pointChargement'>
         •<span id='spanChargement'>•••</span>
       </p>
@@ -109,4 +102,4 @@ const Form = visitor => {
     </div>
   )
 }
-export default Form
+export default FormAdminAccount

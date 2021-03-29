@@ -2,11 +2,11 @@
 import axios from 'axios'
 import { useState } from 'react'
 
-import './FormAdminHealthInsurance.css'
+import './Form.css'
 
 const FormAdminHealthInsurance = () => {
   const [name, setName] = useState('')
-
+  const [message, setMessage] = useState(null)
   const allPost = {
     insurance_name: name
   }
@@ -20,21 +20,22 @@ const FormAdminHealthInsurance = () => {
     axios
       .post('localhost:3000/health_insurance', allPost)
       .then(res => {
-        alert(`${res.data} !`)
+        setMessage(res.data)
       })
       .catch(e => {
         console.error(e)
-        alert(`Erreur lors de la création : ${e.message}`)
+        setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }
 
   return (
     <div className='form'>
       <h1>Création d'un institut</h1>
+      {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
           <legend>information sur l'institut : </legend>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='name'>
               Nom de l'institut<span> * </span>
             </label>
@@ -50,7 +51,7 @@ const FormAdminHealthInsurance = () => {
           <p>
             <span> * </span> required.
           </p>
-          <div className='form-data'>
+          <div className='formData'>
             <input type='submit' value='Envoyer' />
           </div>
         </fieldset>
