@@ -1,6 +1,6 @@
-/* eslint-disable react/no-unescaped-entities */
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
+
 import './Form.css'
 
 const FormAdminMedicalEvent = () => {
@@ -8,11 +8,12 @@ const FormAdminMedicalEvent = () => {
   const [amountEvent, setAmountEvent] = useState('')
   const [secuStatus, setSecuStatus] = useState('')
   const [insuranceStatus, setInsuranceStatus] = useState('')
-  const [specialitiesIdSpeciality, setSpecialitiesIdSpeciality] = useState('')
   const [insuredIdInsured, setInsuredIdInsured] = useState('')
   const [insuredAccountIdCompte, setInsuredAccountIdCompte] = useState('')
-  const [prosProId, setProsProId] = useState('')
   const [message, setMessage] = useState(null)
+  const [prosProId, setProsProId] = useState('')
+  const [specialitiesIdSpeciality, setSpecialitiesIdSpeciality] = useState('')
+
   const allMedicalE = {
     Date_Event: dateEvent,
     amount_Event: amountEvent,
@@ -50,15 +51,14 @@ const FormAdminMedicalEvent = () => {
         setMessage(res.data)
       })
       .catch(e => {
-        console.error(e)
         setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }
 
   return (
     <div className='form'>
-      <h1>Ajout d'un acte</h1>
       {message ? <p>{message}</p> : null}
+      <h1>Ajout d'un acte</h1>
       <form onSubmit={submitForm}>
         <fieldset>
           <legend>Informations Acte</legend>

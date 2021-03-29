@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import whiteCalendar from '../data/images/whiteCalendar.png'
+import { useState } from 'react'
 import Calendrier from './Calendrier.js'
+import whiteCalendar from '../data/images/whiteCalendar.png'
 
 import './Welcome.css'
 

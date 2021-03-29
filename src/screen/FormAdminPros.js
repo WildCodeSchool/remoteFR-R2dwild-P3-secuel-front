@@ -1,5 +1,6 @@
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
+
 import './Form.css'
 const FormAdminPros = () => {
   const [name, setName] = useState('')
@@ -21,7 +22,6 @@ const FormAdminPros = () => {
         setMessage(res.data)
       })
       .catch(e => {
-        console.error(e)
         setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }

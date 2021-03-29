@@ -1,5 +1,5 @@
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
 
 import './Form.css'
 
@@ -30,7 +30,6 @@ const FormAdminProSpe = () => {
         setMessage(res.data)
       })
       .catch(e => {
-        console.error(e)
         setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }

@@ -1,10 +1,7 @@
 import { Doughnut } from 'react-chartjs-2'
-import 'chartjs-plugin-datalabels'
-import React from 'react'
-
-import './Donut.css'
-
 import eventArray from '../data/fakejson/fakedata.json'
+import 'chartjs-plugin-datalabels'
+import './Donut.css'
 
 export default function Donut(label) {
   const array = label.nonrembours
@@ -58,7 +55,6 @@ export default function Donut(label) {
         options={{
           animation: { animateScale: true },
           responsive: true,
-
           legend: {
             position: 'bottom',
             labels: {

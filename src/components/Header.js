@@ -1,9 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
-import React from 'react'
-
-import './Header.css'
-
 import logo_elan from '../data/images/logo_elan.png'
+import './Header.css'
 
 const Header = () => {
   return (

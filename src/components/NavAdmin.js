@@ -75,7 +75,7 @@ const NavAdmin = () => {
           >
             Spécialité par Professionnel
           </NavLink>
-        </li>{' '}
+        </li>
         <li>
           <NavLink
             to='/admin/FormAdminRefund'

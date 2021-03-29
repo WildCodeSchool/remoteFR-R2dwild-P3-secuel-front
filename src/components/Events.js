@@ -1,12 +1,11 @@
-import Aos from 'aos'
 import { useState, useEffect } from 'react'
-import Welcome from './Welcome'
+import Aos from 'aos'
+import eventArray from '../data/fakejson/fakedata.json'
 import MiniEvent from './MiniEvent'
+import Welcome from './Welcome'
 
 import 'aos/dist/aos.css'
 import './Events.css'
-
-import eventArray from '../data/fakejson/fakedata.json'
 
 const Events = () => {
   useEffect(() => {

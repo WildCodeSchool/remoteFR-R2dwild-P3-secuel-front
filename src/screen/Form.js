@@ -1,10 +1,9 @@
-import axios from 'axios'
 import { useState } from 'react'
 import { useHistory } from 'react-router'
+import axios from 'axios'
 import FlecheGold from '../data/images/Flechegold.png'
-
-import './Form.css'
 import logo from '../data/images/logo_elan.png'
+import './Form.css'
 
 const Form = visitor => {
   const [accountName, setAccountName] = useState('')

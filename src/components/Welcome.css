@@ -3,7 +3,6 @@
   justify-content: flex-start;
   text-decoration: underline 4px #4472C4;
   font-weight: lighter;
-
 }
 #bonjourElan{
   display: flex;
@@ -29,7 +28,6 @@
   padding-left:10px;
   color:white;
 }
-
 #whiteCal{
   height:25px;
   margin-right:10px;
