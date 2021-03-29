@@ -27,10 +27,14 @@ const Intro = () => {
             type='password' /*onChange={e => setPassword(e.target.value)}*/
           />
         </label>
-        <div>
+        <div className='connexion'>
           <Link to='/home'>
             <button>Je me connecte</button>
           </Link>
+        </div>
+        <div className='subscribe'>
+          <p>Pas de compte ?</p>
+          <Link to='/subscribe'>Je crée mon compte</Link>
         </div>
       </form>
       <div className='why'>
@@ -60,6 +64,7 @@ const Intro = () => {
         </p>
       </div>
       <div className='bottom'>
+        <p className='line'></p>
         <p>
           Intéressé(e) ? Créez votre compte en quelques clics et surtout en
           moins de 3 minutes

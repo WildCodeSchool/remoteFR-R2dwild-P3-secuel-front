@@ -13,7 +13,7 @@ const DetailEvent = Acte => {
   return (
     <div className='card'>
       <div>
-        <Link to='/'>
+        <Link to='/home'>
           <img src={fleche} />
         </Link>
       </div>
@@ -41,7 +41,6 @@ const DetailEvent = Acte => {
         <span className='infoCard'>Montant remboursé: </span>
         {insured['Montant remboursé'] ? insured['Montant remboursé'] : 0}
       </p>
-
       <Donut />
     </div>
   )
