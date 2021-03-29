@@ -27,6 +27,15 @@ const Intro = () => {
             type='password' /*onChange={e => setPassword(e.target.value)}*/
           />
         </label>
+        <div className='connexion'>
+          <Link to='/home'>
+            <button>Je me connecte</button>
+          </Link>
+        </div>
+        <div className='subscribe'>
+          <p>Pas de compte ?</p>
+          <Link to='/subscribe'>Je crée mon compte</Link>
+        </div>
       </form>
       <div className='connect'>
         <Link to='/home'>

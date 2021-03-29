@@ -1,4 +1,5 @@
 import Admin from './screen/Admin'
+import FormAdminMedicalEvent from './screen/FormAdminMedicalEvent'
 import Analyse from './screen/Analyse'
 import DetailEvent from './components/DetailEvent'
 import Header from './components/Header'
@@ -59,8 +60,8 @@ const App = withRouter(({ location }) => {
         <Route path='/analyse' component={Analyse} />
         <Route path='/params' component={Params} />
         <Route path='/event/:id' component={DetailEvent} />
-        <Route path='/admin' component={Admin} />
-        <Route path='/form' component={Form} />
+        <Route exact path='/admin' component={Admin} />
+        <Route path='/admin/medicalevent' component={FormAdminMedicalEvent} />
       </Switch>
     </div>
   )

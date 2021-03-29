@@ -20,6 +20,7 @@ const Events = () => {
   const handleClick3 = () => setHidden3(!hidden3)
   const [hidden4, setHidden4] = useState(true)
   const handleClick4 = () => setHidden4(!hidden4)
+
   return (
     <div className='events'>
       <Welcome />
