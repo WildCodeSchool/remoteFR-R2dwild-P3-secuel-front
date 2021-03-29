@@ -1,11 +1,12 @@
 import axios from 'axios'
 import { useState } from 'react'
 import { useHistory } from 'react-router'
+import FlecheGold from '../data/images/Flechegold.png'
 
 import './Form.css'
 import logo from '../data/images/logo_elan.png'
 
-const Form = () => {
+const Form = visitor => {
   const [accountName, setAccountName] = useState('')
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
@@ -36,22 +37,29 @@ const Form = () => {
         console.error(e)
         console.log(`Erreur lors de la création : ${e.message}`)
       })
-    nextPage.push('/next')
+    visitor.setVisitor(accountName)
+    nextPage.push('/thanks')
   }
 
   return (
     <div className='form'>
+      <img src={logo} className='bigLogo' />
       <div className='formTitle'>
-        <img src={logo} className='bigLogo' />
-        <h1>Création de compte</h1>
+        <a href='Javascript:history.go(-1)'>
+          <img src={FlecheGold} id='flechegold' />
+        </a>
+        <h1 id='titreForm'> Création de compte</h1>
       </div>
+      <p id='connaissance'>Commençons par faire connaissance</p>
+      <p id='pointChargement'>
+        •<span id='spanChargement'>•••</span>
+      </p>
       <form onSubmit={submitForm}>
-        <fieldset>
-          <legend>Informations</legend>
-          <div className='formData'>
-            <label htmlFor='name'>
+        <div className='form-data'>
+          <fieldset>
+            <legend>
               Nom<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='name'
@@ -60,11 +68,13 @@ const Form = () => {
               required
               value={accountName}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='email'>
+          </fieldset>
+        </div>
+        <div className='form-data'>
+          <fieldset>
+            <legend>
               Email<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='email'
@@ -73,30 +83,30 @@ const Form = () => {
               required
               value={login}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='password'>
-              Mot de passe<span> * </span>
-            </label>
+          </fieldset>
+        </div>
+        <div className='form-data'>
+          <fieldset>
+            <legend>
+              Mot de passe<span> * </span>{' '}
+            </legend>
             <input
               id='password'
               name='password'
               onChange={handleChange}
               required
               value={password}
-            />
-          </div>
-          <hr />
-          <p>
-            <span> * </span> Obligatoire
-          </p>
-          <div className='formData'>
-            <input type='submit' value='Envoyer' />
-          </div>
-        </fieldset>
+            />{' '}
+          </fieldset>
+        </div>
+        <p id='pObligatoire'>
+          <span> * </span> Obligatoire
+        </p>
+        <div className='form-data'>
+          <input id='btnEnvoyer' type='submit' value='Valider le profil' />
+        </div>
       </form>
     </div>
   )
 }
-
 export default Form

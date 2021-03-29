@@ -57,10 +57,10 @@
    "Nom professionnel de santé": "PHARMACIE DU MARCHE",
    "Montant Payé": "32,5",
    "Payeur": "SECURITE SOCIAL",
-   "Statut du dossier": "Traité",
+   "Statut du dossier": "en cours de traitement",
    "Montant remboursé": "28,88",
    "date de remboursement": "18/02/2021",
-   "RECUPERATION TYPE INCIDENT": "-",
+   "RECUPERATION TYPE INCIDENT": "",
    "ENVOI DE NOTIFICATION": ""
  },
  {
@@ -137,10 +137,10 @@
    "Nom professionnel de santé": "HOPITAL ANTONY",
    "Montant Payé": " 150,00 ",
    "Payeur": "SECURITE SOCIAL",
-   "Statut du dossier": "Traité",
+   "Statut du dossier": "en cours de traitement",
    "Montant remboursé": " 120,00 ",
    "date de remboursement": "26/12/2020",
-   "RECUPERATION TYPE INCIDENT": "-",
+   "RECUPERATION TYPE INCIDENT": "",
    "ENVOI DE NOTIFICATION": ""
  },
  {
@@ -249,7 +249,7 @@
    "Nom professionnel de santé": "BIGOTTE",
    "Montant Payé": " 23,00 ",
    "Payeur": "GENERALI",
-   "Statut du dossier": "Traité",
+   "Statut du dossier": "en cours de traitement",
    "Montant remboursé": " 23,00 ",
    "date de remboursement": "18/02/2021",
    "RECUPERATION TYPE INCIDENT": "-",

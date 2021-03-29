@@ -1,0 +1,43 @@
+.addSecu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #4472C4;
+  background: white;
+  width: 90%;
+  padding-bottom: 2rem;
+  border-radius:5px;
+  margin: auto;
+}
+.addSecu span{
+  color: #4472C4;
+  font-weight: bold;
+}
+.addSecu a{
+  width:150px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  background: #BE9B07;
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+  margin-top: 2rem;
+}
+.addSecu label, .addSecu input{
+  color: #BE9B07;
+}
+.addSecu input{
+  margin-top:5px;
+  border:1px solid #BE9B07;
+  outline:none;
+}
+
+.forbidden{
+  margin-top: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  background: #BE9B07;
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+}
