@@ -1,20 +1,16 @@
 import eventArray from '../data/fakejson/fakedata.json'
-import NotificationCompo from '../components/NotificationCompo'
-
-// import React, { useState, Component } from 'react'
+import NotificationCompo from '../components/NotifCompo'
 
 import 'react-datepicker/dist/react-datepicker.css'
 import './Notification.css'
 
 const Notification = () => {
-  // const [notif, setNotif] = useState('')
-
   const statusNotif =
     eventArray.filter(
-      data => data['prénom'] === 'Lucas' && data['ENVOI DE NOTIFICATION']
+      data => data['prénom'] === 'Marie' && data['ENVOI DE NOTIFICATION']
     ) != ''
       ? eventArray.filter(
-          data => data['prénom'] === 'Lucas' && data['ENVOI DE NOTIFICATION']
+          data => data['prénom'] === 'Marie' && data['ENVOI DE NOTIFICATION']
         ).length
       : 'aucune'
 
@@ -24,7 +20,7 @@ const Notification = () => {
         <h1 id='titreNotif'>Vos Notifications</h1>
         <h1>
           <span style={{ color: 'blue' }}>
-            {eventArray[10]['prénom'] + '   ' + eventArray[10]['Nom']}
+            {eventArray[1]['prénom'] + '   ' + eventArray[1]['Nom']}
           </span>
         </h1>
 
@@ -51,21 +47,21 @@ const Notification = () => {
             <li className='textLegend'>Il y a un petit soucis</li>
           </ul>
         </ul>
-        {/* <div className='containerNotif'> */}
-        {/* <div className='notifList'>
-            {eventArray
-              .filter(data => data['prénom'] === 'Jean')
-              .filter(data => data['ENVOI DE NOTIFICATION']) != null ? (
-              <div className='barGreen'></div>
-            ) : (
-              <div className='barYellow'></div>
-            )}
-          </div> */}
         <div>
           {eventArray
-            .filter(data => data['prénom'] === 'Lucas')
-            .map(a => (
-              <NotificationCompo {...a} key={a.id} />
+            .filter(data => data['prénom'] === 'Jean')
+            .map(notif => (
+              <NotificationCompo
+                acteType={notif['Type acte']}
+                firstName={notif['prénom']}
+                payer={notif['Payeur']}
+                notifDate={notif['date acte médicale']}
+                status={notif['Statut du dossier']}
+                incident={notif['RECUPERATION TYPE INCIDENT']}
+                actorName={notif['Nom professionnel de santé']}
+                key={notif.id}
+                id={notif.id}
+              />
             ))}
         </div>
         {/* </div> */}

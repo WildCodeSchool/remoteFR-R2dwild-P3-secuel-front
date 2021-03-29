@@ -1,0 +1,34 @@
+.barGreen {
+  background-color:white;
+  height: auto;
+  padding: 5px;
+  margin: 5px;
+  width: 100%;
+  justify-content: center;
+  border-left: 10px solid rgb(38, 197, 38);
+}
+
+.barYellow {
+  background-color:white;
+  height: auto;
+  padding: 5px;
+  margin: 5px;
+  width: 100%;
+  justify-content: center;
+  border-left: 10px solid rgb(248, 143, 6);
+}
+
+.barRed {
+  background-color:white;
+  height: auto;
+  padding: 5px;
+  margin: 5px;
+  width: 100%;
+  justify-content: center;
+  border-left: 10px solid rgb(212, 20, 20);
+}
+
+span {
+  text-decoration: none;
+}
+

@@ -33,7 +33,7 @@ padding-left:10px;
   padding: 0px;
   align-items: center;
   border-radius: 50%;
-  background-color: green;
+  background-color: rgb(38, 197, 38);
 }
 
 .starYellow {
@@ -43,7 +43,7 @@ padding-left:10px;
   padding: 0px;
   align-items: center;
   border-radius: 50%;
-  background-color: yellow;
+  background-color: rgb(248, 143, 6);
 }
 
 .starRed {
@@ -53,7 +53,7 @@ padding-left:10px;
   padding: 0px;
   align-items: center;
   border-radius: 50%;
-  background-color: red;
+  background-color: rgb(212, 20, 20);
 }
 .textLegend {
   font-size: 15px;
@@ -122,20 +122,6 @@ table {
   list-style-type: none;
   width: 100%;
   padding: 0px;
-}
-
-.barYellow {
-  background-color:yellow;
-  height: 5vh;
-  width: 1vh;
-  justify-content: left;
-}
-
-.barRed {
-  background-color:red;
-  height: 5vh;
-  width: 1vh;
-  justify-content: left;
 }
 
 .dateRemboursement {
