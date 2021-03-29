@@ -7,6 +7,7 @@ const FormAdminProSpe = () => {
   const [idSpe, setIdSpe] = useState('')
   const [idPro, setIdPro] = useState('')
   const [status, setStatus] = useState(true)
+  const [message, setMessage] = useState(null)
   const allPost = {
     pros_pro_id: idPro,
     specialities_id_speciality: idSpe,
@@ -26,21 +27,22 @@ const FormAdminProSpe = () => {
     axios
       .post('http://localhost:3000/Account', allPost)
       .then(res => {
-        alert(`${res.data} !`)
+        setMessage(res.data)
       })
       .catch(e => {
         console.error(e)
-        alert(`Erreur lors de la création : ${e.message}`)
+        setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }
 
   return (
     <div className='form'>
-      <h1>Création de compte</h1>
+      <h1>Création d'un lien pro spé</h1>
+      {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>Informations</legend>
-          <div className='form-data'>
+          <legend>saisie des infos</legend>
+          <div className='formData'>
             <label htmlFor='pro'>
               Identifiant du Professionnel<span> * </span>
             </label>
@@ -53,7 +55,7 @@ const FormAdminProSpe = () => {
               value={idPro}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='spe'>
               Spécialité du professionnel<span> * </span>
             </label>
@@ -66,9 +68,9 @@ const FormAdminProSpe = () => {
               value={idSpe}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='status'>
-              Mot de passe<span> * </span>
+              statuts de la spécialité<span> * </span>
             </label>
             <input
               id='status'
@@ -82,7 +84,7 @@ const FormAdminProSpe = () => {
           <p>
             <span> * </span> required.
           </p>
-          <div className='form-data'>
+          <div className='formData'>
             <input type='submit' value='Envoyer' />
           </div>
         </fieldset>

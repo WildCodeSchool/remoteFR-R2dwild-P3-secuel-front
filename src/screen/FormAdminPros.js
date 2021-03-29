@@ -1,10 +1,9 @@
 import axios from 'axios'
 import { useState } from 'react'
-
-import './FormAdminPros.css'
-
+import './Form.css'
 const FormAdminPros = () => {
   const [name, setName] = useState('')
+  const [message, setMessage] = useState(null)
 
   const allPost = {
     pro_name: name
@@ -19,21 +18,22 @@ const FormAdminPros = () => {
     axios
       .post('localhost:3000/pros', allPost)
       .then(res => {
-        alert(`${res.data} !`)
+        setMessage(res.data)
       })
       .catch(e => {
         console.error(e)
-        alert(`Erreur lors de la création : ${e.message}`)
+        setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }
 
   return (
     <div className='form'>
-      <h1>Création d'un professionnel de santé'</h1>
+      <h1>Création d&apos;un professionnel de santé</h1>
+      {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
           <legend>information sur le professionnel : </legend>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='name'>
               Nom du médecin <span> * </span>
             </label>
@@ -49,7 +49,7 @@ const FormAdminPros = () => {
           <p>
             <span> * </span> required.
           </p>
-          <div className='form-data'>
+          <div className='formData'>
             <input type='submit' value='Envoyer' />
           </div>
         </fieldset>

@@ -5,17 +5,18 @@ import './Form.css'
 
 const FormAdminNotifications = () => {
   const [type, setType] = useState('')
-  const [message, setMessage] = useState('')
+  const [notif, setNotif] = useState('')
+  const [message, setMessage] = useState(null)
 
   const notifPost = {
     type: type,
-    Message: message
+    Message: notif
   }
 
   const handleChange = e => {
     e.target.name === 'type'
       ? setType(e.target.value)
-      : setMessage(e.target.value)
+      : setNotif(e.target.value)
   }
 
   const submitForm = e => {
@@ -23,21 +24,22 @@ const FormAdminNotifications = () => {
     axios
       .post('http://localhost:3000/notifications', notifPost)
       .then(res => {
-        alert(`${res.data} !`)
+        setMessage(res.data)
       })
       .catch(e => {
         console.error(e)
-        alert(`Erreur lors de la création : ${e.message}`)
+        setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }
 
   return (
     <div className='form'>
-      <h1>Création de compte</h1>
+      <h1>Création de notification</h1>
+      {message ? <div>{message}</div> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>Informations</legend>
-          <div className='form-data'>
+          <legend>Informations sur la notification</legend>
+          <div className='formData'>
             <label htmlFor='type'>
               Type de message<span> * </span>
             </label>
@@ -50,7 +52,7 @@ const FormAdminNotifications = () => {
               value={type}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='message'>
               Message<span> * </span>
             </label>
@@ -60,14 +62,14 @@ const FormAdminNotifications = () => {
               name='message'
               onChange={handleChange}
               required
-              value={message}
+              value={notif}
             />
           </div>
           <hr />
           <p>
             <span> * </span> required.
           </p>
-          <div className='form-data'>
+          <div className='formData'>
             <input type='submit' value='Envoyer' />
           </div>
         </fieldset>

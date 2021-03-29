@@ -1,8 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import axios from 'axios'
 import { useState } from 'react'
-
-import './FormAdminMedicalEvent.css'
+import './Form.css'
 
 const FormAdminMedicalEvent = () => {
   const [dateEvent, setDateEvent] = useState('')
@@ -13,6 +12,7 @@ const FormAdminMedicalEvent = () => {
   const [insuredIdInsured, setInsuredIdInsured] = useState('')
   const [insuredAccountIdCompte, setInsuredAccountIdCompte] = useState('')
   const [prosProId, setProsProId] = useState('')
+  const [message, setMessage] = useState(null)
   const allMedicalE = {
     Date_Event: dateEvent,
     amount_Event: amountEvent,
@@ -47,21 +47,22 @@ const FormAdminMedicalEvent = () => {
     axios
       .post('localhost:3000/medical_events', allMedicalE)
       .then(res => {
-        alert(`${res.data} !`)
+        setMessage(res.data)
       })
       .catch(e => {
         console.error(e)
-        alert(`Erreur lors de la création : ${e.message}`)
+        setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }
 
   return (
     <div className='form'>
       <h1>Ajout d'un acte</h1>
+      {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
           <legend>Informations Acte</legend>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='dateEvent'>
               Date de l'acte<span> * </span>
             </label>
@@ -74,7 +75,7 @@ const FormAdminMedicalEvent = () => {
               value={dateEvent}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='amountEvent'>
               Montant de la consultation<span> * </span>
             </label>
@@ -87,7 +88,7 @@ const FormAdminMedicalEvent = () => {
               value={amountEvent}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='secuStatus'>
               Status du dossier à la secu<span> * </span>
             </label>
@@ -100,7 +101,7 @@ const FormAdminMedicalEvent = () => {
             />
           </div>
 
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='insuranceStatus'>
               Status du dossier à la mutuelle<span> * </span>
             </label>
@@ -112,7 +113,7 @@ const FormAdminMedicalEvent = () => {
               value={insuranceStatus}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='specialitiesIdSpeciality'>
               Spécialité medecin<span> * </span>
             </label>
@@ -124,7 +125,7 @@ const FormAdminMedicalEvent = () => {
               value={specialitiesIdSpeciality}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='insuredIdInsured'>
               Assuré concerné<span> * </span>
             </label>
@@ -136,7 +137,7 @@ const FormAdminMedicalEvent = () => {
               value={insuredIdInsured}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='insuredAccountIdCompte'>
               compte relié<span> * </span>
             </label>
@@ -148,7 +149,7 @@ const FormAdminMedicalEvent = () => {
               value={insuredAccountIdCompte}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='prosProId'>
               Professionnel<span> * </span>
             </label>
@@ -164,7 +165,7 @@ const FormAdminMedicalEvent = () => {
           <p>
             <span> * </span> required.
           </p>
-          <div className='form-data'>
+          <div className='formData'>
             <input type='submit' value='Envoyer' />
           </div>
         </fieldset>
