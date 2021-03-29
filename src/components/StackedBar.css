@@ -1,3 +1,6 @@
+.analyse{
+  height: 500px
+}
 .bar{
   align-items: center;
   background-color: white;
@@ -11,17 +14,14 @@
   position: relative;
   width: 90%;
 }
+.label {
+  left:0;
+  position: absolute;
+  top: 0;
+}
 .title{
   color:#003049;
   font-weight: bolder;
   margin: 0;
   position: relative;
-}
-.analyse{
-  height: 500px
-}
-.label {
-  left:0;
-  position: absolute;
-  top: 0;
 }

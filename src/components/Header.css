@@ -5,16 +5,18 @@
   padding: 10px;
   width: 100%;
 }
-.logo {
-  height: 50px;
+.iconBtn {
+  align-items: center;
+  background: none;
+  border: none;
+  color: #4472C4;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  overflow: hidden;
+  padding-bottom: 5px;
+  text-decoration: none;
   width: auto;
-}
-.logoUser {
-  height: 30px;
-  justify-content: center;
-  padding-left: 5px;
-  padding-right: 5px;
-  width: 30px;
 }
 .navIcon {
   align-items: center;
@@ -31,19 +33,18 @@
 .iconNavbar {
   width: 25px;
 }
-.iconBtn {
-  align-items: center;
-  background: none;
-  border: none;
-  color: #4472C4;
-  cursor: pointer;
-  display: flex;
-  outline: none;
-  overflow: hidden;
-  padding-bottom: 5px;
-  text-decoration: none;
+.logo {
+  height: 50px;
   width: auto;
 }
+.logoUser {
+  height: 30px;
+  justify-content: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 30px;
+}
+
 .selected {
   border-bottom: 3px solid #4472C4;
 }

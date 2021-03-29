@@ -9,10 +9,6 @@
   padding-bottom: 2rem;
   width: 90%;
 }
-.addSecu span{
-  color: #4472C4;
-  font-weight: bold;
-}
 .addSecu a{
   background: #BE9B07;
   border-radius: 0.6rem;
@@ -23,13 +19,17 @@
   text-decoration: none;
   width:150px;
 }
-.addSecu label, .addSecu input{
-  color: #BE9B07;
-}
 .addSecu input{
   border:1px solid #BE9B07;
   margin-top:5px;
   outline:none;
+}
+.addSecu label, .addSecu input{
+  color: #BE9B07;
+}
+.addSecu span{
+  color: #4472C4;
+  font-weight: bold;
 }
 .forbidden{
   background: #BE9B07;

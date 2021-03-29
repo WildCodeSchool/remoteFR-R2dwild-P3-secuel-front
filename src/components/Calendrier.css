@@ -1,3 +1,28 @@
+#btnAppliquer{
+  background-color: #0C75B7;
+  border:none;
+  border-radius: 5px;
+  color:white;
+  cursor: pointer;
+  height: 20px;
+  margin-left:10px;
+  outline: none;
+}
+.calendrier{
+  display: flex;
+  justify-content: center;
+  margin-top:10px;
+  width: 83%;
+}
+.divCalendar{
+  align-items: center;
+  background-color:white;
+  border:1px solid #0C75B7;
+  border-radius:10px;
+  display:flex;
+  flex-direction: row;
+  height: 30px;
+}
 .divCalendrier{
   align-items: center;
   background-color:#f5f7f7;
@@ -8,15 +33,6 @@
   justify-content: center;
   padding-left:10px;
   width:50%;
-}
-.divCalendar{
-  align-items: center;
-  background-color:white;
-  border:1px solid #0C75B7;
-  border-radius:10px;
-  display:flex;
-  flex-direction: row;
-  height: 30px;
 }
 .divCalendrier p {
   align-items: center;
@@ -40,41 +56,16 @@
   height: 15px;
   margin-right:5px;
 }
-.calendrier{
-  display: flex;
-  justify-content: center;
-  margin-top:10px;
-  width: 83%;
-}
-#btnAppliquer{
-  background-color: #0C75B7;
-  border:none;
-  border-radius: 5px;
-  color:white;
-  cursor: pointer;
-  height: 20px;
-  margin-left:10px;
-  outline: none;
-}
+
 @media (max-width: 1000px){
-#titreCalendar{
+  .divCalendrier{
+    background:none;
+  }
+  #titreCalendar{
   display:none
-}
-.divCalendrier{
-  background:none;
 }
 }
 @media (max-width: 600px) {
-  .divCalendrier{
-    align-items: center;
-    background:none;
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  #titreCalendar{
-    display: none;
-  }
   .divCalendar{
     align-items: center;
     background-color:white;
@@ -84,5 +75,15 @@
     flex-direction: row;
     height: 30px;
     justify-content: center;
+  }
+  .divCalendrier{
+    align-items: center;
+    background:none;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #titreCalendar{
+    display: none;
   }
 }

@@ -2,6 +2,21 @@
   border-bottom:1px solid #4472C4;
   padding:15px;
 }
+.blueTrash{
+  cursor: pointer;
+  height:20px;
+}
+#btnAddAccount{
+  align-items: center;
+  background:#4472C4;
+  border:none;
+  border-radius: 3px;
+  color:white;
+  cursor: pointer;
+  height: 25px;
+  margin-left:5px;
+  outline:none;
+}
 #btnSupprimer{
   align-items: center;
   background:#4472C4;
@@ -12,6 +27,29 @@
   height: 25px;
   margin:5px;
   outline:none;
+}
+.compteAssure{
+  align-items: center;
+  border:1px solid #4472C4;
+  border-radius:5px;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  list-style: none;
+  margin: 10px;
+  padding:5px;
+  width: 40%;
+}
+.divParams{
+  background-color: white;
+  border-radius:5px;
+  margin-bottom:20px;
+  padding:15px;
+}
+.divVosCompte{
+  display: flex;
+  flex-direction: row;
+  width:100%;
 }
 #imgTrash{
   height: 12px;
@@ -30,52 +68,14 @@ font-size:30px;
 font-weight: bold;
 text-align: left; 
 }
-.divParams{
-  background-color: white;
-  border-radius:5px;
-  margin-bottom:20px;
-  padding:15px;
-}
 #titreSupprimerCompte{
   font-size:30px;
   font-weight: bold;
   text-align: left; 
-}
-#btnAddAccount{
-  align-items: center;
-  background:#4472C4;
-  border:none;
-  border-radius: 3px;
-  color:white;
-  cursor: pointer;
-  height: 25px;
-  margin-left:5px;
-  outline:none;
-}
-.compteAssure{
-  align-items: center;
-  border:1px solid #4472C4;
-  border-radius:5px;
-  display: flex;
-  height: 50px;
-  justify-content: space-between;
-  list-style: none;
-  margin: 10px;
-  padding:5px;
-  width: 40%;
-}
-.divVosCompte{
-  display: flex;
-  flex-direction: row;
-  width:100%;
 }
 .vosComptes{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-}
-.blueTrash{
-  cursor: pointer;
-  height:20px;
 }

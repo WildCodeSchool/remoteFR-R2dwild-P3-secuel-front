@@ -1,3 +1,9 @@
+#bodyTable{
+  background: white;
+}
+#headTable{
+  background:#f5f7f7;
+}
 .message{
   width:90%;
 }
@@ -7,10 +13,4 @@
   border-collapse: collapse;
   padding: 5px;
   text-align: left;
-}
-#bodyTable{
-  background: white;
-}
-#headTable{
-  background:#f5f7f7;
 }

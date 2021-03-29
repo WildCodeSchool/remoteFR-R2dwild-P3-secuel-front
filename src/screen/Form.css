@@ -1,3 +1,23 @@
+.bigLogo{
+  width: 20%;
+}
+#btnEnvoyer{
+  background:#BE9B07;
+  border-radius:5px;
+  color:white;
+  height:30px;
+  width:30%;
+}
+#connaissance{
+  display:flex;
+  justify-content: center;
+}
+fieldset {
+  border-radius: 1px;
+}
+#flechegold{
+  margin-right:20px;
+}
 .form {
   align-items: center;
   background:white;
@@ -10,56 +30,6 @@
   text-align: left;
   width: 80%;
 }
-.formTitle{
-  align-items: center;
-  display: flex;
-  justify-content: space-around;
-}
-.bigLogo{
-  width: 20%;
-}
-.form form{
-  width:100%;
-}
-.form h1 {
-  text-align: center;
-}
-.form .formData {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin: 5px 0;
-  width:100%;
-}
-.form .formData label {
-  display: inline-block;
-  margin-right: 10px;
-  text-align: center;
-  width: 110px;
-}
-.form .formData input:not([type="submit"]), textarea {
-  border-radius: 5px;
-  flex-grow: 1;
-}
-fieldset {
-  border-radius: 1px;
-}
-span {
-  color: red;
-}
-.form form{
-  align-items: center;
-  background:white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.form input{
-  border:none;
-  height: 100%;
-  outline:none;
-  width:100%;
-}
 .form fieldset{
   border:1px solid #BE9B07;
   padding-bottom:0;
@@ -68,18 +38,47 @@ span {
   padding-top:0;
   width:100%;
 }
-#btnEnvoyer{
-  background:#BE9B07;
-  border-radius:5px;
-  color:white;
-  height:30px;
-  width:30%;
+.form form{
+  align-items: center;
+  background:white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:100%;
+}  
+.form .formData {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+  width:100%;
 }
-#titreForm{
-  font-weight: bolder;
+.form .formData input:not([type="submit"]), textarea {
+  border-radius: 5px;
+  flex-grow: 1;
+}
+.form .formData label {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+  width: 110px;
+}
+.form h1 {
+  text-align: center;
+}
+.form input{
+  border:none;
+  height: 100%;
+  outline:none;
+  width:100%;
 }
 .form legend{
   font-size:12px;
+}
+.formTitle{
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
 }
 #pObligatoire{
   font-size:12px;
@@ -93,15 +92,14 @@ span {
   margin:0;
   padding:0;
 }
+span {
+  color: red;
+}
 #spanChargement{
   color:#e2e4e8;
 }
-#connaissance{
-  display:flex;
-  justify-content: center;
-}
-#flechegold{
-  margin-right:20px;
+#titreForm{
+  font-weight: bolder;
 }
 
 @media (max-width: 600px) {
