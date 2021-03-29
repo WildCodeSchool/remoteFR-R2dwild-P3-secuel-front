@@ -1,10 +1,8 @@
-import Donut from './Donut.js'
 import { Link } from 'react-router-dom'
-
-import './DetailEvent.css'
-
 import acte from '../data/fakejson/fakedata.json'
+import Donut from './Donut.js'
 import fleche from '../data/images/fleche.png'
+import './DetailEvent.css'
 
 const DetailEvent = Acte => {
   const insured = acte.filter(

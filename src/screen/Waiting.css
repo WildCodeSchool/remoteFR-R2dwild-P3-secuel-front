@@ -1,3 +1,8 @@
+.profil{
+  box-shadow: 0 0 2px #BE9B07;
+  width: 15%;
+  border-radius: 50%;
+}
 .waiting{
   display: flex;
   flex-direction: column;
@@ -9,10 +14,6 @@
   border-radius:5px;
   margin: auto;
 }
-.waiting span{
-  color: #4472C4;
-  font-weight: bold;
-}
 .waiting a{
   width: 150px;
   margin-top: 2rem;
@@ -23,8 +24,7 @@
   padding: 0.6rem;
   border-radius: 0.6rem;
 }
-.profil{
-  box-shadow: 0 0 2px #BE9B07;
-  width: 15%;
-  border-radius: 50%;
+.waiting span{
+  color: #4472C4;
+  font-weight: bold;
 }

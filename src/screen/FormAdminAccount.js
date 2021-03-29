@@ -1,8 +1,9 @@
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
+
+import logo from '../data/images/logo_elan.png'
 
 import './Form.css'
-import logo from '../data/images/logo_elan.png'
 
 const FormAdminAccount = () => {
   const [message, setMessage] = useState(null)
@@ -28,11 +29,9 @@ const FormAdminAccount = () => {
     axios
       .post('http://localhost:3000/Account', allPost)
       .then(res => {
-        console.log(res.data)
         setMessage(res.data)
       })
       .catch(e => {
-        console.error(e)
         setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }
@@ -81,7 +80,7 @@ const FormAdminAccount = () => {
         <div className='formData'>
           <fieldset>
             <legend>
-              Mot de passe<span> * </span>{' '}
+              Mot de passe<span> * </span>
             </legend>
             <input
               id='password'

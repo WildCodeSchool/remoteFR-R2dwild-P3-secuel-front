@@ -1,9 +1,7 @@
-import React from 'react'
-import './Params.css'
 import { Link } from 'react-router-dom'
-
-// import Trash from '../data/images/Trash.png'
+import React from 'react'
 import blueTrash from '../data/images/blueTrash.png'
+import './Params.css'
 
 const Params = () => {
   return (

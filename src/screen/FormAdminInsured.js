@@ -1,5 +1,5 @@
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
 
 import './Form.css'
 
@@ -26,9 +26,9 @@ const FormAdminInsured = () => {
     e.target.name === 'lastname'
       ? setLastName(e.target.value)
       : e.target.name === 'firstname'
-      ? setFirstName(e.target.value)
-      : e.target.name === 'numsecu'
       ? setNumSecu(e.target.value)
+      : e.target.name === 'numsecu'
+      ? setFirstName(e.target.value)
       : e.target.name === 'email'
       ? setEmail(e.target.value)
       : e.target.name === 'tel'
@@ -46,7 +46,6 @@ const FormAdminInsured = () => {
         setMessage(res.data)
       })
       .catch(e => {
-        console.error(e)
         setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }

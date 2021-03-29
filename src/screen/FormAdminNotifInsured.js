@@ -1,13 +1,15 @@
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
+
 import './Form.css'
+
 const FormAdminNotifInsured = () => {
   const [notif, setNotif] = useState('')
   const [insured, setInsured] = useState('')
   const [status, setStatus] = useState('')
   const [message, setMessage] = useState(null)
+  Notifications_id_Notification: notif,
   const allPost = {
-    Notifications_id_Notification: notif,
     Insured_id_Insured: insured,
     Ni_status: status
   }
@@ -28,7 +30,6 @@ const FormAdminNotifInsured = () => {
         setMessage(res.data)
       })
       .catch(e => {
-        console.error(e)
         setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }
