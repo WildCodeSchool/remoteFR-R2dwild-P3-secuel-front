@@ -1,42 +1,40 @@
 .divCalendrier{
+  align-items: center;
+  background-color:#f5f7f7;
+  border-radius: 5px;
   display:flex;
   flex-direction: row;
-  align-items: center;
-  width:50%;
-  background-color:#f5f7f7;
-  justify-content: center;
   height:40px;
+  justify-content: center;
   padding-left:10px;
-  border-radius: 5px;
+  width:50%;
 }
 .divCalendar{
+  align-items: center;
+  background-color:white;
+  border:1px solid #0C75B7;
+  border-radius:10px;
   display:flex;
   flex-direction: row;
-  align-items: center;
-  border:1px solid #0C75B7;
-  background-color:white;
-  border-radius:10px;
   height: 30px;
 }
-
 .divCalendrier p {
-  color:#0C75B7;
-  font-size:15px;
-  display:flex;
   align-items: center;
-  margin-right:10px;
+  color:#0C75B7;
+  display:flex;
+  font-size:15px;
   font-weight: 900;
+  margin-right:10px;
 }
-
 #firstCalendar, 
 #secondCalendar{
+  border:none;
+  box-shadow:none;
+  cursor: pointer;
   margin-right:5px;
   margin-left:5px;
   outline:none;
-  box-shadow:none;
-  border:none;
   width:75px;
-  cursor: pointer;
 }
 #imgCal{
   height: 15px;
@@ -45,20 +43,19 @@
 .calendrier{
   display: flex;
   justify-content: center;
-  width: 83%;
   margin-top:10px;
+  width: 83%;
 }
 #btnAppliquer{
-  margin-left:10px;
-  color:white;
   background-color: #0C75B7;
   border:none;
-  outline: none;
-  height: 20px;
   border-radius: 5px;
+  color:white;
   cursor: pointer;
+  height: 20px;
+  margin-left:10px;
+  outline: none;
 }
-
 @media (max-width: 1000px){
 #titreCalendar{
   display:none
@@ -69,23 +66,23 @@
 }
 @media (max-width: 600px) {
   .divCalendrier{
-    display:flex;
-    flex-direction: row;
     align-items: center;
     background:none;
+    display:flex;
+    flex-direction: row;
     justify-content: center;
   }
   #titreCalendar{
     display: none;
   }
   .divCalendar{
+    align-items: center;
+    background-color:white;
+    border:1px solid #0C75B7;
+    border-radius:10px;
     display:flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border:1px solid #0C75B7;
-    background-color:white;
-    border-radius:10px;
     height: 30px;
+    justify-content: center;
   }
 }

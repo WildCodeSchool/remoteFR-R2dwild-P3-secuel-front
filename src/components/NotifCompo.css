@@ -1,34 +1,27 @@
 .barGreen {
   background-color:white;
-  height: auto;
-  padding: 5px;
-  margin: 5px;
-  width: 100%;
-  justify-content: center;
   border-left: 10px solid rgb(38, 197, 38);
+  height: auto;
+  justify-content: center;
+  margin: 5px;
+  padding: 5px;
+  width: 100%;
 }
-
 .barYellow {
   background-color:white;
-  height: auto;
-  padding: 5px;
-  margin: 5px;
-  width: 100%;
-  justify-content: center;
   border-left: 10px solid rgb(248, 143, 6);
+  height: auto;
+  justify-content: center;
+  margin: 5px;
+  padding: 5px;
+  width: 100%;
 }
-
 .barRed {
   background-color:white;
-  height: auto;
-  padding: 5px;
-  margin: 5px;
-  width: 100%;
-  justify-content: center;
   border-left: 10px solid rgb(212, 20, 20);
+  height: auto;
+  justify-content: center;
+  margin: 5px;
+  padding: 5px;
+  width: 100%;
 }
-
-span {
-  text-decoration: none;
-}
-
