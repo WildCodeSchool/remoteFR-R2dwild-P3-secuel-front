@@ -1,7 +1,7 @@
-import './ValidateSecu.css'
-
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+
+import './ValidateSecu.css'
 
 const ValidateSecu = () => {
   const [input, setInput] = useState('')

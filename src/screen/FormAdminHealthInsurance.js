@@ -5,8 +5,8 @@ import axios from 'axios'
 import './Form.css'
 
 const FormAdminHealthInsurance = () => {
-  const [name, setName] = useState('')
   const [message, setMessage] = useState(null)
+  const [name, setName] = useState('')
   const allPost = {
     insurance_name: name
   }
