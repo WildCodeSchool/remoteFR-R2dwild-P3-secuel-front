@@ -1,4 +1,3 @@
-import Admin from './screen/Admin'
 import NavAdmin from './components/NavAdmin'
 import Form from './screen/Form'
 import FormAdminMedicalEvent from './screen/FormAdminMedicalEvent'
@@ -19,16 +18,15 @@ import Intro from './screen/Intro'
 import Message from './screen/Message'
 import Notification from './screen/Notification'
 import Params from './screen/Params'
-import { Switch, Route, withRouter } from 'react-router-dom'
-
-import './App.css'
-import Form from './screen/Form'
 import Thanks from './screen/Thanks'
-import { useState } from 'react'
 import AddSecu from './screen/AddSecu'
 import Waiting from './screen/Waiting'
 import ValidateSecu from './screen/ValidateSecu'
 import Congratulation from './screen/Congratulation'
+
+import { Switch, Route, withRouter } from 'react-router-dom'
+import { useState } from 'react'
+import './App.css'
 
 const App = withRouter(({ location }) => {
   const [visitor, setVisitor] = useState('')
@@ -41,7 +39,7 @@ const App = withRouter(({ location }) => {
         location.pathname !== '/validatesecu' &&
         location.pathname !== '/thanks' &&
         location.pathname !== '/subscribe' && <Header />}
-        {location.pathname.includes('/admin') && <NavAdmin />}
+      {location.pathname.includes('/admin') && <NavAdmin />}
       <Switch>
         <Route exact path='/' component={Intro} />
         <Route

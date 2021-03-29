@@ -173,4 +173,4 @@ const FormAdminMedicalEvent = () => {
   )
 }
 
-export default FormAdminMedicalEvent;
+export default FormAdminMedicalEvent
