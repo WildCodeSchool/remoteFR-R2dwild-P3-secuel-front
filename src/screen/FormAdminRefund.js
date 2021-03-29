@@ -8,26 +8,22 @@ const FormAdminRefund = () => {
   const [date, setDate] = useState('')
   const [institute, setInstitute] = useState('')
   const [medicalAct, setMedicalAct] = useState('')
-  
+
   const allPost = {
-    Amount_Refund : amount,
-    Date_Refund : date,
+    Amount_Refund: amount,
+    Date_Refund: date,
     Health_insurance_id_Mutuelle: institute,
     Medical_events_id_Actes: medicalAct
-    
   }
 
   const handleChange = e => {
-    
     e.target.name === 'amount'
-    ? setAmount(e.target.value)
-    : e.target.name === 'date'
-    ? setDate(e.target.value)
-    : e.target.name === 'institute'
-    ? setInstitute(e.target.value)
-    : e.target.name === 'medical-act'
-    ? setMedicalAct(e.target.value)
-      
+      ? setAmount(e.target.value)
+      : e.target.name === 'date'
+      ? setDate(e.target.value)
+      : e.target.name === 'institute'
+      ? setInstitute(e.target.value)
+      : setMedicalAct(e.target.value)
   }
 
   const submitForm = e => {
@@ -54,7 +50,7 @@ const FormAdminRefund = () => {
               Montant du remboursement<span> * </span>
             </label>
             <input
-              type='number' 
+              type='number'
               id='amount'
               name='amount'
               onChange={handleChange}
@@ -113,4 +109,4 @@ const FormAdminRefund = () => {
   )
 }
 
-export default FormAdminRefund ;
+export default FormAdminRefund

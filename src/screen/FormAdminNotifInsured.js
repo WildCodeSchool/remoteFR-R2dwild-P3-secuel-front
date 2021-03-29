@@ -15,11 +15,10 @@ const FormAdminNotifInsured = () => {
 
   const handleChange = e => {
     e.target.name === 'notif'
-    ? setNotif(e.target.value)
-    : e.target.name === 'insured'
-    ? setInsured(e.target.value)
-    : e.target.name === 'status'
-    ? setStatus(e.target.value)
+      ? setNotif(e.target.value)
+      : e.target.name === 'insured'
+      ? setInsured(e.target.value)
+      : setStatus(e.target.value)
   }
 
   const submitForm = e => {
@@ -92,4 +91,4 @@ const FormAdminNotifInsured = () => {
   )
 }
 
-export default FormAdminNotifInsured ;
+export default FormAdminNotifInsured
