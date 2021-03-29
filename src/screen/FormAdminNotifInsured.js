@@ -8,8 +8,8 @@ const FormAdminNotifInsured = () => {
   const [insured, setInsured] = useState('')
   const [status, setStatus] = useState('')
   const [message, setMessage] = useState(null)
-  Notifications_id_Notification: notif,
   const allPost = {
+    Notifications_id_Notification: notif,
     Insured_id_Insured: insured,
     Ni_status: status
   }
