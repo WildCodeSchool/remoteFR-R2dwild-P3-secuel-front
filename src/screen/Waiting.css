@@ -1,0 +1,30 @@
+.waiting{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #4472C4;
+  background: white;
+  width: 90%;
+  padding-bottom: 2rem;
+  border-radius:5px;
+  margin: auto;
+}
+.waiting span{
+  color: #4472C4;
+  font-weight: bold;
+}
+.waiting a{
+  width: 150px;
+  margin-top: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  background: #BE9B07;
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+}
+.profil{
+  box-shadow: 0 0 2px #BE9B07;
+  width: 15%;
+  border-radius: 50%;
+}

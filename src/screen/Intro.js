@@ -37,6 +37,14 @@ const Intro = () => {
           <Link to='/subscribe'>Je crée mon compte</Link>
         </div>
       </form>
+      <div className='connect'>
+        <Link to='/home'>
+          <button>Je me connecte</button>
+        </Link>
+        <p>
+          Nouvel utilisateur ? <Link to='subscribe'>cliquez ici</Link>
+        </p>
+      </div>
       <div className='why'>
         <p>Pourquoi choisir</p>
         <h1>ELAN ?</h1>
@@ -64,7 +72,7 @@ const Intro = () => {
         </p>
       </div>
       <div className='bottom'>
-        <p className='line'></p>
+        <p className='straight'></p>
         <p>
           Intéressé(e) ? Créez votre compte en quelques clics et surtout en
           moins de 3 minutes

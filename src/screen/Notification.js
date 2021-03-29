@@ -1,4 +1,5 @@
 import eventArray from '../data/fakejson/fakedata.json'
+import NotificationCompo from '../components/NotifCompo'
 
 import 'react-datepicker/dist/react-datepicker.css'
 import './Notification.css'
@@ -6,144 +7,65 @@ import './Notification.css'
 const Notification = () => {
   const statusNotif =
     eventArray.filter(
-      data => data['prénom'] === 'Lucas' && data['ENVOI DE NOTIFICATION']
+      data => data['prénom'] === 'Marie' && data['ENVOI DE NOTIFICATION']
     ) != ''
       ? eventArray.filter(
-          data => data['prénom'] === 'Lucas' && data['ENVOI DE NOTIFICATION']
+          data => data['prénom'] === 'Marie' && data['ENVOI DE NOTIFICATION']
         ).length
       : 'aucune'
 
   return (
-    // Body du composant
-    <div className='notifBody'>
-      <h1 id='titreNotif'>Vos Notifications</h1>
-      <h1>
-        <span style={{ color: 'blue' }}>
-          {eventArray[0]['prénom'] + '   ' + eventArray[0]['Nom']}
-        </span>
-      </h1>
+    <div>
+      <div className='notifBody'>
+        <h1 id='titreNotif'>Vos Notifications</h1>
+        <h1>
+          <span style={{ color: 'blue' }}>
+            {eventArray[1]['prénom'] + '   ' + eventArray[1]['Nom']}
+          </span>
+        </h1>
 
-      <div className='notifNumber'>
-        Vous avez {'   '}
-        {statusNotif}
-        {'   '}
-        notification(s)
-      </div>
-      {/* Légende des vignettes  */}
-      <ul className='legendRaw'>
-        <ul className='starNText'>
-          <li className='starGreen'></li>
-          <li className='textLegend'>Tout va bien !</li>
-        </ul>
-        <ul className='starNText'>
-          <li className='starYellow'></li>
-          <li className='textLegend'>
-            C&apos;est un peu long donc voyons ce qu&apos;il se passe
-          </li>
-        </ul>
-        <ul className='starNText'>
-          <li className='starRed'></li>
-          <li className='textLegend'>Il y a un petit soucis</li>
-        </ul>
-      </ul>
-      <section className='notifList'>
-        <section className='notifHeader'>
-          {/* Pour ajouter une icone de statut sur l'évenement  */}
-          {eventArray
-            .filter(data => data['prénom'] === 'Jean')
-            .filter(data => data['ENVOI DE NOTIFICATION']) != null ? (
-            <div className='starGreen'></div>
-          ) : (
-            <div className='starRed'></div>
-          )}
-
-          {/* Informations d'entête de la notification */}
-          <ul className='notifListHeader'>
-            <li>Notification du XX/XX/XXXX</li>
-            <li>
-              Vous avez reçu le paiement de{' '}
-              <span style={{ color: 'blue' }}>{eventArray[0]['Payeur']}</span>{' '}
-              le{' '}
-              <span style={{ color: 'blue' }}>
-                {eventArray[0]['date de remboursement']}
-              </span>{' '}
-              pour :
-              <span style={{ color: 'blue' }}>{eventArray[0]['prénom']}</span>
+        <div className='notifNumber'>
+          Vous avez {'   '}
+          {statusNotif}
+          {'   '}
+          notification(s)
+        </div>
+        {/* Légende des vignettes  */}
+        <ul className='legendRaw'>
+          <ul className='starNText'>
+            <li className='starGreen'></li>
+            <li className='textLegend'>Tout va bien !</li>
+          </ul>
+          <ul className='starNText'>
+            <li className='starYellow'></li>
+            <li className='textLegend'>
+              C&apos;est un peu long donc voyons ce qu&apos;il se passe
             </li>
           </ul>
-        </section>
-        {/* Tableau des données détaillées de remboursement(s) */}
-        <table>
-          <thead>
-            <tr>
-              <th>Date acte médical</th>
-              <th>Type acte</th>
-              <th>Nom professionnel de santé</th>
-              <th>Montant Payé par le bénéficiaire</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <span style={{ color: '#003049' }}>
-                  {eventArray[0]['date acte médicale']}
-                </span>
-              </td>
-              <td>
-                <span style={{ color: '#003049' }}>
-                  {eventArray[0]['Type acte']}
-                </span>
-              </td>
-              <td>
-                <span style={{ color: '#003049' }}>
-                  {eventArray[0]['Nom professionnel de santé']}
-                </span>
-              </td>
-              <td>
-                <span style={{ color: '#003049' }}>
-                  {eventArray[0]['Montant Payé']}€
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <table>
-          <thead>
-            <tr>
-              <th>Statut du dossier </th>
-              <th>Montant remboursé par la Sécurité Sociale</th>
-              <th>Date de remboursement Sécurité Sociale</th>
-              <th>Reste à charge</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <span style={{ color: '#003049' }}>
-                  {eventArray[0]['Statut du dossier']}
-                </span>
-              </td>
-              <td>
-                <span style={{ color: '#003049' }}>
-                  {eventArray[0]['Montant remboursé']}€
-                </span>
-              </td>
-              <td>
-                <span style={{ color: '#003049' }}>
-                  {eventArray[0]['date de remboursement']}
-                </span>
-              </td>
-              <td>
-                <span style={{ color: '#FCBF49', fontWeight: 'bolder' }}>
-                  {parseInt(eventArray[0]['Montant Payé']) -
-                    parseInt(eventArray[0]['Montant remboursé'])}
-                  €
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+          <ul className='starNText'>
+            <li className='starRed'></li>
+            <li className='textLegend'>Il y a un petit soucis</li>
+          </ul>
+        </ul>
+        <div>
+          {eventArray
+            .filter(data => data['prénom'] === 'Jean')
+            .map(notif => (
+              <NotificationCompo
+                acteType={notif['Type acte']}
+                firstName={notif['prénom']}
+                payer={notif['Payeur']}
+                notifDate={notif['date acte médicale']}
+                status={notif['Statut du dossier']}
+                incident={notif['RECUPERATION TYPE INCIDENT']}
+                actorName={notif['Nom professionnel de santé']}
+                key={notif.id}
+                id={notif.id}
+              />
+            ))}
+        </div>
+        {/* </div> */}
+      </div>
     </div>
   )
 }

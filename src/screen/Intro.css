@@ -13,10 +13,10 @@
 .login h1{
   font-weight: bold;
   color: #4472C4;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.login p{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.login input{
+  border:1px solid #BE9B07;
+  outline:none;
 }
 .why{
   width: 90%;
@@ -52,7 +52,15 @@
   padding: 0.6rem;
   border-radius: 0.6rem;
 }
-.connexion button{
+.straight{
+  margin-top: 3rem;
+  width: 85%;
+  border: 3px solid #BE9B07;
+  border-radius: 3px;
+}
+
+  .connexion button{
+  margin: 1rem;
   border: none;
   color: #ffffff;
   background: #4472C4;
@@ -75,6 +83,9 @@
   background: #4472C4;
   padding: 0.6rem;
   border-radius: 0.6rem;
+}
+.connect p, .connect a{
+  color: #BE9B07;
 }
 .subscribe{
   margin-bottom: 1rem;
