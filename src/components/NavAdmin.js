@@ -91,7 +91,7 @@ const NavAdmin = () => {
             className='adminLink'
             activeClassName='selected'
           >
-            Specialite 
+          Specialité
           </NavLink>
         </li>
       </ul>

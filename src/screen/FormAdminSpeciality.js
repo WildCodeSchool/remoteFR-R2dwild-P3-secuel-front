@@ -8,7 +8,7 @@ const FormAdminSpeciality = () => {
   const [message, setMessage] = useState(null)
 
   const spePost = {
-    specialiti_name: speciality
+    speciality_name: speciality
   }
 
   const handleChange = e => {
@@ -18,7 +18,7 @@ const FormAdminSpeciality = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('http://localhost:3000/notifications', spePost)
+      .post('http://localhost:3000/Specialities', spePost)
       .then(res => {
         setMessage(res.data)
       })
@@ -67,7 +67,7 @@ const FormAdminSpeciality = () => {
             <span> * </span> required.
           </p>
           <div className='formData'>
-            <input type='submit' value='Envoyer' />
+            <input className='getBtn' type='submit' value='Envoyer' />
           </div>
         </fieldset>
       </form>
