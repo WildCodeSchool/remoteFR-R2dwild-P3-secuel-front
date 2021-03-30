@@ -12,35 +12,30 @@ const Intro = () => {
     <div className='login'>
       <img src={logo} className='bigLogo' />
       <div>
-        <h1>Optez pour une vision claire</h1>
-        <p>de votre gestion de santé</p>
+        <h1 id='optezVision'>Optez pour une vision claire</h1>
+        <p id='claireSanté'>de votre gestion de santé</p>
       </div>
-      <h1>Se connecter</h1>
-      <form>
+      <p id='seConnecter'>Se connecter</p>
+      <form id='formConnexion'>
         <label>
           <p>Identifiant</p>
-          <input type='text' /*onChange={e => setUserName(e.target.value)}*/ />
+          <input
+            type='text'
+            id='inputIdentifiant'
+            placeholder='votremail@exemple.com'
+          />
         </label>
         <label>
           <p>Mot de passe</p>
-          <input
-            type='password' /*onChange={e => setPassword(e.target.value)}*/
-          />
+          <input type='password' placeholder='votremotdepasse' />
         </label>
         <div className='connexion'>
           <Link to='/home'>
             <button>Je me connecte</button>
           </Link>
         </div>
-        <div className='subscribe'>
-          <p>Pas de compte ?</p>
-          <Link to='/subscribe'>Je crée mon compte</Link>
-        </div>
       </form>
       <div className='connect'>
-        <Link to='/home'>
-          <button>Je me connecte</button>
-        </Link>
         <p>
           Nouvel utilisateur ? <Link to='subscribe'>cliquez ici</Link>
         </p>

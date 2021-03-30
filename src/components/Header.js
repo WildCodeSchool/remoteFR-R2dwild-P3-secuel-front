@@ -1,6 +1,5 @@
 import { Link, NavLink } from 'react-router-dom'
 import React from 'react'
-
 import './Header.css'
 
 import logo_elan from '../data/images/logo_elan.png'
@@ -8,10 +7,10 @@ import logo_elan from '../data/images/logo_elan.png'
 const Header = () => {
   return (
     <div className='header'>
+      <Link to='/home'>
+        <img src={logo_elan} alt='logo' className='logo' />
+      </Link>
       <div className='navIcon'>
-        <Link to='/home'>
-          <img src={logo_elan} alt='logo' className='logo' />
-        </Link>
         <NavLink to='/message' className='iconBtn' activeClassName='selected'>
           Messages
         </NavLink>

@@ -11,6 +11,9 @@ const Thanks = visitor => {
           votre profil est validé !
         </span>
       </p>
+      <p id='pointChargement'>
+        ••<span id='spanChargement'>•••</span>
+      </p>
       <p>
         Ajoutons maintenant vos comptes de <span>Sécurité Sociale</span> et de{' '}
         <span>Mutuelle</span>

@@ -43,7 +43,7 @@ const Form = visitor => {
 
   return (
     <div className='form'>
-      <img src={logo} className='bigLogo' />
+      <img src={logo} id='bigLogo' />
       <div className='formTitle'>
         <a href='Javascript:history.go(-1)'>
           <img src={FlecheGold} id='flechegold' />
@@ -52,7 +52,7 @@ const Form = visitor => {
       </div>
       <p id='connaissance'>Commençons par faire connaissance</p>
       <p id='pointChargement'>
-        •<span id='spanChargement'>•••</span>
+        •<span id='spanChargement'>••••</span>
       </p>
       <form onSubmit={submitForm}>
         <div className='form-data'>

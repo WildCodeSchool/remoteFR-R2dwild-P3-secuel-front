@@ -15,6 +15,9 @@ const ValidateSecu = () => {
       </p>
       <img />
       <p>
+        <p id='pointChargement'>
+          •••••<span id='spanChargement'></span>
+        </p>
         Indiquez <span>le code de sécurité</span> que vous avez reçu
       </p>
       <input type='text' required onChange={handleChange} />

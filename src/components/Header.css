@@ -5,33 +5,6 @@
   align-items: center;
   padding: 10px;
 }
-
-.logo {
-  height: 50px;
-  width: auto;
-}
-
-.logoUser {
-  height: 30px;
-  width: 30px;
-  padding-left: 5px;
-  padding-right: 5px;
-  justify-content: center;
-}
-
-.navIcon {
-  margin-bottom: 40px;
-  margin-left: 10px;
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-  font-size: 12px;
-  font-weight: bold;
-  padding-right:10px;
-}
-
 .iconNavbar {
   width: 25px;
 }
@@ -50,11 +23,47 @@
   color: #4472C4;
 }
 
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.logoUser {
+  height: 30px;
+  width: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  justify-content: center;
+}
+
+#menuBurger{
+  display:none;
+}
+
+.navIcon {
+  margin-bottom: 40px;
+  margin-left: 10px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  font-size: 12px;
+  font-weight: bold;
+  padding-right:10px;
+}
+
 .selected {
   border-bottom: 3px solid #4472C4;
 }
 
 @media (max-width: 600px) {
+  #menuBurger{
+    display:flex;
+    position: fixed;
+    justify-content: right;
+    z-index:9999
+  }
   .navIcon {
     margin-bottom: 40px;
     margin-left: 10px;
@@ -67,4 +76,8 @@
     font-size: 12px;
     font-weight: bold;
   }
+  .navIcon {
+    display: none;
+  }
+
 }

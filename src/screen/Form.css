@@ -1,6 +1,6 @@
 .form {
   width: 80%;
-  margin: 0 auto;
+  margin:auto;
   text-align: left;
   background:white;
   padding-bottom:15px;
@@ -15,9 +15,9 @@
   justify-content: space-around;
   align-items: center;
 }
-.bigLogo{
-  width: 20%;
-
+#bigLogo{
+  width: 10%;
+  margin-top: 10px;
 }
 
 .form form{
@@ -33,7 +33,7 @@
   justify-content: center;
   align-items: center;
   margin: 5px 0;
-  width:100%;
+  width:60%;
 }
 
 .form .form-data label {
@@ -98,7 +98,7 @@ span {
 }
 
 #pointChargement{
-  font-size:50px;
+  font-size:30px;
   margin:0;
   color:#BE9B07;
   display: flex;
@@ -119,11 +119,18 @@ margin-right:20px;
 
 @media (max-width: 600px) {
   .form {
-    width: 90%;
-    margin: 0 auto;
-    text-align: left;
-    background:white;
+  width: 80%;
+  margin: auto;
+  text-align: left;
+  background:white;
+  padding-bottom:15px;
+  border-radius:5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
+
   .form fieldset{
     padding-left:0;
     padding-top:0;
@@ -136,4 +143,15 @@ margin-right:20px;
     text-align: center;
     padding-top:10px;
   }
+  #btnEnvoyer{
+    width:70%;
+  }
+  #bigLogo{
+    width: 20%;
+    margin-top: 10px;
+  }
+  #flechegold{
+    margin-left:10px;
+    margin-right: 0;
+    }
 }

@@ -5,7 +5,7 @@ import Calendrier from './Calendrier.js'
 import './Welcome.css'
 
 const Welcome = () => {
-  const [showCal, setShowCal] = useState(true)
+  const [showCal, setShowCal] = useState(false)
   return (
     <div className='messageWelcome'>
       <h2 id='welcomeElan'>Bienvenue sur Elan</h2>

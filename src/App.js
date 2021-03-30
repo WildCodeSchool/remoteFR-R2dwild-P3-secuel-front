@@ -18,12 +18,27 @@ import AddSecu from './screen/AddSecu'
 import Waiting from './screen/Waiting'
 import ValidateSecu from './screen/ValidateSecu'
 import Congratulation from './screen/Congratulation'
+import Burger from './components/Burger'
 
 const App = withRouter(({ location }) => {
   const [visitor, setVisitor] = useState('')
   const [numSecu, setNumSecu] = useState('')
+  const [showBurger, setShowBurger] = useState(false)
   return (
     <div className='App'>
+      {location.pathname !== '/' && (
+        <>
+          {' '}
+          <button
+            className='navbarBurger'
+            onClick={() => setShowBurger(!showBurger)}
+            id='menuBurger'
+          >
+            <span className='burgerBar'></span>
+          </button>
+          {showBurger ? <Burger /> : null}
+        </>
+      )}
       {location.pathname !== '/' &&
         location.pathname !== '/addsecu' &&
         location.pathname !== '/waiting' &&
@@ -62,6 +77,7 @@ const App = withRouter(({ location }) => {
         <Route path='/event/:id' component={DetailEvent} />
         <Route exact path='/admin' component={Admin} />
         <Route path='/admin/medicalevent' component={FormAdminMedicalEvent} />
+        <Route path='/form' component={Form} />
       </Switch>
     </div>
   )
