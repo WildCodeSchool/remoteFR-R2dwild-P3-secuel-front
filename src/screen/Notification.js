@@ -1,8 +1,9 @@
-import eventArray from '../data/fakejson/fakedata.json'
 import NotificationCompo from '../components/NotifCompo'
 
-import 'react-datepicker/dist/react-datepicker.css'
 import './Notification.css'
+import 'react-datepicker/dist/react-datepicker.css'
+
+import eventArray from '../data/fakejson/fakedata.json'
 
 const Notification = () => {
   const statusNotif =

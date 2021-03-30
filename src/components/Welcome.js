@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import Calendrier from './Calendrier.js'
-import whiteCalendar from '../data/images/whiteCalendar.png'
 
 import './Welcome.css'
+
+import whiteCalendar from '../data/images/whiteCalendar.png'
 
 const Welcome = () => {
   const [showCal, setShowCal] = useState(true)

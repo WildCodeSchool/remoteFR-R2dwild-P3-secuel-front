@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import DatePicker from 'react-datepicker'
 import { addMonths } from 'date-fns'
+import DatePicker from 'react-datepicker'
 
 import './Calendrier.css'
 import 'react-datepicker/dist/react-datepicker.css'

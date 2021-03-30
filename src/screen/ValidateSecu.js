@@ -1,9 +1,9 @@
-import './ValidateSecu.css'
-
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
-const ValidateSecu = () => {
+import './ValidateSecu.css'
+
+const ValidateSecu = origin => {
   const [input, setInput] = useState('')
 
   const handleChange = e => {
@@ -22,7 +22,11 @@ const ValidateSecu = () => {
       {input === '' ? (
         <p className='forbidden'>Validez</p>
       ) : (
-        <Link to='/congratulation'>Validez</Link>
+        <Link
+          to={{ pathname: '/congratulation', props: origin.location.props }}
+        >
+          Validez
+        </Link>
       )}
       <p className='gold'>
         Vous n&apos;avez pas reçu le code de sécurité ?<br />

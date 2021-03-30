@@ -33,11 +33,11 @@
   text-decoration: none;
   width: 150px;
 }
-.validateSecu span{
-  color: #4472C4;
-  font-weight: bold;
-}
 .validateSecu input{
   border:1px solid #BE9B07;
   outline: none;
+}
+.validateSecu span{
+  color: #4472C4;
+  font-weight: bold;
 }

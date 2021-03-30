@@ -1,3 +1,6 @@
+.addsecu a {
+  color: #BE9B07;
+}
 .congratulation{
   align-items: center;
   background: white;
@@ -21,7 +24,4 @@
   margin-top: 2rem;
   padding: 0.6rem;
   text-decoration: none;
-}
-.addsecu a {
-  color: #BE9B07;
 }

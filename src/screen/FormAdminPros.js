@@ -2,9 +2,10 @@ import { useState } from 'react'
 import axios from 'axios'
 
 import './Form.css'
+
 const FormAdminPros = () => {
-  const [name, setName] = useState('')
   const [message, setMessage] = useState(null)
+  const [name, setName] = useState('')
 
   const allPost = {
     pro_name: name

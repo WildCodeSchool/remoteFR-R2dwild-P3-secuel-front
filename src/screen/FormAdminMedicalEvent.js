@@ -4,14 +4,14 @@ import axios from 'axios'
 import './Form.css'
 
 const FormAdminMedicalEvent = () => {
-  const [dateEvent, setDateEvent] = useState('')
   const [amountEvent, setAmountEvent] = useState('')
-  const [secuStatus, setSecuStatus] = useState('')
+  const [dateEvent, setDateEvent] = useState('')
   const [insuranceStatus, setInsuranceStatus] = useState('')
-  const [insuredIdInsured, setInsuredIdInsured] = useState('')
   const [insuredAccountIdCompte, setInsuredAccountIdCompte] = useState('')
+  const [insuredIdInsured, setInsuredIdInsured] = useState('')
   const [message, setMessage] = useState(null)
   const [prosProId, setProsProId] = useState('')
+  const [secuStatus, setSecuStatus] = useState('')
   const [specialitiesIdSpeciality, setSpecialitiesIdSpeciality] = useState('')
 
   const allMedicalE = {
@@ -58,13 +58,13 @@ const FormAdminMedicalEvent = () => {
   return (
     <div className='form'>
       {message ? <p>{message}</p> : null}
-      <h1>Ajout d'un acte</h1>
+      <h1>Ajout d&apos;un acte</h1>
       <form onSubmit={submitForm}>
         <fieldset>
           <legend>Informations Acte</legend>
           <div className='formData'>
             <label htmlFor='dateEvent'>
-              Date de l'acte<span> * </span>
+              Date de l&apos;acte<span> * </span>
             </label>
             <input
               type='date'
