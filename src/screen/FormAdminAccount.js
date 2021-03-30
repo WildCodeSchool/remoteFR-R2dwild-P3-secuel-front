@@ -1,8 +1,8 @@
-import axios from 'axios'
-import { useState } from 'react'
-
 import './Form.css'
+
+import axios from 'axios'
 import logo from '../data/images/logo_elan.png'
+import { useState } from 'react'
 
 const FormAdminAccount = () => {
   const [message, setMessage] = useState(null)
@@ -13,7 +13,7 @@ const FormAdminAccount = () => {
     Account_name: accountName,
     Login: login,
     Password: password
-  }
+    }
 
   const handleChange = e => {
     e.target.name === 'name'
@@ -23,6 +23,7 @@ const FormAdminAccount = () => {
       : setPassword(e.target.value)
   }
 
+  //Gère l'envoie des données
   const submitForm = e => {
     e.preventDefault()
     axios
@@ -34,6 +35,19 @@ const FormAdminAccount = () => {
       .catch(e => {
         console.error(e)
         setMessage(`Erreur lors de la création : ${e.message}`)
+      })
+  }
+
+  // gère l'affichage de la liste des données
+  const clickButton = e => {
+    e.preventDefault()
+    axios
+      .get('http://localhost:3000/Account')
+      .then(res => {
+        console.log(this.res)
+      })
+      .catch(e => {
+        console.error(e)
       })
   }
 
@@ -92,11 +106,12 @@ const FormAdminAccount = () => {
             />{' '}
           </fieldset>
         </div>
-        <p id='pObligatoire'>
+        <p id='Obligatoire'>
           <span> * </span> Obligatoire
         </p>
         <div className='formData'>
           <input id='btnEnvoyer' type='submit' value='Valider le profil' />
+          <button className='getBtn' type='button' onClick={clickButton}>Liste des Comptes</button>
         </div>
       </form>
     </div>
