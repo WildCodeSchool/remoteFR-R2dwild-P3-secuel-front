@@ -1,8 +1,8 @@
+import './Form.css'
+
 /* eslint-disable react/no-unescaped-entities */
 import axios from 'axios'
 import { useState } from 'react'
-
-import './Form.css'
 
 const FormAdminHealthInsurance = () => {
   const [name, setName] = useState('')
@@ -18,13 +18,26 @@ const FormAdminHealthInsurance = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/health_insurance', allPost)
+      .post('http://localhost:3000/health_insurance', allPost)
       .then(res => {
         setMessage(res.data)
       })
       .catch(e => {
         console.error(e)
         setMessage(`Erreur lors de la création : ${e.message}`)
+      })
+  }
+
+  const clickButton = e => {
+    // preventDefault evite le rechargement de la page
+    e.preventDefault()
+    axios
+      .get('http://localhost:3000/health_insurance')
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(e => {
+        console.error(e)
       })
   }
 
@@ -55,6 +68,7 @@ const FormAdminHealthInsurance = () => {
             <input type='submit' value='Envoyer' />
           </div>
         </fieldset>
+        <button className='getBtn' type='button' onClick={clickButton}>Liste des Assurances</button>
       </form>
     </div>
   )

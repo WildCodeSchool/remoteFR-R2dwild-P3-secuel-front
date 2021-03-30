@@ -1,6 +1,8 @@
+import './Form.css'
+
 import axios from 'axios'
 import { useState } from 'react'
-import './Form.css'
+
 const FormAdminPros = () => {
   const [name, setName] = useState('')
   const [message, setMessage] = useState(null)
@@ -16,13 +18,27 @@ const FormAdminPros = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/pros', allPost)
+      .post('http://localhost:3000/pros', allPost)
       .then(res => {
         setMessage(res.data)
       })
       .catch(e => {
         console.error(e)
         setMessage(`Erreur lors de la création : ${e.message}`)
+      })
+  }
+
+  // gère l'affichage de la liste des données
+  const clickButton = e => {
+    // preventDefault evite le rechargement de la page
+    e.preventDefault()
+    axios
+      .get('http://localhost:3000/pros')
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(e => {
+        console.error(e)
       })
   }
 
@@ -54,6 +70,7 @@ const FormAdminPros = () => {
           </div>
         </fieldset>
       </form>
+      <button className='getBtn' type='button' onClick={clickButton}>Liste des Profesionnels de santé</button>
     </div>
   )
 }

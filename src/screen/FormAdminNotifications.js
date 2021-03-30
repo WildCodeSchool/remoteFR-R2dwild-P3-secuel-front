@@ -1,7 +1,7 @@
+import './Form.css'
+
 import axios from 'axios'
 import { useState } from 'react'
-
-import './Form.css'
 
 const FormAdminNotifications = () => {
   const [type, setType] = useState('')
@@ -29,6 +29,19 @@ const FormAdminNotifications = () => {
       .catch(e => {
         console.error(e)
         setMessage(`Erreur lors de la création : ${e.message}`)
+      })
+  }
+
+  const clickButton = e => {
+    // preventDefault evite le rechargement de la page
+    e.preventDefault()
+    axios
+      .get('http://localhost:3000/notifications')
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(e => {
+        console.error(e)
       })
   }
 
@@ -73,6 +86,8 @@ const FormAdminNotifications = () => {
             <input type='submit' value='Envoyer' />
           </div>
         </fieldset>
+        <button className='getBtn' type='button' onClick={clickButton}>Liste des Notifications</button>
+
       </form>
     </div>
   )

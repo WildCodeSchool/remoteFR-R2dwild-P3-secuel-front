@@ -52,6 +52,13 @@ fieldset {
   border-radius: 1px;
 }
 
+.getBtn {
+  background:#BE9B07;
+  width:30%;
+  height:30px;
+  border-radius:5px;
+  color:white;
+}
 span {
   color: red;
 }

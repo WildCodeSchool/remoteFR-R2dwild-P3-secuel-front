@@ -40,11 +40,12 @@ const FormAdminAccount = () => {
 
   // gère l'affichage de la liste des données
   const clickButton = e => {
+    // preventDefault evite le rechargement de la page
     e.preventDefault()
     axios
       .get('http://localhost:3000/Account')
       .then(res => {
-        console.log(this.res)
+        console.log(res.data)
       })
       .catch(e => {
         console.error(e)

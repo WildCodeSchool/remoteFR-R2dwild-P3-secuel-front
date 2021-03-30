@@ -1,7 +1,7 @@
+import './Form.css'
+
 import axios from 'axios'
 import { useState } from 'react'
-
-import './Form.css'
 
 const FormAdminInsured = () => {
   const [lastName, setLastName] = useState('')
@@ -11,6 +11,7 @@ const FormAdminInsured = () => {
   const [tel, setTel] = useState('')
   const [password, setPassword] = useState('')
   const [birthDate, setBirthDate] = useState('')
+  const [accountId, setAccountId] = useState('')
   const [message, setMessage] = useState(null)
   const allPost = {
     lastname: lastName,
@@ -19,7 +20,8 @@ const FormAdminInsured = () => {
     email: email,
     tel: tel,
     Password: password,
-    birth_date: birthDate
+    birth_date: birthDate,
+    Account_id_Compte: accountId
   }
 
   const handleChange = e => {
@@ -35,19 +37,33 @@ const FormAdminInsured = () => {
       ? setTel(e.target.value)
       : e.target.name === 'password'
       ? setPassword(e.target.value)
-      : setBirthDate(e.target.value)
+      :e.target.name ==='birth-date'
+      ? setBirthDate(e.target.value)
+      :setAccountId(e.target.value)
   }
 
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/insured', allPost)
+      .post('http://localhost:3000/insured', allPost)
       .then(res => {
         setMessage(res.data)
       })
       .catch(e => {
         console.error(e)
         setMessage(`Erreur lors de la création : ${e.message}`)
+      })
+  }
+  const clickButton = e => {
+    // preventDefault evite le rechargement de la page
+    e.preventDefault()
+    axios
+      .get('http://localhost:3000/insured')
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(e => {
+        console.error(e)
       })
   }
 
@@ -149,7 +165,19 @@ const FormAdminInsured = () => {
               value={birthDate}
             />
           </div>
-
+          <div className='formData'>
+            <label htmlFor='account-id'>
+              Compte de rattachement<span> * </span>
+            </label>
+            <input
+              type='text'
+              id='account-id'
+              name='account-id'
+              onChange={handleChange}
+              required
+              value={accountId}
+            />
+          </div>
           <p>
             <span> * </span> required.
           </p>
@@ -157,6 +185,8 @@ const FormAdminInsured = () => {
             <input type='submit' value='Envoyer' />
           </div>
         </fieldset>
+        <button className='getBtn' type='button' onClick={clickButton}>Liste des Assurés</button>
+
       </form>
     </div>
   )

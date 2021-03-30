@@ -1,6 +1,8 @@
+import './Form.css'
+
 import axios from 'axios'
 import { useState } from 'react'
-import './Form.css'
+
 const FormAdminNotifInsured = () => {
   const [notif, setNotif] = useState('')
   const [insured, setInsured] = useState('')
@@ -30,6 +32,20 @@ const FormAdminNotifInsured = () => {
       .catch(e => {
         console.error(e)
         setMessage(`Erreur lors de la création : ${e.message}`)
+      })
+  }
+
+  // gère l'affichage de la liste des données
+  const clickButton = e => {
+    // preventDefault evite le rechargement de la page
+    e.preventDefault()
+    axios
+      .get('http://localhost:3000/notif_insured')
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(e => {
+        console.error(e)
       })
   }
 
@@ -87,6 +103,7 @@ const FormAdminNotifInsured = () => {
           </div>
         </fieldset>
       </form>
+      <button className='getBtn' type='button' onClick={clickButton}>Liste des notifications par assuré</button>
     </div>
   )
 }

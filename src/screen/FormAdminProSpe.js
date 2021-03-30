@@ -1,7 +1,7 @@
+import './Form.css'
+
 import axios from 'axios'
 import { useState } from 'react'
-
-import './Form.css'
 
 const FormAdminProSpe = () => {
   const [idSpe, setIdSpe] = useState('')
@@ -25,7 +25,7 @@ const FormAdminProSpe = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('http://localhost:3000/Account', allPost)
+      .post('http://localhost:3000/Pros_speciality', allPost)
       .then(res => {
         setMessage(res.data)
       })
@@ -34,7 +34,21 @@ const FormAdminProSpe = () => {
         setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }
-
+  
+      // gère l'affichage de la liste des données
+      const clickButton = e => {
+        // preventDefault evite le rechargement de la page
+        e.preventDefault()
+        axios
+          .get('http://localhost:3000//Pros_speciality')
+          .then(res => {
+            console.log(res.data)
+          })
+          .catch(e => {
+            console.error(e)
+          })
+        }
+        
   return (
     <div className='form'>
       <h1>Création d'un lien pro spé</h1>
@@ -89,6 +103,7 @@ const FormAdminProSpe = () => {
           </div>
         </fieldset>
       </form>
+      <button className='getBtn' type='button' onClick={clickButton}>Liste des Specialities des Pro</button>
     </div>
   )
 }

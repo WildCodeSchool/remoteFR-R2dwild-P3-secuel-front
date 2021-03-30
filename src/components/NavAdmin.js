@@ -85,6 +85,15 @@ const NavAdmin = () => {
             Remboursement
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to='/admin/FormAdminSpeciality'
+            className='adminLink'
+            activeClassName='selected'
+          >
+            Specialite 
+          </NavLink>
+        </li>
       </ul>
     </div>
   )

@@ -1,7 +1,8 @@
+import './Form.css'
+
 /* eslint-disable react/no-unescaped-entities */
 import axios from 'axios'
 import { useState } from 'react'
-import './Form.css'
 
 const FormAdminMedicalEvent = () => {
   const [dateEvent, setDateEvent] = useState('')
@@ -45,7 +46,7 @@ const FormAdminMedicalEvent = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/medical_events', allMedicalE)
+      .post('http://localhost:3000/medical_events', allMedicalE)
       .then(res => {
         setMessage(res.data)
       })
@@ -55,6 +56,19 @@ const FormAdminMedicalEvent = () => {
       })
   }
 
+
+const clickButton = e => {
+  // preventDefault evite le rechargement de la page
+  e.preventDefault()
+  axios
+    .get('http://localhost:3000/medical_events')
+    .then(res => {
+      console.log(res.data)
+    })
+    .catch(e => {
+      console.error(e)
+    })
+}
   return (
     <div className='form'>
       <h1>Ajout d'un acte</h1>
@@ -169,6 +183,7 @@ const FormAdminMedicalEvent = () => {
             <input type='submit' value='Envoyer' />
           </div>
         </fieldset>
+        <button className='getBtn' type='button' onClick={clickButton}>Liste des Actes médicaux</button>
       </form>
     </div>
   )

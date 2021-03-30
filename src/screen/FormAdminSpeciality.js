@@ -1,7 +1,7 @@
+import './Form.css'
+
 import axios from 'axios'
 import { useState } from 'react'
-
-import './Form.css'
 
 const FormAdminSpeciality = () => {
   const [speciality, setSpeciality] = useState('')
@@ -28,6 +28,20 @@ const FormAdminSpeciality = () => {
       })
   }
 
+    // gère l'affichage de la liste des données
+    const clickButton = e => {
+    // preventDefault evite le rechargement de la page
+    e.preventDefault()
+    axios
+      .get('http://localhost:3000/Specialities')
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(e => {
+        console.error(e)
+      })
+    }
+    
   return (
     <div className='form'>
       <h1>Création d'une spécialité</h1>
@@ -57,6 +71,7 @@ const FormAdminSpeciality = () => {
           </div>
         </fieldset>
       </form>
+      <button className='getBtn' type='button' onClick={clickButton}>Liste des Specialities</button>
     </div>
   )
 }
