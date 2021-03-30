@@ -24,7 +24,6 @@ const Params = () => {
         </ul>
         <button id='btnAppliquerListe'>Appliquer</button>
       </div>
-
       <p id='titreSupprimerCompte'>Vos comptes</p>
       <div className='divVosCompte'>
         <ul className='vosComptes'>
@@ -51,4 +50,5 @@ const Params = () => {
     </div>
   )
 }
+
 export default Params
