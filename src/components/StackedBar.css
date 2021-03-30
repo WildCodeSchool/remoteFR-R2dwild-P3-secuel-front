@@ -1,29 +1,27 @@
+.analyse{
+  height: 500px
+}
 .bar{
-  margin-top: 15px;
-  padding: 10px;
+  align-items: center;
   background-color: white;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 90%;
   height: 400px;
-  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  padding: 10px;
   position: relative;
-}
-
-.title{
-  position: relative;
-  margin: 0;
-  color:#003049;
-  font-weight: bolder;
-}
-
-.analyse{
-  height: 500px
+  width: 90%;
 }
 .label {
+  left:0;
   position: absolute;
   top: 0;
-  left:0;
+}
+.title{
+  color:#003049;
+  font-weight: bolder;
+  margin: 0;
+  position: relative;
 }

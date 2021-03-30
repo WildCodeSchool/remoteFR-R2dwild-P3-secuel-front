@@ -4,9 +4,9 @@ import axios from 'axios'
 import './Form.css'
 
 const FormAdminNotifications = () => {
-  const [type, setType] = useState('')
-  const [notif, setNotif] = useState('')
   const [message, setMessage] = useState(null)
+  const [notif, setNotif] = useState('')
+  const [type, setType] = useState('')
 
   const notifPost = {
     type: type,

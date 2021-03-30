@@ -1,9 +1,11 @@
-.link{
-  text-decoration:none;
-  color:#707070;
-  padding-bottom: 15px;
-}
-
 .infoMiniEvents{
   color:#BE9B07;
+}
+.link{
+  color:#707070;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+  text-decoration:none;
+  width: 90%;
 }

@@ -1,11 +1,11 @@
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
 
 import './Form.css'
 
 const FormAdminSpeciality = () => {
-  const [speciality, setSpeciality] = useState('')
   const [message, setMessage] = useState(null)
+  const [speciality, setSpeciality] = useState('')
 
   const spePost = {
     specialiti_name: speciality
@@ -29,7 +29,7 @@ const FormAdminSpeciality = () => {
 
   return (
     <div className='form'>
-      <h1>Création d'une spécialité</h1>
+      <h1>Création d&apos;une spécialité</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>

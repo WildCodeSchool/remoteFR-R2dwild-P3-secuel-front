@@ -1,6 +1,7 @@
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { useState } from 'react'
 
+import AddMutu from './screen/AddMutu'
 import AddSecu from './screen/AddSecu'
 import Analyse from './screen/Analyse'
 import Congratulation from './screen/Congratulation'
@@ -30,16 +31,18 @@ import Waiting from './screen/Waiting'
 import './App.css'
 
 const App = withRouter(({ location }) => {
-  const [visitor, setVisitor] = useState('')
+  const [numMutu, setNumMutu] = useState('')
   const [numSecu, setNumSecu] = useState('')
+  const [visitor, setVisitor] = useState('')
   return (
     <div className='App'>
       {location.pathname !== '/' &&
+        location.pathname !== '/addmutu' &&
         location.pathname !== '/addsecu' &&
-        location.pathname !== '/waiting' &&
-        location.pathname !== '/validatesecu' &&
+        location.pathname !== '/subscribe' &&
         location.pathname !== '/thanks' &&
-        location.pathname !== '/subscribe' && <Header />}
+        location.pathname !== '/validatesecu' &&
+        location.pathname !== '/waiting' && <Header />}
       {location.pathname.includes('/admin') && <NavAdmin />}
       <Switch>
         <Route exact path='/' component={Intro} />
@@ -52,6 +55,12 @@ const App = withRouter(({ location }) => {
           render={props => <Form {...props} setVisitor={setVisitor} />}
         />
         <Route
+          path='/addmutu'
+          render={props => (
+            <AddMutu {...props} visitor={visitor} setNumMutu={setNumMutu} />
+          )}
+        />
+        <Route
           path='/addsecu'
           render={props => (
             <AddSecu {...props} visitor={visitor} setSecu={setNumSecu} />
@@ -60,7 +69,12 @@ const App = withRouter(({ location }) => {
         <Route
           path='/congratulation'
           render={props => (
-            <Congratulation {...props} visitor={visitor} numSecu={numSecu} />
+            <Congratulation
+              {...props}
+              visitor={visitor}
+              numSecu={numSecu}
+              numMutu={numMutu}
+            />
           )}
         />
         <Route path='/waiting' component={Waiting} />
