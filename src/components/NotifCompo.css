@@ -2,26 +2,23 @@
   background-color:white;
   border-left: 10px solid rgb(38, 197, 38);
   height: auto;
-  justify-content: center;
   margin: 5px;
   padding: 5px;
-  width: 100%;
+  width: 90%;
 }
 .barRed {
   background-color:white;
   border-left: 10px solid rgb(212, 20, 20);
   height: auto;
-  justify-content: center;
   margin: 5px;
   padding: 5px;
-  width: 100%;
+  width: 90%;
 }
 .barYellow {
   background-color:white;
   border-left: 10px solid rgb(248, 143, 6);
   height: auto;
-  justify-content: center;
   margin: 5px;
   padding: 5px;
-  width: 100%;
+  width: 90%;
 }

@@ -11,8 +11,8 @@ const Congratulation = visitor => {
       <p>
         {visitor.numMutu === '' ? (
           <span>
-            Le numéro de Sécurité Sociale {visitor.numSecu} est rattraché à
-            votre profil
+            Le numéro de Sécurité Sociale {visitor.numSecu} est rattaché à votre
+            profil
           </span>
         ) : (
           <span>
