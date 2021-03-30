@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import profil from '../data/images/profil.jpg'
+import profil from '../data/images/profil.png'
 
 import './Waiting.css'
 
@@ -15,7 +15,7 @@ const Waiting = origin => {
       </p>
       <img src={profil} alt='avatar' className='profil' />
       <p>
-        <span>Un code de sécurité</span> sera envoyé pour confirmer
+        Un <span>code de sécurité</span> sera envoyé pour confirmer
         l&apos;accord d&apos;utiliser ce numéro
       </p>
       <Link to={{ pathname: '/validatesecu', props: origin.location.props }}>
