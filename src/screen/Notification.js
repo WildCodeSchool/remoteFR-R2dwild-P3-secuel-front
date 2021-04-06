@@ -1,10 +1,42 @@
 import NotificationCompo from '../components/NotifCompo'
+import { useState } from 'react'
+import axios from 'axios'
 
 import './Notification.css'
 
 import eventArray from '../data/fakejson/fakedata.json'
 
 const Notification = () => {
+  const [acteType, setActeType] = useState('')
+  const [actorName, setActorName] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [incident, setIncident] = useState('')
+  const [message, setMessage] = useState('')
+  const [notifDate, setNotifDate] = useState('')
+  const [payer, setPayer] = useState('')
+  const [status, setStatus] = useState('')
+  const allPost = {
+    acteType: acteType,
+    firstName: firstName,
+    payer: payer,
+    notifDate: notifDate,
+    status: status,
+    incident: incident,
+    actorName: actorName
+  }
+
+  const eventData = e => {
+    e.preventDefault()
+    axios
+      .get('http://localhost:3000/Account', allPost)
+      .then(res => {
+        setMessage(res.data)
+      })
+      .catch(e => {
+        setMessage(`Erreur lors de la création : ${e.message}`)
+      })
+  }
+
   const statusNotif =
     eventArray.filter(
       data => data['prénom'] === 'Marie' && data['ENVOI DE NOTIFICATION']
