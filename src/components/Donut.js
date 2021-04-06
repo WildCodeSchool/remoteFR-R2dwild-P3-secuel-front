@@ -1,7 +1,6 @@
 import { Doughnut } from 'react-chartjs-2'
-import 'chartjs-plugin-datalabels'
-import React from 'react'
 
+import 'chartjs-plugin-datalabels'
 import './Donut.css'
 
 import eventArray from '../data/fakejson/fakedata.json'
@@ -58,7 +57,6 @@ export default function Donut(label) {
         options={{
           animation: { animateScale: true },
           responsive: true,
-
           legend: {
             position: 'bottom',
             labels: {

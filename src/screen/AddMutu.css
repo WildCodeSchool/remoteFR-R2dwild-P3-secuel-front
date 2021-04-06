@@ -1,4 +1,4 @@
-.addSecu{
+.addMutu{
   align-items: center;
   background: white;
   border-radius:5px;
@@ -9,7 +9,7 @@
   padding-bottom: 2rem;
   width: 90%;
 }
-.addSecu a{
+.addMutu a{
   background: #BE9B07;
   border-radius: 0.6rem;
   color: #ffffff;
@@ -19,19 +19,15 @@
   text-decoration: none;
   width:150px;
 }
-.addSecu fieldset{
-  width: 80%;
-}
-.addSecu input{
+.addMutu input{
   border:1px solid #BE9B07;
   margin-top:5px;
   outline:none;
-  cursor: pointer;
 }
-.addSecu label, .addSecu input{
+.addMutu label, .addMutu input{
   color: #BE9B07;
 }
-.addSecu span{
+.addMutu span{
   color: #4472C4;
   font-weight: bold;
 }

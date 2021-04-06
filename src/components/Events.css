@@ -1,25 +1,13 @@
-.events{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-  height: auto;
-  padding-bottom:20px;
-  
-}
 .card {
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 80%;
-  border-radius: 10px;
-  background-color: white;
-  padding: 1.3rem;
-  z-index: 55555;
   flex-wrap:wrap;
-
+  justify-content: space-between;
+  padding: 1.3rem;
+  width: 100%;
 }
 .card p {
   margin: 0px;
@@ -28,17 +16,27 @@
 .card span {
   white-space: nowrap;
 }
+.events{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: center;
+  padding-bottom:20px;
+  width: 100%; 
+}
+.hidden{
+  max-height: 150px;
+}
 #insured1,#insured2,#insured3,#insured4{
+  align-items: center;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  width: 40%;
   margin: 10px;
-  border-radius: 20px;
-  /* overflow: scroll; */
   min-height: 0;
-  /* max-height: 300px; */
+  width: 40%;
 }
 #insured1{
   background-color: #219EBC;
@@ -52,51 +50,38 @@
 #insured4{
   background-color: #7EA8BE;
 }
-.link{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.notificationICon {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-}
-
-.notificationICon .badge {
-  position: absolute;
-  animation-iteration-count: 3;
-  justify-content: center;
-  top: -10px;
-  left: 91%;
-  height: 30px;
-  width: 30px;
-  display: flex;
-  align-items: center;
-  border-radius: 50%;
-  background: #D62828;
-  border: 2px solid #A3BDCE ;
-  color: white;
-}
-
-
 .nomAssure{
   font-weight: 300;
 }
-
+.notificationICon {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+.notificationICon .badge {
+  align-items: center;
+  animation-iteration-count: 3;
+  background: #D62828;
+  border: 2px solid #A3BDCE ;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  left: 91%;
+  position: absolute;
+  top: -10px;
+  width: 30px;
+}
 @media (max-width: 600px) {
   #insured1,#insured2,#insured3,#insured4{
+    align-items: center;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    width: 80%;
     margin: 10px;
-    border-radius: 20px;
     min-height: 0;
-}
-}
-.hidden{
-  max-height: 150px;
+    width: 80%;
+  }
 }

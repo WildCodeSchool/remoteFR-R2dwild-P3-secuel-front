@@ -1,16 +1,16 @@
-.message table,td,th{
-  padding: 5px;
-  border-collapse: collapse;
-  border: 1px solid lightgrey;
-  font-size: normal;
-  text-align: left;
-}
-.message{
-  width:90%;
+#bodyTable{
+  background: white;
 }
 #headTable{
   background:#f5f7f7;
 }
-#bodyTable{
-  background: white;
+.message{
+  width:90%;
+}
+.message table,td,th{
+  font-size: normal;
+  border: 1px solid lightgrey;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: left;
 }

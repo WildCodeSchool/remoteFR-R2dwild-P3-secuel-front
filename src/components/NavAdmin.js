@@ -6,29 +6,83 @@ const NavAdmin = () => {
       <ul>
         <li>
           <NavLink
-            to='/message'
+            to='/admin/Form'
             className='adminLink'
             activeClassName='selected'
           >
-            Gérer assuré
+            Compte
           </NavLink>
         </li>
         <li>
           <NavLink
-            to='/notification'
+            to='/admin/FormAdminHealthInsurance'
             className='adminLink'
             activeClassName='selected'
           >
-            Gérer Notifications
+            Assurances
           </NavLink>
         </li>
         <li>
           <NavLink
-            to='/analyse'
+            to='/admin/FormAdminInsured'
             className='adminLink'
             activeClassName='selected'
           >
-            Gérer acte médical
+            Assuré -e-s
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to='/admin/FormAdminMedicalEvent '
+            className='adminLink'
+            activeClassName='selected'
+          >
+            Acte médical
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to='/admin/FormAdminNotifications'
+            className='adminLink'
+            activeClassName='selected'
+          >
+            Notifications
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to='/admin/FormAdminNotifInsured'
+            className='adminLink'
+            activeClassName='selected'
+          >
+            Notifications par assuré-e
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to='/admin/FormAdminPros'
+            className='adminLink'
+            activeClassName='selected'
+          >
+            Professionnels
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to='/admin/FormAdminProSpe'
+            className='adminLink'
+            activeClassName='selected'
+          >
+            Spécialité par Professionnel
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to='/admin/FormAdminRefund'
+            className='adminLink'
+            activeClassName='selected'
+          >
+            Remboursement
           </NavLink>
         </li>
       </ul>

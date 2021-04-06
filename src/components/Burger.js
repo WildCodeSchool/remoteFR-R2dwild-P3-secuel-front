@@ -6,9 +6,6 @@ import './Burger.css'
 const Burger = () => {
   return (
     <div className='burger'>
-      <button className='navbarBurger'>
-        <span className='burgerBar'></span>
-      </button>
       <ul className='pagesBurger'>
         <li className='liLink'>
           <Link to='/home' className='navlink'>

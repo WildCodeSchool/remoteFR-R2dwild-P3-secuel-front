@@ -1,157 +1,133 @@
-.form {
-  width: 80%;
-  margin:auto;
-  text-align: left;
-  background:white;
-  padding-bottom:15px;
-  border-radius:5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.formTitle{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
 #bigLogo{
-  width: 10%;
-  margin-top: 10px;
-}
-
-.form form{
-  width:100%;
-}
-
-.form h1 {
-  text-align: center;
-}
-
-.form .form-data {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5px 0;
-  width:60%;
-}
-
-.form .form-data label {
-  display: inline-block;
-  width: 110px;
-  margin-right: 10px;
-  text-align: center;
-}
-
-.form .form-data input:not([type="submit"]), textarea {
-  flex-grow: 1;
-  border-radius: 5px;
-}
-
-fieldset {
-  border-radius: 1px;
-}
-
-span {
-  color: red;
-}
-
-.form form{
-  background:white;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
-.form input{
-  width:100%;
-  height: 100%;
-  border:none;
-  outline:none;
-}
-.form fieldset{
-  padding-left:0;
-  padding-top:0;
-  padding-bottom:0;
-  padding-right:6px;
-  width:100%;
-  border:1px solid #BE9B07;
+  width: 20%;
 }
 #btnEnvoyer{
   background:#BE9B07;
-  width:30%;
-  height:30px;
   border-radius:5px;
   color:white;
-}
-
-#titreForm{
-  font-weight: bolder;
-}
-.form legend{
-  font-size:12px;
-}
-#pObligatoire{
-  font-size:12px;
-  text-align:right;
-}
-
-#pointChargement{
-  font-size:30px;
-  margin:0;
-  color:#BE9B07;
-  display: flex;
-  justify-content: center;
-  padding:0;
-}
-
-#spanChargement{
-  color:#e2e4e8;
+  height:30px;
+  width:auto;
 }
 #connaissance{
   display:flex;
   justify-content: center;
 }
-#flechegold{
-margin-right:20px;
+fieldset {
+  border-radius: 1px;
 }
-
-@media (max-width: 600px) {
-  .form {
-  width: 80%;
-  margin: auto;
-  text-align: left;
+#flechegold{
+  margin-right:20px;
+}
+.form {
   background:white;
-  padding-bottom:15px;
   border-radius:5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin:auto;
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom:15px;
+  text-align: left;
+  width: 80%;
+}
+.form fieldset{
+  border:1px solid #BE9B07;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:6px;
+  padding-top:0;
+  width:100%;
+}
+.form form{
   align-items: center;
+  background:white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:100%;
+}  
+.form .formData {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+  width:60%;
+}
+.form .formData input:not([type="submit"]), textarea {
+  border-radius: 5px;
+  flex-grow: 1;
+}
+.form .formData label {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+  width: 110px;
+}
+.form h1 {
+  text-align: center;
+}
+.form input{
+  border:none;
+  height: 100%;
+  outline:none;
+  width:100%;
+}
+.form legend{
+  font-size:12px;
+}
+.formTitle{
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+#pObligatoire{
+  font-size:12px;
+  text-align:right;
+}
+#pointChargement{
+  color:#BE9B07;
+  display: flex;
+  font-size:50px;
+  justify-content: center;
+  margin:0;
+  padding:0;
+}
+span {
+  color: red;
+}
+#spanChargement{
+  color:#e2e4e8;
+}
+#titreForm{
+  font-weight: bolder;
+}
+
+@media (max-width: 600px) {
+  .form {
+    align-items: center;
+    background:white;
+    border-radius:5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding-bottom:15px;
+    text-align: left;
+    width: 80%;
   }
 
   .form fieldset{
-    padding-left:0;
-    padding-top:0;
-    padding-bottom:0;
-    padding-right:6px;
     border:1px solid #707070;
+    padding-bottom:0;
+    padding-left:0;
+    padding-right:6px;
+    padding-top:0;
     width:80%;
   }
   .form h1{
     text-align: center;
     padding-top:10px;
   }
-  #btnEnvoyer{
-    width:70%;
-  }
-  #bigLogo{
-    width: 20%;
-    margin-top: 10px;
-  }
-  #flechegold{
-    margin-left:10px;
-    margin-right: 0;
-    }
 }

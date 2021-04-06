@@ -56,7 +56,7 @@ const AddSecu = visitor => {
       {numSecu === '' || idSecu === '' ? (
         <p className='forbidden'>Valider</p>
       ) : (
-        <Link to='/waiting'>Valider</Link>
+        <Link to={{ pathname: '/waiting', props: 'secu' }}>Valider</Link>
       )}
     </div>
   )

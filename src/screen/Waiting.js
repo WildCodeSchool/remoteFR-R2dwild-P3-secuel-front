@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 
-import './Waiting.css'
-import profil from '../data/images/profil.jpg'
+import profil from '../data/images/profil.png'
 
-const Waiting = () => {
+import './Waiting.css'
+
+const Waiting = origin => {
   return (
     <div className='waiting'>
       <p>
@@ -12,16 +13,26 @@ const Waiting = () => {
           numéro
         </span>
       </p>
-      <p id='pointChargement'>
-        ••••<span id='spanChargement'>•</span>
-      </p>
+      {origin.location.props ? (
+        <p id='pointChargement'>
+          ••••<span id='spanChargement'>•</span>
+        </p>
+      ) : (
+        <p id='pointChargement'>
+          ••<span id='spanChargement'>•</span>
+        </p>
+      )}
       <img src={profil} alt='avatar' className='profil' />
       <p>
-        <span>Un code de sécurité</span> sera envoyé pour confirmer
+        Un <span>code de sécurité</span> sera envoyé pour confirmer
         l&apos;accord d&apos;utiliser ce numéro
       </p>
-      <Link to='/validatesecu'>Envoi par SMS</Link>
-      <Link to='/validatesecu'>Envoi par Email</Link>
+      <Link to={{ pathname: '/validatesecu', props: origin.location.props }}>
+        Envoi par SMS
+      </Link>
+      <Link to={{ pathname: '/validatesecu', props: origin.location.props }}>
+        Envoi par Email
+      </Link>
     </div>
   )
 }

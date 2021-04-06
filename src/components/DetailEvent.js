@@ -1,9 +1,9 @@
-import Donut from './Donut.js'
 import { Link } from 'react-router-dom'
+import acte from '../data/fakejson/fakedata.json'
+import Donut from './Donut.js'
 
 import './DetailEvent.css'
 
-import acte from '../data/fakejson/fakedata.json'
 import fleche from '../data/images/fleche.png'
 
 const DetailEvent = Acte => {

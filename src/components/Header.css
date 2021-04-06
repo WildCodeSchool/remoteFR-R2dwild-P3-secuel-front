@@ -1,62 +1,53 @@
 .header {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
   align-items: center;
+  display: flex;
+  justify-content: space-between;
   padding: 10px;
+  width: 95%;
+}
+.iconBtn {
+  align-items: center;
+  background: none;
+  border: none;
+  color: #4472C4;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  overflow: hidden;
+  padding-bottom: 5px;
+  text-decoration: none;
+  width: auto;
+}
+.navIcon {
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+  font-weight: bold;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding-right:10px;
+  width: 80%;
 }
 .iconNavbar {
   width: 25px;
 }
-
-.iconBtn {
-  padding-bottom: 5px;
-  overflow: hidden;
-  border: none;
-  background: none;
-  display: flex;
-  width: auto;
-  align-items: center;
-  outline: none;
-  cursor: pointer;
-  text-decoration: none;
-  color: #4472C4;
-}
-
 .logo {
   height: 50px;
   width: auto;
 }
-
 .logoUser {
   height: 30px;
-  width: 30px;
+  justify-content: center;
   padding-left: 5px;
   padding-right: 5px;
-  justify-content: center;
-}
-
-#menuBurger{
-  display:none;
-}
-
-.navIcon {
-  margin-bottom: 40px;
-  margin-left: 10px;
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 40px;
-  font-size: 12px;
-  font-weight: bold;
-  padding-right:10px;
+  width: 30px;
 }
 
 .selected {
   border-bottom: 3px solid #4472C4;
 }
-
 @media (max-width: 600px) {
   #menuBurger{
     display:flex;
@@ -65,19 +56,15 @@
     z-index:9999
   }
   .navIcon {
-    margin-bottom: 40px;
-    margin-left: 10px;
-    width: 95%;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
     font-size: 12px;
     font-weight: bold;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 95%;
   }
-  .navIcon {
-    display: none;
-  }
-
 }

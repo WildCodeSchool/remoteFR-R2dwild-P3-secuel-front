@@ -1,33 +1,30 @@
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
 
-import './FormAdminRefund.css'
+import './Form.css'
 
 const FormAdminRefund = () => {
   const [amount, setAmount] = useState('')
   const [date, setDate] = useState('')
   const [institute, setInstitute] = useState('')
   const [medicalAct, setMedicalAct] = useState('')
-  
+  const [message, setMessage] = useState(null)
+
   const allPost = {
-    Amount_Refund : amount,
-    Date_Refund : date,
+    Amount_Refund: amount,
+    Date_Refund: date,
     Health_insurance_id_Mutuelle: institute,
     Medical_events_id_Actes: medicalAct
-    
   }
 
   const handleChange = e => {
-    
     e.target.name === 'amount'
-    ? setAmount(e.target.value)
-    : e.target.name === 'date'
-    ? setDate(e.target.value)
-    : e.target.name === 'institute'
-    ? setInstitute(e.target.value)
-    : e.target.name === 'medical-act'
-    ? setMedicalAct(e.target.value)
-      
+      ? setAmount(e.target.value)
+      : e.target.name === 'date'
+      ? setDate(e.target.value)
+      : e.target.name === 'institute'
+      ? setInstitute(e.target.value)
+      : setMedicalAct(e.target.value)
   }
 
   const submitForm = e => {
@@ -35,26 +32,26 @@ const FormAdminRefund = () => {
     axios
       .post('localhost:3000/refund', allPost)
       .then(res => {
-        alert(`${res.data} !`)
+        setMessage(res.data)
       })
       .catch(e => {
-        console.error(e)
-        alert(`Erreur lors de la création : ${e.message}`)
+        setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }
 
   return (
     <div className='form'>
-      <h1>Création d'un Remboursement</h1>
+      <h1>Création d&apos;un Remboursement</h1>
+      {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
           <legend>information sur le Remboursement : </legend>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='amount'>
               Montant du remboursement<span> * </span>
             </label>
             <input
-              type='number' 
+              type='number'
               id='amount'
               name='amount'
               onChange={handleChange}
@@ -62,7 +59,7 @@ const FormAdminRefund = () => {
               value={amount}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='date'>
               Date du remboursement<span> * </span>
             </label>
@@ -75,7 +72,7 @@ const FormAdminRefund = () => {
               value={date}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='institute'>
               Institut auteur du remboursement<span> * </span>
             </label>
@@ -88,7 +85,7 @@ const FormAdminRefund = () => {
               value={institute}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='medical-act'>
               Acte médical concerné<span> * </span>
             </label>
@@ -104,7 +101,7 @@ const FormAdminRefund = () => {
           <p>
             <span> * </span> required.
           </p>
-          <div className='form-data'>
+          <div className='formData'>
             <input type='submit' value='Envoyer' />
           </div>
         </fieldset>
@@ -113,4 +110,4 @@ const FormAdminRefund = () => {
   )
 }
 
-export default FormAdminRefund ;
+export default FormAdminRefund

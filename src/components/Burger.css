@@ -1,7 +1,3 @@
-.pagesBurger{
-  display:none;
-}
-@media (max-width: 600px){
   .burger{
     display: flex;
     flex-direction: column;
@@ -14,7 +10,7 @@
     justify-content: center;
     align-items:center;
     align-self: flex-end;
-    z-index:99;
+    z-index: 99;
   } 
 
   .burgerBar,
@@ -28,18 +24,17 @@
     background:white;
     border : none;
   }
-
+  .burgerBar::after{
+    transform: translateY(12px);
+  }
+  .burgerBar::before{
+    transform: translateY(-12px);
+  }
   .burgerBar::before,
   .burgerBar::after{
     content:"";
     position: absolute;
     left:0;
-  }
-  .burgerBar::before{
-    transform: translateY(-12px);
-  }
-  .burgerBar::after{
-    transform: translateY(12px);
   }
  .liLink::after{
     content:'';
@@ -52,11 +47,6 @@
   .liLink:last-child::after{
     display:none;
   }
-  .navlink{
-    display:block;
-    padding:1.5rem;
-  }
- 
   .navbarBurger{
     border:none;
     background:none;
@@ -65,7 +55,10 @@
     top:2rem;
     right:1rem;
   }
-
+  .navlink{
+    display:block;
+    padding:1.5rem;
+  }
   .pagesBurger{
     display:flex;
     align-items: center;
@@ -78,6 +71,3 @@
     text-decoration:none; 
     color :white;
   }
- 
- 
-}

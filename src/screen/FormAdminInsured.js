@@ -1,16 +1,17 @@
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
 
 import './Form.css'
 
 const FormAdminInsured = () => {
-  const [lastName, setLastName] = useState('')
-  const [firstName, setFirstName] = useState('')
-  const [numSecu, setNumSecu] = useState('')
-  const [email, setEmail] = useState('')
-  const [tel, setTel] = useState('')
-  const [password, setPassword] = useState('')
   const [birthDate, setBirthDate] = useState('')
+  const [email, setEmail] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [message, setMessage] = useState(null)
+  const [numSecu, setNumSecu] = useState('')
+  const [password, setPassword] = useState('')
+  const [tel, setTel] = useState('')
   const allPost = {
     lastname: lastName,
     firstname: firstName,
@@ -25,9 +26,9 @@ const FormAdminInsured = () => {
     e.target.name === 'lastname'
       ? setLastName(e.target.value)
       : e.target.name === 'firstname'
-      ? setFirstName(e.target.value)
-      : e.target.name === 'numsecu'
       ? setNumSecu(e.target.value)
+      : e.target.name === 'numsecu'
+      ? setFirstName(e.target.value)
       : e.target.name === 'email'
       ? setEmail(e.target.value)
       : e.target.name === 'tel'
@@ -42,21 +43,21 @@ const FormAdminInsured = () => {
     axios
       .post('localhost:3000/insured', allPost)
       .then(res => {
-        alert(`${res.data} !`)
+        setMessage(res.data)
       })
       .catch(e => {
-        console.error(e)
-        alert(`Erreur lors de la création : ${e.message}`)
+        setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }
 
   return (
     <div className='form'>
-      <h1>Création d'un assuré'</h1>
+      <h1>Création de assuré</h1>
+      {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>information de l'assuré : </legend>
-          <div className='form-data'>
+          <legend>information de l&apos;assuré : </legend>
+          <div className='formData'>
             <label htmlFor='lastname'>
               Nom de famille <span> * </span>
             </label>
@@ -69,7 +70,7 @@ const FormAdminInsured = () => {
               value={lastName}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='firstname'>
               Prénom<span> * </span>
             </label>
@@ -82,7 +83,7 @@ const FormAdminInsured = () => {
               value={firstName}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='numsecu'>
               Numéro de sécurité sociale<span> * </span>
             </label>
@@ -95,7 +96,7 @@ const FormAdminInsured = () => {
               value={numSecu}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='email'>
               email<span> * </span>
             </label>
@@ -108,7 +109,7 @@ const FormAdminInsured = () => {
               value={email}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='tel'>
               Téléphone<span> * </span>
             </label>
@@ -121,7 +122,7 @@ const FormAdminInsured = () => {
               value={tel}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='password'>
               Password<span> * </span>
             </label>
@@ -134,7 +135,7 @@ const FormAdminInsured = () => {
               value={password}
             />
           </div>
-          <div className='form-data'>
+          <div className='formData'>
             <label htmlFor='birth-date'>
               Date de naissance<span> * </span>
             </label>
@@ -151,7 +152,7 @@ const FormAdminInsured = () => {
           <p>
             <span> * </span> required.
           </p>
-          <div className='form-data'>
+          <div className='formData'>
             <input type='submit' value='Envoyer' />
           </div>
         </fieldset>

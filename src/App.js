@@ -1,50 +1,50 @@
-import Admin from './screen/Admin'
-import FormAdminMedicalEvent from './screen/FormAdminMedicalEvent'
+import { Switch, Route, withRouter } from 'react-router-dom'
+import { useState } from 'react'
+
+import AddMutu from './screen/AddMutu'
+import AddSecu from './screen/AddSecu'
 import Analyse from './screen/Analyse'
+import Congratulation from './screen/Congratulation'
 import DetailEvent from './components/DetailEvent'
+import Form from './screen/Form'
+import FormAdminAccount from './screen/FormAdminAccount'
+import FormAdminHealthInsurance from './screen/FormAdminHealthInsurance'
+import FormAdminInsured from './screen/FormAdminInsured'
+import FormAdminMedicalEvent from './screen/FormAdminMedicalEvent'
+import FormAdminNotifications from './screen/FormAdminNotifications'
+import FormAdminNotifInsured from './screen/FormAdminNotifInsured'
+import FormAdminPros from './screen/FormAdminPros'
+import FormAdminProSpe from './screen/FormAdminProSpe'
+import FormAdminRefund from './screen/FormAdminRefund'
+import FormAdminSpeciality from './screen/FormAdminSpeciality'
 import Header from './components/Header'
 import Home from './screen/Home'
 import Intro from './screen/Intro'
 import Message from './screen/Message'
+import NavAdmin from './components/NavAdmin'
 import Notification from './screen/Notification'
 import Params from './screen/Params'
-import { Switch, Route, withRouter } from 'react-router-dom'
+import Thanks from './screen/Thanks'
+import ValidateSecu from './screen/ValidateSecu'
+import Waiting from './screen/Waiting'
 
 import './App.css'
-import Form from './screen/Form'
-import Thanks from './screen/Thanks'
-import { useState } from 'react'
-import AddSecu from './screen/AddSecu'
-import Waiting from './screen/Waiting'
-import ValidateSecu from './screen/ValidateSecu'
-import Congratulation from './screen/Congratulation'
-import Burger from './components/Burger'
 
 const App = withRouter(({ location }) => {
-  const [visitor, setVisitor] = useState('')
+  const [numMutu, setNumMutu] = useState('')
   const [numSecu, setNumSecu] = useState('')
-  const [showBurger, setShowBurger] = useState(false)
+  const [visitor, setVisitor] = useState('')
+
   return (
     <div className='App'>
-      {location.pathname !== '/' && (
-        <>
-          {' '}
-          <button
-            className='navbarBurger'
-            onClick={() => setShowBurger(!showBurger)}
-            id='menuBurger'
-          >
-            <span className='burgerBar'></span>
-          </button>
-          {showBurger ? <Burger /> : null}
-        </>
-      )}
       {location.pathname !== '/' &&
+        location.pathname !== '/addmutu' &&
         location.pathname !== '/addsecu' &&
-        location.pathname !== '/waiting' &&
-        location.pathname !== '/validatesecu' &&
+        location.pathname !== '/subscribe' &&
         location.pathname !== '/thanks' &&
-        location.pathname !== '/subscribe' && <Header />}
+        location.pathname !== '/validatesecu' &&
+        location.pathname !== '/waiting' && <Header />}
+      {location.pathname.includes('/admin') && <NavAdmin />}
       <Switch>
         <Route exact path='/' component={Intro} />
         <Route
@@ -56,6 +56,12 @@ const App = withRouter(({ location }) => {
           render={props => <Form {...props} setVisitor={setVisitor} />}
         />
         <Route
+          path='/addmutu'
+          render={props => (
+            <AddMutu {...props} visitor={visitor} setNumMutu={setNumMutu} />
+          )}
+        />
+        <Route
           path='/addsecu'
           render={props => (
             <AddSecu {...props} visitor={visitor} setSecu={setNumSecu} />
@@ -64,20 +70,52 @@ const App = withRouter(({ location }) => {
         <Route
           path='/congratulation'
           render={props => (
-            <Congratulation {...props} visitor={visitor} numSecu={numSecu} />
+            <Congratulation
+              {...props}
+              visitor={visitor}
+              numSecu={numSecu}
+              numMutu={numMutu}
+            />
           )}
         />
-        <Route path='/waiting' component={Waiting} />
-        <Route path='/validatesecu' component={ValidateSecu} />
-        <Route path='/home' component={Home} />
+        <Route path='/analyse' component={Analyse} />
+        <Route path='/event/:id' component={DetailEvent} />
+        <Route
+          path='/home'
+          render={props => <Home {...props} visitor={visitor} />}
+        />
         <Route path='/message' component={Message} />
         <Route path='/notification' component={Notification} />
-        <Route path='/analyse' component={Analyse} />
         <Route path='/params' component={Params} />
-        <Route path='/event/:id' component={DetailEvent} />
-        <Route exact path='/admin' component={Admin} />
+        <Route path='/validatesecu' component={ValidateSecu} />
+        <Route path='/waiting' component={Waiting} />
+
         <Route path='/admin/medicalevent' component={FormAdminMedicalEvent} />
-        <Route path='/form' component={Form} />
+        <Route path='/admin/Form' component={FormAdminAccount} />
+        <Route
+          path='/admin/FormAdminHealthInsurance'
+          component={FormAdminHealthInsurance}
+        />
+        <Route path='/admin/FormAdminInsured' component={FormAdminInsured} />
+        <Route
+          path='/admin/FormAdminMedicalEvent '
+          component={FormAdminMedicalEvent}
+        />
+        <Route
+          path='/admin/FormAdminNotifications'
+          component={FormAdminNotifications}
+        />
+        <Route
+          path='/admin/FormAdminNotifInsured'
+          component={FormAdminNotifInsured}
+        />
+        <Route path='/admin/FormAdminPros' component={FormAdminPros} />
+        <Route path='/admin/FormAdminProSpe' component={FormAdminProSpe} />
+        <Route path='/admin/FormAdminRefund' component={FormAdminRefund} />
+        <Route
+          path='/admin/FormAdminSpeciality'
+          component={FormAdminSpeciality}
+        />
       </Switch>
     </div>
   )

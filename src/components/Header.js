@@ -1,11 +1,18 @@
+import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import React from 'react'
-import './Header.css'
 
 import logo_elan from '../data/images/logo_elan.png'
+import Burger from './Burger'
+
+import './Header.css'
 
 const Header = () => {
-  return (
+  const [showBurger, setShowBurger] = useState(false)
+  const pageWidth = window.innerWidth
+  useEffect(() => {
+    console.log(pageWidth)
+  }, [pageWidth])
+  return pageWidth >= 600 ? (
     <div className='header'>
       <Link to='/home'>
         <img src={logo_elan} alt='logo' className='logo' />
@@ -31,6 +38,17 @@ const Header = () => {
           Administration
         </NavLink>
       </div>
+    </div>
+  ) : (
+    <div id='menuBuger'>
+      <button
+        className='navbarBurger'
+        onClick={() => setShowBurger(!showBurger)}
+        id='menuBurger'
+      >
+        <div className='burgerBar'></div>
+      </button>
+      {showBurger ? <Burger /> : null}
     </div>
   )
 }
