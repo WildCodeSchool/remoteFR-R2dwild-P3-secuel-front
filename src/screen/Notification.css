@@ -49,34 +49,49 @@
 .starGreen {
   align-items: center;
   background-color: rgb(38, 197, 38);
-  border-radius: 50%;
-  height : 30px;
-  margin: auto;
+  border-radius: 0%;
+  height : 50px;
+  margin: 10px;
   padding: 0px;
-  width: 30px;
+  width: 10px;
+}
+.starGreen:hover {
+  transition: width ease-in 0.5s ;
+  width: 50px;
 }
 .starNText {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
   list-style-type: none;
   padding: 0px;
-  width: 33%;
+  width: 25%;
 }
 .starRed {
   align-items: center;
   background-color: rgb(212, 20, 20);
-  border-radius: 50%;
-  height : 30px;
-  margin: auto;
+  border-radius: 0%;
+  height : 50px;
+  margin: 10px;
   padding: 0px;
-  width: 30px;
+  width: 10px;
+}
+.starRed:hover {
+  transition: width ease-in 0.5s ;
+  width: 50px;
 }
 .starYellow {
   align-items: center;
   background-color: rgb(248, 143, 6);
-  border-radius: 50%;
-  height : 30px;
-  margin: auto;
+  border-radius: 0%;
+  height : 50px;
+  margin: 10px;
   padding: 0px;
-  width: 30px;
+  width: 10px;
+}
+.starYellow:hover {
+  transition: width ease-in 0.5s ;
+  width: 50px;
 }
 .textLegend {
   font-size: 15px;
