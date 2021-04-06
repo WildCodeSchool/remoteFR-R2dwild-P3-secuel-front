@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import axios from 'axios'
-
 import './Form.css'
+
+import ListBddEntry from './ListBddEntry'
+import axios from 'axios'
+import { useState } from 'react'
 
 const FormAdminNotifications = () => {
   const [type, setType] = useState('')
@@ -74,6 +75,7 @@ const FormAdminNotifications = () => {
           </div>
         </fieldset>
       </form>
+      <ListBddEntry />
     </div>
   )
 }

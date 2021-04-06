@@ -1,7 +1,8 @@
+import './Form.css'
+
+import ListBddEntry from './ListBddEntry'
 import axios from 'axios'
 import { useState } from 'react'
-
-import './Form.css'
 
 const FormAdminSpeciality = () => {
   const [speciality, setSpeciality] = useState('')
@@ -18,7 +19,7 @@ const FormAdminSpeciality = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('http://localhost:3000/notifications', spePost)
+      .post('http://localhost:3000/specialities', spePost)
       .then(res => {
         setMessage(res.data)
       })
@@ -56,6 +57,7 @@ const FormAdminSpeciality = () => {
           </div>
         </fieldset>
       </form>
+      <ListBddEntry />
     </div>
   )
 }

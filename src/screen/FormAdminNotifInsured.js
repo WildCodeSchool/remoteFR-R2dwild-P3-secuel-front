@@ -1,15 +1,17 @@
-import { useState } from 'react'
-import axios from 'axios'
-
 import './Form.css'
+
+import ListBddEntry from './ListBddEntry'
+import axios from 'axios'
+import { useState } from 'react'
 
 const FormAdminNotifInsured = () => {
   const [notif, setNotif] = useState('')
   const [insured, setInsured] = useState('')
   const [status, setStatus] = useState('')
   const [message, setMessage] = useState(null)
-  Notifications_id_Notification: notif,
+  
   const allPost = {
+    Notifications_id_Notification: notif,
     Insured_id_Insured: insured,
     Ni_status: status
   }
@@ -88,6 +90,7 @@ const FormAdminNotifInsured = () => {
           </div>
         </fieldset>
       </form>
+      <ListBddEntry />
     </div>
   )
 }

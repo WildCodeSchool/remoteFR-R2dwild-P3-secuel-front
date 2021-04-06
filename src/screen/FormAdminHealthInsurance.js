@@ -1,8 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState } from 'react'
-import axios from 'axios'
 
 import './Form.css'
+
+import ListBddEntry from './ListBddEntry'
+import axios from 'axios'
+import { useState } from 'react'
 
 const FormAdminHealthInsurance = () => {
   const [name, setName] = useState('')
@@ -56,6 +58,7 @@ const FormAdminHealthInsurance = () => {
           </div>
         </fieldset>
       </form>
+      <ListBddEntry />
     </div>
   )
 }

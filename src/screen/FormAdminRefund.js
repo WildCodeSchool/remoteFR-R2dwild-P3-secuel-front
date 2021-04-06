@@ -1,7 +1,8 @@
+import './Form.css'
+
+import ListBddEntry from './ListBddEntry'
 import axios from 'axios'
 import { useState } from 'react'
-
-import './Form.css'
 
 const FormAdminRefund = () => {
   const [amount, setAmount] = useState('')
@@ -106,6 +107,7 @@ const FormAdminRefund = () => {
           </div>
         </fieldset>
       </form>
+      <ListBddEntry />
     </div>
   )
 }

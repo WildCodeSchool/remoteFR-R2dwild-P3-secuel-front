@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import axios from 'axios'
-
-import logo from '../data/images/logo_elan.png'
-
 import './Form.css'
+
+import ListBddEntry from './ListBddEntry'
+import axios from 'axios'
+import logo from '../data/images/logo_elan.png'
+import { useState } from 'react'
 
 const FormAdminAccount = () => {
   const [message, setMessage] = useState(null)
@@ -98,6 +98,7 @@ const FormAdminAccount = () => {
           <input id='btnEnvoyer' type='submit' value='Valider le profil' />
         </div>
       </form>
+      <ListBddEntry />
     </div>
   )
 }
