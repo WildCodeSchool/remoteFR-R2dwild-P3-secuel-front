@@ -59,18 +59,24 @@ const Notification = () => {
       {/* Légende des vignettes  */}
       <ul className='legendRaw'>
         <ul className='starNText'>
-          <li className='starGreen'></li>
-          <li className='textLegend'>Tout va bien !</li>
-        </ul>
-        <ul className='starNText'>
-          <li className='starYellow'></li>
-          <li className='textLegend'>
-            C&apos;est un peu long donc voyons ce qu&apos;il se passe
+          <li className='starGreen'>
+            <li className='textLegend'>Tout va bien !</li>
           </li>
+          <input type='checkbox' className='checked' name='noShow' />
         </ul>
         <ul className='starNText'>
-          <li className='starRed'></li>
-          <li className='textLegend'>Il y a un petit soucis</li>
+          <li className='starYellow'>
+            <li className='textLegend'>
+              C&apos;est un peu long donc voyons ce qu&apos;il se passe
+            </li>
+          </li>
+          <input type='checkbox' className='checked' name='noShow' />
+        </ul>
+        <ul className='starNText'>
+          <li className='starRed'>
+            <li className='textLegend'>Il y a un petit soucis</li>
+          </li>
+          <input type='checkbox' className='checked' name='noShow' />
         </ul>
       </ul>
       <div className='notifMap'>
