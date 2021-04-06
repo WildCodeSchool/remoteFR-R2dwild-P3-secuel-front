@@ -46,7 +46,11 @@ const Header = () => {
         onClick={() => setShowBurger(!showBurger)}
         id='menuBurger'
       >
-        <div className='burgerBar'></div>
+        <div id='menu-burger'>
+          <div className='bar1'></div>
+          <div className='bar2'></div>
+          <div className='bar3'></div>
+        </div>
       </button>
       {showBurger ? <Burger /> : null}
     </div>
