@@ -5,7 +5,7 @@
   align-items: center;
   background: white;
   border-radius: 0 0 5px 5px;
-  color: #4472C4;
+  color: #348AA7;
   display: flex;
   flex-direction: column;
   font-weight: bold;
@@ -14,7 +14,7 @@
   width: 90%;
 }
 .bottom a{
-  background: #4472C4;
+  background: #348AA7;
   border-radius: 0.6rem;
   color: #ffffff;
   padding: 0.6rem;
@@ -24,7 +24,7 @@
   margin: 1rem;
   border: none;
   color: #ffffff;
-  background: #4472C4;
+  background: #348AA7;
   padding: 0.6rem;
   border-radius: 0.6rem;
   cursor: pointer;
@@ -35,11 +35,11 @@
 }
 .info{
   background: #dff0ff;
-  color: #4472C4;
+  color: #348AA7;
   width: 90%;
 }
 .info span{
-  color: #4472C4;
+  color: #348AA7;
   font-weight: bold;
 }
 .line{
@@ -60,7 +60,7 @@
 }
 .login h1{
   font-weight: bold;
-  color: #4472C4;
+  color: #348AA7;
 }
 .login input{
   border:1px solid #BE9B07;
@@ -76,7 +76,7 @@
   margin-bottom: 1rem;
 }
 .subscribe a{
-  background: #4472C4;
+  background: #348AA7;
   border-radius: 0.6rem;
   color: #ffffff;
   font-weight: bolder;

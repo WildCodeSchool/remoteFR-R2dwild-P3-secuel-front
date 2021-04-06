@@ -1,5 +1,5 @@
 .affichageCompte{
-  border-bottom:1px solid #4472C4;
+  border-bottom:1px solid #348AA7;
   padding:15px;
 }
 .blueTrash{
@@ -8,7 +8,7 @@
 }
 #btnAddAccount{
   align-items: center;
-  background:#4472C4;
+  background:#348AA7;
   border:none;
   border-radius: 3px;
   color:white;
@@ -19,7 +19,7 @@
 }
 #btnSupprimer{
   align-items: center;
-  background:#4472C4;
+  background:#348AA7;
   border:none;
   border-radius: 3px;
   color:white;
@@ -30,7 +30,7 @@
 }
 .compteAssure{
   align-items: center;
-  border:1px solid #4472C4;
+  border:1px solid #348AA7;
   border-radius:5px;
   display: flex;
   height: 50px;

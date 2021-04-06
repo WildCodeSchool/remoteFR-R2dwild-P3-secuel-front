@@ -1,7 +1,7 @@
   .burger{
     display: flex;
     flex-direction: column;
-    background: #4472C4;
+    background: #348AA7;
     position: fixed;
     height: 100%;
     margin:0;

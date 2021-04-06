@@ -2,7 +2,7 @@
   align-items: center;
   background: white;
   border-radius:5px;
-  color: #4472C4;
+  color: #348AA7;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -18,6 +18,6 @@
   text-decoration: none;
 }
 .thanks span{
-  color: #4472C4;
+  color: #348AA7;
   font-weight: bold;
 }
