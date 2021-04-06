@@ -1,7 +1,6 @@
 import NotificationCompo from '../components/NotifCompo'
 
 import './Notification.css'
-import 'react-datepicker/dist/react-datepicker.css'
 
 import eventArray from '../data/fakejson/fakedata.json'
 
