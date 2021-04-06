@@ -5,11 +5,10 @@ import axios from 'axios'
 import { useState } from 'react'
 
 const FormAdminNotifInsured = () => {
-  const [notif, setNotif] = useState('')
   const [insured, setInsured] = useState('')
-  const [status, setStatus] = useState('')
   const [message, setMessage] = useState(null)
-  
+  const [notif, setNotif] = useState('')
+  const [status, setStatus] = useState('')
   const allPost = {
     Notifications_id_Notification: notif,
     Insured_id_Insured: insured,

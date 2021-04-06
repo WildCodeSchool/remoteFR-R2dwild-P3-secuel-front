@@ -5,14 +5,14 @@ import axios from 'axios'
 import { useState } from 'react'
 
 const FormAdminInsured = () => {
-  const [lastName, setLastName] = useState('')
-  const [firstName, setFirstName] = useState('')
-  const [numSecu, setNumSecu] = useState('')
-  const [email, setEmail] = useState('')
-  const [tel, setTel] = useState('')
-  const [password, setPassword] = useState('')
   const [birthDate, setBirthDate] = useState('')
+  const [email, setEmail] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [message, setMessage] = useState(null)
+  const [numSecu, setNumSecu] = useState('')
+  const [password, setPassword] = useState('')
+  const [tel, setTel] = useState('')
   const allPost = {
     lastname: lastName,
     firstname: firstName,

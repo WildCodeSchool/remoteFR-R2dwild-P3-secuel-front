@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom'
 
 import './Intro.css'
+
 import logo from '../data/images/logo_elan.png'
 import why from '../data/images/why.png'
 

@@ -5,10 +5,10 @@ import axios from 'axios'
 import { useState } from 'react'
 
 const FormAdminProSpe = () => {
-  const [idSpe, setIdSpe] = useState('')
   const [idPro, setIdPro] = useState('')
-  const [status, setStatus] = useState(true)
+  const [idSpe, setIdSpe] = useState('')
   const [message, setMessage] = useState(null)
+  const [status, setStatus] = useState(true)
   const allPost = {
     pros_pro_id: idPro,
     specialities_id_speciality: idSpe,
@@ -37,7 +37,7 @@ const FormAdminProSpe = () => {
 
   return (
     <div className='form'>
-      <h1>Création d'un lien pro spé</h1>
+      <h1>Création d&apos;un lien pro spé</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>

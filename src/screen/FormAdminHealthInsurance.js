@@ -7,8 +7,8 @@ import axios from 'axios'
 import { useState } from 'react'
 
 const FormAdminHealthInsurance = () => {
-  const [name, setName] = useState('')
   const [message, setMessage] = useState(null)
+  const [name, setName] = useState('')
   const allPost = {
     insurance_name: name
   }

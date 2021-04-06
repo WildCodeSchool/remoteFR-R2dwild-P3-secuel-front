@@ -4,9 +4,14 @@ import ListBddEntry from './ListBddEntry'
 import axios from 'axios'
 import { useState } from 'react'
 
+<<<<<<< HEAD
+=======
+import './Form.css'
+
+>>>>>>> 1a239deef3ef0995b81b97b97d81ae926e100a75
 const FormAdminPros = () => {
-  const [name, setName] = useState('')
   const [message, setMessage] = useState(null)
+  const [name, setName] = useState('')
 
   const allPost = {
     pro_name: name

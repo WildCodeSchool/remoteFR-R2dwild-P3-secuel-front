@@ -1,7 +1,9 @@
 import { Doughnut } from 'react-chartjs-2'
-import eventArray from '../data/fakejson/fakedata.json'
+
 import 'chartjs-plugin-datalabels'
 import './Donut.css'
+
+import eventArray from '../data/fakejson/fakedata.json'
 
 export default function Donut(label) {
   const array = label.nonrembours

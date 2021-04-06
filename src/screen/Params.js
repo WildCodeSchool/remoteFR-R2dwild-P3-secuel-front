@@ -1,7 +1,9 @@
-import { Link } from 'react-router-dom'
 import React from 'react'
-import blueTrash from '../data/images/blueTrash.png'
+import { Link } from 'react-router-dom'
+
 import './Params.css'
+
+import blueTrash from '../data/images/blueTrash.png'
 
 const Params = () => {
   return (
@@ -22,7 +24,6 @@ const Params = () => {
         </ul>
         <button id='btnAppliquerListe'>Appliquer</button>
       </div>
-
       <p id='titreSupprimerCompte'>Vos comptes</p>
       <div className='divVosCompte'>
         <ul className='vosComptes'>
@@ -44,11 +45,10 @@ const Params = () => {
         </ul>
       </div>
       <Link to={'/form'}>
-        <button id='btnAddAccount'>
-          <a href='Javascript:history.go(-1)'></a>+ Ajouter un compte
-        </button>
+        <button id='btnAddAccount'>+ Ajouter un compte</button>
       </Link>
     </div>
   )
 }
+
 export default Params
