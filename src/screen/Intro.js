@@ -22,7 +22,6 @@ const Intro = visitor => {
         <h1 id='optezVision'>Optez pour une vision claire</h1>
         <p id='claireSanté'>de votre gestion de santé</p>
       </div>
-      <p id='seConnecter'>Se connecter</p>
       <form id='formConnexion'>
         <label>
           <p>Identifiant</p>
