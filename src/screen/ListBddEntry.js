@@ -151,10 +151,10 @@ const ListBddEntry = () => {
 
   return (
     <div>
-      <div className='ButtonList'>
+      <div className='buttonList'>
         <button
           type='button'
-          className='Button-gradient'
+          className='buttonGradient'
           name='account'
           onClick={accounts}
         >
@@ -162,7 +162,7 @@ const ListBddEntry = () => {
         </button>
         <button
           type='button'
-          className='Button-gradient'
+          className='buttonGradient'
           name='insured'
           onClick={insured}
         >
@@ -170,7 +170,7 @@ const ListBddEntry = () => {
         </button>
         <button
           type='button'
-          className='Button-gradient'
+          className='buttonGradient'
           name='actesMed'
           onClick={actesMed}
         >
@@ -178,7 +178,7 @@ const ListBddEntry = () => {
         </button>
         <button
           type='button'
-          className='Button-gradient'
+          className='buttonGradient'
           name='insurance'
           onClick={insurance}
         >
@@ -186,7 +186,7 @@ const ListBddEntry = () => {
         </button>
         <button
           type='button'
-          className='Button-gradient'
+          className='buttonGradient'
           name='spe'
           onClick={spe}
         >
@@ -194,7 +194,7 @@ const ListBddEntry = () => {
         </button>
         <button
           type='button'
-          className='Button-gradient'
+          className='buttonGradient'
           name='pro'
           onClick={pro}
         >
@@ -202,7 +202,7 @@ const ListBddEntry = () => {
         </button>
         <button
           type='button'
-          className='Button-gradient'
+          className='buttonGradient'
           name='proSpe'
           onClick={proSpe}
         >
@@ -210,7 +210,7 @@ const ListBddEntry = () => {
         </button>
         <button
           type='button'
-          className='Button-gradient'
+          className='buttonGradient'
           name='notif'
           onClick={notif}
         >
@@ -218,7 +218,7 @@ const ListBddEntry = () => {
         </button>
         <button
           type='button'
-          className='Button-gradient'
+          className='buttonGradient'
           name='notifInsured'
           onClick={notifInsured}
         >
@@ -226,14 +226,14 @@ const ListBddEntry = () => {
         </button>
         <button
           type='button'
-          className='Button-gradient'
+          className='buttonGradient'
           name='refund'
           onClick={refund}
         >
           Liste des rmbts
         </button>
       </div>
-      <div className='Listresult'>
+      <div className='listResult'>
         {current === 'account'
           ? dataAccount.map(d => (
               <li key={d.id_Compte}>

@@ -53,15 +53,9 @@ const FormAdminPros = () => {
             <span> * </span> required.
           </p>
           <div className='formData'>
-            <input id='btnEnvoyer' type='submit' value='Envoyer' />
+            <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
         </fieldset>
-        <p>
-          <span> * </span> required.
-        </p>
-        <div className='formData'>
-          <input className='btnEnvoyer' type='submit' value='Envoyer' />
-        </div>
       </form>
       <ListBddEntry />
     </div>

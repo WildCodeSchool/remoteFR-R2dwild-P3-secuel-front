@@ -26,19 +26,13 @@ fieldset {
   flex-direction: column;
   justify-content: center;
   margin:auto;
-  text-align: left;
   width: 80%;
   margin: 0 auto;
   padding-bottom:15px;
-  text-align: left;
   width: 80%;
 }
 .form fieldset{
   border:1px solid #BE9B07;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:6px;
-  padding-top:0;
   width:100%;
 }
 .form form{
@@ -54,7 +48,7 @@ fieldset {
   display: flex;
   justify-content: center;
   margin: 5px 0;
-  width:60%;
+  width:100%;
 }
 .form .formData input:not([type="submit"]), textarea {
   border-radius: 5px;
@@ -67,14 +61,13 @@ fieldset {
   margin-right: 10px;
   padding-right: 50px;
   text-align: center;
-  width: 110px;
+  width: 15%;
 }
 .form h1 {
   text-align: center;
 }
 .form input{
   border:2px, solid, #BE9B07 ;
-  height: 200%;
   outline:none;
   width:100%;
 }
