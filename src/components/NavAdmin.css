@@ -1,0 +1,22 @@
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around ;
+  
+  
+}
+
+li {
+  background-color: #a3bdce;
+  border: 1px solid #000000;
+  height : auto;
+  width: 150px;
+  margin : 7px;
+  padding: 7px;
+ 
+}
+a {
+  text-decoration: none;
+}

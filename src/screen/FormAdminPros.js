@@ -4,11 +4,6 @@ import ListBddEntry from './ListBddEntry'
 import axios from 'axios'
 import { useState } from 'react'
 
-<<<<<<< HEAD
-=======
-import './Form.css'
-
->>>>>>> 1a239deef3ef0995b81b97b97d81ae926e100a75
 const FormAdminPros = () => {
   const [message, setMessage] = useState(null)
   const [name, setName] = useState('')
@@ -48,18 +43,20 @@ const FormAdminPros = () => {
               type='text'
               id='name'
               name='name'
+              className='saisie'
               onChange={handleChange}
               required
               value={name}
             />
           </div>
-          <p>
-            <span> * </span> required.
-          </p>
-          <div className='formData'>
-            <input type='submit' value='Envoyer' />
-          </div>
         </fieldset>
+
+        <p>
+          <span> * </span> required.
+        </p>
+        <div className='formData'>
+          <input className='btnEnvoyer' type='submit' value='Envoyer' />
+        </div>
       </form>
       <ListBddEntry />
     </div>
