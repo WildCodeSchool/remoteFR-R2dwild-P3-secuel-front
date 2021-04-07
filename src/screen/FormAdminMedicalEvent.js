@@ -47,7 +47,7 @@ const FormAdminMedicalEvent = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/medical_events', allMedicalE)
+      .post('http://localhost:3000/medical_events', allMedicalE)
       .then(res => {
         setMessage(res.data)
       })

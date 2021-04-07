@@ -31,7 +31,7 @@ const FormAdminRefund = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/refund', allPost)
+      .post('http://localhost:3000/refund', allPost)
       .then(res => {
         setMessage(res.data)
       })

@@ -1,6 +1,7 @@
 .ButtonList {
   display: flex; 
   flex-wrap: wrap;
+  width: 85%;
 }
 
 
@@ -16,6 +17,7 @@
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;
+  width: 20%;
 }
 
 .Button-gradient:hover {

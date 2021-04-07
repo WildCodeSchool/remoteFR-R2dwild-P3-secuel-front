@@ -228,7 +228,7 @@ const ListBddEntry = () => {
           type='button'
           className='Button-gradient'
           name='refund'
-          Click={refund}
+          onClick={refund}
         >
           Liste des remboursements
         </button>
@@ -277,9 +277,9 @@ const ListBddEntry = () => {
             ))
           : current === 'proSpe'
           ? dataProSpe.map(d => (
-              <li key={d.id_speciality}>
-                {d.id_speciality}, {d.speciality_name},
-                {d.specialities_id_speciality},{d.Status}
+              <li key={d.id_Pros_Speciality}>
+                {d.id_Pros_Speciality},{d.id_speciality}, {d.speciality_name},
+                {d.pros_pro_id},{d.pro_name},{d.Status}
               </li>
             ))
           : current === 'notif'
