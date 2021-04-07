@@ -9,7 +9,7 @@
   align-items: center;
   background: none;
   border: none;
-  color: #4472C4;
+  color: #348AA7;
   cursor: pointer;
   display: flex;
   outline: none;
@@ -18,16 +18,30 @@
   text-decoration: none;
   width: auto;
 }
+#menuBurg {
+  cursor: pointer;
+  right:1rem;
+  top:2rem;
+  z-index: 6666;
+}
+#menuBurg .bar1,
+#menuBurg .bar2,
+#menuBurg .bar3 {
+  background-color: white;
+  height: 5px;
+  margin: 6px 0;
+  transition: 0.4s;
+  width: 32px;
+}
+#menuBurger{
+  display: none;
+}
 .navIcon {
   align-items: center;
   display: flex;
-  font-size: 12px;
+  font-size: 1rem;
   font-weight: bold;
   justify-content: space-between;
-  margin-bottom: 40px;
-  margin-left: 10px;
-  margin-top: 10px;
-  padding-right:10px;
   width: 80%;
 }
 .iconNavbar {
@@ -44,21 +58,16 @@
   padding-right: 5px;
   width: 30px;
 }
-
 .selected {
-  border-bottom: 3px solid #4472C4;
+  border-bottom: 3px solid #348AA7;
 }
 @media (max-width: 600px) {
+  #menuBurger{
+    display:flex;
+    justify-content: right;
+    z-index:9999
+  }
   .navIcon {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 12px;
-    font-weight: bold;
-    justify-content: space-between;
-    margin-bottom: 40px;
-    margin-left: 10px;
-    margin-top: 10px;
-    width: 95%;
+    display: none;
   }
 }

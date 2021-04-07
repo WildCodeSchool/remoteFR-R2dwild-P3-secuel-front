@@ -3,7 +3,8 @@ import './Message.css'
 const Message = () => {
   return (
     <div className='message'>
-      <p>3 nouveaux messages</p>
+      <h1 id='titreNotif'>Vos Messages</h1>
+      <p className='infoNbMessage'>3 nouveaux messages</p>
       <table>
         <thead>
           <tr id='headTable'>

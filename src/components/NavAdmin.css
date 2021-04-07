@@ -8,7 +8,7 @@ ul {
   
 }
 
-li {
+.navAdmin li {
   background-color: #a3bdce;
   border: 1px solid #000000;
   height : auto;

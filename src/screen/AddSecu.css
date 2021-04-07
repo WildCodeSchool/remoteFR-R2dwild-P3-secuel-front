@@ -2,7 +2,7 @@
   align-items: center;
   background: white;
   border-radius:5px;
-  color: #4472C4;
+  color: #348AA7;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -19,16 +19,20 @@
   text-decoration: none;
   width:150px;
 }
+.addSecu fieldset{
+  width: 80%;
+}
 .addSecu input{
   border:1px solid #BE9B07;
   margin-top:5px;
   outline:none;
+  cursor: pointer;
 }
 .addSecu label, .addSecu input{
   color: #BE9B07;
 }
 .addSecu span{
-  color: #4472C4;
+  color: #348AA7;
   font-weight: bold;
 }
 .forbidden{

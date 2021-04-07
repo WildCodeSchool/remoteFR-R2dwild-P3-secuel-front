@@ -1,22 +1,20 @@
 .ButtonList {
   display: flex; 
   flex-wrap: wrap;
-  width: 85%;
+  justify-content: space-around;
+  width: 100%;
 }
-
-
-.Button-gradient {background-image: linear-gradient(to right, #83a4d4 0%, #b6fbff  51%, #83a4d4  100%)}
 .Button-gradient {
+  background-image: linear-gradient(to right, #83a4d4 0%, #b6fbff  51%, #83a4d4  100%);
+  background-size: 200% auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #eee;
+  color: black;            
   margin: 10px;
   padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
-  background-size: 200% auto;
-  color: white;            
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display: block;
   width: 20%;
 }
 

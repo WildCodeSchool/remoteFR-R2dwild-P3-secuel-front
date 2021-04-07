@@ -10,7 +10,8 @@ const Analyse = () => {
   const handleSelect = e => setSelect(e.target.value)
 
   return (
-    <>
+    <div className='refund'>
+      <h1 id='titreNotif'>Vos Remboursements</h1>
       <div className='analyse'>
         <select>
           <option value='' onChange={handleSelect}>
@@ -31,7 +32,8 @@ const Analyse = () => {
         </select>
       </div>
       <StackedBar />
-    </>
+    </div>
   )
 }
+
 export default Analyse

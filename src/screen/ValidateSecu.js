@@ -15,9 +15,14 @@ const ValidateSecu = origin => {
         <span>Confirmez le code de sécurité</span>
       </p>
       <img />
-      <p>
+      <div>
+        {origin.location.props ? (
+          <p id='pointChargement'>•••••</p>
+        ) : (
+          <p id='pointChargement'>•••</p>
+        )}
         Indiquez <span>le code de sécurité</span> que vous avez reçu
-      </p>
+      </div>
       <input type='text' required onChange={handleChange} />
       {input === '' ? (
         <p className='forbidden'>Validez</p>

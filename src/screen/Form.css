@@ -1,4 +1,4 @@
-.bigLogo{
+#bigLogo{
   width: 20%;
 }
 .btnEnvoyer{
@@ -20,12 +20,14 @@ fieldset {
   margin-right:20px;
 }
 .form {
-  align-items: center;
   background:white;
   border-radius:5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin:auto;
+  text-align: left;
+  width: 80%;
   margin: 0 auto;
   padding-bottom:15px;
   text-align: left;
@@ -52,7 +54,7 @@ fieldset {
   display: flex;
   justify-content: center;
   margin: 5px 0;
-  width:100%;
+  width:60%;
 }
 .form .formData input:not([type="submit"]), textarea {
   border-radius: 5px;
@@ -84,9 +86,6 @@ fieldset {
   display: flex;
   justify-content: space-around;
 }
-
-
-
 #pObligatoire{
   font-size:12px;
   text-align:right;
@@ -111,11 +110,18 @@ span {
 
 @media (max-width: 600px) {
   .form {
+    align-items: center;
     background:white;
-    margin: 0 auto;
+    border-radius:5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding-bottom:15px;
     text-align: left;
-    width: 90%;
+    width: 80%;
   }
+
   .form fieldset{
     border:1px solid #707070;
     padding-bottom:0;

@@ -22,6 +22,9 @@ const AddMutu = visitor => {
         Indiquez les comptes <span>Mutuelle</span> que vous souhaitez rattacher
         à votre profil
       </p>
+      <p id='pointChargement'>
+        •<span id='spanChargement'>••</span>
+      </p>
       <label htmlFor='mutu'>Compte mutuelle *</label>
       <input
         id='mutu'

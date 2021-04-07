@@ -182,7 +182,7 @@ const ListBddEntry = () => {
           name='insurance'
           onClick={insurance}
         >
-          Liste des instituts d'assurance
+          Liste des instituts d&apos;assurance
         </button>
         <button
           type='button'
@@ -198,7 +198,7 @@ const ListBddEntry = () => {
           name='pro'
           onClick={pro}
         >
-          Liste des professionnels
+          Liste des pro
         </button>
         <button
           type='button'
@@ -206,7 +206,7 @@ const ListBddEntry = () => {
           name='proSpe'
           onClick={proSpe}
         >
-          Liste des Spécialités par Professionnel
+          Liste des Spé par Pro
         </button>
         <button
           type='button'
@@ -222,7 +222,7 @@ const ListBddEntry = () => {
           name='notifInsured'
           onClick={notifInsured}
         >
-          Liste des notifications par Assuré
+          Liste notifications par Assuré
         </button>
         <button
           type='button'
@@ -230,7 +230,7 @@ const ListBddEntry = () => {
           name='refund'
           onClick={refund}
         >
-          Liste des remboursements
+          Liste des rmbts
         </button>
       </div>
       <div className='Listresult'>

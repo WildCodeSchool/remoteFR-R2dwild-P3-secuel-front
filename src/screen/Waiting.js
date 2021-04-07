@@ -13,6 +13,15 @@ const Waiting = origin => {
           numéro
         </span>
       </p>
+      {origin.location.props ? (
+        <p id='pointChargement'>
+          ••••<span id='spanChargement'>•</span>
+        </p>
+      ) : (
+        <p id='pointChargement'>
+          ••<span id='spanChargement'>•</span>
+        </p>
+      )}
       <img src={profil} alt='avatar' className='profil' />
       <p>
         Un <span>code de sécurité</span> sera envoyé pour confirmer

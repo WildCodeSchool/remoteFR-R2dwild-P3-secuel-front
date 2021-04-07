@@ -34,7 +34,7 @@ function StackedBar() {
           maxBarThickness: 40,
           label: 'Remboursement mutuelle',
           data: [2, 3, 20, 35, 1, 4],
-          backgroundColor: '#257EA7',
+          backgroundColor: '#348AA7',
           boderColor: 'white',
           datalabels: {
             color: 'white'
@@ -83,7 +83,7 @@ function StackedBar() {
 
   return (
     <>
-      <h1 className='title'>Vos remboursements cette année</h1>
+      <h1 className='title'>Année 2021</h1>
       <div className='bar'>
         <Bar data={data} options={options} legend={legend} />
       </div>

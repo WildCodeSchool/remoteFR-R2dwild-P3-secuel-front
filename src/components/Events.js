@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import Aos from 'aos'
 import MiniEvent from './MiniEvent'
-import Welcome from './Welcome'
 
 import 'aos/dist/aos.css'
 import './Events.css'
@@ -23,7 +22,6 @@ const Events = () => {
 
   return (
     <div className='events'>
-      <Welcome />
       <div
         id='insured1'
         onClick={handleClick1}

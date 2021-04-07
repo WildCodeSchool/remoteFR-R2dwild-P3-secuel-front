@@ -34,6 +34,7 @@ const App = withRouter(({ location }) => {
   const [numMutu, setNumMutu] = useState('')
   const [numSecu, setNumSecu] = useState('')
   const [visitor, setVisitor] = useState('')
+
   return (
     <div className='App'>
       {location.pathname !== '/' &&
@@ -45,7 +46,11 @@ const App = withRouter(({ location }) => {
         location.pathname !== '/waiting' && <Header />}
 
       <Switch>
-        <Route exact path='/' component={Intro} />
+        <Route
+          exact
+          path='/'
+          render={props => <Intro {...props} setVisitor={setVisitor} />}
+        />
         <Route
           path='/thanks'
           render={props => <Thanks {...props} visitor={visitor} />}
@@ -77,14 +82,19 @@ const App = withRouter(({ location }) => {
             />
           )}
         />
-        <Route path='/waiting' component={Waiting} />
-        <Route path='/validatesecu' component={ValidateSecu} />
-        <Route path='/home' component={Home} />
+        <Route path='/analyse' component={Analyse} />
+        <Route path='/event/:id' component={DetailEvent} />
+        <Route
+          path='/home'
+          render={props => <Home {...props} visitor={visitor} />}
+        />
         <Route path='/message' component={Message} />
         <Route path='/notification' component={Notification} />
-        <Route path='/analyse' component={Analyse} />
         <Route path='/params' component={Params} />
+        <Route path='/validatesecu' component={ValidateSecu} />
+        <Route path='/waiting' component={Waiting} />
         <Route path='/event/:id' component={DetailEvent} />
+
         <div className='appAdmin'>
           {location.pathname.includes('/admin') && <NavAdmin />}
           <Route path='/admin/medicalevent' component={FormAdminMedicalEvent} />

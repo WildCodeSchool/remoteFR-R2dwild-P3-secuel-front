@@ -1,5 +1,5 @@
 #btnAppliquer{
-  background-color: #0C75B7;
+  background-color: #348AA7;
   border:none;
   border-radius: 5px;
   color:white;
@@ -17,7 +17,7 @@
 .divCalendar{
   align-items: center;
   background-color:white;
-  border:1px solid #0C75B7;
+  border:1px solid #348AA7;
   border-radius:10px;
   display:flex;
   flex-direction: row;
@@ -36,7 +36,7 @@
 }
 .divCalendrier p {
   align-items: center;
-  color:#0C75B7;
+  color:#348AA7;
   display:flex;
   font-size:15px;
   font-weight: 900;
@@ -63,13 +63,13 @@
   }
   #titreCalendar{
   display:none
-}
+  }
 }
 @media (max-width: 600px) {
   .divCalendar{
     align-items: center;
     background-color:white;
-    border:1px solid #0C75B7;
+    border:1px solid #348AA7;
     border-radius:10px;
     display:flex;
     flex-direction: row;
