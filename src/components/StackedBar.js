@@ -34,7 +34,7 @@ function StackedBar() {
           maxBarThickness: 40,
           label: 'Remboursement mutuelle',
           data: [2, 3, 20, 35, 1, 4],
-          backgroundColor: '#257EA7',
+          backgroundColor: '#348AA7',
           boderColor: 'white',
           datalabels: {
             color: 'white'

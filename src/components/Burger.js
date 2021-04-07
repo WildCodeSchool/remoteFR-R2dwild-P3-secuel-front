@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import './Burger.css'
 
@@ -7,34 +7,46 @@ const Burger = () => {
     <div className='burger'>
       <ul className='pagesBurger'>
         <li className='liLink'>
-          <Link to='/home' className='navlink'>
+          <NavLink to='/home' className='navlink' activeClassName='selected1'>
             Home
-          </Link>
+          </NavLink>
         </li>
         <li className='liLink'>
-          <Link to='/message' className='navlink'>
+          <NavLink
+            to='/message'
+            className='navlink'
+            activeClassName='selected1'
+          >
             Messages
-          </Link>
+          </NavLink>
         </li>
         <li className='liLink'>
-          <Link to='/notification' className='navlink'>
+          <NavLink
+            to='/notification'
+            className='navlink'
+            activeClassName='selected1'
+          >
             Notifications
-          </Link>
+          </NavLink>
         </li>
         <li className='liLink'>
-          <Link to='/analyse' className='navlink'>
+          <NavLink
+            to='/analyse'
+            className='navlink'
+            activeClassName='selected1'
+          >
             Analyse
-          </Link>
+          </NavLink>
         </li>
         <li className='liLink'>
-          <Link to='/params' className='navlink'>
+          <NavLink to='/params' className='navlink' activeClassName='selected1'>
             Paramètres
-          </Link>
+          </NavLink>
         </li>
         <li className='liLink'>
-          <Link to='/admin' className='navlink'>
+          <NavLink to='/admin' className='navlink' activeClassName='selected1'>
             Administration
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </div>
