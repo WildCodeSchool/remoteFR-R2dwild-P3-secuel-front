@@ -1,3 +1,5 @@
+import './ListBddEntry.css'
+
 import axios from 'axios'
 import { useState } from 'react'
 
@@ -150,35 +152,85 @@ const ListBddEntry = () => {
   return (
     <div>
       <div className='ButtonList'>
-        <button type='button' name='account' onClick={accounts}>
-          Comptes
+        <button
+          type='button'
+          className='Button-gradient'
+          name='account'
+          onClick={accounts}
+        >
+          Liste des comptes
         </button>
-        <button type='button' name='insured' onClick={insured}>
-          Assurés
+        <button
+          type='button'
+          className='Button-gradient'
+          name='insured'
+          onClick={insured}
+        >
+          Liste des assurés
         </button>
-        <button type='button' name='actesMed' onClick={actesMed}>
-          Actes Medicaux
+        <button
+          type='button'
+          className='Button-gradient'
+          name='actesMed'
+          onClick={actesMed}
+        >
+          Liste des actes médicaux
         </button>
-        <button type='button' name='insurance' onClick={insurance}>
-          Assurances
+        <button
+          type='button'
+          className='Button-gradient'
+          name='insurance'
+          onClick={insurance}
+        >
+          Liste des instituts d'assurance
         </button>
-        <button type='button' name='spe' onClick={spe}>
-          Spécialités
+        <button
+          type='button'
+          className='Button-gradient'
+          name='spe'
+          onClick={spe}
+        >
+          Liste des spécialités
         </button>
-        <button type='button' name='pro' onClick={pro}>
-          Professionnels
+        <button
+          type='button'
+          className='Button-gradient'
+          name='pro'
+          onClick={pro}
+        >
+          Liste des professionnels
         </button>
-        <button type='button' name='proSpe' onClick={proSpe}>
-          Spécialités par Professionnel
+        <button
+          type='button'
+          className='Button-gradient'
+          name='proSpe'
+          onClick={proSpe}
+        >
+          Liste des Spécialités par Professionnel
         </button>
-        <button type='button' name='notif' onClick={notif}>
-          Notifications
+        <button
+          type='button'
+          className='Button-gradient'
+          name='notif'
+          onClick={notif}
+        >
+          Liste des notifications
         </button>
-        <button type='button' name='notifInsured' onClick={notifInsured}>
-          Notifications par Assuré
+        <button
+          type='button'
+          className='Button-gradient'
+          name='notifInsured'
+          onClick={notifInsured}
+        >
+          Liste des notifications par Assuré
         </button>
-        <button type='button' name='refund' Click={refund}>
-          Remboursements
+        <button
+          type='button'
+          className='Button-gradient'
+          name='refund'
+          Click={refund}
+        >
+          Liste des remboursements
         </button>
       </div>
       <div className='Listresult'>

@@ -1,9 +1,10 @@
-import { useState } from 'react'
-import { useHistory } from 'react-router'
-import axios from 'axios'
-import FlecheGold from '../data/images/Flechegold.png'
-import logo from '../data/images/logo_elan.png'
 import './Form.css'
+
+import FlecheGold from '../data/images/Flechegold.png'
+import axios from 'axios'
+import logo from '../data/images/logo_elan.png'
+import { useHistory } from 'react-router'
+import { useState } from 'react'
 
 const Form = visitor => {
   const [accountName, setAccountName] = useState('')
@@ -102,7 +103,11 @@ const Form = visitor => {
           <span> * </span> Obligatoire
         </p>
         <div className='formData'>
-          <input id='btnEnvoyer' type='submit' value='Valider le profil' />
+          <input
+            className='btnEnvoyer'
+            type='submit'
+            value='Valider le profil'
+          />
         </div>
       </form>
     </div>
