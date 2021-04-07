@@ -6,9 +6,15 @@ import './Intro.css'
 import logo from '../data/images/logo_elan.png'
 import why from '../data/images/why.png'
 
-const Intro = () => {
+const Intro = visitor => {
   // const [username, setUserName] = useState()
   // const [password, setPassword] = useState()
+  const handleChange = e => {
+    if (e.target.value.match(/^([^@]*)@/)[1]) {
+      visitor.setVisitor(e.target.value.match(/^([^@]*)@/)[1])
+    }
+  }
+
   return (
     <div className='login'>
       <img src={logo} className='bigLogo' />
@@ -24,6 +30,7 @@ const Intro = () => {
             type='text'
             id='inputIdentifiant'
             placeholder='votremail@exemple.com'
+            onChange={handleChange}
           />
         </label>
         <label>

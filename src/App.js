@@ -46,7 +46,11 @@ const App = withRouter(({ location }) => {
         location.pathname !== '/waiting' && <Header />}
       {location.pathname.includes('/admin') && <NavAdmin />}
       <Switch>
-        <Route exact path='/' component={Intro} />
+        <Route
+          exact
+          path='/'
+          render={props => <Intro {...props} setVisitor={setVisitor} />}
+        />
         <Route
           path='/thanks'
           render={props => <Thanks {...props} visitor={visitor} />}
