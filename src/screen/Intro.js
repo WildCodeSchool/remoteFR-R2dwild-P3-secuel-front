@@ -85,4 +85,5 @@ const Intro = visitor => {
     </div>
   )
 }
+
 export default Intro

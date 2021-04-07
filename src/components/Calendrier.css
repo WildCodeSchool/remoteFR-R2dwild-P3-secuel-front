@@ -36,7 +36,7 @@
 }
 .divCalendrier p {
   align-items: center;
-  color:#0C75B7;
+  color:#348AA7;
   display:flex;
   font-size:15px;
   font-weight: 900;
@@ -63,7 +63,7 @@
   }
   #titreCalendar{
   display:none
-}
+  }
 }
 @media (max-width: 600px) {
   .divCalendar{

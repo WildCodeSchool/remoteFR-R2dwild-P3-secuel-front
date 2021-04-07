@@ -39,7 +39,7 @@ const Notification = () => {
         </ul>
         <ul className='starNText'>
           <li className='starRed'></li>
-          <li className='textLegend'>Il y a un petit soucis</li>
+          <li className='textLegend'>Il y a un petit souci</li>
         </ul>
       </ul>
       <div className='notifMap'>

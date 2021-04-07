@@ -18,16 +18,15 @@
   text-decoration: none;
   width: auto;
 }
-#menu-burger {
+#menuBurg {
   cursor: pointer;
-  position: fixed;
   right:1rem;
   top:2rem;
   z-index: 6666;
 }
-#menu-burger .bar1,
-#menu-burger .bar2,
-#menu-burger .bar3 {
+#menuBurg .bar1,
+#menuBurg .bar2,
+#menuBurg .bar3 {
   background-color: white;
   height: 5px;
   margin: 6px 0;
@@ -63,30 +62,16 @@
   padding-right: 5px;
   width: 30px;
 }
-
 .selected {
   border-bottom: 3px solid #348AA7;
 }
 @media (max-width: 600px) {
-  .header{
-    display: none;
-  }
   #menuBurger{
     display:flex;
-    position: fixed;
     justify-content: right;
     z-index:9999
   }
   .navIcon {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 12px;
-    font-weight: bold;
-    justify-content: space-between;
-    margin-bottom: 40px;
-    margin-left: 10px;
-    margin-top: 10px;
-    width: 95%;
+    display: none;
   }
 }
