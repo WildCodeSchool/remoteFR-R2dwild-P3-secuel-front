@@ -39,7 +39,7 @@
 .navIcon {
   align-items: center;
   display: flex;
-  font-size: 12px;
+  font-size: 1rem;
   font-weight: bold;
   justify-content: space-between;
   margin-bottom: 40px;
