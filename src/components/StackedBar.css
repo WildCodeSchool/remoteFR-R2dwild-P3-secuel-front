@@ -4,7 +4,7 @@
 .bar{
   align-items: center;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   height: 400px;
@@ -12,7 +12,6 @@
   margin-top: 15px;
   padding: 10px;
   position: relative;
-  width: 90%;
 }
 .label {
   left:0;
@@ -20,8 +19,12 @@
   top: 0;
 }
 .title{
-  color:#003049;
-  font-weight: bolder;
+  color:black;
+  font-size: large;
   margin: 0;
   position: relative;
+  font-size:30px;
+  font-weight: bold;
+  text-align: left;   
+  padding-left : 90px
 }

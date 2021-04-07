@@ -83,7 +83,7 @@ function StackedBar() {
 
   return (
     <>
-      <h1 className='title'>Vos remboursements cette année</h1>
+      <h1 className='title'>Année 2021</h1>
       <div className='bar'>
         <Bar data={data} options={options} legend={legend} />
       </div>

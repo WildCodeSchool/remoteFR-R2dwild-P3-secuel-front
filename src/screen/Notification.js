@@ -18,10 +18,8 @@ const Notification = () => {
   return (
     <div className='notifBody'>
       <h1 id='titreNotif'>Vos Notifications</h1>
-      <h1>
-        <span style={{ color: '#348AA7' }}>
-          {eventArray[1]['prénom'] + '   ' + eventArray[1]['Nom']}
-        </span>
+      <h1 className='nameInsured'>
+        {eventArray[1]['prénom'] + '   ' + eventArray[1]['Nom']}
       </h1>
 
       <div className='notifNumber'>Vous avez {statusNotif} notification(s)</div>
