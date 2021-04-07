@@ -10,7 +10,7 @@ const Intro = visitor => {
   // const [username, setUserName] = useState()
   // const [password, setPassword] = useState()
   const handleChange = e => {
-    if (e.target.value.match(/^([^@]*)@/)[1]) {
+    if (e.target.value.includes('@')) {
       visitor.setVisitor(e.target.value.match(/^([^@]*)@/)[1])
     }
   }
