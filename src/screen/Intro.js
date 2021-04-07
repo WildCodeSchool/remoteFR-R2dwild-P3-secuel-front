@@ -35,7 +35,7 @@ const Intro = visitor => {
         </label>
         <label>
           <p>Mot de passe</p>
-          <input type='password' placeholder='votremotdepasse' />
+          <input type='password' placeholder='votre mot de passe' />
         </label>
         <div className='connexion'>
           <Link to='/home'>
