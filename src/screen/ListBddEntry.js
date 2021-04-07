@@ -304,6 +304,7 @@ const ListBddEntry = () => {
             ))
           : null}
       </div>
+      {message !== '' ? <div>{message}</div> : null}
     </div>
   )
 }

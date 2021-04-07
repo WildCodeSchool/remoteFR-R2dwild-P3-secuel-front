@@ -2,7 +2,6 @@ import './Form.css'
 
 import ListBddEntry from './ListBddEntry'
 import axios from 'axios'
-import logo from '../data/images/logo_elan.png'
 import { useState } from 'react'
 
 const FormAdminAccount = () => {
@@ -39,7 +38,7 @@ const FormAdminAccount = () => {
   return (
     <div className='form'>
       <div className='formTitle'>
-        <h1 id='titreForm'> Création d'un compte utilisateur</h1>
+        <h1 id='titreForm'> Création d&apos;un compte utilisateur</h1>
       </div>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>

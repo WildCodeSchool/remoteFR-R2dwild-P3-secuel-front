@@ -12,11 +12,9 @@ const DetailEvent = Acte => {
   )[0]
   return (
     <div className='card'>
-      <div>
-        <Link to='/home'>
-          <img src={fleche} />
-        </Link>
-      </div>
+      <Link to='/home'>
+        <img src={fleche} />
+      </Link>
       <p className='titreCard'>{insured['N Sécurité sociale']}</p>
       <p>
         <span className='infoCard'>Date acte: </span>{' '}

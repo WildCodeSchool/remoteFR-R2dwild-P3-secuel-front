@@ -4,6 +4,7 @@ import { Route, Switch, withRouter } from 'react-router-dom'
 
 import AddMutu from './screen/AddMutu'
 import AddSecu from './screen/AddSecu'
+import Admin from './screen/Admin'
 import Analyse from './screen/Analyse'
 import Congratulation from './screen/Congratulation'
 import DetailEvent from './components/DetailEvent'
@@ -97,6 +98,7 @@ const App = withRouter(({ location }) => {
 
         <div className='appAdmin'>
           {location.pathname.includes('/admin') && <NavAdmin />}
+          <Route path='/admin' component={Admin} />
           <Route path='/admin/medicalevent' component={FormAdminMedicalEvent} />
           <Route path='/admin/Form' component={FormAdminAccount} />
           <Route

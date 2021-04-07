@@ -12,7 +12,7 @@ const NavAdmin = () => {
             className='adminLink'
             activeClassName='selected'
           >
-            Création d'un compte
+            Création d&apos;un compte
           </NavLink>
         </li>
         <li>
@@ -21,7 +21,7 @@ const NavAdmin = () => {
             className='adminLink'
             activeClassName='selected'
           >
-            création d'un institut d'assurance
+            Création d&apos;un institut d&apos;assurance
           </NavLink>
         </li>
         <li>
@@ -30,7 +30,7 @@ const NavAdmin = () => {
             className='adminLink'
             activeClassName='selected'
           >
-            création d'Assuré -e-s
+            Création d&apos;Assuré -e-s
           </NavLink>
         </li>
         <li>
@@ -39,7 +39,7 @@ const NavAdmin = () => {
             className='adminLink'
             activeClassName='selected'
           >
-            création d'un acte médical
+            Création d&apos;un acte médical
           </NavLink>
         </li>
         <li>
@@ -48,7 +48,7 @@ const NavAdmin = () => {
             className='adminLink'
             activeClassName='selected'
           >
-            création de Notifications
+            Création de Notifications
           </NavLink>
         </li>
         <li>
@@ -66,7 +66,7 @@ const NavAdmin = () => {
             className='adminLink'
             activeClassName='selected'
           >
-            création d'un professionnels
+            Création d&apos;un professionnels
           </NavLink>
         </li>
         <li>
@@ -93,7 +93,7 @@ const NavAdmin = () => {
             className='adminLink'
             activeClassName='selected'
           >
-            création d'un remboursement
+            Création d&apos;un remboursement
           </NavLink>
         </li>
       </ul>
