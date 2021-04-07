@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import axios from 'axios'
-
 import './Form.css'
+
+import ListBddEntry from './ListBddEntry'
+import axios from 'axios'
+import { useState } from 'react'
 
 const FormAdminProSpe = () => {
   const [idPro, setIdPro] = useState('')
@@ -25,7 +26,7 @@ const FormAdminProSpe = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('http://localhost:3000/Account', allPost)
+      .post('http://localhost:3000/Pros_speciality', allPost)
       .then(res => {
         setMessage(res.data)
       })
@@ -84,10 +85,11 @@ const FormAdminProSpe = () => {
             <span> * </span> required.
           </p>
           <div className='formData'>
-            <input type='submit' value='Envoyer' />
+            <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
         </fieldset>
       </form>
+      <ListBddEntry />
     </div>
   )
 }

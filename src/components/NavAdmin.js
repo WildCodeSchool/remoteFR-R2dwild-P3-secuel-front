@@ -1,3 +1,5 @@
+import './NavAdmin.css'
+
 import { NavLink } from 'react-router-dom'
 
 const NavAdmin = () => {
@@ -10,7 +12,7 @@ const NavAdmin = () => {
             className='adminLink'
             activeClassName='selected'
           >
-            Compte
+            Création d'un compte
           </NavLink>
         </li>
         <li>
@@ -19,7 +21,7 @@ const NavAdmin = () => {
             className='adminLink'
             activeClassName='selected'
           >
-            Assurances
+            création d'un institut d'assurance
           </NavLink>
         </li>
         <li>
@@ -28,7 +30,7 @@ const NavAdmin = () => {
             className='adminLink'
             activeClassName='selected'
           >
-            Assuré -e-s
+            création d'Assuré -e-s
           </NavLink>
         </li>
         <li>
@@ -37,7 +39,7 @@ const NavAdmin = () => {
             className='adminLink'
             activeClassName='selected'
           >
-            Acte médical
+            création d'un acte médical
           </NavLink>
         </li>
         <li>
@@ -46,7 +48,7 @@ const NavAdmin = () => {
             className='adminLink'
             activeClassName='selected'
           >
-            Notifications
+            création de Notifications
           </NavLink>
         </li>
         <li>
@@ -64,7 +66,7 @@ const NavAdmin = () => {
             className='adminLink'
             activeClassName='selected'
           >
-            Professionnels
+            création d'un professionnels
           </NavLink>
         </li>
         <li>
@@ -78,11 +80,20 @@ const NavAdmin = () => {
         </li>
         <li>
           <NavLink
+            to='/admin/FormAdminSpeciality'
+            className='adminLink'
+            activeClassName='selected'
+          >
+            Spécialité
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
             to='/admin/FormAdminRefund'
             className='adminLink'
             activeClassName='selected'
           >
-            Remboursement
+            création d'un remboursement
           </NavLink>
         </li>
       </ul>

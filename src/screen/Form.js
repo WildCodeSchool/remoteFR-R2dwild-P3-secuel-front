@@ -104,7 +104,11 @@ const Form = visitor => {
           <span> * </span> Obligatoire
         </p>
         <div className='formData'>
-          <input id='btnEnvoyer' type='submit' value='Valider le profil' />
+          <input
+            className='btnEnvoyer'
+            type='submit'
+            value='Valider le profil'
+          />
         </div>
       </form>
     </div>

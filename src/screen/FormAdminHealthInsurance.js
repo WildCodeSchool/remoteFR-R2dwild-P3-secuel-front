@@ -1,8 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState } from 'react'
-import axios from 'axios'
 
 import './Form.css'
+
+import ListBddEntry from './ListBddEntry'
+import axios from 'axios'
+import { useState } from 'react'
 
 const FormAdminHealthInsurance = () => {
   const [message, setMessage] = useState(null)
@@ -18,7 +20,7 @@ const FormAdminHealthInsurance = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/health_insurance', allPost)
+      .post('http://localhost:3000/health_insurance', allPost)
       .then(res => {
         setMessage(res.data)
       })
@@ -52,10 +54,11 @@ const FormAdminHealthInsurance = () => {
             <span> * </span> required.
           </p>
           <div className='formData'>
-            <input type='submit' value='Envoyer' />
+            <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
         </fieldset>
       </form>
+      <ListBddEntry />
     </div>
   )
 }

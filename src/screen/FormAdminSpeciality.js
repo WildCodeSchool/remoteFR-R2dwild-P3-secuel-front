@@ -1,14 +1,15 @@
-import { useState } from 'react'
-import axios from 'axios'
-
 import './Form.css'
+
+import ListBddEntry from './ListBddEntry'
+import axios from 'axios'
+import { useState } from 'react'
 
 const FormAdminSpeciality = () => {
   const [message, setMessage] = useState(null)
   const [speciality, setSpeciality] = useState('')
 
   const spePost = {
-    specialiti_name: speciality
+    speciality_name: speciality
   }
 
   const handleChange = e => {
@@ -18,7 +19,7 @@ const FormAdminSpeciality = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('http://localhost:3000/notifications', spePost)
+      .post('http://localhost:3000/specialities', spePost)
       .then(res => {
         setMessage(res.data)
       })
@@ -52,10 +53,11 @@ const FormAdminSpeciality = () => {
             <span> * </span> required.
           </p>
           <div className='formData'>
-            <input type='submit' value='Envoyer' />
+            <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
         </fieldset>
       </form>
+      <ListBddEntry />
     </div>
   )
 }
