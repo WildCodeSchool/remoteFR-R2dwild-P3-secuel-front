@@ -78,6 +78,15 @@ const NavAdmin = () => {
         </li>
         <li>
           <NavLink
+            to='/admin/FormAdminSpeciality'
+            className='adminLink'
+            activeClassName='selected'
+          >
+            Spécialité
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
             to='/admin/FormAdminRefund'
             className='adminLink'
             activeClassName='selected'

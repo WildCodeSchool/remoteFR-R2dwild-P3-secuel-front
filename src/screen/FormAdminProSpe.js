@@ -26,7 +26,7 @@ const FormAdminProSpe = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('http://localhost:3000/Account', allPost)
+      .post('http://localhost:3000/Pros_speciality', allPost)
       .then(res => {
         setMessage(res.data)
       })

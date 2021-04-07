@@ -9,7 +9,7 @@ const FormAdminSpeciality = () => {
   const [speciality, setSpeciality] = useState('')
 
   const spePost = {
-    specialiti_name: speciality
+    speciality_name: speciality
   }
 
   const handleChange = e => {
@@ -53,7 +53,7 @@ const FormAdminSpeciality = () => {
             <span> * </span> required.
           </p>
           <div className='formData'>
-            <input type='submit' value='Envoyer' />
+            <input id='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
         </fieldset>
       </form>

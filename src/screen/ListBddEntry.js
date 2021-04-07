@@ -36,7 +36,7 @@ const ListBddEntry = () => {
     e.preventDefault()
     setCurrent(e.target.name)
     axios
-      .get('localhost:3000/insured')
+      .get('http://localhost:3000/insured')
       .then(res => res.data)
       .then(data => setDataInsured(data))
       .catch(e => {

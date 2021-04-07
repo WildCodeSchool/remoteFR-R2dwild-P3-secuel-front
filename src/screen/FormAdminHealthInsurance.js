@@ -20,7 +20,7 @@ const FormAdminHealthInsurance = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/health_insurance', allPost)
+      .post('http://localhost:3000/health_insurance', allPost)
       .then(res => {
         setMessage(res.data)
       })
