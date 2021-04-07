@@ -63,6 +63,9 @@
 .listeParams li{
   margin-right: 10px;
 }
+.paramsBody{
+  width: 90%;
+}
 #titreAfficheCompte{
 font-size:30px;
 font-weight: bold;
@@ -72,6 +75,7 @@ text-align: left;
   font-size:30px;
   font-weight: bold;
   text-align: left; 
+  padding-left:15px;
 }
 .vosComptes{
   display: flex;
