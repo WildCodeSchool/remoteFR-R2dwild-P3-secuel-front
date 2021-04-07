@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import axios from 'axios'
-
 import './Form.css'
+
+import ListBddEntry from './ListBddEntry'
+import axios from 'axios'
+import { useState } from 'react'
 
 const FormAdminMedicalEvent = () => {
   const [amountEvent, setAmountEvent] = useState('')
@@ -46,7 +47,7 @@ const FormAdminMedicalEvent = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/medical_events', allMedicalE)
+      .post('http://localhost:3000/medical_events', allMedicalE)
       .then(res => {
         setMessage(res.data)
       })
@@ -166,10 +167,11 @@ const FormAdminMedicalEvent = () => {
             <span> * </span> required.
           </p>
           <div className='formData'>
-            <input type='submit' value='Envoyer' />
+            <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
         </fieldset>
       </form>
+      <ListBddEntry />
     </div>
   )
 }

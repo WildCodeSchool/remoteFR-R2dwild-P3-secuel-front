@@ -1,12 +1,13 @@
 .bigLogo{
   width: 20%;
 }
-#btnEnvoyer{
-  background:#BE9B07;
+.btnEnvoyer{
+  background-color:#BE9B07 !important;
   border-radius:5px;
   color:white;
   height:30px;
   width:auto;
+  font-weight: bold;
 }
 #connaissance{
   display:flex;
@@ -56,10 +57,13 @@ fieldset {
 .form .formData input:not([type="submit"]), textarea {
   border-radius: 5px;
   flex-grow: 1;
+  height : 25px;
+
 }
 .form .formData label {
   display: inline-block;
   margin-right: 10px;
+  padding-right: 50px;
   text-align: center;
   width: 110px;
 }
@@ -67,8 +71,8 @@ fieldset {
   text-align: center;
 }
 .form input{
-  border:none;
-  height: 100%;
+  border:2px, solid, #BE9B07 ;
+  height: 200%;
   outline:none;
   width:100%;
 }
@@ -80,6 +84,9 @@ fieldset {
   display: flex;
   justify-content: space-around;
 }
+
+
+
 #pObligatoire{
   font-size:12px;
   text-align:right;

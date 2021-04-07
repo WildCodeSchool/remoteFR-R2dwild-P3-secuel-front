@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import axios from 'axios'
-
 import './Form.css'
+
+import ListBddEntry from './ListBddEntry'
+import axios from 'axios'
+import { useState } from 'react'
 
 const FormAdminPros = () => {
   const [message, setMessage] = useState(null)
@@ -18,7 +19,7 @@ const FormAdminPros = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/pros', allPost)
+      .post('http://localhost:3000/pros', allPost)
       .then(res => {
         setMessage(res.data)
       })
@@ -42,6 +43,7 @@ const FormAdminPros = () => {
               type='text'
               id='name'
               name='name'
+              className='saisie'
               onChange={handleChange}
               required
               value={name}
@@ -51,10 +53,17 @@ const FormAdminPros = () => {
             <span> * </span> required.
           </p>
           <div className='formData'>
-            <input type='submit' value='Envoyer' />
+            <input id='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
         </fieldset>
+        <p>
+          <span> * </span> required.
+        </p>
+        <div className='formData'>
+          <input className='btnEnvoyer' type='submit' value='Envoyer' />
+        </div>
       </form>
+      <ListBddEntry />
     </div>
   )
 }

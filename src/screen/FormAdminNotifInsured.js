@@ -1,17 +1,20 @@
-import { useState } from 'react'
-import axios from 'axios'
-
 import './Form.css'
+
+import ListBddEntry from './ListBddEntry'
+import axios from 'axios'
+import { useState } from 'react'
 
 const FormAdminNotifInsured = () => {
   const [insured, setInsured] = useState('')
   const [message, setMessage] = useState(null)
   const [notif, setNotif] = useState('')
+  const [compte, setCompte] = useState('')
   const [status, setStatus] = useState('')
   const allPost = {
-    Notifications_id_Notification: notif,
-    Insured_id_Insured: insured,
-    Ni_status: status
+    notifications_id_Notification: notif,
+    insured_id_Insured: insured,
+    insured_Account_id_Compte: compte,
+    Status: status
   }
 
   const handleChange = e => {
@@ -19,13 +22,15 @@ const FormAdminNotifInsured = () => {
       ? setNotif(e.target.value)
       : e.target.name === 'insured'
       ? setInsured(e.target.value)
+      : e.target.name === 'compte'
+      ? setCompte(e.target.value)
       : setStatus(e.target.value)
   }
 
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/notif_insured', allPost)
+      .post('http://localhost:3000/notif_insured', allPost)
       .then(res => {
         setMessage(res.data)
       })
@@ -68,6 +73,19 @@ const FormAdminNotifInsured = () => {
             />
           </div>
           <div className='formData'>
+            <label htmlFor='compte'>
+              Id du compte concerné <span> * </span>
+            </label>
+            <input
+              type='text'
+              id='compte'
+              name='compte'
+              onChange={handleChange}
+              required
+              value={compte}
+            />
+          </div>
+          <div className='formData'>
             <label htmlFor='status'>
               Statuts de la notif <span> * </span>
             </label>
@@ -84,10 +102,11 @@ const FormAdminNotifInsured = () => {
             <span> * </span> required.
           </p>
           <div className='formData'>
-            <input type='submit' value='Envoyer' />
+            <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
         </fieldset>
       </form>
+      <ListBddEntry />
     </div>
   )
 }

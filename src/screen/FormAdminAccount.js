@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import axios from 'axios'
-
 import './Form.css'
 
+import ListBddEntry from './ListBddEntry'
+import axios from 'axios'
 import logo from '../data/images/logo_elan.png'
+import { useState } from 'react'
 
 const FormAdminAccount = () => {
   const [accountName, setAccountName] = useState('')
@@ -38,14 +38,10 @@ const FormAdminAccount = () => {
 
   return (
     <div className='form'>
-      <img src={logo} className='bigLogo' />
       <div className='formTitle'>
-        <h1 id='titreForm'> Création de compte</h1>
+        <h1 id='titreForm'> Création d'un compte utilisateur</h1>
       </div>
       {message ? <p>{message}</p> : null}
-      <p id='pointChargement'>
-        •<span id='spanChargement'>•••</span>
-      </p>
       <form onSubmit={submitForm}>
         <div className='formData'>
           <fieldset>
@@ -95,9 +91,14 @@ const FormAdminAccount = () => {
           <span> * </span> Obligatoire
         </p>
         <div className='formData'>
-          <input id='btnEnvoyer' type='submit' value='Valider le profil' />
+          <input
+            className='btnEnvoyer'
+            type='submit'
+            value='Valider le profil'
+          />
         </div>
       </form>
+      <ListBddEntry />
     </div>
   )
 }

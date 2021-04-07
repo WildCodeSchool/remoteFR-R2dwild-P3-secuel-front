@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import axios from 'axios'
-
 import './Form.css'
+
+import ListBddEntry from './ListBddEntry'
+import axios from 'axios'
+import { useState } from 'react'
 
 const FormAdminInsured = () => {
   const [birthDate, setBirthDate] = useState('')
@@ -12,6 +13,7 @@ const FormAdminInsured = () => {
   const [numSecu, setNumSecu] = useState('')
   const [password, setPassword] = useState('')
   const [tel, setTel] = useState('')
+  const [compte, setCompte] = useState('')
   const allPost = {
     lastname: lastName,
     firstname: firstName,
@@ -19,29 +21,32 @@ const FormAdminInsured = () => {
     email: email,
     tel: tel,
     Password: password,
-    birth_date: birthDate
+    birth_date: birthDate,
+    Account_id_Compte: compte
   }
 
   const handleChange = e => {
     e.target.name === 'lastname'
       ? setLastName(e.target.value)
       : e.target.name === 'firstname'
-      ? setNumSecu(e.target.value)
-      : e.target.name === 'numsecu'
       ? setFirstName(e.target.value)
+      : e.target.name === 'numsecu'
+      ? setNumSecu(e.target.value)
       : e.target.name === 'email'
       ? setEmail(e.target.value)
       : e.target.name === 'tel'
       ? setTel(e.target.value)
       : e.target.name === 'password'
       ? setPassword(e.target.value)
-      : setBirthDate(e.target.value)
+      : e.target.name === 'birth-date'
+      ? setBirthDate(e.target.value)
+      : setCompte(e.target.value)
   }
 
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/insured', allPost)
+      .post('http://localhost:3000/insured', allPost)
       .then(res => {
         setMessage(res.data)
       })
@@ -149,14 +154,28 @@ const FormAdminInsured = () => {
             />
           </div>
 
+          <div className='formData'>
+            <label htmlFor='compte'>
+              Compte de rattachement<span> * </span>
+            </label>
+            <input
+              type='text'
+              id='compte'
+              name='compte'
+              onChange={handleChange}
+              required
+              value={compte}
+            />
+          </div>
           <p>
             <span> * </span> required.
           </p>
           <div className='formData'>
-            <input type='submit' value='Envoyer' />
+            <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
         </fieldset>
       </form>
+      <ListBddEntry />
     </div>
   )
 }
