@@ -36,7 +36,7 @@ const FormAdminHealthInsurance = () => {
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>information sur l'institut : </legend>
+          {/* <legend>information sur l'institut : </legend> */}
           <div className='formData'>
             <label htmlFor='name'>
               Nom de l'institut<span> * </span>
@@ -51,7 +51,7 @@ const FormAdminHealthInsurance = () => {
             />
           </div>
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />

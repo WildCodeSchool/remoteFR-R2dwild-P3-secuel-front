@@ -62,7 +62,7 @@ const FormAdminMedicalEvent = () => {
       <h1>Ajout d&apos;un acte</h1>
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>Informations Acte</legend>
+          {/* <legend>Informations Acte</legend> */}
           <div className='formData'>
             <label htmlFor='dateEvent'>
               Date de l&apos;acte<span> * </span>
@@ -91,7 +91,7 @@ const FormAdminMedicalEvent = () => {
           </div>
           <div className='formData'>
             <label htmlFor='secuStatus'>
-              Status du dossier à la secu<span> * </span>
+              Statut du dossier à la Sécu<span> * </span>
             </label>
             <input
               id='secuStatus'
@@ -104,7 +104,7 @@ const FormAdminMedicalEvent = () => {
 
           <div className='formData'>
             <label htmlFor='insuranceStatus'>
-              Status du dossier à la mutuelle<span> * </span>
+              Statut du dossier à la mutuelle<span> * </span>
             </label>
             <input
               id='insuranceStatus'
@@ -116,7 +116,7 @@ const FormAdminMedicalEvent = () => {
           </div>
           <div className='formData'>
             <label htmlFor='specialitiesIdSpeciality'>
-              Spécialité medecin<span> * </span>
+              Spécialité médecin<span> * </span>
             </label>
             <input
               id='specialitiesIdSpeciality'
@@ -140,7 +140,7 @@ const FormAdminMedicalEvent = () => {
           </div>
           <div className='formData'>
             <label htmlFor='insuredAccountIdCompte'>
-              compte relié<span> * </span>
+              Compte relié<span> * </span>
             </label>
             <input
               id='insuredAccountIdCompte'
@@ -164,7 +164,7 @@ const FormAdminMedicalEvent = () => {
           </div>
           <hr />
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />

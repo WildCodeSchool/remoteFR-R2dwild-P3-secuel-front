@@ -34,7 +34,7 @@ const FormAdminPros = () => {
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>information sur le professionnel : </legend>
+          {/* <legend>information sur le professionnel : </legend> */}
           <div className='formData'>
             <label htmlFor='name'>
               Nom du médecin <span> * </span>
@@ -50,7 +50,7 @@ const FormAdminPros = () => {
             />
           </div>
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />

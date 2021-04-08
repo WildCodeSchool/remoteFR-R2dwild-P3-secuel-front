@@ -79,10 +79,6 @@ fieldset {
   display: flex;
   justify-content: space-around;
 }
-#pObligatoire{
-  font-size:12px;
-  text-align:right;
-}
 #pointChargement{
   color:#BE9B07;
   display: flex;
@@ -96,9 +92,6 @@ span {
 }
 #spanChargement{
   color:#e2e4e8;
-}
-#titreForm{
-  font-weight: bolder;
 }
 
 @media (max-width: 600px) {

@@ -38,15 +38,15 @@ const FormAdminAccount = () => {
   return (
     <div className='form'>
       <div className='formTitle'>
-        <h1 id='titreForm'> Création d&apos;un compte utilisateur</h1>
+        <h1>Création d&apos;un compte utilisateur</h1>
       </div>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <div className='formData'>
-          <fieldset>
-            <legend>
+        <fieldset>
+          <div className='formData'>
+            <label htmlFor='name'>
               Nom<span> * </span>
-            </legend>
+            </label>
             <input
               type='text'
               id='name'
@@ -55,13 +55,11 @@ const FormAdminAccount = () => {
               required
               value={accountName}
             />
-          </fieldset>
-        </div>
-        <div className='formData'>
-          <fieldset>
-            <legend>
+          </div>
+          <div className='formData'>
+            <label htmlFor='name'>
               Email<span> * </span>
-            </legend>
+            </label>
             <input
               type='text'
               id='email'
@@ -70,32 +68,30 @@ const FormAdminAccount = () => {
               required
               value={login}
             />
-          </fieldset>
-        </div>
-        <div className='formData'>
-          <fieldset>
-            <legend>
+          </div>
+          <div className='formData'>
+            <label htmlFor='name'>
               Mot de passe<span> * </span>
-            </legend>
+            </label>
             <input
               id='password'
               name='password'
               onChange={handleChange}
               required
               value={password}
-            />{' '}
-          </fieldset>
-        </div>
-        <p id='pObligatoire'>
-          <span> * </span> Obligatoire
-        </p>
-        <div className='formData'>
-          <input
-            className='btnEnvoyer'
-            type='submit'
-            value='Valider le profil'
-          />
-        </div>
+            />
+          </div>
+          <p>
+            <span> * </span> Obligatoire
+          </p>
+          <div className='formData'>
+            <input
+              className='btnEnvoyer'
+              type='submit'
+              value='Valider le profil'
+            />
+          </div>
+        </fieldset>
       </form>
       <ListBddEntry />
     </div>

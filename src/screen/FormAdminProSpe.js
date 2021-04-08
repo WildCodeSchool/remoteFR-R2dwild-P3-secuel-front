@@ -41,10 +41,10 @@ const FormAdminProSpe = () => {
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>saisie des infos</legend>
+          {/* <legend>saisie des infos</legend> */}
           <div className='formData'>
             <label htmlFor='pro'>
-              Identifiant du Professionnel<span> * </span>
+              Identifiant du professionnel<span> * </span>
             </label>
             <input
               type='text'
@@ -70,7 +70,7 @@ const FormAdminProSpe = () => {
           </div>
           <div className='formData'>
             <label htmlFor='status'>
-              statuts de la spécialité<span> * </span>
+              Statut de la spécialité<span> * </span>
             </label>
             <input
               id='status'
@@ -82,7 +82,7 @@ const FormAdminProSpe = () => {
           </div>
           <hr />
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />

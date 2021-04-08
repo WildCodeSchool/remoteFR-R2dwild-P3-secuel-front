@@ -45,7 +45,7 @@ const FormAdminNotifInsured = () => {
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>information sur la notification : </legend>
+          {/* <legend>information sur la notification : </legend> */}
           <div className='formData'>
             <label htmlFor='notif'>
               Id de notif <span> * </span>
@@ -87,7 +87,7 @@ const FormAdminNotifInsured = () => {
           </div>
           <div className='formData'>
             <label htmlFor='status'>
-              Statuts de la notif <span> * </span>
+              Statut de la notif <span> * </span>
             </label>
             <input
               type='bool'
@@ -99,7 +99,7 @@ const FormAdminNotifInsured = () => {
             />
           </div>
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />

@@ -46,7 +46,7 @@ const FormAdminRefund = () => {
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>information sur le Remboursement : </legend>
+          {/* <legend>information sur le Remboursement : </legend> */}
           <div className='formData'>
             <label htmlFor='amount'>
               Montant du remboursement<span> * </span>
@@ -100,7 +100,7 @@ const FormAdminRefund = () => {
             />
           </div>
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />

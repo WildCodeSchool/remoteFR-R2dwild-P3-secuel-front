@@ -61,7 +61,7 @@ const FormAdminInsured = () => {
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>information de l&apos;assuré : </legend>
+          {/* <legend>information de l&apos;assuré : </legend> */}
           <div className='formData'>
             <label htmlFor='lastname'>
               Nom de famille <span> * </span>
@@ -103,7 +103,7 @@ const FormAdminInsured = () => {
           </div>
           <div className='formData'>
             <label htmlFor='email'>
-              email<span> * </span>
+              Email<span> * </span>
             </label>
             <input
               type='text'
@@ -129,7 +129,7 @@ const FormAdminInsured = () => {
           </div>
           <div className='formData'>
             <label htmlFor='password'>
-              Password<span> * </span>
+              Mot de passe<span> * </span>
             </label>
             <input
               type='text'
@@ -168,7 +168,7 @@ const FormAdminInsured = () => {
             />
           </div>
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />

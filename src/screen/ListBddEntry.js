@@ -166,6 +166,14 @@ const ListBddEntry = () => {
           name='insured'
           onClick={insured}
         >
+          Liste des instituts d&apos;assurance
+        </button>
+        <button
+          type='button'
+          className='buttonGradient'
+          name='spe'
+          onClick={spe}
+        >
           Liste des assurés
         </button>
         <button
@@ -176,38 +184,7 @@ const ListBddEntry = () => {
         >
           Liste des actes médicaux
         </button>
-        <button
-          type='button'
-          className='buttonGradient'
-          name='insurance'
-          onClick={insurance}
-        >
-          Liste des instituts d&apos;assurance
-        </button>
-        <button
-          type='button'
-          className='buttonGradient'
-          name='spe'
-          onClick={spe}
-        >
-          Liste des spécialités
-        </button>
-        <button
-          type='button'
-          className='buttonGradient'
-          name='pro'
-          onClick={pro}
-        >
-          Liste des pro
-        </button>
-        <button
-          type='button'
-          className='buttonGradient'
-          name='proSpe'
-          onClick={proSpe}
-        >
-          Liste des Spé par Pro
-        </button>
+
         <button
           type='button'
           className='buttonGradient'
@@ -222,7 +199,32 @@ const ListBddEntry = () => {
           name='notifInsured'
           onClick={notifInsured}
         >
-          Liste notifications par Assuré
+          Liste des notifications par Assuré
+        </button>
+        <button
+          type='button'
+          className='buttonGradient'
+          name='pro'
+          onClick={pro}
+        >
+          Liste des pro
+        </button>
+
+        <button
+          type='button'
+          className='buttonGradient'
+          name='proSpe'
+          onClick={proSpe}
+        >
+          Liste des Spé par Pro
+        </button>
+        <button
+          type='button'
+          className='buttonGradient'
+          name='insurance'
+          onClick={insurance}
+        >
+          Liste des spécialités
         </button>
         <button
           type='button'

@@ -39,7 +39,7 @@ const FormAdminNotifications = () => {
       {message ? <div>{message}</div> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>Informations sur la notification</legend>
+          {/* <legend>Informations sur la notification</legend> */}
           <div className='formData'>
             <label htmlFor='type'>
               Type de message<span> * </span>
@@ -68,7 +68,7 @@ const FormAdminNotifications = () => {
           </div>
           <hr />
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />
