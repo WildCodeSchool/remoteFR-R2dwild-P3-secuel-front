@@ -66,7 +66,7 @@ const NavAdmin = () => {
             className='adminLink'
             activeClassName='selected'
           >
-            Création d&apos;un professionnels
+            Création d&apos;un professionnel
           </NavLink>
         </li>
         <li>
