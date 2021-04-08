@@ -31,13 +31,11 @@ const Notification = () => {
         </ul>
         <ul className='starNText'>
           <li className='starYellow'></li>
-          <li className='textLegend'>
-            C&apos;est un peu long donc voyons ce qu&apos;il se passe
-          </li>
+          <li className='textLegend'>C&apos;est un peu long, voyons ça</li>
         </ul>
         <ul className='starNText'>
           <li className='starRed'></li>
-          <li className='textLegend'>Il y a un petit souci</li>
+          <li className='textLegend'>Il y a un problème</li>
         </ul>
       </ul>
       <div className='notifMap'>
