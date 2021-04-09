@@ -163,16 +163,16 @@ const ListBddEntry = () => {
         <button
           type='button'
           className='buttonGradient'
-          name='insured'
-          onClick={insured}
+          name='insurance'
+          onClick={insurance}
         >
           Liste des instituts d&apos;assurance
         </button>
         <button
           type='button'
           className='buttonGradient'
-          name='spe'
-          onClick={spe}
+          name='insured'
+          onClick={insured}
         >
           Liste des assurés
         </button>
@@ -221,8 +221,8 @@ const ListBddEntry = () => {
         <button
           type='button'
           className='buttonGradient'
-          name='insurance'
-          onClick={insurance}
+          name='spe'
+          onClick={spe}
         >
           Liste des spécialités
         </button>
@@ -236,75 +236,231 @@ const ListBddEntry = () => {
         </button>
       </div>
       <div className='listResult'>
-        {current === 'account'
-          ? dataAccount.map(d => (
-              <li key={d.id_Compte}>
-                {d.id_Compte}, {d.account_name}, {d.Login}, {d.Password}
-              </li>
-            ))
-          : current === 'insured'
-          ? dataInsured.map(d => (
-              <li key={d.id_Insured}>
-                {d.id_Insured}, {d.lastname}, {d.firstname},{' '}
-                {d.social_security_num},{d.email}, {d.tel}, {d.Password},{' '}
-                {d.Password},{d.birth_date}, {d.Account_id_Compte}
-              </li>
-            ))
-          : current === 'actesMed'
-          ? dataMedEvent.map(d => (
-              <li key={d.id_med_event}>
-                {d.id_med_event}, {d.Date_Event}, {d.amount_Event},{' '}
-                {d.secu_status},{d.insurance_status},{' '}
-                {d.Specialities_id_speciality},{d.Insured_id_Insured},{' '}
-                {d.Insured_Account_id_Compte},{d.Pros_pro_id}
-              </li>
-            ))
-          : current === 'insurance'
-          ? dataHealthInsurance.map(d => (
-              <li key={d.id_insurance}>
-                {d.id_insurance}, {d.insurance_name}
-              </li>
-            ))
-          : current === 'spe'
-          ? dataSpeciality.map(d => (
-              <li key={d.id_speciality}>
-                {d.id_speciality}, {d.speciality_name}
-              </li>
-            ))
-          : current === 'pro'
-          ? dataPros.map(d => (
-              <li key={d.pro_id}>
-                {d.pro_id}, {d.pro_name}
-              </li>
-            ))
-          : current === 'proSpe'
-          ? dataProSpe.map(d => (
-              <li key={d.id_Pros_Speciality}>
-                {d.id_Pros_Speciality},{d.id_speciality}, {d.speciality_name},
-                {d.pros_pro_id},{d.pro_name},{d.Status}
-              </li>
-            ))
-          : current === 'notif'
-          ? dataNotification.map(d => (
-              <li key={d.id_Pros_Speciality}>
-                {d.id_Pros_Speciality}, {d.pros_pro_id}, {d.Message}
-              </li>
-            ))
-          : current === 'notifInsured'
-          ? dataNotifInsured.map(d => (
-              <li key={d.id_notif_insured}>
-                {d.id_notif_insured}, {d.notifications_id_Notification},{' '}
-                {d.insured_id_Insured},{d.insured_Account_id_Compte}, {d.Status}
-              </li>
-            ))
-          : current === 'refund'
-          ? dataRefund.map(d => (
-              <li key={d.id_refund}>
-                {d.id_refund}, {d.Amount_Refund}, {d.Date_Refund},
-                {d.Health_insurance_id_Mutuelle}, {d.Medical_events_id_Actes}
-              </li>
-            ))
-          : null}
+        {current === 'account' ? (
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Login/Email</th>
+                <th>Mot de passe</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dataAccount.map(d => (
+                <tr key={d.id_Compte}>
+                  <td>{d.id_Compte}</td>
+                  <td>{d.account_name}</td>
+                  <td>{d.Login}</td>
+                  <td>{d.Password}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : current === 'insured' ? (
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Numéro de Sécurité</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Mot de passe</th>
+                <th>Date de naissance</th>
+                <th>Id compte</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dataInsured.map(d => (
+                <tr key={d.id_Insured}>
+                  <td>{d.id_Insured}</td>
+                  <td>{d.lastname}</td>
+                  <td>{d.firstname}</td>
+                  <td>{d.social_security_num}</td>
+                  <td>{d.email}</td>
+                  <td>{d.tel}</td>
+                  <td>{d.Password}</td>
+                  <td>{d.birth_date}</td>
+                  <td>{d.Account_id_Compte}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : current === 'actesMed' ? (
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Date évenement</th>
+                <th>Montant</th>
+                <th>Statut Sécu</th>
+                <th>Statut Mutuelle</th>
+                <th>Id spécialité</th>
+                <th>Id assuré</th>
+                <th>Id compte</th>
+                <th>Ip professionnel</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dataMedEvent.map(d => (
+                <tr key={d.id_med_event}>
+                  <td>{d.id_med_event}</td>
+                  <td>{d.Date_Event}</td>
+                  <td>{d.amount_Event}</td>
+                  <td>{d.secu_status}</td>
+                  <td>{d.insurance_status}</td>
+                  <td>{d.Specialities_id_speciality}</td>
+                  <td>{d.Insured_id_Insured}</td>
+                  <td>{d.Insured_Account_id_Compte}</td>
+                  <td>{d.Pros_pro_id}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : current === 'insurance' ? (
+          <table>
+            <thead>
+              <tr>
+                <th>Id institut d&apos;assurance</th>
+                <th>Nom institut</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dataHealthInsurance.map(d => (
+                <tr key={d.id_insurance}>
+                  <td>{d.id_insurance}</td>
+                  <td>{d.insurance_name}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : current === 'spe' ? (
+          <table>
+            <thead>
+              <tr>
+                <th>Id spécialité</th>
+                <th>Nom spécialité</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dataSpeciality.map(d => (
+                <tr key={d.id_speciality}>
+                  <td>{d.id_speciality}</td>
+                  <td>{d.speciality_name}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : current === 'pro' ? (
+          <table>
+            <thead>
+              <tr>
+                <th>Id professionnel</th>
+                <th>Nom professionnel</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dataPros.map(d => (
+                <tr key={d.pro_id}>
+                  <td>{d.pro_id}</td>
+                  <td>{d.pro_name}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : current === 'proSpe' ? (
+          <table>
+            <thead>
+              <tr>
+                <th>Id Pro Spécialité</th>
+                <th>Id Spécialité</th>
+                <th>Nom spécialité</th>
+                <th>Id pro</th>
+                <th>Nom pro</th>
+                <th>Statut</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dataProSpe.map(d => (
+                <tr key={d.id_Pros_Speciality}>
+                  <td>{d.id_Pros_Speciality}</td>
+                  <td>{d.id_speciality}</td>
+                  <td>{d.speciality_name}</td>
+                  <td>{d.pros_pro_id}</td>
+                  <td>{d.pro_name}</td>
+                  <td>{d.Status}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : current === 'notif' ? (
+          <table>
+            <thead>
+              <tr>
+                <th>Id notification</th>
+                <th>Type</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dataNotification.map(d => (
+                <tr key={d.id_Notification}>
+                  <td>{d.id_Notification}</td>
+                  <td>{d.type}</td>
+                  <td>{d.Message}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : current === 'notifInsured' ? (
+          <table>
+            <thead>
+              <tr>
+                <th>Id lien notif/assuré</th>
+                <th>Id notification</th>
+                <th>Id assuré</th>
+                <th>Id compte/assuré</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dataNotifInsured.map(d => (
+                <tr key={d.id_notif_insured}>
+                  <td>{d.id_notif_insured}</td>
+                  <td>{d.notifications_id_Notification}</td>
+                  <td>{d.insured_id_Insured}</td>
+                  <td>{d.insured_Account_id_Compte}</td>
+                  <td>{d.Status}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : current === 'refund' ? (
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Montant remboursé</th>
+                <th>Date remboursement</th>
+                <th>Id institut</th>
+                <th>Id acte médical</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dataRefund.map(d => (
+                <tr key={d.id_refund}>
+                  <td>{d.id_refund}</td>
+                  <td>{d.Amount_Refund}</td>
+                  <td>{d.Date_Refund}</td>
+                  <td>{d.Health_insurance_id_Mutuelle}</td>
+                  <td>{d.Medical_events_id_Actes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : null}
       </div>
       {message !== '' ? <div>{message}</div> : null}
     </div>
