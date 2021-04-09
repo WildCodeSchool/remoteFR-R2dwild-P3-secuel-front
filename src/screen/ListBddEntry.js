@@ -453,7 +453,7 @@ const ListBddEntry = () => {
                 <tr key={d.id_refund}>
                   <td>{d.id_refund}</td>
                   <td>{d.Amount_Refund}</td>
-                  <td>{d.Date_Refund}</td>
+                  <td>{new Date(d.Date_Refund).toString().split(' 00')[0]}</td>
                   <td>{d.Health_insurance_id_Mutuelle}</td>
                   <td>{d.Medical_events_id_Actes}</td>
                 </tr>
