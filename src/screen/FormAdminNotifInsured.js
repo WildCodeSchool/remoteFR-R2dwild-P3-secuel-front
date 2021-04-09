@@ -54,6 +54,7 @@ const FormAdminNotifInsured = () => {
               type='text'
               id='notif'
               name='notif'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={notif}
@@ -67,6 +68,7 @@ const FormAdminNotifInsured = () => {
               type='text'
               id='insured'
               name='insured'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={insured}
@@ -80,6 +82,7 @@ const FormAdminNotifInsured = () => {
               type='text'
               id='compte'
               name='compte'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={compte}
@@ -93,6 +96,7 @@ const FormAdminNotifInsured = () => {
               type='bool'
               id='status'
               name='status'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={status}

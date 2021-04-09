@@ -48,6 +48,7 @@ const FormAdminNotifications = () => {
               type='text'
               id='type'
               name='type'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={type}
@@ -61,6 +62,7 @@ const FormAdminNotifications = () => {
               type='textarea'
               id='message'
               name='message'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={notif}

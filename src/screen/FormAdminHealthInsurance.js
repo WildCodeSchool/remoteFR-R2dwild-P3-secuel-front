@@ -45,6 +45,7 @@ const FormAdminHealthInsurance = () => {
               type='text'
               id='name'
               name='name'
+              placeholder='minimum X caractères'
               onChange={handleChange}
               required
               value={name}

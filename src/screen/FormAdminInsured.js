@@ -70,6 +70,7 @@ const FormAdminInsured = () => {
               type='text'
               id='lastname'
               name='lastname'
+              placeholder='minimum X caractères'
               onChange={handleChange}
               required
               value={lastName}
@@ -83,6 +84,7 @@ const FormAdminInsured = () => {
               type='text'
               id='firstname'
               name='firstname'
+              placeholder='minimum X caractères'
               onChange={handleChange}
               required
               value={firstName}
@@ -96,6 +98,7 @@ const FormAdminInsured = () => {
               type='text'
               id='numsecu'
               name='numsecu'
+              placeholder='minimum X caractères'
               onChange={handleChange}
               required
               value={numSecu}
@@ -109,6 +112,7 @@ const FormAdminInsured = () => {
               type='text'
               id='email'
               name='email'
+              placeholder='exemple@mail.com'
               onChange={handleChange}
               required
               value={email}
@@ -122,6 +126,7 @@ const FormAdminInsured = () => {
               type='text'
               id='tel'
               name='tel'
+              placeholder='minimum 10 chiffres'
               onChange={handleChange}
               required
               value={tel}
@@ -135,6 +140,7 @@ const FormAdminInsured = () => {
               type='text'
               id='password'
               name='password'
+              placeholder='minimum 10 caractères'
               onChange={handleChange}
               required
               value={password}
@@ -148,6 +154,7 @@ const FormAdminInsured = () => {
               type='text'
               id='birth-date'
               name='birth-date'
+              placeholder='JJ/MM/AAAA'
               onChange={handleChange}
               required
               value={birthDate}
@@ -162,6 +169,7 @@ const FormAdminInsured = () => {
               type='text'
               id='compte'
               name='compte'
+              placeholder='numéro d un compte'
               onChange={handleChange}
               required
               value={compte}
