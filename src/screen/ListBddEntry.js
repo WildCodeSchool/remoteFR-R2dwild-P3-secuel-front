@@ -1,10 +1,10 @@
+import { useState } from 'react'
+import axios from 'axios'
+
 import './ListBddEntry.css'
 
-import axios from 'axios'
-import { useState } from 'react'
-
 const ListBddEntry = () => {
-  const [message, setMessage] = useState('')
+  const [current, setCurrent] = useState('')
   const [dataAccount, setDataAccount] = useState([])
   const [dataHealthInsurance, setDataHealthInsurance] = useState([])
   const [dataInsured, setDataInsured] = useState([])
@@ -15,7 +15,7 @@ const ListBddEntry = () => {
   const [dataProSpe, setDataProSpe] = useState([])
   const [dataRefund, setDataRefund] = useState([])
   const [dataSpeciality, setDataSpeciality] = useState([])
-  const [current, setCurrent] = useState('')
+  const [message, setMessage] = useState('')
   // recuperer les Accounts
 
   const accounts = e => {
@@ -24,11 +24,7 @@ const ListBddEntry = () => {
     axios
       .get('http://localhost:3000/Account')
       .then(res => res.data)
-      .then(
-        data => setDataAccount(data) || console.log(dataAccount),
-        console.log(current)
-      )
-
+      .then(data => setDataAccount(data))
       .catch(e => {
         setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
       })
@@ -282,7 +278,7 @@ const ListBddEntry = () => {
                   <td>{d.email}</td>
                   <td>{d.tel}</td>
                   <td>{d.Password}</td>
-                  <td>{d.birth_date}</td>
+                  <td>{new Date(d.birth_date).toLocaleDateString()}</td>
                   <td>{d.Account_id_Compte}</td>
                 </tr>
               ))}

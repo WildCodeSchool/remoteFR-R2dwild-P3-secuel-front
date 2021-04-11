@@ -1,8 +1,8 @@
-import './Form.css'
-
-import ListBddEntry from './ListBddEntry'
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
+import ListBddEntry from './ListBddEntry'
+
+import './Form.css'
 
 const FormAdminNotifications = () => {
   const [message, setMessage] = useState(null)
@@ -58,8 +58,8 @@ const FormAdminNotifications = () => {
             <label htmlFor='message'>
               Message<span> * </span>
             </label>
-            <textarea
-              type='textarea'
+            <input
+              type='text'
               id='message'
               name='message'
               placeholder='XX'

@@ -1,10 +1,8 @@
-/* eslint-disable react/no-unescaped-entities */
+import { useState } from 'react'
+import axios from 'axios'
+import ListBddEntry from './ListBddEntry'
 
 import './Form.css'
-
-import ListBddEntry from './ListBddEntry'
-import axios from 'axios'
-import { useState } from 'react'
 
 const FormAdminHealthInsurance = () => {
   const [message, setMessage] = useState(null)
@@ -32,14 +30,13 @@ const FormAdminHealthInsurance = () => {
 
   return (
     <div className='form'>
-      <h1>Création d'un institut</h1>
+      <h1>Création d&apos;un institut</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          {/* <legend>information sur l'institut : </legend> */}
           <div className='formData'>
             <label htmlFor='name'>
-              Nom de l'institut<span> * </span>
+              Nom de l&apos;institut<span> * </span>
             </label>
             <input
               type='text'
