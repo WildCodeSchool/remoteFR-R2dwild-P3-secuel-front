@@ -58,7 +58,7 @@
   width: 90%;
 }
 .notifs {
-  background: #80d2ee;
+  background: #348AA7;
   border-radius: 10px;
   display: flex;
   overflow-x: auto;
@@ -72,11 +72,11 @@
   width: 10px;
 }
 .notifs::-webkit-scrollbar-thumb {
-  background: black;
+  background: #214957;
   border-radius: 10px;
 }
 .notifs::-webkit-scrollbar-track {
-  background: transparent;
+  background-color: #90d3e9;
 }
 .notifs > div {
   align-items: center;
