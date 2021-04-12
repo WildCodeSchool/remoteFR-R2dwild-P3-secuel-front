@@ -7,26 +7,8 @@ import blueTrash from '../data/images/blueTrash.png'
 import colors from '../data/fakejson/colors.json'
 
 const Params = () => {
-  const [colorId, setColorId] = useState([])
-  const [userId, setUserId] = useState([])
-
-  function colorRandom() {
-    colors
-      .filter(e => e.id === Math.round(Math.random() * colors.length))
-      .map(color => color.HEX)
-      .toString()
-  }
-  function addColor() {
-    setColorId(colorRandom.result)
-    console.log(colorRandom.result)
-  }
-  function addUser() {
-    setUserId('1')
-  }
-  function colorIdCombo() {
-    setUserId.concat(setColorId)
-  }
-
+  const [color, setColor] = useState('#34568B')
+  console.log('couleur' + setColor)
   return (
     <div className='paramsBody'>
       <h1 id='titreNotif'>Vos Paramètres</h1>
@@ -48,9 +30,10 @@ const Params = () => {
           <button id='btnAppliquerListe'>Appliquer</button>
         </div>
         <p id='titreSupprimerCompte'>Vos comptes</p>
+        <input type='color' onChange={e => console.log(e.target.value)} />
         <div className='divVosCompte'>
           <ul className='vosComptes'>
-            <li style={{ background: `${colorRandom}` }}>
+            <li style={{ background: `red` }}>
               Jean Dupont <img src={blueTrash} className='blueTrash' />
             </li>
             <li className='compteAssure'>
