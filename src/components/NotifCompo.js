@@ -13,10 +13,11 @@ const NotifCompo = notif => {
     >
       <div className='dateRemboursement'>{notif.eventDate}</div>
       <p>
-        <span>{notif.firstName} </span>a obtenu un remboursement de
-        <span> {notif.payer} </span>
+        <strong>{notif.firstName} </strong>a obtenu un remboursement de
+        <strong> {notif.payer} </strong>
         pour la dépense de
-        <span> {notif.acteType} </span>avec<span> {notif.actorName}</span>
+        <strong> {notif.acteType} </strong>avec
+        <strong> {notif.actorName}</strong>
       </p>
     </div>
   )
