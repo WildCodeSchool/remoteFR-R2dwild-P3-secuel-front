@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: center;
   margin-right: 10%;
   padding : 5px;
   width: 100%;
@@ -125,6 +126,9 @@ th {
     height : 10px;
     padding: 0px;
     width: 100%;
+  }
+  .starNText {
+    flex-direction: column;
   }
   .starRed {
     height : 10px;

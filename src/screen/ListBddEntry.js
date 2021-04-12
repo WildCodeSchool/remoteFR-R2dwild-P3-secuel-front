@@ -303,7 +303,7 @@ const ListBddEntry = () => {
               {dataMedEvent.map(d => (
                 <tr key={d.id_med_event}>
                   <td>{d.id_med_event}</td>
-                  <td>{d.Date_Event}</td>
+                  <td>{new Date(d.Date_Event).toLocaleDateString()}</td>
                   <td>{d.amount_Event}</td>
                   <td>{d.secu_status}</td>
                   <td>{d.insurance_status}</td>
@@ -449,7 +449,7 @@ const ListBddEntry = () => {
                 <tr key={d.id_refund}>
                   <td>{d.id_refund}</td>
                   <td>{d.Amount_Refund}</td>
-                  <td>{new Date(d.Date_Refund).toString().split(' 00')[0]}</td>
+                  <td>{new Date(d.Date_Refund).toLocaleDateString()}</td>
                   <td>{d.Health_insurance_id_Mutuelle}</td>
                   <td>{d.Medical_events_id_Actes}</td>
                 </tr>
