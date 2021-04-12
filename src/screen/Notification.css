@@ -10,6 +10,7 @@
   align-items: flex-start;
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   margin-right: 10%;
   padding : 5px;
   width: 100%;
@@ -59,36 +60,35 @@
   align-items: center;
   background-color: rgb(38, 197, 38);
   height : 30px;
-  margin: auto;
   padding: 0px;
   width: 10px;
 }
 .starNText {
   align-items: center;
+  background-color: white;
   display: flex;
+  flex-direction: row;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 20%;
 }
 .starRed {
   align-items: center;
   background-color: rgb(212, 20, 20);
   height : 30px;
-  margin: auto;
   padding: 0px;
   width: 10px;
 }
 .starYellow {
   align-items: center;
   background-color: rgb(248, 143, 6);
- height : 30px;
-  margin: auto;
+  height : 30px;
   padding: 0px;
   width: 10px;
 }
 .textLegend {
   font-size: 15px;
+  padding:0 5px 0 5px;
   margin: 0px;
 }
 table {
@@ -118,4 +118,26 @@ th {
 .vignette {
   font-size: xx-large;
   margin-right: 50px;
+}
+
+@media (max-width: 600px) {
+  .starGreen {
+    height : 10px;
+    padding: 0px;
+    width: 100%;
+  }
+  .starRed {
+    height : 10px;
+    padding: 0px;
+    width: 100%;
+  }
+  .starYellow {
+    height : 10px;
+    padding: 0px;
+    width: 100%;
+  }
+  .textLegend {
+    font-size: 12px;
+    padding:1px;
+  }
 }

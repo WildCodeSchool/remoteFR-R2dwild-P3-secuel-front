@@ -1,8 +1,8 @@
-import './Form.css'
-
-import ListBddEntry from './ListBddEntry'
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
+import ListBddEntry from './ListBddEntry'
+
+import './Form.css'
 
 const FormAdminNotifInsured = () => {
   const [insured, setInsured] = useState('')
@@ -45,7 +45,7 @@ const FormAdminNotifInsured = () => {
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>information sur la notification : </legend>
+          {/* <legend>information sur la notification : </legend> */}
           <div className='formData'>
             <label htmlFor='notif'>
               Id de notif <span> * </span>
@@ -54,6 +54,7 @@ const FormAdminNotifInsured = () => {
               type='text'
               id='notif'
               name='notif'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={notif}
@@ -67,6 +68,7 @@ const FormAdminNotifInsured = () => {
               type='text'
               id='insured'
               name='insured'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={insured}
@@ -80,6 +82,7 @@ const FormAdminNotifInsured = () => {
               type='text'
               id='compte'
               name='compte'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={compte}
@@ -87,19 +90,20 @@ const FormAdminNotifInsured = () => {
           </div>
           <div className='formData'>
             <label htmlFor='status'>
-              Statuts de la notif <span> * </span>
+              Statut de la notif <span> * </span>
             </label>
             <input
               type='bool'
               id='status'
               name='status'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={status}
             />
           </div>
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />

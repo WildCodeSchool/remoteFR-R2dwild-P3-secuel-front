@@ -50,7 +50,9 @@ const Header = () => {
           </button>
         </div>
       </div>
-      {showBurger ? <Burger /> : null}
+      {showBurger ? (
+        <Burger setBurger={setShowBurger} burger={showBurger} />
+      ) : null}
     </>
   )
 }

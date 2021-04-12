@@ -1,8 +1,8 @@
-import './Form.css'
-
-import ListBddEntry from './ListBddEntry'
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
+import ListBddEntry from './ListBddEntry'
+
+import './Form.css'
 
 const FormAdminInsured = () => {
   const [birthDate, setBirthDate] = useState('')
@@ -61,7 +61,7 @@ const FormAdminInsured = () => {
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>information de l&apos;assuré : </legend>
+          {/* <legend>information de l&apos;assuré : </legend> */}
           <div className='formData'>
             <label htmlFor='lastname'>
               Nom de famille <span> * </span>
@@ -70,6 +70,7 @@ const FormAdminInsured = () => {
               type='text'
               id='lastname'
               name='lastname'
+              placeholder='minimum X caractères'
               onChange={handleChange}
               required
               value={lastName}
@@ -83,6 +84,7 @@ const FormAdminInsured = () => {
               type='text'
               id='firstname'
               name='firstname'
+              placeholder='minimum X caractères'
               onChange={handleChange}
               required
               value={firstName}
@@ -96,6 +98,7 @@ const FormAdminInsured = () => {
               type='text'
               id='numsecu'
               name='numsecu'
+              placeholder='minimum X caractères'
               onChange={handleChange}
               required
               value={numSecu}
@@ -103,12 +106,13 @@ const FormAdminInsured = () => {
           </div>
           <div className='formData'>
             <label htmlFor='email'>
-              email<span> * </span>
+              Email<span> * </span>
             </label>
             <input
               type='text'
               id='email'
               name='email'
+              placeholder='exemple@mail.com'
               onChange={handleChange}
               required
               value={email}
@@ -122,6 +126,7 @@ const FormAdminInsured = () => {
               type='text'
               id='tel'
               name='tel'
+              placeholder='minimum 10 chiffres'
               onChange={handleChange}
               required
               value={tel}
@@ -129,12 +134,13 @@ const FormAdminInsured = () => {
           </div>
           <div className='formData'>
             <label htmlFor='password'>
-              Password<span> * </span>
+              Mot de passe<span> * </span>
             </label>
             <input
               type='text'
               id='password'
               name='password'
+              placeholder='minimum 10 caractères'
               onChange={handleChange}
               required
               value={password}
@@ -148,6 +154,7 @@ const FormAdminInsured = () => {
               type='text'
               id='birth-date'
               name='birth-date'
+              placeholder='JJ/MM/AAAA'
               onChange={handleChange}
               required
               value={birthDate}
@@ -162,13 +169,14 @@ const FormAdminInsured = () => {
               type='text'
               id='compte'
               name='compte'
+              placeholder='numéro d un compte'
               onChange={handleChange}
               required
               value={compte}
             />
           </div>
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />

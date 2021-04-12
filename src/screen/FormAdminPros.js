@@ -1,8 +1,8 @@
-import './Form.css'
-
-import ListBddEntry from './ListBddEntry'
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
+import ListBddEntry from './ListBddEntry'
+
+import './Form.css'
 
 const FormAdminPros = () => {
   const [message, setMessage] = useState(null)
@@ -34,7 +34,7 @@ const FormAdminPros = () => {
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>information sur le professionnel : </legend>
+          {/* <legend>information sur le professionnel : </legend> */}
           <div className='formData'>
             <label htmlFor='name'>
               Nom du médecin <span> * </span>
@@ -50,18 +50,12 @@ const FormAdminPros = () => {
             />
           </div>
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
-            <input id='btnEnvoyer' type='submit' value='Envoyer' />
+            <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
         </fieldset>
-        <p>
-          <span> * </span> required.
-        </p>
-        <div className='formData'>
-          <input className='btnEnvoyer' type='submit' value='Envoyer' />
-        </div>
       </form>
       <ListBddEntry />
     </div>

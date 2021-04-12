@@ -1,8 +1,8 @@
-import './Form.css'
-
-import ListBddEntry from './ListBddEntry'
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
+import ListBddEntry from './ListBddEntry'
+
+import './Form.css'
 
 const FormAdminSpeciality = () => {
   const [message, setMessage] = useState(null)
@@ -34,7 +34,7 @@ const FormAdminSpeciality = () => {
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>Informations sur la spécialité</legend>
+          {/* <legend>Informations sur la spécialité</legend> */}
           <div className='formData'>
             <label htmlFor='speciality'>
               Nom de la spécialité <span> * </span>
@@ -50,7 +50,7 @@ const FormAdminSpeciality = () => {
           </div>
           <hr />
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />

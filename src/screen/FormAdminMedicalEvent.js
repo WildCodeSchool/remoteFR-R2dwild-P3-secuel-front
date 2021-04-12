@@ -1,8 +1,8 @@
-import './Form.css'
-
-import ListBddEntry from './ListBddEntry'
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
+import ListBddEntry from './ListBddEntry'
+
+import './Form.css'
 
 const FormAdminMedicalEvent = () => {
   const [amountEvent, setAmountEvent] = useState('')
@@ -62,7 +62,7 @@ const FormAdminMedicalEvent = () => {
       <h1>Ajout d&apos;un acte</h1>
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>Informations Acte</legend>
+          {/* <legend>Informations Acte</legend> */}
           <div className='formData'>
             <label htmlFor='dateEvent'>
               Date de l&apos;acte<span> * </span>
@@ -84,6 +84,7 @@ const FormAdminMedicalEvent = () => {
               type='text'
               id='amountEvent'
               name='amountEvent'
+              placeholder='chiffre(s) sans devise'
               onChange={handleChange}
               required
               value={amountEvent}
@@ -91,11 +92,12 @@ const FormAdminMedicalEvent = () => {
           </div>
           <div className='formData'>
             <label htmlFor='secuStatus'>
-              Status du dossier à la secu<span> * </span>
+              Statut du dossier à la Sécu<span> * </span>
             </label>
             <input
               id='secuStatus'
               name='secuStatus'
+              placeholder='traité || non traité || en cours de traitement'
               onChange={handleChange}
               required
               value={secuStatus}
@@ -104,11 +106,12 @@ const FormAdminMedicalEvent = () => {
 
           <div className='formData'>
             <label htmlFor='insuranceStatus'>
-              Status du dossier à la mutuelle<span> * </span>
+              Statut du dossier à la mutuelle<span> * </span>
             </label>
             <input
               id='insuranceStatus'
               name='insuranceStatus'
+              placeholder='traité || non traité || en cours de traitement'
               onChange={handleChange}
               required
               value={insuranceStatus}
@@ -116,11 +119,12 @@ const FormAdminMedicalEvent = () => {
           </div>
           <div className='formData'>
             <label htmlFor='specialitiesIdSpeciality'>
-              Spécialité medecin<span> * </span>
+              Spécialité médecin<span> * </span>
             </label>
             <input
               id='specialitiesIdSpeciality'
               name='specialitiesIdSpeciality'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={specialitiesIdSpeciality}
@@ -133,6 +137,7 @@ const FormAdminMedicalEvent = () => {
             <input
               id='insuredIdInsured'
               name='insuredIdInsured'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={insuredIdInsured}
@@ -140,11 +145,12 @@ const FormAdminMedicalEvent = () => {
           </div>
           <div className='formData'>
             <label htmlFor='insuredAccountIdCompte'>
-              compte relié<span> * </span>
+              Compte relié<span> * </span>
             </label>
             <input
               id='insuredAccountIdCompte'
               name='insuredAccountIdCompte'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={insuredAccountIdCompte}
@@ -157,6 +163,7 @@ const FormAdminMedicalEvent = () => {
             <input
               id='prosProId'
               name='prosProId'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={prosProId}
@@ -164,7 +171,7 @@ const FormAdminMedicalEvent = () => {
           </div>
           <hr />
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />

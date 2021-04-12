@@ -2,12 +2,17 @@ import { NavLink } from 'react-router-dom'
 
 import './Burger.css'
 
-const Burger = () => {
+const Burger = show => {
   return (
     <div className='burger'>
       <ul className='pagesBurger'>
         <li className='liLink'>
-          <NavLink to='/home' className='navlink' activeClassName='selected1'>
+          <NavLink
+            to='/home'
+            className='navlink'
+            activeClassName='selected1'
+            onClick={() => show.setBurger(!show.burger)}
+          >
             Home
           </NavLink>
         </li>
@@ -16,6 +21,7 @@ const Burger = () => {
             to='/message'
             className='navlink'
             activeClassName='selected1'
+            onClick={() => show.setBurger(!show.burger)}
           >
             Messages
           </NavLink>
@@ -25,6 +31,7 @@ const Burger = () => {
             to='/notification'
             className='navlink'
             activeClassName='selected1'
+            onClick={() => show.setBurger(!show.burger)}
           >
             Notifications
           </NavLink>
@@ -34,17 +41,28 @@ const Burger = () => {
             to='/analyse'
             className='navlink'
             activeClassName='selected1'
+            onClick={() => show.setBurger(!show.burger)}
           >
             Analyse
           </NavLink>
         </li>
         <li className='liLink'>
-          <NavLink to='/params' className='navlink' activeClassName='selected1'>
+          <NavLink
+            to='/params'
+            className='navlink'
+            activeClassName='selected1'
+            onClick={() => show.setBurger(!show.burger)}
+          >
             Paramètres
           </NavLink>
         </li>
         <li className='liLink'>
-          <NavLink to='/admin' className='navlink' activeClassName='selected1'>
+          <NavLink
+            to='/admin'
+            className='navlink'
+            activeClassName='selected1'
+            onClick={() => show.setBurger(!show.burger)}
+          >
             Administration
           </NavLink>
         </li>

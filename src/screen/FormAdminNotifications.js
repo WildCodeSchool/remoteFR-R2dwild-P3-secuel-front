@@ -1,8 +1,8 @@
-import './Form.css'
-
-import ListBddEntry from './ListBddEntry'
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
+import ListBddEntry from './ListBddEntry'
+
+import './Form.css'
 
 const FormAdminNotifications = () => {
   const [message, setMessage] = useState(null)
@@ -39,7 +39,7 @@ const FormAdminNotifications = () => {
       {message ? <div>{message}</div> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          <legend>Informations sur la notification</legend>
+          {/* <legend>Informations sur la notification</legend> */}
           <div className='formData'>
             <label htmlFor='type'>
               Type de message<span> * </span>
@@ -48,6 +48,7 @@ const FormAdminNotifications = () => {
               type='text'
               id='type'
               name='type'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={type}
@@ -57,10 +58,11 @@ const FormAdminNotifications = () => {
             <label htmlFor='message'>
               Message<span> * </span>
             </label>
-            <textarea
-              type='textarea'
+            <input
+              type='text'
               id='message'
               name='message'
+              placeholder='XX'
               onChange={handleChange}
               required
               value={notif}
@@ -68,7 +70,7 @@ const FormAdminNotifications = () => {
           </div>
           <hr />
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />

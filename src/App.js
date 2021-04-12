@@ -1,5 +1,4 @@
-import './App.css'
-
+import { useState } from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
 
 import AddMutu from './screen/AddMutu'
@@ -8,16 +7,6 @@ import Analyse from './screen/Analyse'
 import Congratulation from './screen/Congratulation'
 import DetailEvent from './components/DetailEvent'
 import Form from './screen/Form'
-import FormAdminAccount from './screen/FormAdminAccount'
-import FormAdminHealthInsurance from './screen/FormAdminHealthInsurance'
-import FormAdminInsured from './screen/FormAdminInsured'
-import FormAdminMedicalEvent from './screen/FormAdminMedicalEvent'
-import FormAdminNotifInsured from './screen/FormAdminNotifInsured'
-import FormAdminNotifications from './screen/FormAdminNotifications'
-import FormAdminProSpe from './screen/FormAdminProSpe'
-import FormAdminPros from './screen/FormAdminPros'
-import FormAdminRefund from './screen/FormAdminRefund'
-import FormAdminSpeciality from './screen/FormAdminSpeciality'
 import Header from './components/Header'
 import Home from './screen/Home'
 import Intro from './screen/Intro'
@@ -28,7 +17,8 @@ import Params from './screen/Params'
 import Thanks from './screen/Thanks'
 import ValidateSecu from './screen/ValidateSecu'
 import Waiting from './screen/Waiting'
-import { useState } from 'react'
+
+import './App.css'
 
 const App = withRouter(({ location }) => {
   const [numMutu, setNumMutu] = useState('')
@@ -94,36 +84,7 @@ const App = withRouter(({ location }) => {
         <Route path='/validatesecu' component={ValidateSecu} />
         <Route path='/waiting' component={Waiting} />
         <Route path='/event/:id' component={DetailEvent} />
-
-        <div className='appAdmin'>
-          {location.pathname.includes('/admin') && <NavAdmin />}
-          <Route path='/admin/medicalevent' component={FormAdminMedicalEvent} />
-          <Route path='/admin/Form' component={FormAdminAccount} />
-          <Route
-            path='/admin/FormAdminHealthInsurance'
-            component={FormAdminHealthInsurance}
-          />
-          <Route path='/admin/FormAdminInsured' component={FormAdminInsured} />
-          <Route
-            path='/admin/FormAdminMedicalEvent '
-            component={FormAdminMedicalEvent}
-          />
-          <Route
-            path='/admin/FormAdminNotifications'
-            component={FormAdminNotifications}
-          />
-          <Route
-            path='/admin/FormAdminNotifInsured'
-            component={FormAdminNotifInsured}
-          />
-          <Route path='/admin/FormAdminPros' component={FormAdminPros} />
-          <Route path='/admin/FormAdminProSpe' component={FormAdminProSpe} />
-          <Route path='/admin/FormAdminRefund' component={FormAdminRefund} />
-          <Route
-            path='/admin/FormAdminSpeciality'
-            component={FormAdminSpeciality}
-          />
-        </div>
+        <Route path='/admin' component={NavAdmin} />
       </Switch>
     </div>
   )
