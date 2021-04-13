@@ -159,7 +159,6 @@ const FormAdminInsured = () => {
               value={birthDate}
             />
           </div>
-
           <div className='formData'>
             <label htmlFor='compte'>
               Compte de rattachement<span> * </span>
@@ -174,6 +173,18 @@ const FormAdminInsured = () => {
               value={compte}
             />
           </div>
+          {/* <div className='formData'>
+            <label htmlFor='color'>
+              Couleur affichage<span> * </span>
+            </label>
+            <input
+              type='color'
+              id='color'
+              name='color'
+              onChange={handleChange}
+              required
+            />
+          </div> */}
           <p>
             <span> * </span> Obligatoire
           </p>
