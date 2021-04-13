@@ -26,7 +26,6 @@ const Params = () => {
           <button id='btnAppliquerListe'>Appliquer</button>
         </div>
         <p id='titreSupprimerCompte'>Vos comptes</p>
-        <input type='color' onChange={e => console.log(e.target.value)} />
         <div className='divVosCompte'>
           <ul className='vosComptes'>
             <li className='compteAssure'>

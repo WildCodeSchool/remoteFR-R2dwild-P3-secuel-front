@@ -13,6 +13,69 @@
   display:flex;
   justify-content: center;
 }
+.colorBox {
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+  margin-right: 30px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.colorBox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.colorPickerBar {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid rgb(118, 118, 118);
+  border-radius: 5px;
+  padding: 1px;
+  height: 25px;
+  width: auto;
+}
+.checkmark {
+  position: absolute;
+  top : 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+.colorBox:hover input ~ .checkmark {
+  background-color : grey;
+}
+.colorBox input:checked ~ .checkmark {
+  background-color: blue;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.colorBox input:checked ~ .checkmark:after {
+  display: block;
+}
+.colorBox .checkmark:after {
+ top: 9px;
+ left: 9px;
+ width: 8px;
+ height: 8px;
+ border-radius: 50%;
+ background: white;
+}
+#color1{background-color: #F94144;}
+#color2{background-color: #F3722C;}
+#color3{background-color: #F8961E;}
+#color4{background-color: #F9C74F;}
+#color5{background-color: #90BE6D;}
+#color6{background-color: #43AA8B;}
+#color7{background-color: #577590;}
 fieldset {
   border-radius: 1px;
 }
@@ -78,6 +141,12 @@ fieldset {
   align-items: center;
   display: flex;
   justify-content: space-around;
+}
+.inputColor{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 #pointChargement{
   color:#BE9B07;
