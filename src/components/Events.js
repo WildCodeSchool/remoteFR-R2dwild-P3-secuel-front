@@ -5,23 +5,9 @@ import MiniEvent from './MiniEvent'
 import 'aos/dist/aos.css'
 import './Events.css'
 
-import colors from '../data/fakejson/colors.json'
 import eventArray from '../data/fakejson/fakedata.json'
 
 const Events = () => {
-  function colorRandom() {
-    colors
-      .filter(e => e.id === Math.round(Math.random() * colors.length))
-      .map(color => color.HEX)
-      .toString()
-  }
-  console.log(colorRandom.result)
-  console.log(
-    colors
-      .filter(e => e.id === Math.round(Math.random() * colors.length))
-      .map(color => color.HEX)
-      .toString()
-  )
   useEffect(() => {
     Aos.init({ duration: 2000 })
   }, [])
@@ -37,13 +23,7 @@ const Events = () => {
   return (
     <div className='events'>
       <div
-        style={{
-          background: `${colors
-            .filter(e => e.id === Math.round(Math.random() * colors.length))
-            .map(color => color.HEX)
-            .toString()}`
-        }}
-        // id='insured1'
+        id='insured1'
         onClick={handleClick1}
         className={hidden1 ? 'hidden' : 'show'}
       >
@@ -131,7 +111,6 @@ const Events = () => {
         )}
       </div>
       <div
-        // style = {Colors.map}
         id='insured3'
         onClick={handleClick3}
         className={hidden3 ? 'hidden' : 'show'}
