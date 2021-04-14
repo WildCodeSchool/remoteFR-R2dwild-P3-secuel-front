@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: center;
   margin-right: 10%;
   padding : 5px;
   width: 100%;
@@ -55,6 +56,44 @@
   margin: auto;
   padding : 5px;
   width: 90%;
+}
+.notifs {
+  background: #348AA7;
+  border-radius: 10px;
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  scroll-snap-type: none;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.notifs::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+.notifs::-webkit-scrollbar-thumb {
+  background: #214957;
+  border-radius: 10px;
+}
+.notifs::-webkit-scrollbar-track {
+  background-color: #90d3e9;
+}
+.notifs > div {
+  align-items: center;
+  background: #eee;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  font-size: 1rem;
+  justify-content: center;
+  margin-right: 50px;
+  padding: 5px;
+  position: relative;
+  scroll-snap-align: start;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
 }
 .starGreen {
   align-items: center;
@@ -125,6 +164,9 @@ th {
     height : 10px;
     padding: 0px;
     width: 100%;
+  }
+  .starNText {
+    flex-direction: column;
   }
   .starRed {
     height : 10px;

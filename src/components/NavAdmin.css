@@ -1,22 +1,23 @@
-ul {
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around ;
-  
-  
-}
-
-.navAdmin li {
-  background-color: #a3bdce;
-  border: 1px solid #000000;
-  height : auto;
-  width: 150px;
-  margin : 7px;
-  padding: 7px;
- 
+#navAdmin {
+  background: white;
+  width: 100%;
 }
 .navAdmin a {
   text-decoration: none;
+}
+.navAdmin li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a3bdce;
+  border: 1px solid #000000;
+  height : auto;
+  width: 120px;
+  padding: 3px;
+}
+.navAdmin ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
 }

@@ -12,10 +12,11 @@ import FormAdminRefund from '../screen/FormAdminRefund'
 import FormAdminSpeciality from '../screen/FormAdminSpeciality'
 
 import './NavAdmin.css'
+import ListBddEntry from '../screen/ListBddEntry'
 
 const NavAdmin = () => {
   return (
-    <>
+    <div id='navAdmin'>
       <div className='navAdmin'>
         <ul>
           <li>
@@ -139,8 +140,9 @@ const NavAdmin = () => {
             component={FormAdminSpeciality}
           />
         </Switch>
+        <ListBddEntry />
       </div>
-    </>
+    </div>
   )
 }
 

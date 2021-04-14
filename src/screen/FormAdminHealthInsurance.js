@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import axios from 'axios'
-import ListBddEntry from './ListBddEntry'
 
 import './Form.css'
 
@@ -56,7 +55,6 @@ const FormAdminHealthInsurance = () => {
           </div>
         </fieldset>
       </form>
-      <ListBddEntry />
     </div>
   )
 }

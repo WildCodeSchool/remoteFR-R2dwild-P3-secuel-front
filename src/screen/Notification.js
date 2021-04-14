@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import Notif from '../components/Notif'
 import NotificationCompo from '../components/NotifCompo'
 
 import './Notification.css'
@@ -6,14 +9,18 @@ import 'react-datepicker/dist/react-datepicker.css'
 import eventArray from '../data/fakejson/fakedata.json'
 
 const Notification = () => {
-  const statusNotif =
-    eventArray.filter(
-      data => data['prénom'] === 'Marie' && data['ENVOI DE NOTIFICATION']
-    ) != ''
-      ? eventArray.filter(
-          data => data['prénom'] === 'Marie' && data['ENVOI DE NOTIFICATION']
-        ).length
-      : 'aucune'
+  const [notifs, setNotif] = useState(null)
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/notif_insured/1')
+      .then(res => res.data)
+      .then(data => setNotif(data))
+
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+  }, [])
 
   return (
     <div className='notifBody'>
@@ -21,8 +28,19 @@ const Notification = () => {
       <h1 className='nameInsured'>
         {eventArray[1]['prénom'] + '   ' + eventArray[1]['Nom']}
       </h1>
+      {notifs ? (
+        <>
+          {/* <div className='notifNumber'>
+            Vous avez {notifs.length} notification(s)
+          </div> */}
+          <div className='notifs'>
+            {notifs.map(notif => (
+              <Notif key={notif.notifications_id_Notification} notif={notif} />
+            ))}
+          </div>
+        </>
+      ) : null}
 
-      <div className='notifNumber'>Vous avez {statusNotif} notification(s)</div>
       {/* Légende des vignettes  */}
       <ul className='legendRaw'>
         <ul className='starNText'>
