@@ -2,3 +2,12 @@
   background: white;
   border-radius: 10px;
 }
+.insuredcolor {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  font-size: bold;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+}

@@ -10,13 +10,20 @@ import eventArray from '../data/fakejson/fakedata.json'
 
 const Notification = () => {
   const [notifs, setNotif] = useState(null)
+  const [alert, setAlert] = useState(null)
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/notifications')
+      .get('http://localhost:3000/notif_insured/1')
       .then(res => res.data)
       .then(data => setNotif(data))
-
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+    axios
+      .get('http://localhost:3000/medical_events')
+      .then(res => res.data)
+      .then(data => setAlert(data))
       .catch(e => {
         console.log(`Erreur lors de la reception : ${e.message}`)
       })
@@ -29,16 +36,11 @@ const Notification = () => {
         {eventArray[1]['prénom'] + '   ' + eventArray[1]['Nom']}
       </h1>
       {notifs ? (
-        <>
-          {/* <div className='notifNumber'>
-            Vous avez {notifs.length} notification(s)
-          </div> */}
-          <div className='notifs'>
-            {notifs.map(notif => (
-              <Notif key={notif.id_Notification} notif={notif} />
-            ))}
-          </div>
-        </>
+        <div className='notifs'>
+          {notifs.map(notif => (
+            <Notif key={notif.notifications_id_Notification} notif={notif} />
+          ))}
+        </div>
       ) : null}
 
       {/* Légende des vignettes  */}
@@ -57,7 +59,20 @@ const Notification = () => {
         </ul>
       </ul>
       <div className='notifMap'>
-        {eventArray
+        {alert
+          ? alert.map(medevent => (
+              <NotificationCompo
+                acteType={medevent.speciality_name}
+                firstName={medevent.firstname}
+                payer={medevent.insurance_name}
+                notifDate={new Date(medevent.Date_Refund).toLocaleDateString()}
+                status={[medevent.secu_status, medevent.insurance_status]}
+                actorName={medevent.pro_name}
+                key={medevent.id_refund}
+              />
+            ))
+          : null}
+        {/* {eventArray
           .filter(data => data['prénom'] === 'Jean')
           .map(notif => (
             <NotificationCompo
@@ -71,7 +86,7 @@ const Notification = () => {
               key={notif.id}
               id={notif.id}
             />
-          ))}
+          ))} */}
       </div>
     </div>
   )

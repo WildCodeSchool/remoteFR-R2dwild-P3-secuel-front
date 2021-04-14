@@ -2,7 +2,9 @@
   background-color:white;
   border-left: 10px solid rgb(38, 197, 38);
   border-radius: 10px;
+  display: flex;
   height: auto;
+  justify-content: space-around;
   margin: 5px;
   padding: 5px;
   width: 90%;
@@ -11,7 +13,9 @@
   background-color:white;
   border-left: 10px solid rgb(212, 20, 20);
   border-radius: 10px;
+  display: flex;
   height: auto;
+  justify-content: space-around;
   margin: 5px;
   padding: 5px;
   width: 90%;
@@ -20,7 +24,9 @@
   background-color:white;
   border-left: 10px solid rgb(248, 143, 6);
   border-radius: 10px;
+  display: flex;
   height: auto;
+  justify-content: space-around;
   margin: 5px;
   padding: 5px;
   width: 90%;
