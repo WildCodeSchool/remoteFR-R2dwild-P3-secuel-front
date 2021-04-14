@@ -17,7 +17,7 @@ const DetailEvent = Acte => {
     axios
       .get(`http://localhost:3000/Medical_events/${Acte.match.params.id}`)
       .then(res => res.data)
-      .then(data => setMedActe(data[0]))
+      .then(data => setMedActe(data))
       .catch(e => {
         console.log(`Erreur lors de la reception : ${e.message}`)
       })
