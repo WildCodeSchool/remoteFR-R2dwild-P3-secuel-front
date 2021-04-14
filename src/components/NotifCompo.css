@@ -1,4 +1,5 @@
 .barGreen {
+  align-items: center;
   background-color:white;
   border-left: 10px solid rgb(38, 197, 38);
   border-radius: 10px;
@@ -9,7 +10,14 @@
   padding: 5px;
   width: 90%;
 }
+.barGreen p:first-child{
+  width: 10%;
+}
+.barGreen p:last-child{
+  width: 60%;
+}
 .barRed {
+  align-items: center;
   background-color:white;
   border-left: 10px solid rgb(212, 20, 20);
   border-radius: 10px;
@@ -20,7 +28,14 @@
   padding: 5px;
   width: 90%;
 }
+.barRed p:first-child{
+  width: 10%;
+}
+.barRed p:last-child{
+  width: 60%;
+}
 .barYellow {
+  align-items: center;
   background-color:white;
   border-left: 10px solid rgb(248, 143, 6);
   border-radius: 10px;
@@ -30,4 +45,35 @@
   margin: 5px;
   padding: 5px;
   width: 90%;
+}
+.barYellow p:first-child{
+  width: 10%;
+}
+.barYellow p:last-child{
+  width: 60%;
+}
+
+@media (max-width: 600px) {
+  .barGreen,.barRed,.barYellow{
+    flex-direction: column;
+    align-items: center;
+  }
+  .barGreen p:first-child{
+    width: auto;
+  }
+  .barGreen p:last-child{
+    width: auto;
+  }
+  .barRed p:first-child{
+    width: auto;
+  }
+  .barRed p:last-child{
+    width: auto;
+  }
+  .barYellow p:first-child{
+    width: auto;
+  }
+  .barYellow p:last-child{
+    width: auto;
+  }
 }

@@ -72,21 +72,6 @@ const Notification = () => {
               />
             ))
           : null}
-        {/* {eventArray
-          .filter(data => data['prénom'] === 'Jean')
-          .map(notif => (
-            <NotificationCompo
-              acteType={notif['Type acte']}
-              firstName={notif['prénom']}
-              payer={notif['Payeur']}
-              notifDate={notif['date acte médicale']}
-              status={notif['Statut du dossier']}
-              incident={notif['RECUPERATION TYPE INCIDENT']}
-              actorName={notif['Nom professionnel de santé']}
-              key={notif.id}
-              id={notif.id}
-            />
-          ))} */}
       </div>
     </div>
   )

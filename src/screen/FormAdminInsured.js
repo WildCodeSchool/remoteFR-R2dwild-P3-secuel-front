@@ -13,6 +13,7 @@ const FormAdminInsured = () => {
   const [password, setPassword] = useState('')
   const [tel, setTel] = useState('')
   const [compte, setCompte] = useState('')
+  const [color, setColor] = useState('')
   const allPost = {
     lastname: lastName,
     firstname: firstName,
@@ -40,6 +41,7 @@ const FormAdminInsured = () => {
       : e.target.name === 'birth-date'
       ? setBirthDate(e.target.value)
       : setCompte(e.target.value)
+    // ? setColor(e.target.value)
   }
 
   const submitForm = e => {
@@ -54,13 +56,16 @@ const FormAdminInsured = () => {
       })
   }
 
+  function colorChoosen(e) {
+    setColor(e.target.value)
+  }
+
   return (
     <div className='form'>
       <h1>Création de assuré</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          {/* <legend>information de l&apos;assuré : </legend> */}
           <div className='formData'>
             <label htmlFor='lastname'>
               Nom de famille <span> * </span>
@@ -150,14 +155,88 @@ const FormAdminInsured = () => {
               Date de naissance<span> * </span>
             </label>
             <input
-              type='text'
+              type='date'
               id='birth-date'
               name='birth-date'
-              placeholder='JJ/MM/AAAA'
               onChange={handleChange}
               required
               value={birthDate}
             />
+          </div>
+          <div className='formData'>
+            <label htmlFor='color'>
+              Couleur utilisateur <span> * </span>
+            </label>
+            <div className='inputColor'>
+              <div>
+                code couleur sélectionnée = <strong>{color}</strong>
+              </div>
+              <div className='colorPickerBar'>
+                <label className='colorBox'>
+                  <input
+                    onClick={colorChoosen}
+                    type='radio'
+                    name='radio1'
+                    value='#348AA7'
+                  ></input>
+                  <span className='checkmark' id='color1'></span>
+                </label>
+                <label className='colorBox'>
+                  <input
+                    onClick={colorChoosen}
+                    type='radio'
+                    name='radio1'
+                    value='#98A578'
+                  ></input>
+                  <span className='checkmark' id='color2'></span>
+                </label>
+                <label className='colorBox'>
+                  <input
+                    onClick={colorChoosen}
+                    type='radio'
+                    name='radio1'
+                    value='#FCBF49'
+                  ></input>
+                  <span className='checkmark' id='color3'></span>
+                </label>
+                <label className='colorBox'>
+                  <input
+                    onClick={colorChoosen}
+                    type='radio'
+                    name='radio1'
+                    value='#55538D'
+                  ></input>
+                  <span className='checkmark' id='color4'></span>
+                </label>
+                <label className='colorBox'>
+                  <input
+                    onClick={colorChoosen}
+                    type='radio'
+                    name='radio1'
+                    value='#71B340'
+                  ></input>
+                  <span className='checkmark' id='color5'></span>
+                </label>
+                <label className='colorBox'>
+                  <input
+                    onClick={colorChoosen}
+                    type='radio'
+                    name='radio1'
+                    value='#BA9593'
+                  ></input>
+                  <span className='checkmark' id='color6'></span>
+                </label>
+                <label className='colorBox'>
+                  <input
+                    onClick={colorChoosen}
+                    type='radio'
+                    name='radio1'
+                    value='#7EA8BE'
+                  ></input>
+                  <span className='checkmark' id='color7'></span>
+                </label>
+              </div>
+            </div>
           </div>
           <div className='formData'>
             <label htmlFor='compte'>
@@ -173,18 +252,7 @@ const FormAdminInsured = () => {
               value={compte}
             />
           </div>
-          {/* <div className='formData'>
-            <label htmlFor='color'>
-              Couleur affichage<span> * </span>
-            </label>
-            <input
-              type='color'
-              id='color'
-              name='color'
-              onChange={handleChange}
-              required
-            />
-          </div> */}
+
           <p>
             <span> * </span> Obligatoire
           </p>
