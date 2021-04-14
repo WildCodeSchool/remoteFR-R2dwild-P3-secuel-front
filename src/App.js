@@ -1,8 +1,21 @@
-import { useState } from 'react'
+import './App.css'
+
 import { Route, Switch, withRouter } from 'react-router-dom'
 
 import AddMutu from './screen/AddMutu'
 import AddSecu from './screen/AddSecu'
+/*
+import AdminModifInsured from './screen/AdminModifInsured'
+import AdminModifInsured from './screen/AdminModifInsured' 
+import AdminModifInsured from './screen/AdminModifInsured'
+import AdminModifInsured from './screen/AdminModifInsured'
+import AdminModifInsured from './screen/AdminModifInsured'
+import AdminModifInsured from './screen/AdminModifInsured'
+import AdminModifInsured from './screen/AdminModifInsured'
+import AdminModifInsured from './screen/AdminModifInsured'
+import AdminModifInsured from './screen/AdminModifInsured'
+
+*/
 import Analyse from './screen/Analyse'
 import Congratulation from './screen/Congratulation'
 import DetailEvent from './components/DetailEvent'
@@ -17,8 +30,7 @@ import Params from './screen/Params'
 import Thanks from './screen/Thanks'
 import ValidateSecu from './screen/ValidateSecu'
 import Waiting from './screen/Waiting'
-
-import './App.css'
+import { useState } from 'react'
 
 const App = withRouter(({ location }) => {
   const [numMutu, setNumMutu] = useState('')
