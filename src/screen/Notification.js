@@ -13,7 +13,7 @@ const Notification = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/notifications')
+      .get('http://localhost:3000/notif_insured/1')
       .then(res => res.data)
       .then(data => setNotif(data))
 
@@ -35,7 +35,7 @@ const Notification = () => {
           </div> */}
           <div className='notifs'>
             {notifs.map(notif => (
-              <Notif key={notif.id_Notification} notif={notif} />
+              <Notif key={notif.notifications_id_Notification} notif={notif} />
             ))}
           </div>
         </>
