@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import axios from 'axios'
-
 import './ListBddEntry.css'
+
+import Modifier from '../data/images/Modifier.png'
+import axios from 'axios'
+import { useState } from 'react'
 
 const ListBddEntry = () => {
   const [current, setCurrent] = useState('')
@@ -29,12 +30,35 @@ const ListBddEntry = () => {
         setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
       })
   }
+  const handleModifCpt = e => {
+    e.preventDefault()
+    setCurrent(e.target.name)
+    axios
+      .get(`http://localhost:3000/Account/${dataAccount.id_Compte}`)
+      .then(res => res.data)
+      .then(data => setDataAccount(data))
+      .catch(e => {
+        setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
+      })
+  }
 
   const insured = e => {
     e.preventDefault()
     setCurrent(e.target.name)
     axios
       .get('http://localhost:3000/insured')
+      .then(res => res.data)
+      .then(data => setDataInsured(data))
+      .catch(e => {
+        console.error(e)
+        setMessage(`Erreur lors de la reception des assurés : ${e.message}`)
+      })
+  }
+  const handleModifIns = e => {
+    e.preventDefault()
+    setCurrent(e.target.name)
+    axios
+      .get(`http://localhost:3000/insured/${dataInsured.id_insured}`)
       .then(res => res.data)
       .then(data => setDataInsured(data))
       .catch(e => {
@@ -54,11 +78,39 @@ const ListBddEntry = () => {
         setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }
+
+  const handleModifMedE = e => {
+    e.preventDefault()
+    setCurrent(e.target.name)
+    axios
+      .get(`http://localhost:3000/medical_events/${dataMedEvent.id_med_event}`)
+      .then(res => res.data)
+      .then(data => setDataMedEvent(data))
+      .catch(e => {
+        setMessage(`Erreur lors de la création : ${e.message}`)
+      })
+  }
+
   const insurance = e => {
     e.preventDefault()
     setCurrent(e.target.name)
     axios
       .get('http://localhost:3000/health_insurance')
+      .then(res => res.data)
+      .then(data => setDataHealthInsurance(data))
+
+      .catch(e => {
+        setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
+      })
+  }
+
+  const handleModifHI = e => {
+    e.preventDefault()
+    setCurrent(e.target.name)
+    axios
+      .get(
+        `http://localhost:3000/health_insurance/${dataHealthInsurance.id_insurance}`
+      )
       .then(res => res.data)
       .then(data => setDataHealthInsurance(data))
 
@@ -80,11 +132,37 @@ const ListBddEntry = () => {
       })
   }
 
+  const handleModifSpe = e => {
+    e.preventDefault()
+    setCurrent(e.target.name)
+    axios
+      .get(`http://localhost:3000/specialities/${dataSpeciality.id_speciality}`)
+      .then(res => res.data)
+      .then(data => setDataSpeciality(data))
+
+      .catch(e => {
+        setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
+      })
+  }
+
   const pro = e => {
     e.preventDefault()
     setCurrent(e.target.name)
     axios
       .get('http://localhost:3000/pros')
+      .then(res => res.data)
+      .then(data => setDataPros(data))
+
+      .catch(e => {
+        setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
+      })
+  }
+
+  const handleModifPro = e => {
+    e.preventDefault()
+    setCurrent(e.target.name)
+    axios
+      .get(`http://localhost:3000/pros/${dataPros.pro_id}`)
       .then(res => res.data)
       .then(data => setDataPros(data))
 
@@ -106,11 +184,41 @@ const ListBddEntry = () => {
       })
   }
 
+  const handleModifPS = e => {
+    e.preventDefault()
+    setCurrent(e.target.name)
+    axios
+      .get(
+        `http://localhost:3000/pros_speciality/${dataProSpe.id_Pros_Speciality}`
+      )
+      .then(res => res.data)
+      .then(data => setDataProSpe(data))
+
+      .catch(e => {
+        setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
+      })
+  }
+
   const notif = e => {
     e.preventDefault()
     setCurrent(e.target.name)
     axios
       .get('http://localhost:3000/notifications')
+      .then(res => res.data)
+      .then(data => setDataNotification(data))
+
+      .catch(e => {
+        setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
+      })
+  }
+
+  const handleModifNotif = e => {
+    e.preventDefault()
+    setCurrent(e.target.name)
+    axios
+      .get(
+        `http://localhost:3000/notifications/${dataNotification.id_Notification}`
+      )
       .then(res => res.data)
       .then(data => setDataNotification(data))
 
@@ -131,12 +239,38 @@ const ListBddEntry = () => {
         setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
       })
   }
+  const handleModifNI = e => {
+    e.preventDefault()
+    setCurrent(e.target.name)
+    axios
+      .get(
+        `http://localhost:3000/notif_insured/${dataNotifInsured.id_notif_insured}`
+      )
+      .then(res => res.data)
+      .then(data => setDataNotInsured(data))
+
+      .catch(e => {
+        setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
+      })
+  }
 
   const refund = e => {
     e.preventDefault()
     setCurrent(e.target.name)
     axios
       .get('http://localhost:3000/refund')
+      .then(res => res.data)
+      .then(data => setDataRefund(data))
+
+      .catch(e => {
+        setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
+      })
+  }
+  const handleModifRef = e => {
+    e.preventDefault()
+    setCurrent(e.target.name)
+    axios
+      .get(`http://localhost:3000/refund/${dataRefund.id_refund}`)
       .then(res => res.data)
       .then(data => setDataRefund(data))
 
@@ -240,6 +374,7 @@ const ListBddEntry = () => {
                 <th>Nom</th>
                 <th>Login/Email</th>
                 <th>Mot de passe</th>
+                <th>Modification</th>
               </tr>
             </thead>
             <tbody>
@@ -249,6 +384,9 @@ const ListBddEntry = () => {
                   <td>{d.account_name}</td>
                   <td>{d.Login}</td>
                   <td>{d.Password}</td>
+                  <td>
+                    <img src={Modifier} onClick={handleModifCpt}></img>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -266,6 +404,8 @@ const ListBddEntry = () => {
                 <th>Mot de passe</th>
                 <th>Date de naissance</th>
                 <th>Id compte</th>
+                <th>Couleur</th>
+                <th>Modification</th>
               </tr>
             </thead>
             <tbody>
@@ -280,6 +420,10 @@ const ListBddEntry = () => {
                   <td>{d.Password}</td>
                   <td>{new Date(d.birth_date).toLocaleDateString()}</td>
                   <td>{d.Account_id_Compte}</td>
+                  <td>{d.color}</td>
+                  <td>
+                    <img src={Modifier} onClick={handleModifIns}></img>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -297,6 +441,7 @@ const ListBddEntry = () => {
                 <th>Id assuré</th>
                 <th>Id compte</th>
                 <th>Ip professionnel</th>
+                <th>Modification</th>
               </tr>
             </thead>
             <tbody>
@@ -311,6 +456,9 @@ const ListBddEntry = () => {
                   <td>{d.Insured_id_Insured}</td>
                   <td>{d.Insured_Account_id_Compte}</td>
                   <td>{d.Pros_pro_id}</td>
+                  <td>
+                    <img src={Modifier} onClick={handleModifMedE}></img>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -321,6 +469,7 @@ const ListBddEntry = () => {
               <tr>
                 <th>Id institut d&apos;assurance</th>
                 <th>Nom institut</th>
+                <th>Modification</th>
               </tr>
             </thead>
             <tbody>
@@ -328,6 +477,9 @@ const ListBddEntry = () => {
                 <tr key={d.id_insurance}>
                   <td>{d.id_insurance}</td>
                   <td>{d.insurance_name}</td>
+                  <td>
+                    <img src={Modifier} onClick={handleModifHI}></img>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -338,6 +490,7 @@ const ListBddEntry = () => {
               <tr>
                 <th>Id spécialité</th>
                 <th>Nom spécialité</th>
+                <th>Modification</th>
               </tr>
             </thead>
             <tbody>
@@ -345,6 +498,9 @@ const ListBddEntry = () => {
                 <tr key={d.id_speciality}>
                   <td>{d.id_speciality}</td>
                   <td>{d.speciality_name}</td>
+                  <td>
+                    <img src={Modifier} onClick={handleModifSpe}></img>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -355,6 +511,7 @@ const ListBddEntry = () => {
               <tr>
                 <th>Id professionnel</th>
                 <th>Nom professionnel</th>
+                <th>Modification</th>
               </tr>
             </thead>
             <tbody>
@@ -362,6 +519,9 @@ const ListBddEntry = () => {
                 <tr key={d.pro_id}>
                   <td>{d.pro_id}</td>
                   <td>{d.pro_name}</td>
+                  <td>
+                    <img src={Modifier} onClick={handleModifPro}></img>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -376,6 +536,7 @@ const ListBddEntry = () => {
                 <th>Id pro</th>
                 <th>Nom pro</th>
                 <th>Statut</th>
+                <th>Modification</th>
               </tr>
             </thead>
             <tbody>
@@ -387,6 +548,9 @@ const ListBddEntry = () => {
                   <td>{d.pros_pro_id}</td>
                   <td>{d.pro_name}</td>
                   <td>{d.Status}</td>
+                  <td>
+                    <img src={Modifier} onClick={handleModifPS}></img>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -398,6 +562,7 @@ const ListBddEntry = () => {
                 <th>Id notification</th>
                 <th>Type</th>
                 <th>Message</th>
+                <th>Modification</th>
               </tr>
             </thead>
             <tbody>
@@ -406,6 +571,9 @@ const ListBddEntry = () => {
                   <td>{d.id_Notification}</td>
                   <td>{d.type}</td>
                   <td>{d.Message}</td>
+                  <td>
+                    <img src={Modifier} onClick={handleModifNotif}></img>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -419,6 +587,7 @@ const ListBddEntry = () => {
                 <th>Id assuré</th>
                 <th>Id compte/assuré</th>
                 <th>Status</th>
+                <th>Modification</th>
               </tr>
             </thead>
             <tbody>
@@ -429,6 +598,9 @@ const ListBddEntry = () => {
                   <td>{d.insured_id_Insured}</td>
                   <td>{d.insured_Account_id_Compte}</td>
                   <td>{d.Status}</td>
+                  <td>
+                    <img src={Modifier} onClick={handleModifNI}></img>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -442,6 +614,7 @@ const ListBddEntry = () => {
                 <th>Date remboursement</th>
                 <th>Id institut</th>
                 <th>Id acte médical</th>
+                <th>Modification</th>
               </tr>
             </thead>
             <tbody>
@@ -452,6 +625,9 @@ const ListBddEntry = () => {
                   <td>{new Date(d.Date_Refund).toLocaleDateString()}</td>
                   <td>{d.Health_insurance_id_Mutuelle}</td>
                   <td>{d.Medical_events_id_Actes}</td>
+                  <td>
+                    <img src={Modifier} onClick={handleModifRef}></img>
+                  </td>
                 </tr>
               ))}
             </tbody>
