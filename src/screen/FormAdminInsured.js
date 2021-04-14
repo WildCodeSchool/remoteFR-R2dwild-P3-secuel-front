@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import axios from 'axios'
-import ListBddEntry from './ListBddEntry'
-
 import './Form.css'
+
+import ListBddEntry from './ListBddEntry'
+import axios from 'axios'
+import { useState } from 'react'
 
 const FormAdminInsured = () => {
   const [birthDate, setBirthDate] = useState('')
@@ -14,6 +14,7 @@ const FormAdminInsured = () => {
   const [password, setPassword] = useState('')
   const [tel, setTel] = useState('')
   const [compte, setCompte] = useState('')
+  const [color, setColor] = useState('')
   const allPost = {
     lastname: lastName,
     firstname: firstName,
@@ -22,6 +23,7 @@ const FormAdminInsured = () => {
     tel: tel,
     Password: password,
     birth_date: birthDate,
+    color: color,
     Account_id_Compte: compte
   }
 
@@ -40,6 +42,8 @@ const FormAdminInsured = () => {
       ? setPassword(e.target.value)
       : e.target.name === 'birth-date'
       ? setBirthDate(e.target.value)
+      :e.target.name === 'color'
+      ? setColor(e.target.value)
       : setCompte(e.target.value)
   }
 
