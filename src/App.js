@@ -4,7 +4,6 @@ import { Route, Switch, withRouter } from 'react-router-dom'
 
 import AddMutu from './screen/AddMutu'
 import AddSecu from './screen/AddSecu'
-
 import AdminModifInsured from './screen/AdminModifInsured'
 /* 
 import AdminModifInsured from './screen/AdminModifInsured' 
