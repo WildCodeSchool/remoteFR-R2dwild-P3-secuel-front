@@ -1,18 +1,14 @@
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 import { Link } from 'react-router-dom'
-import acte from '../data/fakejson/fakedata.json'
 import Donut from './Donut.js'
 
 import './DetailEvent.css'
 
 import fleche from '../data/images/fleche.png'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
 
 const DetailEvent = Acte => {
   const [medActe, setMedActe] = useState(null)
-  const insured = acte.filter(
-    medevent => medevent.id === parseInt(Acte.match.params.id)
-  )[0]
   useEffect(() => {
     axios
       .get(`http://localhost:3000/Medical_events/${Acte.match.params.id}`)
@@ -51,7 +47,7 @@ const DetailEvent = Acte => {
           </p>
           <p>
             <span className='infoCard'>Montant remboursé: </span>
-            {insured['Montant remboursé'] ? insured['Montant remboursé'] : 0}
+            {medActe.Amount_Refund + medActe.refund_insurance}
           </p>
           <Donut />
         </>
