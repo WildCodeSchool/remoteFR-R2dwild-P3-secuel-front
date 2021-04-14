@@ -1,3 +1,37 @@
+.cardDetail {
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  height: 80%;
+  justify-content: space-between;
+  padding: 15px;
+  width: 60%;
+}
+.donut {
+  width: 50%;
+  } 
+  .explanations {
+    border: 2px solid grey;
+    border-radius: 10px;
+    width: 35%;
+  }
 .infoCard{
   color:#BE9B07;
+}
+
+
+
+@media screen and (max-width: 1100px) {
+  .cardDetail {
+    flex-direction: column;
+    height: 600px;
+    width: 80%;
+  }
+  .donut {
+    width: 90%;
+    } 
+  .explanations {
+    width: 80%;
+  }
 }
