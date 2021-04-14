@@ -92,6 +92,7 @@ const Form = visitor => {
               Mot de passe<span> * </span>{' '}
             </legend>
             <input
+              type='password'
               id='password'
               name='password'
               onChange={handleChange}
