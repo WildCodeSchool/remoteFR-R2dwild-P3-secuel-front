@@ -165,7 +165,7 @@ const FormAdminInsured = () => {
           </div>
           <div className='formData'>
             <label htmlFor='color'>
-              Couleur affectée<span> * </span>
+              Couleur utilisateur <span> * </span>
             </label>
             <div className='inputColor'>
               <div>
