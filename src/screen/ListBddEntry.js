@@ -468,8 +468,14 @@ const ListBddEntry = () => {
                     <td>{d.Insured_Account_id_Compte}</td>
                     <td>{d.Pros_pro_id}</td>
                     <td>
-                      <Link to='./AdminModifInsured' className='modifLink'>
-                        <img src={Modifier} onClick={() => handleModifMedE} />
+                    <Link to='./AdminModifMed' className='modifLink'>
+                        <img
+                          src={Modifier}
+                          onClick={
+                            (() => handleModifIns(d.id_med_event),
+                           )
+                          }
+                        />
                       </Link>
                     </td>
                   </tr>
@@ -653,6 +659,12 @@ const ListBddEntry = () => {
               path='/AdminModifInsured'
               render={props => (
                 <AdminModifInsured {...props} Data={dataInsured} />
+              )}
+            />
+            <Route
+              path='/AdminModifMed'
+              render={props => (
+                <AdminModifMed {...props} Data={dataMed} />
               )}
             />
           </Switch>
