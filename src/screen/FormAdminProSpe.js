@@ -50,6 +50,7 @@ const FormAdminProSpe = () => {
               id='pro'
               name='pro'
               onChange={handleChange}
+              placeholder='nombre'
               required
               value={idPro}
             />
@@ -63,6 +64,7 @@ const FormAdminProSpe = () => {
               id='spe'
               name='spe'
               onChange={handleChange}
+              placeholder='nombre'
               required
               value={idSpe}
             />

@@ -10,7 +10,6 @@ import Cal from '../data/images/Calendrier.png'
 const Calendrier = () => {
   const [startDate, setStartDate] = useState(addMonths(new Date(), -6))
   const [endDate, setEndDate] = useState(new Date())
-  const [date, setDate] = useState('')
   return (
     <div className='calendrier'>
       <div className='divCalendrier'>
@@ -18,9 +17,7 @@ const Calendrier = () => {
         <div className='divCalendar'>
           <DatePicker
             selected={startDate}
-            onChange={date =>
-              setStartDate(date) || setDate(date.toLocaleDateString())
-            }
+            onChange={date => setStartDate(date)}
             maxDate={new Date()}
             minDate={addMonths(new Date(), -6)}
             id='firstCalendar'
@@ -39,7 +36,6 @@ const Calendrier = () => {
         </div>
         <button id='btnAppliquer'>Appliquer</button>
       </div>
-      <p>{date}</p>
     </div>
   )
 }

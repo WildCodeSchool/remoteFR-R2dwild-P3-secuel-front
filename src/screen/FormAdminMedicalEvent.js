@@ -96,7 +96,7 @@ const FormAdminMedicalEvent = () => {
             <input
               id='secuStatus'
               name='secuStatus'
-              placeholder='traité || non traité || en cours de traitement'
+              placeholder='Traité || non traité || En cours de traitement'
               onChange={handleChange}
               required
               value={secuStatus}
@@ -110,7 +110,7 @@ const FormAdminMedicalEvent = () => {
             <input
               id='insuranceStatus'
               name='insuranceStatus'
-              placeholder='traité || non traité || en cours de traitement'
+              placeholder='Traité || non traité || En cours de traitement'
               onChange={handleChange}
               required
               value={insuranceStatus}
@@ -123,7 +123,7 @@ const FormAdminMedicalEvent = () => {
             <input
               id='specialitiesIdSpeciality'
               name='specialitiesIdSpeciality'
-              placeholder='XX'
+              placeholder='id de la spécialité'
               onChange={handleChange}
               required
               value={specialitiesIdSpeciality}
@@ -136,7 +136,7 @@ const FormAdminMedicalEvent = () => {
             <input
               id='insuredIdInsured'
               name='insuredIdInsured'
-              placeholder='XX'
+              placeholder='id assuré'
               onChange={handleChange}
               required
               value={insuredIdInsured}
@@ -149,7 +149,7 @@ const FormAdminMedicalEvent = () => {
             <input
               id='insuredAccountIdCompte'
               name='insuredAccountIdCompte'
-              placeholder='XX'
+              placeholder='id du compte'
               onChange={handleChange}
               required
               value={insuredAccountIdCompte}
@@ -162,7 +162,7 @@ const FormAdminMedicalEvent = () => {
             <input
               id='prosProId'
               name='prosProId'
-              placeholder='XX'
+              placeholder='id du professionnel'
               onChange={handleChange}
               required
               value={prosProId}
