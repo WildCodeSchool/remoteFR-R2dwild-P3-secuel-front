@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom'
 import { Doughnut } from 'react-chartjs-2'
 
 import 'chartjs-plugin-datalabels'
-
 import './DetailEvent.css'
-
 import fleche from '../data/images/fleche.png'
 
 const DetailEvent = Acte => {
@@ -22,8 +20,6 @@ const DetailEvent = Acte => {
         console.log(`Erreur lors de la reception : ${e.message}`)
       })
   }, [])
-  console.log(medActe)
-
   return (
     <div className='cardDetail'>
       {medActe ? (
@@ -183,5 +179,4 @@ const DetailEvent = Acte => {
     </div>
   )
 }
-
 export default DetailEvent
