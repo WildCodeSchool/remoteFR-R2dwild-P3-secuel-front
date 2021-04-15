@@ -5,7 +5,6 @@ const Message = () => {
     <div className='message'>
       <h1 id='titreNotif'>Vos Messages</h1>
       <div className='fontMessages'>
-        <p className='infoNbMessage'>3 nouveaux messages</p>
         <p className='infoNombreMessage'>
           Messages <span id='spanNbMessages'>3</span>
         </p>

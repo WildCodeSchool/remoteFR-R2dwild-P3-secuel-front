@@ -6,8 +6,6 @@ import NotificationCompo from '../components/NotifCompo'
 import './Notification.css'
 import 'react-datepicker/dist/react-datepicker.css'
 
-import eventArray from '../data/fakejson/fakedata.json'
-
 const Notification = () => {
   const [notifs, setNotif] = useState(null)
   const [alert, setAlert] = useState(null)

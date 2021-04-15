@@ -6,10 +6,13 @@ const Notif = notif => {
       <div className='notifBack'>
         <p>{notif.notif.type} </p>
         <p>{notif.notif.Message}</p>
-        <p
-          className='insuredcolor'
-          style={{ background: notif.notif.color }}
-        ></p>
+        <p className='insuredcolor' style={{ background: notif.notif.color }}>
+          <strong>
+            {' '}
+            {notif.notif.firstname.charAt(0) +
+              notif.notif.lastname.charAt(0)}{' '}
+          </strong>
+        </p>
       </div>
     </div>
   )
