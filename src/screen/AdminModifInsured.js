@@ -5,14 +5,12 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 const AdminModifInsured = Data => {
-  const [insured, setInsured] = useState('')
   useEffect(() => {
     axios
       .get(`http://localhost:3000/insured/${Data.match.params.id}`)
       .then(res => res.data)
       .then(data => {
         console.log(data[0])
-        setInsured(data[0])
         setCompte(data[0].Account_id_Compte)
         setBirthDate(
           new Date(data[0].birth_date)

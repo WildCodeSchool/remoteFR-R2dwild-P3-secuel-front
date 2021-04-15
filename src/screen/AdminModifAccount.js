@@ -21,7 +21,6 @@ const AdminModifAccount = Data => {
   }, [])
   const [accountName, setAccountName] = useState('')
   const [login, setLogin] = useState('')
-  const [message, setMessage] = useState(null)
   const [password, setPassword] = useState('')
   const allPost = {
     Account_name: accountName,
@@ -42,10 +41,10 @@ const AdminModifAccount = Data => {
     axios
       .post('http://localhost:3000/Account', allPost)
       .then(res => {
-        setMessage(res.data)
+        console.log(res.data)
       })
       .catch(e => {
-        setMessage(`Erreur lors de la création : ${e.message}`)
+        console.log(`Erreur lors de la création : ${e.message}`)
       })
   }
   // // {message ? <p>{message}</p> : null}
