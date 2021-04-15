@@ -6,6 +6,7 @@ import { Doughnut } from 'react-chartjs-2'
 import 'chartjs-plugin-datalabels'
 import './DetailEvent.css'
 import fleche from '../data/images/fleche.png'
+import email from '../data/images/email.png'
 
 const DetailEvent = Acte => {
   const [medActe, setMedActe] = useState(null)
@@ -20,6 +21,7 @@ const DetailEvent = Acte => {
         console.log(`Erreur lors de la reception : ${e.message}`)
       })
   }, [])
+  console.log(medActe)
   return (
     <div className='cardDetail'>
       {medActe ? (
@@ -110,14 +112,24 @@ const DetailEvent = Acte => {
                     medActe.refund_insurance ===
                   0
                     ? '😀'
-                    : '🙁'}
+                    : (medActe.amount_Event -
+                        medActe.Amount_Refund -
+                        medActe.refund_insurance ===
+                        0 &&
+                        medActe.secu_status) ||
+                      medActe.insurance_status === 'Traité'
+                    ? '🙁'
+                    : ''}
                 </div>
               </strong>
             </p>
           </div>
           {medActe.secu_status != 'Traité' &&
           medActe.insurance_status != 'Traité' ? (
-            <div className='noShow'>Dossier en cours de traitement</div>
+            <div className='noShow'>
+              Dossier en cours de traitement ou non reçu veuillez consulter vos
+              messages <img src={email} style={{ width: '60px' }} />
+            </div>
           ) : (
             <div className='donut'>
               <Doughnut
