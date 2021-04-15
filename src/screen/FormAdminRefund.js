@@ -44,12 +44,12 @@ const FormAdminRefund = () => {
       <h1>Création d&apos;un Remboursement</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
+        <div className='containerAdmin'>
           {/* <legend>information sur le Remboursement : </legend> */}
-          <div className='formData'>
-            <label htmlFor='amount'>
+          <fieldset className='formData'>
+            <legend htmlFor='amount'>
               Montant du remboursement<span> * </span>
-            </label>
+            </legend>
             <input
               type='number'
               id='amount'
@@ -59,11 +59,11 @@ const FormAdminRefund = () => {
               required
               value={amount}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='date'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='date'>
               Date du remboursement<span> * </span>
-            </label>
+            </legend>
             <input
               type='date'
               id='date'
@@ -72,11 +72,11 @@ const FormAdminRefund = () => {
               required
               value={date}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='institute'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='institute'>
               Institut auteur du remboursement<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='institute'
@@ -86,11 +86,11 @@ const FormAdminRefund = () => {
               required
               value={institute}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='medical-act'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='medical-act'>
               Acte médical concerné<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='medical-act'
@@ -100,14 +100,14 @@ const FormAdminRefund = () => {
               required
               value={medicalAct}
             />
-          </div>
+          </fieldset>
           <p>
             <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

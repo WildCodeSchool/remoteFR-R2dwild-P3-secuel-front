@@ -1,5 +1,5 @@
 #bigLogo{
-  width: 20%;
+  width: 10%;
 }
 .btnEnvoyer{
   background-color:#BE9B07 !important;
@@ -8,6 +8,8 @@
   height:30px;
   width:auto;
   font-weight: bold;
+  border:none;
+  cursor: pointer;
 }
 #connaissance{
   display:flex;
@@ -71,6 +73,12 @@
 #color6{background-color: #43AA8B;}
 #color7{background-color: #577590;}
 
+.containerAdmin{
+  border:1px solid #BE9B07;
+  width:90%;
+  padding:10px;
+}
+
 fieldset {
   border-radius: 1px;
 }
@@ -92,6 +100,7 @@ fieldset {
 .form fieldset{
   border:1px solid #BE9B07;
   width:100%;
+  padding: 0;
 }
 .form form{
   align-items: center;
@@ -112,30 +121,34 @@ fieldset {
   border-radius: 5px;
   flex-grow: 1;
   height : 25px;
+  border:none;
+  padding:0;
 
 }
-.form .formData label {
+/* .form .formData label {
   display: inline-block;
   margin-right: 10px;
   padding-right: 50px;
   text-align: center;
   width: 15%;
-}
+} */
 .form h1 {
   text-align: center;
 }
 .form input{
   border:2px, solid, #BE9B07 ;
   outline:none;
-  width:100%;
+  width:98%;
 }
 .form legend{
-  font-size:12px;
+  font-size:13px;
+  text-align: left;
+  margin-left:5px;
 }
 .formTitle{
   align-items: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 .inputColor{
   display: flex;
@@ -159,6 +172,13 @@ span {
 }
 
 @media (max-width: 600px) {
+  #bigLogo{
+    width:30%;
+  }
+  .bigLogoDiv{
+    display: flex;
+    justify-content: center;
+  }
   .form {
     align-items: center;
     background:white;
@@ -173,7 +193,7 @@ span {
   }
 
   .form fieldset{
-    border:1px solid #707070;
+    border:1px solid #BE9B07;
     padding-bottom:0;
     padding-left:0;
     padding-right:6px;

@@ -32,12 +32,12 @@ const FormAdminPros = () => {
       <h1>Création d&apos;un professionnel de santé</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
+        <div className='containerAdmin'>
           {/* <legend>information sur le professionnel : </legend> */}
-          <div className='formData'>
-            <label htmlFor='name'>
+          <fieldset className='formData'>
+            <legend htmlFor='name'>
               Nom du médecin <span> * </span>
-            </label>
+            </legend>
             <input
               className='saisie'
               id='name'
@@ -48,14 +48,14 @@ const FormAdminPros = () => {
               type='text'
               value={name}
             />
-          </div>
+          </fieldset>
           <p>
             <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

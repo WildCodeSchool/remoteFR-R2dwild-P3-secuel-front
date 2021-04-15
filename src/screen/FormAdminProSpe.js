@@ -39,12 +39,12 @@ const FormAdminProSpe = () => {
       <h1>Création d&apos;un lien pro spé</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
+        <div className='containerAdmin'>
           {/* <legend>saisie des infos</legend> */}
-          <div className='formData'>
-            <label htmlFor='pro'>
+          <fieldset className='formData'>
+            <legend htmlFor='pro'>
               Identifiant du professionnel<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='pro'
@@ -54,11 +54,11 @@ const FormAdminProSpe = () => {
               required
               value={idPro}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='spe'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='spe'>
               Spécialité du professionnel<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='spe'
@@ -68,11 +68,11 @@ const FormAdminProSpe = () => {
               required
               value={idSpe}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='status'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='status'>
               Statut de la spécialité<span> * </span>
-            </label>
+            </legend>
             <input
               id='status'
               name='status'
@@ -80,7 +80,7 @@ const FormAdminProSpe = () => {
               required
               value={status}
             />
-          </div>
+          </fieldset>
           <hr />
           <p>
             <span> * </span> Obligatoire
@@ -88,7 +88,7 @@ const FormAdminProSpe = () => {
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

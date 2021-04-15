@@ -31,7 +31,7 @@
   background-color: white;
   border-left: 6px solid green;
   display: flex;
-  flex-direction: raw;
+  flex-direction: row;
   height: 20px;
   justify-content: center;
   padding: 10px;
@@ -64,6 +64,7 @@
   scroll-snap-type: none;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  margin:5px;
 }
 .notifs::-webkit-scrollbar {
   height: 10px;
@@ -78,14 +79,13 @@
 }
 .notifs > div {
   align-items: center;
-  background: #eee;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
   font-size: 1rem;
   justify-content: center;
-  margin-right: 50px;
+  margin-right: 10px;
   padding: 5px;
   position: relative;
   scroll-snap-align: start;

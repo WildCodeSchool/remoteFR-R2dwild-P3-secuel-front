@@ -73,7 +73,7 @@ const DetailEvent = Acte => {
             </p>
             <p className='pInfoCard'>
               <span className='infoCard'>
-                <p className='patchMutu'></p>Remboursement Mutuelle:{' '}
+                <span className='patchMutu'></span>Remboursement Mutuelle:{' '}
               </span>
               <strong className='strongInfoCard'>
                 {medActe.insurance_status === 'Traité' &&
@@ -93,9 +93,9 @@ const DetailEvent = Acte => {
                   medActe.Amount_Refund -
                   medActe.refund_insurance ===
                   0 ? (
-                  <div className='patchGreen'></div>
+                  <span className='patchGreen'></span>
                 ) : (
-                  <div className='patchReste'></div>
+                  <span className='patchReste'></span>
                 )}{' '}
                 {medActe.secu_status && medActe.insurance_status === 'Traité'
                   ? 'Reste à charge :'

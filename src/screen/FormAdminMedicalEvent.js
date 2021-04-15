@@ -60,12 +60,12 @@ const FormAdminMedicalEvent = () => {
       {message ? <p>{message}</p> : null}
       <h1>Ajout d&apos;un acte</h1>
       <form onSubmit={submitForm}>
-        <fieldset>
+        <div className='containerAdmin'>
           {/* <legend>Informations Acte</legend> */}
-          <div className='formData'>
-            <label htmlFor='dateEvent'>
+          <fieldset className='formData'>
+            <legend htmlFor='dateEvent'>
               Date de l&apos;acte<span> * </span>
-            </label>
+            </legend>
             <input
               type='date'
               id='dateEvent'
@@ -74,11 +74,11 @@ const FormAdminMedicalEvent = () => {
               required
               value={dateEvent}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='amountEvent'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='amountEvent'>
               Montant de la consultation<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='amountEvent'
@@ -88,11 +88,11 @@ const FormAdminMedicalEvent = () => {
               required
               value={amountEvent}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='secuStatus'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='secuStatus'>
               Statut du dossier à la Sécu<span> * </span>
-            </label>
+            </legend>
             <input
               id='secuStatus'
               name='secuStatus'
@@ -101,12 +101,12 @@ const FormAdminMedicalEvent = () => {
               required
               value={secuStatus}
             />
-          </div>
+          </fieldset>
 
-          <div className='formData'>
-            <label htmlFor='insuranceStatus'>
+          <fieldset className='formData'>
+            <legend htmlFor='insuranceStatus'>
               Statut du dossier à la mutuelle<span> * </span>
-            </label>
+            </legend>
             <input
               id='insuranceStatus'
               name='insuranceStatus'
@@ -115,11 +115,11 @@ const FormAdminMedicalEvent = () => {
               required
               value={insuranceStatus}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='specialitiesIdSpeciality'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='specialitiesIdSpeciality'>
               Spécialité médecin<span> * </span>
-            </label>
+            </legend>
             <input
               id='specialitiesIdSpeciality'
               name='specialitiesIdSpeciality'
@@ -128,11 +128,11 @@ const FormAdminMedicalEvent = () => {
               required
               value={specialitiesIdSpeciality}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='insuredIdInsured'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='insuredIdInsured'>
               Assuré concerné<span> * </span>
-            </label>
+            </legend>
             <input
               id='insuredIdInsured'
               name='insuredIdInsured'
@@ -141,11 +141,11 @@ const FormAdminMedicalEvent = () => {
               required
               value={insuredIdInsured}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='insuredAccountIdCompte'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='insuredAccountIdCompte'>
               Compte relié<span> * </span>
-            </label>
+            </legend>
             <input
               id='insuredAccountIdCompte'
               name='insuredAccountIdCompte'
@@ -154,11 +154,11 @@ const FormAdminMedicalEvent = () => {
               required
               value={insuredAccountIdCompte}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='prosProId'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='prosProId'>
               Professionnel<span> * </span>
-            </label>
+            </legend>
             <input
               id='prosProId'
               name='prosProId'
@@ -167,7 +167,7 @@ const FormAdminMedicalEvent = () => {
               required
               value={prosProId}
             />
-          </div>
+          </fieldset>
           <hr />
           <p>
             <span> * </span> Obligatoire
@@ -175,7 +175,7 @@ const FormAdminMedicalEvent = () => {
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

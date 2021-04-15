@@ -68,11 +68,11 @@ const FormAdminInsured = () => {
       <h1>Création de assuré</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          <div className='formData'>
-            <label htmlFor='lastname'>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='lastname'>
               Nom de famille <span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='lastname'
@@ -82,11 +82,11 @@ const FormAdminInsured = () => {
               required
               value={lastName}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='firstname'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='firstname'>
               Prénom<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='firstname'
@@ -96,11 +96,11 @@ const FormAdminInsured = () => {
               required
               value={firstName}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='numsecu'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='numsecu'>
               Numéro de sécurité sociale<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='numsecu'
@@ -110,11 +110,11 @@ const FormAdminInsured = () => {
               required
               value={numSecu}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='email'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='email'>
               Email<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='email'
@@ -124,11 +124,11 @@ const FormAdminInsured = () => {
               required
               value={email}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='tel'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='tel'>
               Téléphone<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='tel'
@@ -138,11 +138,11 @@ const FormAdminInsured = () => {
               required
               value={tel}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='password'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='password'>
               Mot de passe<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='password'
@@ -152,11 +152,11 @@ const FormAdminInsured = () => {
               required
               value={password}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='birth-date'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='birth-date'>
               Date de naissance<span> * </span>
-            </label>
+            </legend>
             <input
               type='date'
               id='birth-date'
@@ -165,11 +165,11 @@ const FormAdminInsured = () => {
               required
               value={birthDate}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='color'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='color'>
               Couleur utilisateur <span> * </span>
-            </label>
+            </legend>
             <div className='inputColor'>
               <div>
                 code couleur sélectionnée = <strong>{color}</strong>
@@ -240,11 +240,11 @@ const FormAdminInsured = () => {
                 </label>
               </div>
             </div>
-          </div>
-          <div className='formData'>
-            <label htmlFor='compte'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='compte'>
               Compte de rattachement<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='compte'
@@ -254,7 +254,7 @@ const FormAdminInsured = () => {
               required
               value={compte}
             />
-          </div>
+          </fieldset>
 
           <p>
             <span> * </span> Obligatoire
@@ -262,7 +262,7 @@ const FormAdminInsured = () => {
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )
