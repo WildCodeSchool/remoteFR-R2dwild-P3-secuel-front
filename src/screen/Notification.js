@@ -21,7 +21,7 @@ const Notification = () => {
         console.log(`Erreur lors de la reception : ${e.message}`)
       })
     axios
-      .get('http://localhost:3000/medical_events')
+      .get('http://localhost:3000/medical_events/notif')
       .then(res => res.data)
       .then(data => setAlert(data))
       .catch(e => {

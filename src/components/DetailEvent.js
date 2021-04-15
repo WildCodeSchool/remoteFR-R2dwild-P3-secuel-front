@@ -21,7 +21,7 @@ const DetailEvent = Acte => {
         console.log(`Erreur lors de la reception : ${e.message}`)
       })
   }, [])
-  console.log(medActe)
+
   return (
     <div className='cardDetail'>
       {medActe ? (
@@ -59,7 +59,7 @@ const DetailEvent = Acte => {
             </p>
             <p className='pInfoCard'>
               <span className='infoCard'>
-                <div className='patchSecu'></div>
+                <p className='patchSecu'></p>
                 Remboursement Sécurité So. :{' '}
               </span>
               <strong className='strongInfoCard'>
@@ -73,7 +73,7 @@ const DetailEvent = Acte => {
             </p>
             <p className='pInfoCard'>
               <span className='infoCard'>
-                <div className='patchMutu'></div>Remboursement Mutuelle:{' '}
+                <p className='patchMutu'></p>Remboursement Mutuelle:{' '}
               </span>
               <strong className='strongInfoCard'>
                 {medActe.insurance_status === 'Traité' &&
