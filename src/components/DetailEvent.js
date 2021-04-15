@@ -57,7 +57,7 @@ const DetailEvent = Acte => {
             </p>
             <p className='pInfoCard'>
               <span className='infoCard'>
-                <div className='patchYellow'></div>
+                <div className='patchSecu'></div>
                 Remboursement Sécurité So. :{' '}
               </span>
               <strong className='strongInfoCard'>
@@ -71,7 +71,7 @@ const DetailEvent = Acte => {
             </p>
             <p className='pInfoCard'>
               <span className='infoCard'>
-                <div className='patchBlue'></div>Remboursement Mutuelle:{' '}
+                <div className='patchMutu'></div>Remboursement Mutuelle:{' '}
               </span>
               <strong className='strongInfoCard'>
                 {medActe.insurance_status === 'Traité' &&
@@ -93,7 +93,7 @@ const DetailEvent = Acte => {
                   0 ? (
                   <div className='patchGreen'></div>
                 ) : (
-                  <div className='patchRed'></div>
+                  <div className='patchReste'></div>
                 )}{' '}
                 {medActe.secu_status && medActe.insurance_status === 'Traité'
                   ? 'Reste à charge :'
@@ -133,7 +133,7 @@ const DetailEvent = Acte => {
                           parseInt(`${medActe.refund_insurance}`) -
                           parseInt(`${medActe.Amount_Refund}`)
                       ],
-                      backgroundColor: ['#3d5a80', '#f2af29', '#ee6c4d'],
+                      backgroundColor: ['#8ecae6', '#348AA7', '#ffb703'],
                       borderColor: 'white',
                       hoverBorderColor: 'grey',
                       borderWidth: 2,

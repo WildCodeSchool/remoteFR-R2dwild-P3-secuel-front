@@ -47,13 +47,6 @@ img {
   padding: 15px;
   width: 400px;
 }
-.patchBlue {
-  border-radius: 50%;
-  background-color : #3d5a80;
-  height: 20px;
-  margin-right: 5px;
-  width: 20px;
-}
 .patchGreen {
   border-radius: 50%;
   background-color : #8db38b;
@@ -61,16 +54,23 @@ img {
   margin-right: 5px;
   width: 20px;
 }
-.patchYellow {
+.patchMutu {
   border-radius: 50%;
-  background-color : #f2af29;
+  background-color : #348AA7;
   height: 20px;
   margin-right: 5px;
   width: 20px;
 }
-.patchRed {
+.patchSecu {
   border-radius: 50%;
-  background-color : #ee6c4d;
+  background-color : #8ecae6;
+  height: 20px;
+  margin-right: 5px;
+  width: 20px;
+}
+.patchReste {
+  border-radius: 50%;
+  background-color : #ffb703;
   height: 20px;
   margin-right: 5px;
   width: 20px;
