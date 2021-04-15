@@ -7,14 +7,12 @@
   text-align: right; 
 }
 .legendRaw {
-  align-items: flex-start;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  margin-right: 10%;
+  margin: 0;
   padding : 5px;
-  width: 100%;
 }
 .nameInsured{
   color:black;
@@ -98,6 +96,7 @@
 .starGreen {
   align-items: center;
   background-color: rgb(38, 197, 38);
+  border-radius: 5px 0 0 5px;
   height : 30px;
   padding: 0px;
   width: 10px;
@@ -110,6 +109,12 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+.starNText:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.starNText:last-child {
+  border-radius: 0 5px 5px 0;
 }
 .starRed {
   align-items: center;
@@ -161,6 +166,7 @@ th {
 
 @media (max-width: 600px) {
   .starGreen {
+    border-radius: 5px 0 0 0;
     height : 10px;
     padding: 0px;
     width: 100%;
@@ -169,6 +175,7 @@ th {
     flex-direction: column;
   }
   .starRed {
+    border-radius: 0 5px 0 0;
     height : 10px;
     padding: 0px;
     width: 100%;
