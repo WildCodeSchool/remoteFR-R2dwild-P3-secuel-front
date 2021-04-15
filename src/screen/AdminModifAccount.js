@@ -40,10 +40,7 @@ const AdminModifAccount = Data => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('http://localhost:3000/Account', allPost)
-      .then(res => {
-        setMessage(res.data)
-      })
+      .put(`http://localhost:3000/Account/${Data.match.params.id}`, allPost)
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)
       })
