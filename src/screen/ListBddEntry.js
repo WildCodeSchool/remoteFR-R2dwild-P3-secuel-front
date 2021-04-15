@@ -1,8 +1,7 @@
 import './ListBddEntry.css'
 
-import { Link, Route, Switch, useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
-import AdminModifInsured from './AdminModifInsured'
 import Modifier from '../data/images/Modifier.png'
 import axios from 'axios'
 import { useState } from 'react'
