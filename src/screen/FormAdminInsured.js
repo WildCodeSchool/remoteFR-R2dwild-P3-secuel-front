@@ -1,8 +1,7 @@
-import './Form.css'
-
-import ListBddEntry from './ListBddEntry'
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
+
+import './Form.css'
 
 const FormAdminInsured = () => {
   const [birthDate, setBirthDate] = useState('')
@@ -78,7 +77,7 @@ const FormAdminInsured = () => {
               type='text'
               id='lastname'
               name='lastname'
-              placeholder='minimum X caractères'
+              placeholder='minimum 2 caractères'
               onChange={handleChange}
               required
               value={lastName}
@@ -92,7 +91,7 @@ const FormAdminInsured = () => {
               type='text'
               id='firstname'
               name='firstname'
-              placeholder='minimum X caractères'
+              placeholder='minimum 2 caractères'
               onChange={handleChange}
               required
               value={firstName}
@@ -106,7 +105,7 @@ const FormAdminInsured = () => {
               type='text'
               id='numsecu'
               name='numsecu'
-              placeholder='minimum X caractères'
+              placeholder='minimum 13 caractères'
               onChange={handleChange}
               required
               value={numSecu}

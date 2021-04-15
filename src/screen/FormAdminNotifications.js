@@ -47,7 +47,7 @@ const FormAdminNotifications = () => {
               type='text'
               id='type'
               name='type'
-              placeholder='XX'
+              placeholder='ex: Manque dossier || non reçu'
               onChange={handleChange}
               required
               value={type}
@@ -61,7 +61,7 @@ const FormAdminNotifications = () => {
               type='text'
               id='message'
               name='message'
-              placeholder='XX'
+              placeholder='Action pour régler le problème'
               onChange={handleChange}
               required
               value={notif}

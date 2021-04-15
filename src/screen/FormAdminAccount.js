@@ -50,7 +50,7 @@ const FormAdminAccount = () => {
               type='text'
               id='name'
               name='name'
-              placeholder='minimum X caractères'
+              placeholder='minimum 2 caractères'
               onChange={handleChange}
               required
               value={accountName}
@@ -77,7 +77,7 @@ const FormAdminAccount = () => {
             <input
               id='password'
               name='password'
-              placeholder='minimum X caractères'
+              placeholder='minimum 10 caractères'
               onChange={handleChange}
               required
               value={password}
