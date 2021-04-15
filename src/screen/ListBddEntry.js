@@ -1,5 +1,7 @@
 import './ListBddEntry.css'
 
+import { Link, useHistory } from 'react-router-dom'
+
 import Modifier from '../data/images/Modifier.png'
 import axios from 'axios'
 import { useState } from 'react'
@@ -17,6 +19,8 @@ const ListBddEntry = () => {
   const [dataRefund, setDataRefund] = useState([])
   const [dataSpeciality, setDataSpeciality] = useState([])
   const [message, setMessage] = useState('')
+  const [id, setId] = useState([])
+  const nextPage = useHistory()
   // recuperer les Accounts
 
   const accounts = e => {
@@ -54,17 +58,10 @@ const ListBddEntry = () => {
         setMessage(`Erreur lors de la reception des assurés : ${e.message}`)
       })
   }
-  const handleModifIns = e => {
-    e.preventDefault()
-    setCurrent(e.target.name)
-    axios
-      .get(`http://localhost:3000/insured/${dataInsured.id_insured}`)
-      .then(res => res.data)
-      .then(data => setDataInsured(data))
-      .catch(e => {
-        console.error(e)
-        setMessage(`Erreur lors de la reception des assurés : ${e.message}`)
-      })
+
+  const handleModifIns = id => {
+    setId(id)
+    nextPage.push('/AdminModifInsured')
   }
 
   const actesMed = e => {
@@ -385,7 +382,12 @@ const ListBddEntry = () => {
                   <td>{d.Login}</td>
                   <td>{d.Password}</td>
                   <td>
-                    <img src={Modifier} onClick={handleModifCpt}></img>
+                    <Link to={`/adminmodifaccount/${d.id_Compte}`}>
+                      <img
+                        src={Modifier}
+                        // onClick={() => handleModifIns(d.id_Insured)}
+                      />
+                    </Link>
                   </td>
                 </tr>
               ))}
@@ -422,7 +424,12 @@ const ListBddEntry = () => {
                   <td>{d.Account_id_Compte}</td>
                   <td>{d.color}</td>
                   <td>
-                    <img src={Modifier} onClick={handleModifIns}></img>
+                    <Link to={`/adminmodifinsured/${d.id_Insured}`}>
+                      <img
+                        src={Modifier}
+                        // onClick={() => handleModifIns(d.id_Insured)}
+                      />
+                    </Link>
                   </td>
                 </tr>
               ))}
@@ -457,7 +464,9 @@ const ListBddEntry = () => {
                   <td>{d.Insured_Account_id_Compte}</td>
                   <td>{d.Pros_pro_id}</td>
                   <td>
-                    <img src={Modifier} onClick={handleModifMedE}></img>
+                    <Link to={`/adminmodifmedical/${d.id_med_event}`}>
+                      <img src={Modifier} />
+                    </Link>
                   </td>
                 </tr>
               ))}
@@ -634,7 +643,19 @@ const ListBddEntry = () => {
           </table>
         ) : null}
       </div>
-      {message !== '' ? <div>{message}</div> : null}
+      {/* <div className='switch'>
+        <Switch>
+          <Route
+            path='/AdminModifInsured'
+            render={props => (
+              <AdminModifInsured
+                {...props}
+                data={dataInsured.filter(insured => (insured.id_Insured = id))}
+              />
+            )}
+          />
+        </Switch>
+      </div> */}
     </div>
   )
 }
