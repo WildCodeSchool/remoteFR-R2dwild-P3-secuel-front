@@ -11,26 +11,18 @@ import fleche from '../data/images/fleche.png'
 
 const DetailEvent = Acte => {
   const [medActe, setMedActe] = useState(null)
-  const [array, setArray] = useState('')
   useEffect(() => {
     axios
       .get(`http://localhost:3000/Medical_events/${Acte.match.params.id}`)
       .then(res => res.data)
       .then(data => {
         setMedActe(data)
-        data.insurance_status === 'Traité' && data.secu_status === 'Traité'
-          ? setArray(['Sécurité Sociale', 'Mutuelle ', 'Reste à charge'])
-          : setArray([
-              'Sécurité Sociale',
-              'Mutuelle',
-              'Remboursement(s) en attente'
-            ])
       })
       .catch(e => {
         console.log(`Erreur lors de la reception : ${e.message}`)
       })
-    console.log(medActe)
   }, [])
+  console.log(medActe)
 
   return (
     <div className='cardDetail'>
@@ -39,95 +31,153 @@ const DetailEvent = Acte => {
           <Link to='/home'>
             <img src={fleche} />
           </Link>
-          {/* <p className='titreCard'>{medActe.social_security_num}</p> */}
           <div className='explanations'>
-            <p>
+            <p className='pInfoCard'>
               <span className='infoCard'>Date acte: </span>{' '}
-              <strong>
+              <strong className='strongInfoCard'>
                 {new Date(medActe.Date_Event).toLocaleDateString()}
               </strong>
             </p>
-            <p>
+            <p className='pInfoCard'>
               <span className='infoCard'> Assuré: </span>{' '}
-              <strong>{medActe.lastname} </strong>
-              <strong>{medActe.firstname}</strong>
+              <strong className='strongInfoCard'>{medActe.lastname} </strong>
+              <strong className='strongInfoCard'>{medActe.firstname}</strong>
             </p>
-            <p>
+            <p className='pInfoCard'>
               <span className='infoCard'>Acte: </span>{' '}
-              <strong>{medActe.speciality_name}</strong>
+              <strong className='strongInfoCard'>
+                {medActe.speciality_name}
+              </strong>
             </p>
-            <p>
+            <p className='pInfoCard'>
               <span className='infoCard'>Spécialiste: </span>
-              <strong>{medActe.pro_name}</strong>
+              <strong className='strongInfoCard'>{medActe.pro_name}</strong>
             </p>
-            <p>
+            <p className='pInfoCard'>
               <span className='infoCard'>Montant payé : </span>
-              <strong>{medActe.amount_Event} € </strong>
+              <strong className='strongInfoCard'>
+                {medActe.amount_Event} €{' '}
+              </strong>
             </p>
-            <p>
-              <span className='infoCard'>Montant remboursé : </span>
-              <strong>
-                {medActe.Amount_Refund + medActe.refund_insurance} €
+            <p className='pInfoCard'>
+              <span className='infoCard'>
+                <div className='patchYellow'></div>
+                Remboursement Sécurité So. :{' '}
+              </span>
+              <strong className='strongInfoCard'>
+                {medActe.secu_status === 'Traité' &&
+                medActe.refund_insurance != 0
+                  ? medActe.refund_insurance + '€'
+                  : medActe.secu_status === 'Traité' && medActe.secu_status != 0
+                  ? 'refus de remboursement'
+                  : medActe.secu_status}
+              </strong>
+            </p>
+            <p className='pInfoCard'>
+              <span className='infoCard'>
+                <div className='patchBlue'></div>Remboursement Mutuelle:{' '}
+              </span>
+              <strong className='strongInfoCard'>
+                {medActe.insurance_status === 'Traité' &&
+                medActe.insurance_status != 0
+                  ? medActe.Amount_Refund + '€'
+                  : medActe.insurance_status === 'Traité' &&
+                    medActe.insurance_status != 0
+                  ? 'refus de remboursement'
+                  : medActe.insurance_status}
+              </strong>
+            </p>
+            <p className='pInfoCard'>
+              <span className='infoCard'>
+                {medActe.secu_status &&
+                medActe.insurance_status === 'Traité' &&
+                medActe.amount_Event -
+                  medActe.Amount_Refund -
+                  medActe.refund_insurance ===
+                  0 ? (
+                  <div className='patchGreen'></div>
+                ) : (
+                  <div className='patchRed'></div>
+                )}{' '}
+                {medActe.secu_status && medActe.insurance_status === 'Traité'
+                  ? 'Reste à charge :'
+                  : 'En attente de remboursement'}
+              </span>
+              <strong className='strongInfoCard'>
+                {medActe.amount_Event -
+                  medActe.Amount_Refund -
+                  medActe.refund_insurance}{' '}
+                €{' '}
+                <div className='emoji'>
+                  {medActe.amount_Event -
+                    medActe.Amount_Refund -
+                    medActe.refund_insurance ===
+                  0
+                    ? '😀'
+                    : '🙁'}
+                </div>
               </strong>
             </p>
           </div>
-          <div className='donut'>
-            <Doughnut
-              data={{
-                labels: array,
-                datasets: [
-                  {
-                    label: 'montants remboursés en euros',
-                    data: [
-                      parseInt(`${medActe.Amount_Refund}`),
-                      parseInt(`${medActe.refund_insurance}`),
-                      parseInt(`${medActe.Amount_Event}`) -
-                        parseInt(`${medActe.refund_insurance}`) -
-                        parseInt(`${medActe.Amount_Refund}`) >
-                      0
-                        ? parseInt(`${medActe.Amount_Event}`) -
+          {medActe.secu_status != 'Traité' &&
+          medActe.insurance_status != 'Traité' ? (
+            <div className='noShow'>Dossier en cours de traitement</div>
+          ) : (
+            <div className='donut'>
+              <Doughnut
+                data={{
+                  labels: '',
+                  datasets: [
+                    {
+                      label: 'montants remboursés en euros',
+                      data: [
+                        parseInt(`${medActe.Amount_Refund}`),
+                        parseInt(`${medActe.refund_insurance}`),
+                        parseInt(`${medActe.amount_Event}`) -
                           parseInt(`${medActe.refund_insurance}`) -
                           parseInt(`${medActe.Amount_Refund}`)
-                        : ''
-                    ],
-                    backgroundColor: ['#f2af29', '#3d5a80', '#ee6c4d'],
-                    borderColor: 'white',
-                    hoverBorderColor: 'grey',
-                    borderWidth: 2,
-                    hoverBorderWidth: 4,
-                    datalabels: {
-                      display: true,
-                      color: 'white',
-                      anchor: 'end',
-                      align: 'start',
-                      offset: -10,
-                      borderWidth: 2,
+                      ],
+                      backgroundColor: ['#3d5a80', '#f2af29', '#ee6c4d'],
                       borderColor: 'white',
-                      borderRadius: 25,
-                      backgroundColor: context => {
-                        return context.dataset.backgroundColor
-                      },
-                      formatter: value => {
-                        return value + '€'
+                      hoverBorderColor: 'grey',
+                      borderWidth: 2,
+                      hoverBorderWidth: 4,
+                      datalabels: {
+                        display: function (context) {
+                          return context.dataset.data[context.dataIndex] !== 0
+                        },
+                        color: 'white',
+                        anchor: 'end',
+                        align: 'start',
+                        offset: -10,
+                        borderWidth: 2,
+                        borderColor: 'white',
+                        borderRadius: 25,
+                        backgroundColor: context => {
+                          return context.dataset.backgroundColor
+                        },
+                        formatter: value => {
+                          return value + '€'
+                        }
                       }
                     }
+                  ]
+                }}
+                // height={500}
+                // width={500}
+                options={{
+                  animation: { animateScale: true },
+                  responsive: true,
+                  legend: {
+                    position: 'bottom',
+                    labels: {
+                      fontSize: 15
+                    }
                   }
-                ]
-              }}
-              // height={500}
-              // width={500}
-              options={{
-                animation: { animateScale: true },
-                responsive: true,
-                legend: {
-                  position: 'bottom',
-                  labels: {
-                    fontSize: 15
-                  }
-                }
-              }}
-            />
-          </div>
+                }}
+              />
+            </div>
+          )}
         </>
       ) : null}
     </div>
