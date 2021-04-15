@@ -6,6 +6,7 @@ const insured = person => {
 
   const handleClick = () => setHidden(!hidden)
 
+  console.log(person.person.color)
   return (
     <div
       onClick={handleClick}
