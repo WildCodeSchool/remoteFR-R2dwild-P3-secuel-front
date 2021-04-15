@@ -43,12 +43,11 @@ const FormAdminNotifInsured = () => {
       <h1>Création de notification</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          {/* <legend>information sur la notification : </legend> */}
-          <div className='formData'>
-            <label htmlFor='notif'>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='notif'>
               Id de notif <span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='notif'
@@ -58,11 +57,11 @@ const FormAdminNotifInsured = () => {
               required
               value={notif}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='insured'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='insured'>
               Id de l&apos;assuré concerné <span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='insured'
@@ -72,11 +71,11 @@ const FormAdminNotifInsured = () => {
               required
               value={insured}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='compte'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='compte'>
               Id du compte concerné <span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='compte'
@@ -86,11 +85,11 @@ const FormAdminNotifInsured = () => {
               required
               value={compte}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='status'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='status'>
               Statut de la notif <span> * </span>
-            </label>
+            </legend>
             <input
               type='bool'
               id='status'
@@ -100,14 +99,14 @@ const FormAdminNotifInsured = () => {
               required
               value={status}
             />
-          </div>
+          </fieldset>
           <p>
             <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

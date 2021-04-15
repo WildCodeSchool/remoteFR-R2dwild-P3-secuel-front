@@ -37,12 +37,11 @@ const FormAdminNotifications = () => {
       <h1>Création de notification</h1>
       {message ? <div>{message}</div> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          {/* <legend>Informations sur la notification</legend> */}
-          <div className='formData'>
-            <label htmlFor='type'>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='type'>
               Type de message<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='type'
@@ -52,11 +51,11 @@ const FormAdminNotifications = () => {
               required
               value={type}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='message'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='message'>
               Message<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='message'
@@ -66,7 +65,7 @@ const FormAdminNotifications = () => {
               required
               value={notif}
             />
-          </div>
+          </fieldset>
           <hr />
           <p>
             <span> * </span> Obligatoire
@@ -74,7 +73,7 @@ const FormAdminNotifications = () => {
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

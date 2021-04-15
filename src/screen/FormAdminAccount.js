@@ -41,11 +41,11 @@ const FormAdminAccount = () => {
       </div>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          <div className='formData'>
-            <label htmlFor='name'>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='name'>
               Nom<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='name'
@@ -55,11 +55,11 @@ const FormAdminAccount = () => {
               required
               value={accountName}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='name'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='name'>
               Email<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='email'
@@ -69,11 +69,11 @@ const FormAdminAccount = () => {
               required
               value={login}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='name'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='name'>
               Mot de passe<span> * </span>
-            </label>
+            </legend>
             <input
               id='password'
               name='password'
@@ -82,7 +82,7 @@ const FormAdminAccount = () => {
               required
               value={password}
             />
-          </div>
+          </fieldset>
           <p>
             <span> * </span> Obligatoire
           </p>
@@ -93,7 +93,7 @@ const FormAdminAccount = () => {
               value='Valider le profil'
             />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )
