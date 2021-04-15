@@ -179,6 +179,12 @@ span {
     display: flex;
     justify-content: center;
   }
+  .inputColor{     
+    flex-direction: column;     
+    justify-content: space-between;     
+    align-items: center;     
+    width: 100%;   
+  }
   .form {
     align-items: center;
     background:white;
