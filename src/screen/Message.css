@@ -4,6 +4,9 @@
 #headTable{
   background:#f5f7f7;
 }
+.infoNbMessage {
+  font-size: 20px;
+}
 .message{
   width:90%;
 }
@@ -17,24 +20,18 @@
   padding: 5px;
   text-align: left;
 }
-.infoNbMessage {
-  font-size: 20px;
-}
 
 @media (max-width: 600px){
-  .tableMessages{
-    display:none;
+  #etoileMessages{
+    color:gray;
+    margin-left:65px;
   }
-  #validerMessages{
-    display:none;
-  }
-  #selectMessages{
-    width: 90%;
-    height:35px;
-    border-radius:5px;
-    outline:none;
-    border:1px solid lightgray;
-    margin-bottom: 15px;
+  .fontMessages{
+    background:white;
+    margin:0;
+    padding:0;
+    height:100%;
+    width:100%;
   }
   .infoNbMessage{
     display: none;
@@ -54,17 +51,6 @@
     outline:none;
     border:1px solid lightgray;
     margin-bottom: 15px;
-  }
-  #etoileMessages{
-    color:gray;
-    margin-left:65px;
-  }
-  .fontMessages{
-    background:white;
-    margin:0;
-    padding:0;
-    height:100%;
-    width:100%;
   }
   .messagesMobile{
     display:flex;
@@ -90,6 +76,14 @@
     margin:0;
     padding:0
   }
+  #selectMessages{
+    width: 90%;
+    height:35px;
+    border-radius:5px;
+    outline:none;
+    border:1px solid lightgray;
+    margin-bottom: 15px;
+  }
   .spanBleu{
     color:#348AA7;
     font-size:25px;
@@ -102,4 +96,11 @@
     border-radius:40%;
     font-weight: bold;
   }
+  #validerMessages{
+    display:none;
+  }
+  .tableMessages{
+    display:none;
+  }
+
 }
