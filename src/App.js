@@ -4,6 +4,7 @@ import { Route, Switch, withRouter } from 'react-router-dom'
 
 import AddMutu from './screen/AddMutu'
 import AddSecu from './screen/AddSecu'
+import AdminModifAccount from './screen/AdminModifAccount'
 import AdminModifInsured from './screen/AdminModifInsured'
 import AdminModifMedical from './screen/AdminModifMedical'
 import Analyse from './screen/Analyse'
@@ -89,6 +90,7 @@ const App = withRouter(({ location }) => {
         <Route path='/admin' component={NavAdmin} />
         <Route path='/adminmodifinsured/:id' component={AdminModifInsured} />
         <Route path='/adminmodifmedical/:id' component={AdminModifMedical} />
+        <Route path='/adminmodifaccount/:id' component={AdminModifAccount} />
       </Switch>
     </div>
   )

@@ -383,7 +383,12 @@ const ListBddEntry = () => {
                   <td>{d.Login}</td>
                   <td>{d.Password}</td>
                   <td>
-                    <img src={Modifier} onClick={handleModifCpt}></img>
+                    <Link to={`/adminmodifaccount/${d.id_Compte}`}>
+                      <img
+                        src={Modifier}
+                        // onClick={() => handleModifIns(d.id_Insured)}
+                      />
+                    </Link>
                   </td>
                 </tr>
               ))}
