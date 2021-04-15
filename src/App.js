@@ -4,18 +4,8 @@ import { Route, Switch, withRouter } from 'react-router-dom'
 
 import AddMutu from './screen/AddMutu'
 import AddSecu from './screen/AddSecu'
-/*
 import AdminModifInsured from './screen/AdminModifInsured'
-import AdminModifInsured from './screen/AdminModifInsured' 
-import AdminModifInsured from './screen/AdminModifInsured'
-import AdminModifInsured from './screen/AdminModifInsured'
-import AdminModifInsured from './screen/AdminModifInsured'
-import AdminModifInsured from './screen/AdminModifInsured'
-import AdminModifInsured from './screen/AdminModifInsured'
-import AdminModifInsured from './screen/AdminModifInsured'
-import AdminModifInsured from './screen/AdminModifInsured'
-
-*/
+import AdminModifMedical from './screen/AdminModifMedical'
 import Analyse from './screen/Analyse'
 import Congratulation from './screen/Congratulation'
 import DetailEvent from './components/DetailEvent'
@@ -97,6 +87,8 @@ const App = withRouter(({ location }) => {
         <Route path='/waiting' component={Waiting} />
         <Route path='/event/:id' component={DetailEvent} />
         <Route path='/admin' component={NavAdmin} />
+        <Route path='/adminmodifinsured/:id' component={AdminModifInsured} />
+        <Route path='/adminmodifmedical/:id' component={AdminModifMedical} />
       </Switch>
     </div>
   )

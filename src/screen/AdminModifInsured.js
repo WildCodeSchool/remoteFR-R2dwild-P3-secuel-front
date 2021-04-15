@@ -1,21 +1,48 @@
 import './Form.css'
 
-import { Link, Route, Switch } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 import axios from 'axios'
-import { useState } from 'react'
 
 const AdminModifInsured = Data => {
-  const [birthDate, setBirthDate] = useState(Data.birthDate)
-  const [email, setEmail] = useState(Data.email)
-  const [firstName, setFirstName] = useState('props.firstName')
-  const [lastName, setLastName] = useState('props.lastname')
-  const [message, setMessage] = useState('props.message')
-  const [numSecu, setNumSecu] = useState('props.numSecu')
-  const [password, setPassword] = useState('props.password')
-  const [tel, setTel] = useState('props.tel')
-  const [compte, setCompte] = useState('props.compte')
-  const [color, setColor] = useState('props.color')
+  const [insured, setInsured] = useState('')
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/insured/${Data.match.params.id}`)
+      .then(res => res.data)
+      .then(data => {
+        console.log(data[0])
+        setInsured(data[0])
+        setCompte(data[0].Account_id_Compte)
+        setBirthDate(
+          new Date(data[0].birth_date)
+            .toLocaleDateString()
+            .split('/')
+            .reverse()
+            .join('-')
+        )
+        setEmail(data[0].email)
+        setFirstName(data[0].firstname)
+        setLastName(data[0].lastname)
+        setNumSecu(data[0].social_security_num)
+        setTel(data[0].tel)
+        setPassword(data[0].Password)
+        setColor(data[0].color)
+      })
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+  }, [])
+  const [birthDate, setBirthDate] = useState('')
+  const [email, setEmail] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [message, setMessage] = useState('')
+  const [numSecu, setNumSecu] = useState('')
+  const [password, setPassword] = useState('')
+  const [tel, setTel] = useState('')
+  const [compte, setCompte] = useState('')
+  const [color, setColor] = useState('')
   const allPost = {
     lastname: lastName,
     firstname: firstName,
@@ -76,10 +103,9 @@ const AdminModifInsured = Data => {
               type='text'
               id='lastname'
               name='lastname'
-              placeholder='minimum X caractères'
               onChange={handleChange}
               required
-              value={console.log(Data)}
+              value={lastName}
             />
           </div>
           <div className='formData'>
@@ -248,7 +274,6 @@ const AdminModifInsured = Data => {
               type='text'
               id='compte'
               name='compte'
-              placeholder='numéro d un compte'
               onChange={handleChange}
               required
               value={compte}
