@@ -20,19 +20,15 @@ const StackedBar = () => {
         .then(data => {
           data.totalCost.forEach(data => {
             setLabel(label.push(data.speciality_name))
-            setTotal(total.push(data['ROUND(SUM(ME.amount_Event),2)']))
+            setTotal(total.push(data.AmountPaid))
           })
-          data.refundSecu.forEach(data =>
-            setSecu(secu.push(data['ROUND(SUM(R.Amount_Refund),2)']))
-          )
-          data.refundMutu.forEach(data =>
-            setMutu(mutu.push(data['ROUND(SUM(R.Amount_Refund),2)']))
-          )
+          data.refundSecu.forEach(data => setSecu(secu.push(data.RefundSecu)))
+          data.refundMutu.forEach(data => setMutu(mutu.push(data.MutuRefund)))
           test = total.map((number, i) =>
             Math.round(
               number -
-                data.refundSecu[i]['ROUND(SUM(R.Amount_Refund),2)'] -
-                data.refundMutu[i]['ROUND(SUM(R.Amount_Refund),2)']
+                data.refundSecu[i].RefundSecu -
+                data.refundMutu[i].MutuRefund
             )
           )
         })

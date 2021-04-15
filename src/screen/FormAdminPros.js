@@ -39,12 +39,13 @@ const FormAdminPros = () => {
               Nom du médecin <span> * </span>
             </legend>
             <input
-              type='text'
+              className='saisie'
               id='name'
               name='name'
-              className='saisie'
               onChange={handleChange}
+              placeholder='ex: Bigotte'
               required
+              type='text'
               value={name}
             />
           </fieldset>

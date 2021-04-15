@@ -1,12 +1,26 @@
-import { useState } from 'react'
-import axios from 'axios'
-
 import './Form.css'
 
-const FormAdminAccount = () => {
+import { useEffect, useState } from 'react'
+
+import axios from 'axios'
+
+const AdminModifAccount = Data => {
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/Account/${Data.match.params.id}`)
+      .then(res => res.data)
+      .then(data => {
+        console.log(data)
+        setAccountName(data[0].account_name)
+        setLogin(data[0].Login)
+        setPassword(data[0].Password)
+      })
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+  }, [])
   const [accountName, setAccountName] = useState('')
   const [login, setLogin] = useState('')
-  const [message, setMessage] = useState(null)
   const [password, setPassword] = useState('')
   const allPost = {
     Account_name: accountName,
@@ -27,39 +41,39 @@ const FormAdminAccount = () => {
     axios
       .post('http://localhost:3000/Account', allPost)
       .then(res => {
-        setMessage(res.data)
+        console.log(res.data)
       })
       .catch(e => {
-        setMessage(`Erreur lors de la création : ${e.message}`)
+        console.log(`Erreur lors de la création : ${e.message}`)
       })
   }
-
+  // // {message ? <p>{message}</p> : null}
   return (
     <div className='form'>
       <div className='formTitle'>
-        <h1>Création d&apos;un compte utilisateur</h1>
+        <h1>Modification d&apos;un compte utilisateur</h1>
       </div>
-      {message ? <p>{message}</p> : null}
+
       <form onSubmit={submitForm}>
-        <div className='containerAdmin'>
-          <fieldset className='formData'>
-            <legend htmlFor='name'>
+        <fieldset>
+          <div className='formData'>
+            <label htmlFor='name'>
               Nom<span> * </span>
-            </legend>
+            </label>
             <input
               type='text'
               id='name'
               name='name'
-              placeholder='minimum 2 caractères'
+              placeholder='minimum X caractères'
               onChange={handleChange}
               required
               value={accountName}
             />
-          </fieldset>
-          <fieldset className='formData'>
-            <legend htmlFor='name'>
+          </div>
+          <div className='formData'>
+            <label htmlFor='name'>
               Email<span> * </span>
-            </legend>
+            </label>
             <input
               type='text'
               id='email'
@@ -69,20 +83,20 @@ const FormAdminAccount = () => {
               required
               value={login}
             />
-          </fieldset>
-          <fieldset className='formData'>
-            <legend htmlFor='name'>
+          </div>
+          <div className='formData'>
+            <label htmlFor='name'>
               Mot de passe<span> * </span>
-            </legend>
+            </label>
             <input
               id='password'
               name='password'
-              placeholder='minimum 10 caractères'
+              placeholder='minimum X caractères'
               onChange={handleChange}
               required
               value={password}
             />
-          </fieldset>
+          </div>
           <p>
             <span> * </span> Obligatoire
           </p>
@@ -93,10 +107,10 @@ const FormAdminAccount = () => {
               value='Valider le profil'
             />
           </div>
-        </div>
+        </fieldset>
       </form>
     </div>
   )
 }
 
-export default FormAdminAccount
+export default AdminModifAccount

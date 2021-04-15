@@ -1,8 +1,12 @@
-import { useState } from 'react'
+import './App.css'
+
 import { Route, Switch, withRouter } from 'react-router-dom'
 
 import AddMutu from './screen/AddMutu'
 import AddSecu from './screen/AddSecu'
+import AdminModifAccount from './screen/AdminModifAccount'
+import AdminModifInsured from './screen/AdminModifInsured'
+import AdminModifMedical from './screen/AdminModifMedical'
 import Analyse from './screen/Analyse'
 import Congratulation from './screen/Congratulation'
 import DetailEvent from './components/DetailEvent'
@@ -17,8 +21,7 @@ import Params from './screen/Params'
 import Thanks from './screen/Thanks'
 import ValidateSecu from './screen/ValidateSecu'
 import Waiting from './screen/Waiting'
-
-import './App.css'
+import { useState } from 'react'
 
 const App = withRouter(({ location }) => {
   const [numMutu, setNumMutu] = useState('')
@@ -85,6 +88,9 @@ const App = withRouter(({ location }) => {
         <Route path='/waiting' component={Waiting} />
         <Route path='/event/:id' component={DetailEvent} />
         <Route path='/admin' component={NavAdmin} />
+        <Route path='/adminmodifinsured/:id' component={AdminModifInsured} />
+        <Route path='/adminmodifmedical/:id' component={AdminModifMedical} />
+        <Route path='/adminmodifaccount/:id' component={AdminModifAccount} />
       </Switch>
     </div>
   )

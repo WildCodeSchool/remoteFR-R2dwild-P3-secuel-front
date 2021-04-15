@@ -42,6 +42,7 @@ const FormAdminSpeciality = () => {
               id='speciality'
               name='speciality'
               onChange={handleChange}
+              placeholder='ex: Généraliste'
               required
               value={speciality}
             />

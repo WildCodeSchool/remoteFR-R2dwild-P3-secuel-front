@@ -1,14 +1,41 @@
-import { useState } from 'react'
-import axios from 'axios'
-
 import './Form.css'
 
-const FormAdminInsured = () => {
+import { useEffect, useState } from 'react'
+
+import axios from 'axios'
+
+const AdminModifInsured = Data => {
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/insured/${Data.match.params.id}`)
+      .then(res => res.data)
+      .then(data => {
+        console.log(data[0])
+        setCompte(data[0].Account_id_Compte)
+        setBirthDate(
+          new Date(data[0].birth_date)
+            .toLocaleDateString()
+            .split('/')
+            .reverse()
+            .join('-')
+        )
+        setEmail(data[0].email)
+        setFirstName(data[0].firstname)
+        setLastName(data[0].lastname)
+        setNumSecu(data[0].social_security_num)
+        setTel(data[0].tel)
+        setPassword(data[0].Password)
+        setColor(data[0].color)
+      })
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+  }, [])
   const [birthDate, setBirthDate] = useState('')
   const [email, setEmail] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
-  const [message, setMessage] = useState(null)
+  const [message, setMessage] = useState('')
   const [numSecu, setNumSecu] = useState('')
   const [password, setPassword] = useState('')
   const [tel, setTel] = useState('')
@@ -22,7 +49,6 @@ const FormAdminInsured = () => {
     tel: tel,
     Password: password,
     birth_date: birthDate,
-    color: color,
     Account_id_Compte: compte
   }
 
@@ -41,8 +67,6 @@ const FormAdminInsured = () => {
       ? setPassword(e.target.value)
       : e.target.name === 'birth-date'
       ? setBirthDate(e.target.value)
-      : e.target.name === 'color'
-      ? setColor(e.target.value)
       : setCompte(e.target.value)
     // ? setColor(e.target.value)
   }
@@ -50,7 +74,7 @@ const FormAdminInsured = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('http://localhost:3000/insured', allPost)
+      .put('http://localhost:3000/insured', allPost)
       .then(res => {
         setMessage(res.data)
       })
@@ -65,56 +89,55 @@ const FormAdminInsured = () => {
 
   return (
     <div className='form'>
-      <h1>Création de assuré</h1>
+      <h1>Modification Assuré</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <div className='containerAdmin'>
-          <fieldset className='formData'>
-            <legend htmlFor='lastname'>
+        <fieldset>
+          <div className='formData'>
+            <label htmlFor='lastname'>
               Nom de famille <span> * </span>
-            </legend>
+            </label>
             <input
               type='text'
               id='lastname'
               name='lastname'
-              placeholder='minimum 2 caractères'
               onChange={handleChange}
               required
               value={lastName}
             />
-          </fieldset>
-          <fieldset className='formData'>
-            <legend htmlFor='firstname'>
+          </div>
+          <div className='formData'>
+            <label htmlFor='firstname'>
               Prénom<span> * </span>
-            </legend>
+            </label>
             <input
               type='text'
               id='firstname'
               name='firstname'
-              placeholder='minimum 2 caractères'
+              placeholder='minimum X caractères'
               onChange={handleChange}
               required
               value={firstName}
             />
-          </fieldset>
-          <fieldset className='formData'>
-            <legend htmlFor='numsecu'>
+          </div>
+          <div className='formData'>
+            <label htmlFor='numsecu'>
               Numéro de sécurité sociale<span> * </span>
-            </legend>
+            </label>
             <input
               type='text'
               id='numsecu'
               name='numsecu'
-              placeholder='minimum 13 caractères'
+              placeholder='minimum X caractères'
               onChange={handleChange}
               required
               value={numSecu}
             />
-          </fieldset>
-          <fieldset className='formData'>
-            <legend htmlFor='email'>
+          </div>
+          <div className='formData'>
+            <label htmlFor='email'>
               Email<span> * </span>
-            </legend>
+            </label>
             <input
               type='text'
               id='email'
@@ -124,11 +147,11 @@ const FormAdminInsured = () => {
               required
               value={email}
             />
-          </fieldset>
-          <fieldset className='formData'>
-            <legend htmlFor='tel'>
+          </div>
+          <div className='formData'>
+            <label htmlFor='tel'>
               Téléphone<span> * </span>
-            </legend>
+            </label>
             <input
               type='text'
               id='tel'
@@ -138,11 +161,11 @@ const FormAdminInsured = () => {
               required
               value={tel}
             />
-          </fieldset>
-          <fieldset className='formData'>
-            <legend htmlFor='password'>
+          </div>
+          <div className='formData'>
+            <label htmlFor='password'>
               Mot de passe<span> * </span>
-            </legend>
+            </label>
             <input
               type='text'
               id='password'
@@ -152,24 +175,24 @@ const FormAdminInsured = () => {
               required
               value={password}
             />
-          </fieldset>
-          <fieldset className='formData'>
-            <legend htmlFor='birth-date'>
+          </div>
+          <div className='formData'>
+            <label htmlFor='birth-date'>
               Date de naissance<span> * </span>
-            </legend>
+            </label>
             <input
-              type='date'
+              type='text'
               id='birth-date'
               name='birth-date'
               onChange={handleChange}
               required
               value={birthDate}
             />
-          </fieldset>
-          <fieldset className='formData'>
-            <legend htmlFor='color'>
+          </div>
+          <div className='formData'>
+            <label htmlFor='color'>
               Couleur utilisateur <span> * </span>
-            </legend>
+            </label>
             <div className='inputColor'>
               <div>
                 code couleur sélectionnée = <strong>{color}</strong>
@@ -240,32 +263,31 @@ const FormAdminInsured = () => {
                 </label>
               </div>
             </div>
-          </fieldset>
-          <fieldset className='formData'>
-            <legend htmlFor='compte'>
+          </div>
+          <div className='formData'>
+            <label htmlFor='compte'>
               Compte de rattachement<span> * </span>
-            </legend>
+            </label>
             <input
               type='text'
               id='compte'
               name='compte'
-              placeholder='numéro d un compte'
               onChange={handleChange}
               required
               value={compte}
             />
-          </fieldset>
+          </div>
 
           <p>
             <span> * </span> Obligatoire
           </p>
           <div className='formData'>
-            <input className='btnEnvoyer' type='submit' value='Envoyer' />
+            <input className='btnEnvoyer' type='submit' value='Mettre a jour' />
           </div>
-        </div>
+        </fieldset>
       </form>
     </div>
   )
 }
 
-export default FormAdminInsured
+export default AdminModifInsured

@@ -6,6 +6,7 @@ const insured = person => {
 
   const handleClick = () => setHidden(!hidden)
 
+  console.log(person.person.color)
   return (
     <div
       onClick={handleClick}
@@ -13,7 +14,7 @@ const insured = person => {
       style={{ background: person.person.color }}
     >
       <div className='notificationICon'>
-        <h1 className='nomAssure'>
+        <h1 className='nomAssure' style={{ cursor: 'pointer' }}>
           {person.person.firstname + ' ' + person.person.lastname}
         </h1>
         {person.person.medical.filter(

@@ -4,14 +4,15 @@ const NotifCompo = notif => {
   return (
     <div
       className={
-        notif.status === 'Traité'
+        notif.status[0] === 'Traité' && notif.status[1]
           ? 'barGreen'
-          : notif.status === 'en cours de traitement' && notif.incident === ''
-          ? 'barYellow'
-          : 'barRed'
+          : notif.status[0] !== 'En cours de traitement' ||
+            notif.status[1] !== 'En cours de traitement'
+          ? 'barRed'
+          : 'barYellow'
       }
     >
-      <div className='dateRemboursement'>{notif.eventDate}</div>
+      <p>{notif.notifDate}</p>
       <p>
         <strong>{notif.firstName} </strong>a obtenu un remboursement de
         <strong> {notif.payer} </strong>

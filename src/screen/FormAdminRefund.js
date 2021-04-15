@@ -55,6 +55,7 @@ const FormAdminRefund = () => {
               id='amount'
               name='amount'
               onChange={handleChange}
+              placeholder='nombre sans devise'
               required
               value={amount}
             />
@@ -81,6 +82,7 @@ const FormAdminRefund = () => {
               id='institute'
               name='institute'
               onChange={handleChange}
+              placeholder='id assurance'
               required
               value={institute}
             />
@@ -94,6 +96,7 @@ const FormAdminRefund = () => {
               id='medical-act'
               name='medical-act'
               onChange={handleChange}
+              placeholder='id acte'
               required
               value={medicalAct}
             />
