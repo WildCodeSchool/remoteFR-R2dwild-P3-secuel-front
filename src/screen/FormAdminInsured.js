@@ -180,7 +180,7 @@ const FormAdminInsured = () => {
                     onClick={colorChoosen}
                     type='radio'
                     name='radio1'
-                    value='#F9414'
+                    value='#F94144'
                   ></input>
                   <span className='checkmark' id='color1'></span>
                 </label>
