@@ -4,7 +4,7 @@ Health care insurance management application
 
 Credits RWilders Remote 2020/2021 : Christelle | Samantha | Alain | Jérome | Marc | Olivier
 
-********************Setting requirements :*******************
+********************ce qu'il faut installer :*******************
     1/ Pour installer le projet : 
     Dans le terminal de commande taper : git clone https://github.com/WildCodeSchool/remoteFR-R2dwild-P3-secuel-front
 
