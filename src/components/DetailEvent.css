@@ -25,6 +25,7 @@
   justify-content: center;
   }
 .infoCard{
+  align-items: center;
   color:#BE9B07;
   display: flex;
   justify-content: center;
