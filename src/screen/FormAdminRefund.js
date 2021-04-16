@@ -1,9 +1,27 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 import './Form.css'
 
 const FormAdminRefund = () => {
+  const [idInsurance, setIdInsurance] = useState(null)
+  const [idMedEvent, setIdMedEvent] = useState(null)
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/health_insurance')
+      .then(res => res.data)
+      .then(data => setIdInsurance(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+    axios
+      .get('http://localhost:3000/medical_events')
+      .then(res => res.data)
+      .then(data => setIdMedEvent(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+  }, [])
   const [amount, setAmount] = useState('')
   const [date, setDate] = useState('')
   const [institute, setInstitute] = useState('')
@@ -77,29 +95,35 @@ const FormAdminRefund = () => {
             <legend htmlFor='institute'>
               Institut auteur du remboursement<span> * </span>
             </legend>
-            <input
-              type='text'
-              id='institute'
-              name='institute'
-              onChange={handleChange}
-              placeholder='id assurance'
-              required
-              value={institute}
-            />
+            <select id='institute' name='institute' onChange={handleChange}>
+              <option>Sélectionne une assurance</option>
+              {idInsurance
+                ? idInsurance.map(insurance => (
+                    <option
+                      key={insurance.id_insurance}
+                      value={insurance.id_insurance}
+                    >
+                      {insurance.insurance_name}
+                    </option>
+                  ))
+                : null}
+            </select>
           </fieldset>
           <fieldset className='formData'>
             <legend htmlFor='medical-act'>
               Acte médical concerné<span> * </span>
             </legend>
-            <input
-              type='text'
-              id='medical-act'
-              name='medical-act'
-              onChange={handleChange}
-              placeholder='id acte'
-              required
-              value={medicalAct}
-            />
+            <select id='medical-act' name='medical-act' onChange={handleChange}>
+              <option>Sélectionne un acte</option>
+              {idMedEvent
+                ? idMedEvent.map(event => (
+                    <option key={event.id_med_event} value={event.id_med_event}>
+                      Consultation {event.speciality_name} du{' '}
+                      {new Date(event.Date_Event).toLocaleDateString()}
+                    </option>
+                  ))
+                : null}
+            </select>
           </fieldset>
           <p>
             <span> * </span> Obligatoire

@@ -1,9 +1,27 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 import './Form.css'
 
 const FormAdminProSpe = () => {
+  const [idPros, setIdPros] = useState(null)
+  const [idSpes, setIdSpes] = useState(null)
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/pros')
+      .then(res => res.data)
+      .then(data => setIdPros(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+    axios
+      .get('http://localhost:3000/specialities')
+      .then(res => res.data)
+      .then(data => setIdSpes(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+  }, [])
   const [idPro, setIdPro] = useState('')
   const [idSpe, setIdSpe] = useState('')
   const [message, setMessage] = useState(null)
@@ -45,41 +63,41 @@ const FormAdminProSpe = () => {
             <legend htmlFor='pro'>
               Identifiant du professionnel<span> * </span>
             </legend>
-            <input
-              type='text'
-              id='pro'
-              name='pro'
-              onChange={handleChange}
-              placeholder='nombre'
-              required
-              value={idPro}
-            />
+            <select id='pro' name='pro' onChange={handleChange}>
+              <option>Sélectionne un pro</option>
+              {idPros
+                ? idPros.map(pro => (
+                    <option key={pro.pro_id} value={pro.pro_id}>
+                      {pro.pro_name}
+                    </option>
+                  ))
+                : null}
+            </select>
           </fieldset>
           <fieldset className='formData'>
             <legend htmlFor='spe'>
               Spécialité du professionnel<span> * </span>
             </legend>
-            <input
-              type='text'
-              id='spe'
-              name='spe'
-              onChange={handleChange}
-              placeholder='nombre'
-              required
-              value={idSpe}
-            />
+            <select id='spe' name='spe' onChange={handleChange}>
+              <option>Sélectionne une spécialité</option>
+              {idSpes
+                ? idSpes.map(spe => (
+                    <option key={spe.id_speciality} value={spe.id_speciality}>
+                      {spe.speciality_name}
+                    </option>
+                  ))
+                : null}
+            </select>
           </fieldset>
           <fieldset className='formData'>
             <legend htmlFor='status'>
               Statut de la spécialité<span> * </span>
             </legend>
-            <input
-              id='status'
-              name='status'
-              onChange={handleChange}
-              required
-              value={status}
-            />
+            <select id='status' name='status' onChange={handleChange}>
+              <option>Sélectionne un status</option>
+              <option value={1}>Exercé</option>
+              <option value={0}>Non exercé</option>
+            </select>
           </fieldset>
           <hr />
           <p>

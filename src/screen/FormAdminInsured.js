@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 import './Form.css'
@@ -26,6 +26,17 @@ const FormAdminInsured = () => {
     Account_id_Compte: compte
   }
 
+  const [select, setSelect] = useState(null)
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/account')
+      .then(res => res.data)
+      .then(data => setSelect(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+  }, [])
   const handleChange = e => {
     e.target.name === 'lastname'
       ? setLastName(e.target.value)
@@ -245,17 +256,17 @@ const FormAdminInsured = () => {
             <legend htmlFor='compte'>
               Compte de rattachement<span> * </span>
             </legend>
-            <input
-              type='text'
-              id='compte'
-              name='compte'
-              placeholder='numéro d un compte'
-              onChange={handleChange}
-              required
-              value={compte}
-            />
+            <select id='compte' name='compte' onChange={handleChange}>
+              <option>Sélectionne l&apos;id du compte</option>
+              {select
+                ? select.map(option => (
+                    <option key={option.id_Compte} value={option.id_Compte}>
+                      {option.account_name}
+                    </option>
+                  ))
+                : null}
+            </select>
           </fieldset>
-
           <p>
             <span> * </span> Obligatoire
           </p>

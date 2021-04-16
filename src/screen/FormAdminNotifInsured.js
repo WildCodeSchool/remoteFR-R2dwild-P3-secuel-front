@@ -1,9 +1,35 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 import './Form.css'
 
 const FormAdminNotifInsured = () => {
+  const [idNotif, setIdNotif] = useState(null)
+  const [idInsured, setIdInsured] = useState(null)
+  const [idAccount, setIdAccount] = useState(null)
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/notifications')
+      .then(res => res.data)
+      .then(data => setIdNotif(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+    axios
+      .get('http://localhost:3000/insured')
+      .then(res => res.data)
+      .then(data => setIdInsured(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+    axios
+      .get('http://localhost:3000/account')
+      .then(res => res.data)
+      .then(data => setIdAccount(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+  }, [])
   const [insured, setInsured] = useState('')
   const [message, setMessage] = useState(null)
   const [notif, setNotif] = useState('')
@@ -48,57 +74,59 @@ const FormAdminNotifInsured = () => {
             <legend htmlFor='notif'>
               Id de notif <span> * </span>
             </legend>
-            <input
-              type='text'
-              id='notif'
-              name='notif'
-              placeholder='nombre'
-              onChange={handleChange}
-              required
-              value={notif}
-            />
+            <select id='notif' name='notif' onChange={handleChange}>
+              <option>Sélectionne une notification</option>
+              {idNotif
+                ? idNotif.map(notif => (
+                    <option
+                      key={notif.id_Notification}
+                      value={notif.id_Notification}
+                    >
+                      {notif.type}
+                    </option>
+                  ))
+                : null}
+            </select>
           </fieldset>
           <fieldset className='formData'>
             <legend htmlFor='insured'>
               Id de l&apos;assuré concerné <span> * </span>
             </legend>
-            <input
-              type='text'
-              id='insured'
-              name='insured'
-              placeholder='nombre'
-              onChange={handleChange}
-              required
-              value={insured}
-            />
+            <select id='insured' name='insured' onChange={handleChange}>
+              <option>Sélectionne un assuré</option>
+              {idInsured
+                ? idInsured.map(insured => (
+                    <option key={insured.id_Insured} value={insured.id_Insured}>
+                      {insured.firstname + ' ' + insured.lastname}
+                    </option>
+                  ))
+                : null}
+            </select>
           </fieldset>
           <fieldset className='formData'>
             <legend htmlFor='compte'>
               Id du compte concerné <span> * </span>
             </legend>
-            <input
-              type='text'
-              id='compte'
-              name='compte'
-              placeholder='nombre'
-              onChange={handleChange}
-              required
-              value={compte}
-            />
+            <select id='compte' name='compte' onChange={handleChange}>
+              <option>Sélectionne un compte</option>
+              {idAccount
+                ? idAccount.map(account => (
+                    <option key={account.id_Compte} value={account.id_Compte}>
+                      {account.account_name}
+                    </option>
+                  ))
+                : null}
+            </select>
           </fieldset>
           <fieldset className='formData'>
             <legend htmlFor='status'>
               Statut de la notif <span> * </span>
             </legend>
-            <input
-              type='bool'
-              id='status'
-              name='status'
-              placeholder='0 || 1'
-              onChange={handleChange}
-              required
-              value={status}
-            />
+            <select id='status' name='status' onChange={handleChange}>
+              <option>Sélectionne un status</option>
+              <option value={0}>Non lu</option>
+              <option value={1}>Lu</option>
+            </select>
           </fieldset>
           <p>
             <span> * </span> Obligatoire
