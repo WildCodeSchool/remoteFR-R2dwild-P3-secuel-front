@@ -63,9 +63,8 @@ const DetailEvent = Acte => {
                 Remboursement Sécurité So. :{' '}
               </span>
               <strong className='strongInfoCard'>
-                {medActe.secu_status === 'Traité' &&
-                medActe.refund_insurance != 0
-                  ? medActe.refund_insurance + '€'
+                {medActe.secu_status === 'Traité' && medActe.Amount_Refund != 0
+                  ? medActe.Amount_Refund + '€'
                   : medActe.secu_status === 'Traité' && medActe.secu_status != 0
                   ? 'refus de remboursement'
                   : medActe.secu_status}
@@ -77,8 +76,8 @@ const DetailEvent = Acte => {
               </span>
               <strong className='strongInfoCard'>
                 {medActe.insurance_status === 'Traité' &&
-                medActe.insurance_status != 0
-                  ? medActe.Amount_Refund + '€'
+                medActe.refund_insurance != 0
+                  ? medActe.refund_insurance + '€'
                   : medActe.insurance_status === 'Traité' &&
                     medActe.insurance_status != 0
                   ? 'refus de remboursement'
