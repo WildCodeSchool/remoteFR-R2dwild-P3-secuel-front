@@ -19,7 +19,7 @@ const FormAdminHealthInsurance = () => {
     axios
       .post('http://localhost:3000/health_insurance', allPost)
       .then(res => {
-        setMessage(res.data)
+        setMessage(res.data + ' ' + name)
       })
       .catch(e => {
         console.error(e)

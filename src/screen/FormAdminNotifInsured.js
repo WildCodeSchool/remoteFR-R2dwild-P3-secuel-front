@@ -57,7 +57,13 @@ const FormAdminNotifInsured = () => {
     axios
       .post('http://localhost:3000/notif_insured', allPost)
       .then(res => {
-        setMessage(res.data)
+        setMessage(
+          res.data +
+            ' and linked the insured ' +
+            insured +
+            ' with the notif ' +
+            notif
+        )
       })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)

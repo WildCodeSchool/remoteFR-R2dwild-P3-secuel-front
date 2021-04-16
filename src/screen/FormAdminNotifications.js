@@ -24,7 +24,7 @@ const FormAdminNotifications = () => {
     axios
       .post('http://localhost:3000/notifications', notifPost)
       .then(res => {
-        setMessage(res.data)
+        setMessage(res.data + ' ' + type)
       })
       .catch(e => {
         console.error(e)

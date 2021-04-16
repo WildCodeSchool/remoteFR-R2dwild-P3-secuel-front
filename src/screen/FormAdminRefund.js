@@ -50,7 +50,9 @@ const FormAdminRefund = () => {
     axios
       .post('http://localhost:3000/refund', allPost)
       .then(res => {
-        setMessage(res.data)
+        setMessage(
+          res.data + ' of ' + amount + ' from health insurance ' + institute
+        )
       })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)

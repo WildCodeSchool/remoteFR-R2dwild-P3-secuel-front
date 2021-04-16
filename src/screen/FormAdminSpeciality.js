@@ -20,7 +20,7 @@ const FormAdminSpeciality = () => {
     axios
       .post('http://localhost:3000/specialities', spePost)
       .then(res => {
-        setMessage(res.data)
+        setMessage(res.data + ' ' + speciality)
       })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)

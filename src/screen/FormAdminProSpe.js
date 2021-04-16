@@ -45,7 +45,13 @@ const FormAdminProSpe = () => {
     axios
       .post('http://localhost:3000/Pros_speciality', allPost)
       .then(res => {
-        setMessage(res.data)
+        setMessage(
+          res.data +
+            ' and linked the pro ' +
+            idPro +
+            ' with the speciality ' +
+            idSpe
+        )
       })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)

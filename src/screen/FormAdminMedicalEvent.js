@@ -82,7 +82,7 @@ const FormAdminMedicalEvent = () => {
     axios
       .post('http://localhost:3000/medical_events', allMedicalE)
       .then(res => {
-        setMessage(res.data)
+        setMessage(res.data + ' ' + dateEvent + ' of ' + amountEvent)
       })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)
