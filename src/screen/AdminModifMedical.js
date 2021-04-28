@@ -71,9 +71,12 @@ const AdminModifMedical = Data => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .put('http://localhost:3000/medical_events', allPost)
+      .put(
+        `http://localhost:3000/medical_events/${Data.match.params.id}`,
+        allPost
+      )
       .then(res => {
-        setMessage(res.data)
+        setMessage('Modification réussie')
       })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)

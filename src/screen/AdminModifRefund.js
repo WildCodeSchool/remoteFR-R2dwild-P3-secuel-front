@@ -1,9 +1,31 @@
 import './Form.css'
 
-import axios from 'axios'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-const FormAdminRefund = () => {
+import axios from 'axios'
+
+const FormAdminRefund = Data => {
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/refund/${Data.match.params.id}`)
+      .then(res => res.data)
+      .then(data => {
+        console.log(data)
+        setAmount(data[0].Amount_Refund)
+        setDate(
+          new Date(data[0].Date_Refund)
+            .toLocaleDateString()
+            .split('/')
+            .reverse()
+            .join('-')
+        )
+        setInstitute(data[0].Health_insurance_id_Mutuelle)
+        setMedicalAct(data[0].Medical_events_id_Actes)
+      })
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+  }, [])
   const [amount, setAmount] = useState('')
   const [date, setDate] = useState('')
   const [institute, setInstitute] = useState('')
@@ -26,14 +48,11 @@ const FormAdminRefund = () => {
       ? setInstitute(e.target.value)
       : setMedicalAct(e.target.value)
   }
-
+  ;``
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('http://localhost:3000/refund', allPost)
-      .then(res => {
-        setMessage(res.data)
-      })
+      .put(`http://localhost:3000/refund/${Data.match.params.id}`, allPost)
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)
       })
@@ -41,7 +60,7 @@ const FormAdminRefund = () => {
 
   return (
     <div className='form'>
-      <h1>Modification d&apos;un Remboursement</h1>
+      <h1>Création d&apos;un Remboursement</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>

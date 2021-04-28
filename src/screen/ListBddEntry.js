@@ -487,7 +487,9 @@ const ListBddEntry = () => {
                   <td>{d.id_insurance}</td>
                   <td>{d.insurance_name}</td>
                   <td>
-                    <img src={Modifier} onClick={handleModifHI}></img>
+                    <Link to={`/adminModifHealthIns/${d.id_insurance}`}>
+                      <img src={Modifier} />
+                    </Link>
                   </td>
                 </tr>
               ))}
@@ -508,7 +510,9 @@ const ListBddEntry = () => {
                   <td>{d.id_speciality}</td>
                   <td>{d.speciality_name}</td>
                   <td>
-                    <img src={Modifier} onClick={handleModifSpe}></img>
+                    <Link to={`/adminmodifspe/${d.id_speciality}`}>
+                      <img src={Modifier}></img>
+                    </Link>
                   </td>
                 </tr>
               ))}
@@ -529,7 +533,12 @@ const ListBddEntry = () => {
                   <td>{d.pro_id}</td>
                   <td>{d.pro_name}</td>
                   <td>
-                    <img src={Modifier} onClick={handleModifPro}></img>
+                    <Link to={`/adminmodifpro/${d.pro_id}`}>
+                      <img
+                        src={Modifier}
+                        // onClick={() => handleModifIns(d.id_Insured)}
+                      />
+                    </Link>
                   </td>
                 </tr>
               ))}
@@ -608,7 +617,9 @@ const ListBddEntry = () => {
                   <td>{d.insured_Account_id_Compte}</td>
                   <td>{d.Status}</td>
                   <td>
-                    <img src={Modifier} onClick={handleModifNI}></img>
+                    <Link to={`/adminmodifnotifins/${d.id_notif_insured}`}>
+                      <img src={Modifier}></img>
+                    </Link>
                   </td>
                 </tr>
               ))}
@@ -635,7 +646,9 @@ const ListBddEntry = () => {
                   <td>{d.Health_insurance_id_Mutuelle}</td>
                   <td>{d.Medical_events_id_Actes}</td>
                   <td>
-                    <img src={Modifier} onClick={handleModifRef}></img>
+                    <Link to={`/adminmodifrefund/${d.id_refund}`}>
+                      <img src={Modifier}></img>
+                    </Link>
                   </td>
                 </tr>
               ))}

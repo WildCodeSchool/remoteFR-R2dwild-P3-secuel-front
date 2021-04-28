@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import axios from 'axios'
-
 import './Form.css'
+
+import axios from 'axios'
+import { useState } from 'react'
 
 const FormAdminNotifInsured = () => {
   const [insured, setInsured] = useState('')
   const [message, setMessage] = useState(null)
   const [notif, setNotif] = useState('')
-  const [compte, setCompte] = useState('')
   const [status, setStatus] = useState('')
+  const [compte, setCompte] = useState('')
   const allPost = {
     notifications_id_Notification: notif,
     insured_id_Insured: insured,
@@ -44,7 +44,7 @@ const FormAdminNotifInsured = () => {
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <fieldset>
-          {/* <legend>information sur la notification : </legend> */}
+          <legend>information sur la notification : </legend>
           <div className='formData'>
             <label htmlFor='notif'>
               Id de notif <span> * </span>
@@ -53,7 +53,6 @@ const FormAdminNotifInsured = () => {
               type='text'
               id='notif'
               name='notif'
-              placeholder='nombre'
               onChange={handleChange}
               required
               value={notif}
@@ -67,45 +66,42 @@ const FormAdminNotifInsured = () => {
               type='text'
               id='insured'
               name='insured'
-              placeholder='nombre'
               onChange={handleChange}
               required
               value={insured}
             />
           </div>
           <div className='formData'>
-            <label htmlFor='compte'>
-              Id du compte concerné <span> * </span>
-            </label>
-            <input
-              type='text'
-              id='compte'
-              name='compte'
-              placeholder='nombre'
-              onChange={handleChange}
-              required
-              value={compte}
-            />
-          </div>
-          <div className='formData'>
             <label htmlFor='status'>
-              Statut de la notif <span> * </span>
+              Statuts de la notif <span> * </span>
             </label>
             <input
               type='bool'
               id='status'
               name='status'
-              placeholder='0 || 1'
               onChange={handleChange}
               required
               value={status}
             />
           </div>
+          <div className='formData'>
+            <label htmlFor='compte'>
+              N° de compte rattaché <span> * </span>
+            </label>
+            <input
+              type='text'
+              id='compte'
+              name='compte'
+              onChange={handleChange}
+              required
+              value={compte}
+            />
+          </div>
           <p>
-            <span> * </span> Obligatoire
+            <span> * </span> required.
           </p>
           <div className='formData'>
-            <input className='btnEnvoyer' type='submit' value='Envoyer' />
+            <input type='submit' value='Envoyer' />
           </div>
         </fieldset>
       </form>

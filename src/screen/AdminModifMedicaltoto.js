@@ -79,10 +79,10 @@ const AdminModifInsured = Data => {
     axios
       .put('http://localhost:3000/insured', allPost)
       .then(res => {
-        setMessage(res.data)
+        setMessage('Modification réussie')
       })
       .catch(e => {
-        setMessage(`Erreur lors de la création : ${e.message}`)
+        setMessage(`Erreur lors de la modification : ${e.message}`)
       })
   }
 
