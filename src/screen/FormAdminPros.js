@@ -33,7 +33,6 @@ const FormAdminPros = () => {
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <div className='containerAdmin'>
-          {/* <legend>information sur le professionnel : </legend> */}
           <fieldset className='formData'>
             <legend htmlFor='name'>
               Nom du médecin <span> * </span>

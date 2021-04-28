@@ -1,8 +1,7 @@
-import './Form.css'
-
 import { useEffect, useState } from 'react'
-
 import axios from 'axios'
+
+import './Form.css'
 
 const AdminModifNotifIns = Data => {
   const [insured, setInsured] = useState('')
@@ -21,7 +20,6 @@ const AdminModifNotifIns = Data => {
       .get(`http://localhost:3000/notif_insured/modif/${Data.match.params.id}`)
       .then(res => res.data)
       .then(data => {
-        console.log(data)
         setInsured(data[0].insured_id_Insured)
         setNotif(data[0].notifications_id_Notification)
         setStatus(data[0].Status)
@@ -56,74 +54,61 @@ const AdminModifNotifIns = Data => {
 
   return (
     <div className='form'>
-      <div className='formTitle'>
-        <h1>Modification des notifications</h1>
-        {message ? <p>{message}</p> : null}
-      </div>
+      <h1>Modification de notification</h1>
+      {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          <div className='formData'>
-            <label htmlFor='insured'>
-              Nom<span></span>
-            </label>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='notif'>
+              Id de notif <span> * </span>
+            </legend>
             <input
-              type='text'
-              id='insured'
-              name='insured'
-              onChange={handleChange}
-              required
-              value={insured}
-            />
-          </div>
-          <div className='formData'>
-            <label htmlFor='notif'>
-              notif<span></span>
-            </label>
-            <input
-              type='text'
               id='notif'
               name='notif'
               onChange={handleChange}
-              required
               value={notif}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='compte'>
-              Compte<span></span>
-            </label>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='insured'>
+              Id de l&apos;assuré concerné <span> * </span>
+            </legend>
             <input
-              type='text'
+              id='insured'
+              name='insured'
+              onChange={handleChange}
+              value={insured}
+            />
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='compte'>
+              Id du compte concerné <span> * </span>
+            </legend>
+            <input
               id='compte'
               name='compte'
               onChange={handleChange}
-              required
               value={compte}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='status'>
-              Status<span> * </span>
-            </label>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='status'>
+              Statut de la notif <span> * </span>
+            </legend>
             <input
               id='status'
               name='status'
               onChange={handleChange}
-              required
               value={status}
             />
-          </div>
+          </fieldset>
           <p>
-            <span> * </span> Obligatoire
+            <span> * </span> required.
           </p>
           <div className='formData'>
-            <input
-              className='btnEnvoyer'
-              type='submit'
-              value='Valider le profil'
-            />
+            <input type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

@@ -10,7 +10,6 @@ const AdminModifInsured = Data => {
       .get(`http://localhost:3000/insured/${Data.match.params.id}`)
       .then(res => res.data)
       .then(data => {
-        console.log(data[0])
         setCompte(data[0].Account_id_Compte)
         setBirthDate(
           new Date(data[0].birth_date)
@@ -49,7 +48,8 @@ const AdminModifInsured = Data => {
     tel: tel,
     Password: password,
     birth_date: birthDate,
-    Account_id_Compte: compte
+    Account_id_Compte: compte,
+    color: color
   }
 
   const handleChange = e => {
@@ -89,55 +89,56 @@ const AdminModifInsured = Data => {
 
   return (
     <div className='form'>
-      <h1>Modification Assuré</h1>
+      <h1>Modification de assuré</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          <div className='formData'>
-            <label htmlFor='lastname'>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='lastname'>
               Nom de famille <span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='lastname'
               name='lastname'
+              placeholder='minimum 2 caractères'
               onChange={handleChange}
               required
               value={lastName}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='firstname'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='firstname'>
               Prénom<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='firstname'
               name='firstname'
-              placeholder='minimum X caractères'
+              placeholder='minimum 2 caractères'
               onChange={handleChange}
               required
               value={firstName}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='numsecu'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='numsecu'>
               Numéro de sécurité sociale<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='numsecu'
               name='numsecu'
-              placeholder='minimum X caractères'
+              placeholder='minimum 13 caractères'
               onChange={handleChange}
               required
               value={numSecu}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='email'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='email'>
               Email<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='email'
@@ -147,11 +148,11 @@ const AdminModifInsured = Data => {
               required
               value={email}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='tel'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='tel'>
               Téléphone<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='tel'
@@ -161,11 +162,11 @@ const AdminModifInsured = Data => {
               required
               value={tel}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='password'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='password'>
               Mot de passe<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='password'
@@ -175,24 +176,24 @@ const AdminModifInsured = Data => {
               required
               value={password}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='birth-date'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='birth-date'>
               Date de naissance<span> * </span>
-            </label>
+            </legend>
             <input
-              type='text'
+              type='date'
               id='birth-date'
               name='birth-date'
               onChange={handleChange}
               required
               value={birthDate}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='color'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='color'>
               Couleur utilisateur <span> * </span>
-            </label>
+            </legend>
             <div className='inputColor'>
               <div>
                 code couleur sélectionnée = <strong>{color}</strong>
@@ -203,7 +204,7 @@ const AdminModifInsured = Data => {
                     onClick={colorChoosen}
                     type='radio'
                     name='radio1'
-                    value='#348AA7'
+                    value='#F94144'
                   ></input>
                   <span className='checkmark' id='color1'></span>
                 </label>
@@ -212,7 +213,7 @@ const AdminModifInsured = Data => {
                     onClick={colorChoosen}
                     type='radio'
                     name='radio1'
-                    value='#98A578'
+                    value='#F3722C'
                   ></input>
                   <span className='checkmark' id='color2'></span>
                 </label>
@@ -221,7 +222,7 @@ const AdminModifInsured = Data => {
                     onClick={colorChoosen}
                     type='radio'
                     name='radio1'
-                    value='#FCBF49'
+                    value='#F8961E'
                   ></input>
                   <span className='checkmark' id='color3'></span>
                 </label>
@@ -230,7 +231,7 @@ const AdminModifInsured = Data => {
                     onClick={colorChoosen}
                     type='radio'
                     name='radio1'
-                    value='#55538D'
+                    value='#F9C74F'
                   ></input>
                   <span className='checkmark' id='color4'></span>
                 </label>
@@ -239,7 +240,7 @@ const AdminModifInsured = Data => {
                     onClick={colorChoosen}
                     type='radio'
                     name='radio1'
-                    value='#71B340'
+                    value='#90BE6D'
                   ></input>
                   <span className='checkmark' id='color5'></span>
                 </label>
@@ -248,7 +249,7 @@ const AdminModifInsured = Data => {
                     onClick={colorChoosen}
                     type='radio'
                     name='radio1'
-                    value='#BA9593'
+                    value='#43AA8B'
                   ></input>
                   <span className='checkmark' id='color6'></span>
                 </label>
@@ -257,34 +258,31 @@ const AdminModifInsured = Data => {
                     onClick={colorChoosen}
                     type='radio'
                     name='radio1'
-                    value='#7EA8BE'
+                    value='#577590'
                   ></input>
                   <span className='checkmark' id='color7'></span>
                 </label>
               </div>
             </div>
-          </div>
-          <div className='formData'>
-            <label htmlFor='compte'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='compte'>
               Compte de rattachement<span> * </span>
-            </label>
+            </legend>
             <input
-              type='text'
               id='compte'
               name='compte'
-              onChange={handleChange}
-              required
               value={compte}
+              onChange={handleChange}
             />
-          </div>
-
+          </fieldset>
           <p>
             <span> * </span> Obligatoire
           </p>
           <div className='formData'>
-            <input className='btnEnvoyer' type='submit' value='Mettre a jour' />
+            <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

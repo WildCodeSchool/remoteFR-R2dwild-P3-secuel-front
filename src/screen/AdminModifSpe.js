@@ -16,7 +16,6 @@ const AdminModifSpeciality = Data => {
       .get(`http://localhost:3000/specialities/${Data.match.params.id}`)
       .then(res => res.data)
       .then(data => {
-        console.log(data)
         setSpeciality(data[0].speciality_name)
       })
       .catch(e => {
@@ -42,15 +41,14 @@ const AdminModifSpeciality = Data => {
 
   return (
     <div className='form'>
-      <h1>Modification d&apos;une spécialité</h1>
+      <h1>Création d&apos;une spécialité</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          {/* <legend>Informations sur la spécialité</legend> */}
-          <div className='formData'>
-            <label htmlFor='speciality'>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='speciality'>
               Nom de la spécialité <span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='speciality'
@@ -60,7 +58,7 @@ const AdminModifSpeciality = Data => {
               required
               value={speciality}
             />
-          </div>
+          </fieldset>
           <hr />
           <p>
             <span> * </span> Obligatoire
@@ -68,7 +66,7 @@ const AdminModifSpeciality = Data => {
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

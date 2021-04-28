@@ -10,7 +10,6 @@ const AdminModifAccount = Data => {
       .get(`http://localhost:3000/Account/${Data.match.params.id}`)
       .then(res => res.data)
       .then(data => {
-        console.log(data)
         setAccountName(data[0].account_name)
         setLogin(data[0].Login)
         setPassword(data[0].Password)
@@ -53,29 +52,28 @@ const AdminModifAccount = Data => {
     <div className='form'>
       <div className='formTitle'>
         <h1>Modification d&apos;un compte utilisateur</h1>
-        {message ? <p>{message}</p> : null}
       </div>
-
+      {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          <div className='formData'>
-            <label htmlFor='name'>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='name'>
               Nom<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='name'
               name='name'
-              placeholder='minimum X caractères'
+              placeholder='minimum 2 caractères'
               onChange={handleChange}
               required
               value={accountName}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='name'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='name'>
               Email<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='email'
@@ -85,20 +83,20 @@ const AdminModifAccount = Data => {
               required
               value={login}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='name'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='name'>
               Mot de passe<span> * </span>
-            </label>
+            </legend>
             <input
               id='password'
               name='password'
-              placeholder='minimum X caractères'
+              placeholder='minimum 10 caractères'
               onChange={handleChange}
               required
               value={password}
             />
-          </div>
+          </fieldset>
           <p>
             <span> * </span> Obligatoire
           </p>
@@ -109,7 +107,7 @@ const AdminModifAccount = Data => {
               value='Valider le profil'
             />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

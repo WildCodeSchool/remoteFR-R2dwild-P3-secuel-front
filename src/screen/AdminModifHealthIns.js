@@ -43,38 +43,33 @@ const AdminModifHealthIns = Data => {
 
   return (
     <div className='form'>
-      <div className='formTitle'>
-        <h1>Modification Assurance</h1>
-        {message ? <p>{message}</p> : null}
-      </div>
-
+      <h1>Modification d&apos;un institut</h1>
+      {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
+        <div className='containerAdmin'>
           <div className='formData'>
-            <label htmlFor='name'>
-              Nom<span> * </span>
-            </label>
-            <input
-              type='text'
-              id='name'
-              name='name'
-              placeholder='minimum X caractères'
-              onChange={handleChange}
-              required
-              value={name}
-            />
+            <fieldset>
+              <legend htmlFor='name'>
+                Nom de l&apos;institut<span> * </span>
+              </legend>
+              <input
+                type='text'
+                id='name'
+                name='name'
+                placeholder='minimum X caractères'
+                onChange={handleChange}
+                required
+                value={name}
+              />
+            </fieldset>
           </div>
           <p>
             <span> * </span> Obligatoire
           </p>
           <div className='formData'>
-            <input
-              className='btnEnvoyer'
-              type='submit'
-              value='Valider le profil'
-            />
+            <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

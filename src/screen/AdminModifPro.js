@@ -6,7 +6,7 @@ import axios from 'axios'
 
 const FormAdminPros = Data => {
   const [name, setName] = useState('')
-
+  const [message, setMessage] = useState(null)
   const allPost = {
     pro_name: name
   }
@@ -15,7 +15,6 @@ const FormAdminPros = Data => {
       .get(`http://localhost:3000/pros/${Data.match.params.id}`)
       .then(res => res.data)
       .then(data => {
-        console.log(data)
         setName(data[0].pro_name)
       })
       .catch(e => {
@@ -29,19 +28,26 @@ const FormAdminPros = Data => {
 
   const submitForm = e => {
     e.preventDefault()
-    axios.put(`http://localhost:3000/pros/${Data.match.params.id}`, allPost)
+    axios
+      .put(`http://localhost:3000/pros/${Data.match.params.id}`, allPost)
+      .then(() => {
+        setMessage('Modification réussie')
+      })
+      .catch(e => {
+        setMessage(`Erreur lors de la création : ${e.message}`)
+      })
   }
 
   return (
     <div className='form'>
       <h1>Modification d&apos;un professionnel de santé</h1>
+      {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          {/* <legend>information sur le professionnel : </legend> */}
-          <div className='formData'>
-            <label htmlFor='name'>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='name'>
               Nom du médecin <span> * </span>
-            </label>
+            </legend>
             <input
               className='saisie'
               id='name'
@@ -52,14 +58,14 @@ const FormAdminPros = Data => {
               type='text'
               value={name}
             />
-          </div>
+          </fieldset>
           <p>
             <span> * </span> Obligatoire
           </p>
           <div className='formData'>
-            <input className='btnEnvoyer' type='submit' value='mettre à jour' />
+            <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )
