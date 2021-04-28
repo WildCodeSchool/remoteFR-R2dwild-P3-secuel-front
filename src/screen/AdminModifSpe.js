@@ -34,6 +34,9 @@ const AdminModifSpeciality = Data => {
         `http://localhost:3000/specialities/${Data.match.params.id}`,
         spePost
       )
+      .then(() => {
+        setMessage('Modification réussie')
+      })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)
       })

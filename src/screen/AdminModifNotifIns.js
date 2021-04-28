@@ -47,6 +47,9 @@ const AdminModifNotifIns = Data => {
         `http://localhost:3000/notif_insured/${Data.match.params.id}`,
         allPost
       )
+      .then(() => {
+        setMessage('Modification réussie')
+      })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)
       })

@@ -407,7 +407,7 @@ const ListBddEntry = () => {
                   <td>{d.speciality_name}</td>
                   <td>
                     <Link to={`/adminmodifspe/${d.id_speciality}`}>
-                      <img src={Modifier}></img>
+                      <img src={Modifier} />
                     </Link>
                   </td>
                 </tr>
@@ -460,7 +460,9 @@ const ListBddEntry = () => {
                   <td>{d.pro_name}</td>
                   <td>{d.Status}</td>
                   <td>
-                    <img src={Modifier} onClick={handleModifPS}></img>
+                    <Link to={`/adminmodifprospe/${d.id_Pros_Speciality}`}>
+                      <img src={Modifier} />
+                    </Link>
                   </td>
                 </tr>
               ))}
@@ -483,7 +485,9 @@ const ListBddEntry = () => {
                   <td>{d.type}</td>
                   <td>{d.Message}</td>
                   <td>
-                    <img src={Modifier} onClick={handleModifNotif}></img>
+                    <Link to={`/adminmodifnotif/${d.id_Notification}`}>
+                      <img src={Modifier} />
+                    </Link>
                   </td>
                 </tr>
               ))}
