@@ -1,9 +1,28 @@
 import './Form.css'
 
+import { useEffect, useState } from 'react'
+
 import axios from 'axios'
-import { useState } from 'react'
 
 const FormAdminProSpe = () => {
+  const [idPros, setIdPros] = useState(null)
+  const [idSpes, setIdSpes] = useState(null)
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/pros')
+      .then(res => res.data)
+      .then(data => setIdPros(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+    axios
+      .get('http://localhost:3000/specialities')
+      .then(res => res.data)
+      .then(data => setIdSpes(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+  }, [])
   const [idPro, setIdPro] = useState('')
   const [idSpe, setIdSpe] = useState('')
   const [message, setMessage] = useState(null)
@@ -27,7 +46,13 @@ const FormAdminProSpe = () => {
     axios
       .post('http://localhost:3000/Pros_speciality', allPost)
       .then(res => {
-        setMessage(res.data)
+        setMessage(
+          res.data +
+            ' and linked the pro ' +
+            idPro +
+            ' with the speciality ' +
+            idSpe
+        )
       })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)
@@ -39,48 +64,48 @@ const FormAdminProSpe = () => {
       <h1>Création d&apos;un lien pro spé</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
+        <div className='containerAdmin'>
           {/* <legend>saisie des infos</legend> */}
-          <div className='formData'>
-            <label htmlFor='pro'>
+          <fieldset className='formData'>
+            <legend htmlFor='pro'>
               Identifiant du professionnel<span> * </span>
-            </label>
-            <input
-              type='text'
-              id='pro'
-              name='pro'
-              onChange={handleChange}
-              placeholder='nombre'
-              required
-              value={idPro}
-            />
-          </div>
-          <div className='formData'>
-            <label htmlFor='spe'>
+            </legend>
+            <select id='pro' name='pro' onChange={handleChange}>
+              <option>Sélectionne un pro</option>
+              {idPros
+                ? idPros.map(pro => (
+                    <option key={pro.pro_id} value={pro.pro_id}>
+                      {pro.pro_name}
+                    </option>
+                  ))
+                : null}
+            </select>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='spe'>
               Spécialité du professionnel<span> * </span>
-            </label>
-            <input
-              type='text'
-              id='spe'
-              name='spe'
-              onChange={handleChange}
-              placeholder='nombre'
-              required
-              value={idSpe}
-            />
-          </div>
-          <div className='formData'>
-            <label htmlFor='status'>
+            </legend>
+            <select id='spe' name='spe' onChange={handleChange}>
+              <option>Sélectionne une spécialité</option>
+              {idSpes
+                ? idSpes.map(spe => (
+                    <option key={spe.id_speciality} value={spe.id_speciality}>
+                      {spe.speciality_name}
+                    </option>
+                  ))
+                : null}
+            </select>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='status'>
               Statut de la spécialité<span> * </span>
-            </label>
-            <input
-              id='status'
-              name='status'
-              onChange={handleChange}
-              required
-              value={status}
-            />
-          </div>
+            </legend>
+            <select id='status' name='status' onChange={handleChange}>
+              <option>Sélectionne un status</option>
+              <option value={1}>Exercé</option>
+              <option value={0}>Non exercé</option>
+            </select>
+          </fieldset>
           <hr />
           <p>
             <span> * </span> Obligatoire
@@ -88,7 +113,7 @@ const FormAdminProSpe = () => {
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

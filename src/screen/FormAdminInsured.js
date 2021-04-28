@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+
+>>>>>>> eccf90320b4928bbd8b953f84a39b19244364d07
 import './Form.css'
 
 import axios from 'axios'
@@ -26,6 +32,17 @@ const FormAdminInsured = () => {
     Account_id_Compte: compte
   }
 
+  const [select, setSelect] = useState(null)
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/account')
+      .then(res => res.data)
+      .then(data => setSelect(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+  }, [])
   const handleChange = e => {
     e.target.name === 'lastname'
       ? setLastName(e.target.value)
@@ -52,7 +69,7 @@ const FormAdminInsured = () => {
     axios
       .post('http://localhost:3000/insured', allPost)
       .then(res => {
-        setMessage(res.data)
+        setMessage(res.data + ' ' + firstName + ' ' + lastName)
       })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)
@@ -68,11 +85,11 @@ const FormAdminInsured = () => {
       <h1>Création de assuré</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          <div className='formData'>
-            <label htmlFor='lastname'>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='lastname'>
               Nom de famille <span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='lastname'
@@ -82,11 +99,11 @@ const FormAdminInsured = () => {
               required
               value={lastName}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='firstname'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='firstname'>
               Prénom<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='firstname'
@@ -96,11 +113,11 @@ const FormAdminInsured = () => {
               required
               value={firstName}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='numsecu'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='numsecu'>
               Numéro de sécurité sociale<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='numsecu'
@@ -110,11 +127,11 @@ const FormAdminInsured = () => {
               required
               value={numSecu}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='email'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='email'>
               Email<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='email'
@@ -124,11 +141,11 @@ const FormAdminInsured = () => {
               required
               value={email}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='tel'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='tel'>
               Téléphone<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='tel'
@@ -138,11 +155,11 @@ const FormAdminInsured = () => {
               required
               value={tel}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='password'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='password'>
               Mot de passe<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='password'
@@ -152,11 +169,11 @@ const FormAdminInsured = () => {
               required
               value={password}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='birth-date'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='birth-date'>
               Date de naissance<span> * </span>
-            </label>
+            </legend>
             <input
               type='date'
               id='birth-date'
@@ -165,11 +182,11 @@ const FormAdminInsured = () => {
               required
               value={birthDate}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='color'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='color'>
               Couleur utilisateur <span> * </span>
-            </label>
+            </legend>
             <div className='inputColor'>
               <div>
                 code couleur sélectionnée = <strong>{color}</strong>
@@ -180,7 +197,7 @@ const FormAdminInsured = () => {
                     onClick={colorChoosen}
                     type='radio'
                     name='radio1'
-                    value='#348AA7'
+                    value='#F94144'
                   ></input>
                   <span className='checkmark' id='color1'></span>
                 </label>
@@ -189,7 +206,7 @@ const FormAdminInsured = () => {
                     onClick={colorChoosen}
                     type='radio'
                     name='radio1'
-                    value='#98A578'
+                    value='#F3722C'
                   ></input>
                   <span className='checkmark' id='color2'></span>
                 </label>
@@ -198,7 +215,7 @@ const FormAdminInsured = () => {
                     onClick={colorChoosen}
                     type='radio'
                     name='radio1'
-                    value='#FCBF49'
+                    value='#F8961E'
                   ></input>
                   <span className='checkmark' id='color3'></span>
                 </label>
@@ -207,7 +224,7 @@ const FormAdminInsured = () => {
                     onClick={colorChoosen}
                     type='radio'
                     name='radio1'
-                    value='#55538D'
+                    value='#F9C74F'
                   ></input>
                   <span className='checkmark' id='color4'></span>
                 </label>
@@ -216,7 +233,7 @@ const FormAdminInsured = () => {
                     onClick={colorChoosen}
                     type='radio'
                     name='radio1'
-                    value='#71B340'
+                    value='#90BE6D'
                   ></input>
                   <span className='checkmark' id='color5'></span>
                 </label>
@@ -225,7 +242,7 @@ const FormAdminInsured = () => {
                     onClick={colorChoosen}
                     type='radio'
                     name='radio1'
-                    value='#BA9593'
+                    value='#43AA8B'
                   ></input>
                   <span className='checkmark' id='color6'></span>
                 </label>
@@ -234,35 +251,35 @@ const FormAdminInsured = () => {
                     onClick={colorChoosen}
                     type='radio'
                     name='radio1'
-                    value='#7EA8BE'
+                    value='#577590'
                   ></input>
                   <span className='checkmark' id='color7'></span>
                 </label>
               </div>
             </div>
-          </div>
-          <div className='formData'>
-            <label htmlFor='compte'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='compte'>
               Compte de rattachement<span> * </span>
-            </label>
-            <input
-              type='text'
-              id='compte'
-              name='compte'
-              placeholder='numéro d un compte'
-              onChange={handleChange}
-              required
-              value={compte}
-            />
-          </div>
-
+            </legend>
+            <select id='compte' name='compte' onChange={handleChange}>
+              <option>Sélectionne l&apos;id du compte</option>
+              {select
+                ? select.map(option => (
+                    <option key={option.id_Compte} value={option.id_Compte}>
+                      {option.account_name}
+                    </option>
+                  ))
+                : null}
+            </select>
+          </fieldset>
           <p>
             <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

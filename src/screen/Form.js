@@ -44,7 +44,9 @@ const Form = visitor => {
 
   return (
     <div className='form'>
-      <img src={logo} id='bigLogo' />
+      <div className='bigLogoDiv'>
+        <img src={logo} id='bigLogo' />
+      </div>
       <div className='formTitle'>
         <a href='Javascript:history.go(-1)'>
           <img src={FlecheGold} id='flechegold' />

@@ -31,7 +31,9 @@ const AddSecu = visitor => {
       </p>
       {/* <label htmlFor='secu'>Numéro de Sécurité Sociale *</label> */}
       <fieldset>
-        <legend>Numéro de Sécurité Sociale *</legend>
+        <legend>
+          Numéro de Sécurité Sociale <span className='spanEtoile'>*</span>
+        </legend>
         <input
           id='secu'
           type='text'
@@ -44,7 +46,10 @@ const AddSecu = visitor => {
         Identifiant de votre compte Sécurité Sociale *
       </label> */}
       <fieldset>
-        <legend>Identifiant de votre compte Sécurité Sociale *</legend>
+        <legend>
+          Identifiant de votre compte Sécurité Sociale{' '}
+          <span className='spanEtoile'>*</span>
+        </legend>
         <input
           id='idSecu'
           type='text'
@@ -53,6 +58,9 @@ const AddSecu = visitor => {
           onChange={handleChange}
         />
       </fieldset>
+      <p className='textObligatoire'>
+        <span className='spanEtoile'> * </span>Obligatoire
+      </p>
       {numSecu === '' || idSecu === '' ? (
         <p className='forbidden'>Valider</p>
       ) : (

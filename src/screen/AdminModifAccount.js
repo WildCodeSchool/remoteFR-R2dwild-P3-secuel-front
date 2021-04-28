@@ -21,8 +21,8 @@ const AdminModifAccount = Data => {
   }, [])
   const [accountName, setAccountName] = useState('')
   const [login, setLogin] = useState('')
-  const [message, setMessage] = useState(null)
   const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('')
   const allPost = {
     Account_name: accountName,
     Login: login,
@@ -45,7 +45,7 @@ const AdminModifAccount = Data => {
         setMessage('Modification réussie')
       })
       .catch(e => {
-        setMessage(`Erreur lors de la création : ${e.message}`)
+        console.log(`Erreur lors de la création : ${e.message}`)
       })
   }
   // // {message ? <p>{message}</p> : null}

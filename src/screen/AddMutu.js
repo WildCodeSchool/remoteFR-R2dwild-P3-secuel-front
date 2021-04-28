@@ -25,22 +25,34 @@ const AddMutu = visitor => {
       <p id='pointChargement'>
         •<span id='spanChargement'>••</span>
       </p>
-      <label htmlFor='mutu'>Compte mutuelle *</label>
-      <input
-        id='mutu'
-        type='text'
-        required
-        placeholder='N° assuré'
-        onChange={handleChange}
-      />
-      <label htmlFor='idMutu'>Identifiant Mutuelle *</label>
-      <input
-        id='idMutu'
-        type='text'
-        required
-        placeholder='Nom mutuelle'
-        onChange={handleChange}
-      />
+      <fieldset>
+        <legend htmlFor='mutu'>
+          Compte mutuelle <span className='spanEtoile'> * </span>
+        </legend>
+        <input
+          id='mutu'
+          type='text'
+          required
+          placeholder='N° assuré'
+          onChange={handleChange}
+        />
+      </fieldset>
+      <fieldset>
+        <legend htmlFor='idMutu'>
+          Identifiant Mutuelle <span className='spanEtoile'> * </span>
+        </legend>
+        <input
+          id='idMutu'
+          type='text'
+          required
+          placeholder='Nom mutuelle'
+          onChange={handleChange}
+        />
+      </fieldset>
+      <p className='textObligatoire'>
+        {' '}
+        <span className='spanEtoile'> * </span>Obligatoire
+      </p>
       {numMutu === '' || idMutu === '' ? (
         <p className='forbidden'>Valider</p>
       ) : (

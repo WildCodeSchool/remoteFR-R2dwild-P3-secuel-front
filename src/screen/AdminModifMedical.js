@@ -86,7 +86,7 @@ const AdminModifMedical = Data => {
   return (
     <div className='form'>
       {message ? <p>{message}</p> : null}
-      <h1>Ajout d&apos;un acte</h1>
+      <h1>Modification d&apos;un acte</h1>
       <form onSubmit={submitForm}>
         <fieldset>
           {/* <legend>Informations Acte</legend> */}

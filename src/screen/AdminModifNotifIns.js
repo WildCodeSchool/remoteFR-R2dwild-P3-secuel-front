@@ -57,7 +57,7 @@ const AdminModifNotifIns = Data => {
   return (
     <div className='form'>
       <div className='formTitle'>
-        <h1>Modification du status des notifications</h1>
+        <h1>Modification des notifications</h1>
       </div>
 
       <form onSubmit={submitForm}>
