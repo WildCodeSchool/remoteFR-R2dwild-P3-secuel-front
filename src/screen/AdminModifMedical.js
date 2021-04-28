@@ -9,7 +9,6 @@ const AdminModifMedical = Data => {
       .get(`http://localhost:3000/medical_events/${Data.match.params.id}`)
       .then(res => res.data)
       .then(data => {
-        console.log(data)
         setAmountEvent(data.amount_Event)
         setDateEvent(
           new Date(data.Date_Event)
@@ -87,25 +86,25 @@ const AdminModifMedical = Data => {
       {message ? <p>{message}</p> : null}
       <h1>Modification d&apos;un acte</h1>
       <form onSubmit={submitForm}>
-        <fieldset>
+        <div className='containerAdmin'>
           {/* <legend>Informations Acte</legend> */}
-          <div className='formData'>
-            <label htmlFor='dateEvent'>
+          <fieldset className='formData'>
+            <legend htmlFor='dateEvent'>
               Date de l&apos;acte<span> * </span>
-            </label>
+            </legend>
             <input
-              type='text'
+              type='date'
               id='dateEvent'
               name='dateEvent'
               onChange={handleChange}
               required
               value={dateEvent}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='amountEvent'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='amountEvent'>
               Montant de la consultation<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='amountEvent'
@@ -115,86 +114,73 @@ const AdminModifMedical = Data => {
               required
               value={amountEvent}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='secuStatus'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='secuStatus'>
               Statut du dossier à la Sécu<span> * </span>
-            </label>
+            </legend>
             <input
               id='secuStatus'
               name='secuStatus'
-              placeholder='traité || non traité || en cours de traitement'
               onChange={handleChange}
-              required
               value={secuStatus}
             />
-          </div>
-
-          <div className='formData'>
-            <label htmlFor='insuranceStatus'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='insuranceStatus'>
               Statut du dossier à la mutuelle<span> * </span>
-            </label>
+            </legend>
             <input
               id='insuranceStatus'
               name='insuranceStatus'
-              placeholder='traité || non traité || en cours de traitement'
               onChange={handleChange}
-              required
               value={insuranceStatus}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='specialitiesIdSpeciality'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='specialitiesIdSpeciality'>
               Spécialité médecin<span> * </span>
-            </label>
+            </legend>
             <input
               id='specialitiesIdSpeciality'
               name='specialitiesIdSpeciality'
-              placeholder='XX'
               onChange={handleChange}
-              required
               value={specialitiesIdSpeciality}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='insuredIdInsured'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='insuredIdInsured'>
               Assuré concerné<span> * </span>
-            </label>
+            </legend>
             <input
               id='insuredIdInsured'
               name='insuredIdInsured'
-              placeholder='XX'
               onChange={handleChange}
-              required
               value={insuredIdInsured}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='insuredAccountIdCompte'>
-              Numéro de compte relié<span> * </span>
-            </label>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='insuredAccountIdCompte'>
+              Compte relié<span> * </span>
+            </legend>
             <input
               id='insuredAccountIdCompte'
               name='insuredAccountIdCompte'
-              placeholder='XX'
               onChange={handleChange}
-              required
               value={insuredAccountIdCompte}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='prosProId'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='prosProId'>
               Professionnel<span> * </span>
-            </label>
+            </legend>
             <input
               id='prosProId'
               name='prosProId'
-              placeholder='XX'
               onChange={handleChange}
-              required
               value={prosProId}
             />
-          </div>
+          </fieldset>
           <hr />
           <p>
             <span> * </span> Obligatoire
@@ -202,7 +188,7 @@ const AdminModifMedical = Data => {
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

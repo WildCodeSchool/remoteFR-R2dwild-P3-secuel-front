@@ -60,15 +60,14 @@ const FormAdminRefund = Data => {
 
   return (
     <div className='form'>
-      <h1>Création d&apos;un Remboursement</h1>
+      <h1>Modification d&apos;un Remboursement</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          {/* <legend>information sur le Remboursement : </legend> */}
-          <div className='formData'>
-            <label htmlFor='amount'>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='amount'>
               Montant du remboursement<span> * </span>
-            </label>
+            </legend>
             <input
               type='number'
               id='amount'
@@ -78,11 +77,11 @@ const FormAdminRefund = Data => {
               required
               value={amount}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='date'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='date'>
               Date du remboursement<span> * </span>
-            </label>
+            </legend>
             <input
               type='date'
               id='date'
@@ -91,42 +90,36 @@ const FormAdminRefund = Data => {
               required
               value={date}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='institute'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='institute'>
               Institut auteur du remboursement<span> * </span>
-            </label>
+            </legend>
             <input
-              type='text'
               id='institute'
               name='institute'
               onChange={handleChange}
-              placeholder='id assurance'
-              required
               value={institute}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='medical-act'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='medical-act'>
               Acte médical concerné<span> * </span>
-            </label>
+            </legend>
             <input
-              type='text'
               id='medical-act'
               name='medical-act'
               onChange={handleChange}
-              placeholder='id acte'
-              required
               value={medicalAct}
             />
-          </div>
+          </fieldset>
           <p>
             <span> * </span> Obligatoire
           </p>
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )
