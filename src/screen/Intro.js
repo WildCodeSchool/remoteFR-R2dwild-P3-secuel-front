@@ -1,4 +1,3 @@
-// import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import './Intro.css'
@@ -7,8 +6,6 @@ import logo from '../data/images/logo_elan.png'
 import why from '../data/images/why.png'
 
 const Intro = visitor => {
-  // const [username, setUserName] = useState()
-  // const [password, setPassword] = useState()
   const handleChange = e => {
     if (e.target.value.includes('@')) {
       visitor.setVisitor(e.target.value.match(/^([^@]*)@/)[1])

@@ -1,12 +1,14 @@
-import './App.css'
-
-import { Route, Switch, withRouter } from 'react-router-dom'
-
+import { useState } from 'react'
 import AddMutu from './screen/AddMutu'
 import AddSecu from './screen/AddSecu'
 import AdminModifAccount from './screen/AdminModifAccount'
+import AdminModifHealthIns from './screen/AdminModifHealthIns'
 import AdminModifInsured from './screen/AdminModifInsured'
 import AdminModifMedical from './screen/AdminModifMedical'
+import AdminModifNotifIns from './screen/AdminModifNotifIns'
+import AdminModifPro from './screen/AdminModifPro'
+import AdminModifRefund from './screen/AdminModifRefund'
+import AdminModifSpe from './screen/AdminModifSpe'
 import Analyse from './screen/Analyse'
 import Congratulation from './screen/Congratulation'
 import DetailEvent from './components/DetailEvent'
@@ -18,10 +20,12 @@ import Message from './screen/Message'
 import NavAdmin from './components/NavAdmin'
 import Notification from './screen/Notification'
 import Params from './screen/Params'
+import { Route, Switch, withRouter } from 'react-router-dom'
 import Thanks from './screen/Thanks'
 import ValidateSecu from './screen/ValidateSecu'
 import Waiting from './screen/Waiting'
-import { useState } from 'react'
+
+import './App.css'
 
 const App = withRouter(({ location }) => {
   const [numMutu, setNumMutu] = useState('')
@@ -91,6 +95,14 @@ const App = withRouter(({ location }) => {
         <Route path='/adminmodifinsured/:id' component={AdminModifInsured} />
         <Route path='/adminmodifmedical/:id' component={AdminModifMedical} />
         <Route path='/adminmodifaccount/:id' component={AdminModifAccount} />
+        <Route path='/adminmodifpro/:id' component={AdminModifPro} />
+        <Route path='/adminmodifnotifins/:id' component={AdminModifNotifIns} />
+        <Route path='/adminmodifrefund/:id' component={AdminModifRefund} />
+        <Route path='/adminmodifspe/:id' component={AdminModifSpe} />
+        <Route
+          path='/adminModifHealthIns/:id'
+          component={AdminModifHealthIns}
+        />
       </Switch>
     </div>
   )

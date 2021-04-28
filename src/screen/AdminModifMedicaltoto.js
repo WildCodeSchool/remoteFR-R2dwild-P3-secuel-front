@@ -1,8 +1,7 @@
-import './Form.css'
-
 import { useEffect, useState } from 'react'
-
 import axios from 'axios'
+
+import './Form.css'
 
 const AdminModifInsured = Data => {
   useEffect(() => {
@@ -10,7 +9,6 @@ const AdminModifInsured = Data => {
       .get(`http://localhost:3000/insured/${Data.match.params.id}`)
       .then(res => res.data)
       .then(data => {
-        console.log(data[0])
         setCompte(data[0].Account_id_Compte)
         setBirthDate(
           new Date(data[0].birth_date)
@@ -74,12 +72,12 @@ const AdminModifInsured = Data => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .put(`http://localhost:3000/Insured/${Data.match.params.id}`, allPost)
-      .then(() => {
+      .put('http://localhost:3000/insured', allPost)
+      .then(res => {
         setMessage('Modification réussie')
       })
       .catch(e => {
-        setMessage(`Erreur lors de la création : ${e.message}`)
+        setMessage(`Erreur lors de la modification : ${e.message}`)
       })
   }
 

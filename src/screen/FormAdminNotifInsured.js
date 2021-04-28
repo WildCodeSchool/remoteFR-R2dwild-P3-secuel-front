@@ -33,8 +33,8 @@ const FormAdminNotifInsured = () => {
   const [insured, setInsured] = useState('')
   const [message, setMessage] = useState(null)
   const [notif, setNotif] = useState('')
-  const [compte, setCompte] = useState('')
   const [status, setStatus] = useState('')
+  const [compte, setCompte] = useState('')
   const allPost = {
     notifications_id_Notification: notif,
     insured_id_Insured: insured,
@@ -135,10 +135,10 @@ const FormAdminNotifInsured = () => {
             </select>
           </fieldset>
           <p>
-            <span> * </span> Obligatoire
+            <span> * </span> required.
           </p>
           <div className='formData'>
-            <input className='btnEnvoyer' type='submit' value='Envoyer' />
+            <input type='submit' value='Envoyer' />
           </div>
         </div>
       </form>

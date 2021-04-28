@@ -1,8 +1,7 @@
-import './Form.css'
-
 import { useEffect, useState } from 'react'
-
 import axios from 'axios'
+
+import './Form.css'
 
 const AdminModifMedical = Data => {
   useEffect(() => {
@@ -71,9 +70,12 @@ const AdminModifMedical = Data => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .put('http://localhost:3000/medical_events', allPost)
-      .then(res => {
-        setMessage(res.data)
+      .put(
+        `http://localhost:3000/medical_events/${Data.match.params.id}`,
+        allPost
+      )
+      .then(() => {
+        setMessage('Modification réussie')
       })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)
@@ -83,7 +85,7 @@ const AdminModifMedical = Data => {
   return (
     <div className='form'>
       {message ? <p>{message}</p> : null}
-      <h1>Ajout d&apos;un acte</h1>
+      <h1>Modification d&apos;un acte</h1>
       <form onSubmit={submitForm}>
         <fieldset>
           {/* <legend>Informations Acte</legend> */}

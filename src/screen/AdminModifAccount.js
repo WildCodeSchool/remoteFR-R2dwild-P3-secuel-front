@@ -22,6 +22,7 @@ const AdminModifAccount = Data => {
   const [accountName, setAccountName] = useState('')
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('')
   const allPost = {
     Account_name: accountName,
     Login: login,
@@ -39,19 +40,20 @@ const AdminModifAccount = Data => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('http://localhost:3000/Account', allPost)
-      .then(res => {
-        console.log(res.data)
+      .put(`http://localhost:3000/Account/${Data.match.params.id}`, allPost)
+      .then(() => {
+        setMessage('Modification réussie')
       })
       .catch(e => {
         console.log(`Erreur lors de la création : ${e.message}`)
       })
   }
-  // // {message ? <p>{message}</p> : null}
+
   return (
     <div className='form'>
       <div className='formTitle'>
         <h1>Modification d&apos;un compte utilisateur</h1>
+        {message ? <p>{message}</p> : null}
       </div>
 
       <form onSubmit={submitForm}>

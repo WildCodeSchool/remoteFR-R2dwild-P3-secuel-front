@@ -61,7 +61,7 @@ const FormAdminRefund = () => {
 
   return (
     <div className='form'>
-      <h1>Création d&apos;un Remboursement</h1>
+      <h1>Modification d&apos;un Remboursement</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
         <div className='containerAdmin'>
