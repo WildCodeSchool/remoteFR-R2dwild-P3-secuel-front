@@ -33,18 +33,19 @@ const AdminModifHealthIns = Data => {
         `http://localhost:3000/Health_insurance/${Data.match.params.id}`,
         allPost
       )
-      .then(res => {
+      .then(() => {
         setMessage('Modification réussie')
       })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }
-  // // {message ? <p>{message}</p> : null}
+
   return (
     <div className='form'>
       <div className='formTitle'>
         <h1>Modification Assurance</h1>
+        {message ? <p>{message}</p> : null}
       </div>
 
       <form onSubmit={submitForm}>

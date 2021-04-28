@@ -75,62 +75,6 @@ const FormAdminNotifInsured = () => {
       <h1>Création de notification</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-<<<<<<< HEAD
-        <fieldset>
-          <legend>information sur la notification : </legend>
-          <div className='formData'>
-            <label htmlFor='notif'>
-              Id de notif <span> * </span>
-            </label>
-            <input
-              type='text'
-              id='notif'
-              name='notif'
-              onChange={handleChange}
-              required
-              value={notif}
-            />
-          </div>
-          <div className='formData'>
-            <label htmlFor='insured'>
-              Id de l&apos;assuré concerné <span> * </span>
-            </label>
-            <input
-              type='text'
-              id='insured'
-              name='insured'
-              onChange={handleChange}
-              required
-              value={insured}
-            />
-          </div>
-          <div className='formData'>
-            <label htmlFor='status'>
-              Statuts de la notif <span> * </span>
-            </label>
-            <input
-              type='bool'
-              id='status'
-              name='status'
-              onChange={handleChange}
-              required
-              value={status}
-            />
-          </div>
-          <div className='formData'>
-            <label htmlFor='compte'>
-              N° de compte rattaché <span> * </span>
-            </label>
-            <input
-              type='text'
-              id='compte'
-              name='compte'
-              onChange={handleChange}
-              required
-              value={compte}
-            />
-          </div>
-=======
         <div className='containerAdmin'>
           <fieldset className='formData'>
             <legend htmlFor='notif'>
@@ -190,7 +134,6 @@ const FormAdminNotifInsured = () => {
               <option value={1}>Lu</option>
             </select>
           </fieldset>
->>>>>>> eccf90320b4928bbd8b953f84a39b19244364d07
           <p>
             <span> * </span> required.
           </p>

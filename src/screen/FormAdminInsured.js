@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-=======
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
->>>>>>> eccf90320b4928bbd8b953f84a39b19244364d07
 import './Form.css'
-
-import axios from 'axios'
-import { useState } from 'react'
 
 const FormAdminInsured = () => {
   const [birthDate, setBirthDate] = useState('')

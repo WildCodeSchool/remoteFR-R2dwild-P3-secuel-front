@@ -75,7 +75,7 @@ const AdminModifInsured = Data => {
     e.preventDefault()
     axios
       .put(`http://localhost:3000/Insured/${Data.match.params.id}`, allPost)
-      .then(res => {
+      .then(() => {
         setMessage('Modification réussie')
       })
       .catch(e => {

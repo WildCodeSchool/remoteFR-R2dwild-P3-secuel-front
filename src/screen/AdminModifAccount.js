@@ -41,18 +41,19 @@ const AdminModifAccount = Data => {
     e.preventDefault()
     axios
       .put(`http://localhost:3000/Account/${Data.match.params.id}`, allPost)
-      .then(res => {
+      .then(() => {
         setMessage('Modification réussie')
       })
       .catch(e => {
         console.log(`Erreur lors de la création : ${e.message}`)
       })
   }
-  // // {message ? <p>{message}</p> : null}
+
   return (
     <div className='form'>
       <div className='formTitle'>
         <h1>Modification d&apos;un compte utilisateur</h1>
+        {message ? <p>{message}</p> : null}
       </div>
 
       <form onSubmit={submitForm}>

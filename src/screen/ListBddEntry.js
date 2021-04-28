@@ -1,9 +1,10 @@
+import { useState } from 'react'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
+
 import './ListBddEntry.css'
 
-import { Link } from 'react-router-dom'
 import Modifier from '../data/images/Modifier.png'
-import axios from 'axios'
-import { useState } from 'react'
 
 const ListBddEntry = () => {
   const [current, setCurrent] = useState('')
@@ -18,7 +19,6 @@ const ListBddEntry = () => {
   const [dataRefund, setDataRefund] = useState([])
   const [dataSpeciality, setDataSpeciality] = useState([])
   const [message, setMessage] = useState('')
-  // recuperer les Accounts
 
   const accounts = e => {
     e.preventDefault()
@@ -105,21 +105,6 @@ const ListBddEntry = () => {
       })
   }
 
-  const handleModifHI = e => {
-    e.preventDefault()
-    setCurrent(e.target.name)
-    axios
-      .get(
-        `http://localhost:3000/health_insurance/${dataHealthInsurance.id_insurance}`
-      )
-      .then(res => res.data)
-      .then(data => setDataHealthInsurance(data))
-
-      .catch(e => {
-        setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
-      })
-  }
-
   const spe = e => {
     e.preventDefault()
     setCurrent(e.target.name)
@@ -133,37 +118,11 @@ const ListBddEntry = () => {
       })
   }
 
-  const handleModifSpe = e => {
-    e.preventDefault()
-    setCurrent(e.target.name)
-    axios
-      .get(`http://localhost:3000/specialities/${dataSpeciality.id_speciality}`)
-      .then(res => res.data)
-      .then(data => setDataSpeciality(data))
-
-      .catch(e => {
-        setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
-      })
-  }
-
   const pro = e => {
     e.preventDefault()
     setCurrent(e.target.name)
     axios
       .get('http://localhost:3000/pros')
-      .then(res => res.data)
-      .then(data => setDataPros(data))
-
-      .catch(e => {
-        setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
-      })
-  }
-
-  const handleModifPro = e => {
-    e.preventDefault()
-    setCurrent(e.target.name)
-    axios
-      .get(`http://localhost:3000/pros/${dataPros.pro_id}`)
       .then(res => res.data)
       .then(data => setDataPros(data))
 
@@ -240,38 +199,12 @@ const ListBddEntry = () => {
         setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
       })
   }
-  const handleModifNI = e => {
-    e.preventDefault()
-    setCurrent(e.target.name)
-    axios
-      .get(
-        `http://localhost:3000/notif_insured/${dataNotifInsured.id_notif_insured}`
-      )
-      .then(res => res.data)
-      .then(data => setDataNotInsured(data))
-
-      .catch(e => {
-        setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
-      })
-  }
 
   const refund = e => {
     e.preventDefault()
     setCurrent(e.target.name)
     axios
       .get('http://localhost:3000/refund')
-      .then(res => res.data)
-      .then(data => setDataRefund(data))
-
-      .catch(e => {
-        setMessage(`Erreur lors de la reception des comptes : ${e.message}`)
-      })
-  }
-  const handleModifRef = e => {
-    e.preventDefault()
-    setCurrent(e.target.name)
-    axios
-      .get(`http://localhost:3000/refund/${dataRefund.id_refund}`)
       .then(res => res.data)
       .then(data => setDataRefund(data))
 

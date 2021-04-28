@@ -1,8 +1,7 @@
-import './Form.css'
-
 import { useEffect, useState } from 'react'
-
 import axios from 'axios'
+
+import './Form.css'
 
 const FormAdminMedicalEvent = () => {
   const [idSpe, setIdSpe] = useState(null)

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 
-import profil from '../data/images/profil.png'
-
 import './Waiting.css'
+
+import profil from '../data/images/profil.png'
 
 const Waiting = origin => {
   return (

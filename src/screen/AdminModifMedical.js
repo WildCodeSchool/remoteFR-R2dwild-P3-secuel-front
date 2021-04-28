@@ -1,8 +1,7 @@
-import './Form.css'
-
 import { useEffect, useState } from 'react'
-
 import axios from 'axios'
+
+import './Form.css'
 
 const AdminModifMedical = Data => {
   useEffect(() => {
@@ -75,7 +74,7 @@ const AdminModifMedical = Data => {
         `http://localhost:3000/medical_events/${Data.match.params.id}`,
         allPost
       )
-      .then(res => {
+      .then(() => {
         setMessage('Modification réussie')
       })
       .catch(e => {

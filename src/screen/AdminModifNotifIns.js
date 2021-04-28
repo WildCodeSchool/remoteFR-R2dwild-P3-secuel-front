@@ -53,13 +53,13 @@ const AdminModifNotifIns = Data => {
         setMessage(`Erreur lors de la création : ${e.message}`)
       })
   }
-  // // {message ? <p>{message}</p> : null}
+
   return (
     <div className='form'>
       <div className='formTitle'>
         <h1>Modification des notifications</h1>
+        {message ? <p>{message}</p> : null}
       </div>
-
       <form onSubmit={submitForm}>
         <fieldset>
           <div className='formData'>
