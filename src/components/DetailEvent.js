@@ -66,7 +66,7 @@ const DetailEvent = Acte => {
                 {medActe.secu_status === 'Traité' && medActe.Amount_Refund != 0
                   ? medActe.Amount_Refund + '€'
                   : medActe.secu_status === 'Traité' && medActe.secu_status != 0
-                  ? 'refus de remboursement'
+                  ? 'Refus de remboursement'
                   : medActe.secu_status}
               </strong>
             </p>
@@ -79,8 +79,8 @@ const DetailEvent = Acte => {
                 medActe.refund_insurance != 0
                   ? medActe.refund_insurance + '€'
                   : medActe.insurance_status === 'Traité' &&
-                    medActe.insurance_status != 0
-                  ? 'refus de remboursement'
+                    medActe.insurance_status === 0
+                  ? 'Refus de remboursement'
                   : medActe.insurance_status}
               </strong>
             </p>
@@ -96,7 +96,8 @@ const DetailEvent = Acte => {
                 ) : (
                   <span className='patchReste'></span>
                 )}{' '}
-                {medActe.secu_status && medActe.insurance_status === 'Traité'
+                {medActe.secu_status === 'Traité' &&
+                medActe.insurance_status === 'Traité'
                   ? 'Reste à charge :'
                   : 'En attente de remboursement'}
               </span>
