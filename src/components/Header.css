@@ -18,6 +18,9 @@
   text-decoration: none;
   width: auto;
 }
+.iconBtn:hover{
+  color:white;
+}
 #menuBurg {
   cursor: pointer;
   right:1rem;

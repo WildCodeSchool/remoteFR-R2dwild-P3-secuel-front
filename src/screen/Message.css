@@ -4,8 +4,14 @@
 #headTable{
   background:#f5f7f7;
 }
+.infoNbMessage {
+  font-size: 20px;
+}
 .message{
   width:90%;
+}
+.messagesMobile{
+  display:none;
 }
 .message table,td,th{
   font-size: normal;
@@ -14,6 +20,87 @@
   padding: 5px;
   text-align: left;
 }
-.infoNbMessage {
-  font-size: 20px;
+
+@media (max-width: 600px){
+  #etoileMessages{
+    color:gray;
+    margin-left:65px;
+  }
+  .fontMessages{
+    background:white;
+    margin:0;
+    padding:0;
+    height:100%;
+    width:100%;
+  }
+  .infoNbMessage{
+    display: none;
+  }
+  .infoNombreMessage{
+    text-align: left;
+    font-size:20px;
+    margin:10px;
+    padding:10px;
+    font-weight: bold;
+    color:#707070;
+  }
+  #inputMessages{
+    width: 90%;
+    height:35px;
+    border-radius:5px;
+    outline:none;
+    border:1px solid lightgray;
+    margin-bottom: 15px;
+  }
+  .messagesMobile{
+    display:flex;
+    background:white;
+  }
+  .messagesMobile ul{
+    list-style: none;
+    width: 100%;
+    height: 500px;
+    overflow-y: scroll;
+    margin:0;
+    padding:0;
+    text-align: left;
+    border-top:1px solid lightgrey;
+  }
+  .messagesMobile li{
+    border-bottom:1px solid lightgrey;
+    margin-top:10px;
+    padding-bottom:10px;
+    margin-left:10px;
+  }
+  #titreNotif{
+    margin:0;
+    padding:0
+  }
+  #selectMessages{
+    width: 90%;
+    height:35px;
+    border-radius:5px;
+    outline:none;
+    border:1px solid lightgray;
+    margin-bottom: 15px;
+  }
+  .spanBleu{
+    color:#348AA7;
+    font-size:25px;
+  }
+  #spanNbMessages{
+    background-color:#348AA7;
+    padding-left:10px;
+    padding-right:10px;
+    color:white;
+    border-radius:40%;
+    font-weight: bold;
+  }
+  #validerMessages{
+    display:none;
+  }
+  .tableMessages{
+    display:none;
+  }
+
 }

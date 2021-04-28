@@ -1,9 +1,43 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 import './Form.css'
 
 const FormAdminMedicalEvent = () => {
+  const [idSpe, setIdSpe] = useState(null)
+  const [idInsured, setIdInsured] = useState(null)
+  const [idAccount, setIdAccount] = useState(null)
+  const [idPros, setIdPros] = useState(null)
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/specialities')
+      .then(res => res.data)
+      .then(data => setIdSpe(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+    axios
+      .get('http://localhost:3000/insured')
+      .then(res => res.data)
+      .then(data => setIdInsured(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+    axios
+      .get('http://localhost:3000/account')
+      .then(res => res.data)
+      .then(data => setIdAccount(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+    axios
+      .get('http://localhost:3000/pros')
+      .then(res => res.data)
+      .then(data => setIdPros(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+  }, [])
   const [amountEvent, setAmountEvent] = useState('')
   const [dateEvent, setDateEvent] = useState('')
   const [insuranceStatus, setInsuranceStatus] = useState('')
@@ -48,7 +82,7 @@ const FormAdminMedicalEvent = () => {
     axios
       .post('http://localhost:3000/medical_events', allMedicalE)
       .then(res => {
-        setMessage(res.data)
+        setMessage(res.data + ' ' + dateEvent + ' of ' + amountEvent)
       })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)
@@ -60,12 +94,12 @@ const FormAdminMedicalEvent = () => {
       {message ? <p>{message}</p> : null}
       <h1>Ajout d&apos;un acte</h1>
       <form onSubmit={submitForm}>
-        <fieldset>
+        <div className='containerAdmin'>
           {/* <legend>Informations Acte</legend> */}
-          <div className='formData'>
-            <label htmlFor='dateEvent'>
+          <fieldset className='formData'>
+            <legend htmlFor='dateEvent'>
               Date de l&apos;acte<span> * </span>
-            </label>
+            </legend>
             <input
               type='date'
               id='dateEvent'
@@ -74,11 +108,11 @@ const FormAdminMedicalEvent = () => {
               required
               value={dateEvent}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='amountEvent'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='amountEvent'>
               Montant de la consultation<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='amountEvent'
@@ -88,86 +122,109 @@ const FormAdminMedicalEvent = () => {
               required
               value={amountEvent}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='secuStatus'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='secuStatus'>
               Statut du dossier à la Sécu<span> * </span>
-            </label>
-            <input
-              id='secuStatus'
-              name='secuStatus'
-              placeholder='Traité || non traité || En cours de traitement'
-              onChange={handleChange}
-              required
-              value={secuStatus}
-            />
-          </div>
-
-          <div className='formData'>
-            <label htmlFor='insuranceStatus'>
+            </legend>
+            <select id='secuStatus' name='secuStatus' onChange={handleChange}>
+              <option>Sélectionne un status</option>
+              <option value='Traité'>Traité</option>
+              <option value='Non traité'>Non traité</option>
+              <option value='En cours de traitement'>
+                En cours de traitement
+              </option>
+            </select>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='insuranceStatus'>
               Statut du dossier à la mutuelle<span> * </span>
-            </label>
-            <input
+            </legend>
+            <select
               id='insuranceStatus'
               name='insuranceStatus'
-              placeholder='Traité || non traité || En cours de traitement'
               onChange={handleChange}
-              required
-              value={insuranceStatus}
-            />
-          </div>
-          <div className='formData'>
-            <label htmlFor='specialitiesIdSpeciality'>
+            >
+              <option>Sélectionne un status</option>
+              <option value='Traité'>Traité</option>
+              <option value='Non traité'>Non traité</option>
+              <option value='En cours de traitement'>
+                En cours de traitement
+              </option>
+            </select>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='specialitiesIdSpeciality'>
               Spécialité médecin<span> * </span>
-            </label>
-            <input
+            </legend>
+            <select
               id='specialitiesIdSpeciality'
               name='specialitiesIdSpeciality'
-              placeholder='id de la spécialité'
               onChange={handleChange}
-              required
-              value={specialitiesIdSpeciality}
-            />
-          </div>
-          <div className='formData'>
-            <label htmlFor='insuredIdInsured'>
+            >
+              <option>Sélectionne une spécialité</option>
+              {idSpe
+                ? idSpe.map(spe => (
+                    <option key={spe.id_speciality} value={spe.id_speciality}>
+                      {spe.speciality_name}
+                    </option>
+                  ))
+                : null}
+            </select>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='insuredIdInsured'>
               Assuré concerné<span> * </span>
-            </label>
-            <input
+            </legend>
+            <select
               id='insuredIdInsured'
               name='insuredIdInsured'
-              placeholder='id assuré'
               onChange={handleChange}
-              required
-              value={insuredIdInsured}
-            />
-          </div>
-          <div className='formData'>
-            <label htmlFor='insuredAccountIdCompte'>
+            >
+              <option>Sélectionne un assuré</option>
+              {idInsured
+                ? idInsured.map(insured => (
+                    <option key={insured.id_Insured} value={insured.id_Insured}>
+                      {insured.firstname + ' ' + insured.lastname}
+                    </option>
+                  ))
+                : null}
+            </select>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='insuredAccountIdCompte'>
               Compte relié<span> * </span>
-            </label>
-            <input
+            </legend>
+            <select
               id='insuredAccountIdCompte'
               name='insuredAccountIdCompte'
-              placeholder='id du compte'
               onChange={handleChange}
-              required
-              value={insuredAccountIdCompte}
-            />
-          </div>
-          <div className='formData'>
-            <label htmlFor='prosProId'>
+            >
+              <option>Sélectionne un compte</option>
+              {idAccount
+                ? idAccount.map(account => (
+                    <option key={account.id_Compte} value={account.id_Compte}>
+                      {account.account_name}
+                    </option>
+                  ))
+                : null}
+            </select>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='prosProId'>
               Professionnel<span> * </span>
-            </label>
-            <input
-              id='prosProId'
-              name='prosProId'
-              placeholder='id du professionnel'
-              onChange={handleChange}
-              required
-              value={prosProId}
-            />
-          </div>
+            </legend>
+            <select id='prosProId' name='prosProId' onChange={handleChange}>
+              <option>Sélectionne un pro</option>
+              {idPros
+                ? idPros.map(pro => (
+                    <option key={pro.pro_id} value={pro.pro_id}>
+                      {pro.pro_name}
+                    </option>
+                  ))
+                : null}
+            </select>
+          </fieldset>
           <hr />
           <p>
             <span> * </span> Obligatoire
@@ -175,7 +232,7 @@ const FormAdminMedicalEvent = () => {
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

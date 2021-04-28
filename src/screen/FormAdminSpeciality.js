@@ -20,7 +20,7 @@ const FormAdminSpeciality = () => {
     axios
       .post('http://localhost:3000/specialities', spePost)
       .then(res => {
-        setMessage(res.data)
+        setMessage(res.data + ' ' + speciality)
       })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)
@@ -32,12 +32,11 @@ const FormAdminSpeciality = () => {
       <h1>Création d&apos;une spécialité</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          {/* <legend>Informations sur la spécialité</legend> */}
-          <div className='formData'>
-            <label htmlFor='speciality'>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='speciality'>
               Nom de la spécialité <span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='speciality'
@@ -47,7 +46,7 @@ const FormAdminSpeciality = () => {
               required
               value={speciality}
             />
-          </div>
+          </fieldset>
           <hr />
           <p>
             <span> * </span> Obligatoire
@@ -55,7 +54,7 @@ const FormAdminSpeciality = () => {
           <div className='formData'>
             <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )
