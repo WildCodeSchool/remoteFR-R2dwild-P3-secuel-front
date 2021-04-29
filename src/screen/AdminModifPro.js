@@ -15,6 +15,7 @@ const FormAdminPros = Data => {
       .get(`http://localhost:3000/pros/${Data.match.params.id}`)
       .then(res => res.data)
       .then(data => {
+        console.log(data)
         setName(data[0].pro_name)
       })
       .catch(e => {

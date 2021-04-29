@@ -5,8 +5,10 @@ import AdminModifAccount from './screen/AdminModifAccount'
 import AdminModifHealthIns from './screen/AdminModifHealthIns'
 import AdminModifInsured from './screen/AdminModifInsured'
 import AdminModifMedical from './screen/AdminModifMedical'
+import AdminModifNotif from './screen/AdminModifNotif'
 import AdminModifNotifIns from './screen/AdminModifNotifIns'
 import AdminModifPro from './screen/AdminModifPro'
+import AdminModifProSpe from './screen/AdminModifProSpe'
 import AdminModifRefund from './screen/AdminModifRefund'
 import AdminModifSpe from './screen/AdminModifSpe'
 import Analyse from './screen/Analyse'
@@ -99,6 +101,8 @@ const App = withRouter(({ location }) => {
         <Route path='/adminmodifnotifins/:id' component={AdminModifNotifIns} />
         <Route path='/adminmodifrefund/:id' component={AdminModifRefund} />
         <Route path='/adminmodifspe/:id' component={AdminModifSpe} />
+        <Route path='/adminmodifprospe/:id' component={AdminModifProSpe} />
+        <Route path='/adminmodifnotif/:id' component={AdminModifNotif} />
         <Route
           path='/adminModifHealthIns/:id'
           component={AdminModifHealthIns}
