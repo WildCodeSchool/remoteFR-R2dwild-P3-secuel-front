@@ -1,16 +1,17 @@
 import { useState } from 'react'
 import Calendrier from './Calendrier.js'
-import whiteCalendar from '../data/images/whiteCalendar.png'
 
 import './Welcome.css'
 
-const Welcome = () => {
-  const [showCal, setShowCal] = useState(true)
+import whiteCalendar from '../data/images/whiteCalendar.png'
+
+const Welcome = visitor => {
+  const [showCal, setShowCal] = useState(false)
   return (
     <div className='messageWelcome'>
       <h2 id='welcomeElan'>Bienvenue sur Elan</h2>
       <h1 id='bonjourElan'>
-        Bonjour Jean, <br /> Ravis de vous (re)voir !
+        Bonjour {visitor.visitor} <br /> Ravis de vous (re)voir !
       </h1>
       <div id='vosRemboursement'>
         <div>Vos Remboursements</div>

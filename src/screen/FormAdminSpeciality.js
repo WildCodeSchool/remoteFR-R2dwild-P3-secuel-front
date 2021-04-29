@@ -1,14 +1,14 @@
-import axios from 'axios'
 import { useState } from 'react'
+import axios from 'axios'
 
 import './Form.css'
 
 const FormAdminSpeciality = () => {
-  const [speciality, setSpeciality] = useState('')
   const [message, setMessage] = useState(null)
+  const [speciality, setSpeciality] = useState('')
 
   const spePost = {
-    specialiti_name: speciality
+    speciality_name: speciality
   }
 
   const handleChange = e => {
@@ -18,9 +18,9 @@ const FormAdminSpeciality = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('http://localhost:3000/notifications', spePost)
+      .post('http://localhost:3000/specialities', spePost)
       .then(res => {
-        setMessage(res.data)
+        setMessage(res.data + ' ' + speciality)
       })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)
@@ -29,32 +29,32 @@ const FormAdminSpeciality = () => {
 
   return (
     <div className='form'>
-      <h1>Création d'une spécialité</h1>
+      <h1>Création d&apos;une spécialité</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          <legend>Informations sur la spécialité</legend>
-          <div className='formData'>
-            <label htmlFor='speciality'>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='speciality'>
               Nom de la spécialité <span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='speciality'
               name='speciality'
               onChange={handleChange}
+              placeholder='ex: Généraliste'
               required
               value={speciality}
             />
-          </div>
+          </fieldset>
           <hr />
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
-            <input type='submit' value='Envoyer' />
+            <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

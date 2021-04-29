@@ -1,0 +1,74 @@
+.addMutu{
+  align-items: center;
+  background: white;
+  border-radius:5px;
+  color: #348AA7;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding-bottom: 2rem;
+  width: 90%;
+}
+.addMutu a{
+  background: #BE9B07;
+  border-radius: 0.6rem;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 2rem;
+  padding: 0.6rem;
+  text-decoration: none;
+  width:150px;
+}
+.addMutu legend{
+text-align: left;
+}
+.addMutu fieldset{
+  color:black;
+  border: 1px solid #BE9B07;
+  width:50%;
+  padding: 0;
+  margin-top:10px;
+}
+.addMutu input{
+  border:1px solid #BE9B07;
+  /* margin-top:5px; */
+  margin:0;
+  outline:none;
+  padding:0;
+  height:25px;
+  width:95%;
+  border:none;
+}
+.addMutu label, .addMutu input{
+  color: #BE9B07;
+}
+.addMutu span{
+  color: #348AA7;
+  font-weight: bold;
+}
+.addMutu .spanEtoile{
+  color:red;
+  font-weight:normal;
+}
+.addMutu .textObligatoire{
+  color:black;
+}
+.forbidden{
+  background: #BE9B07;
+  border-radius: 0.6rem;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 2rem;
+  padding: 0.6rem;
+  text-decoration: none;
+}
+
+@media (max-width: 600px){
+  .addMutu fieldset{
+    color:black;
+    border: 1px solid #BE9B07;
+    width:70%;
+    padding: 0;
+    margin-top:10px;
+  }
+}

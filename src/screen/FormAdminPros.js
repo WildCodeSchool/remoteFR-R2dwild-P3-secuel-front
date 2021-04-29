@@ -2,9 +2,10 @@ import { useState } from 'react'
 import axios from 'axios'
 
 import './Form.css'
+
 const FormAdminPros = () => {
-  const [name, setName] = useState('')
   const [message, setMessage] = useState(null)
+  const [name, setName] = useState('')
 
   const allPost = {
     pro_name: name
@@ -17,9 +18,9 @@ const FormAdminPros = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/pros', allPost)
+      .post('http://localhost:3000/pros', allPost)
       .then(res => {
-        setMessage(res.data)
+        setMessage(res.data + ' ' + name)
       })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)
@@ -31,28 +32,29 @@ const FormAdminPros = () => {
       <h1>Création d&apos;un professionnel de santé</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          <legend>information sur le professionnel : </legend>
-          <div className='formData'>
-            <label htmlFor='name'>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='name'>
               Nom du médecin <span> * </span>
-            </label>
+            </legend>
             <input
-              type='text'
+              className='saisie'
               id='name'
               name='name'
               onChange={handleChange}
+              placeholder='ex: Bigotte'
               required
+              type='text'
               value={name}
             />
-          </div>
+          </fieldset>
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
-            <input type='submit' value='Envoyer' />
+            <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

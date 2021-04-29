@@ -1,56 +1,36 @@
-#welcomeElan{
-  display:flex;
-  justify-content: flex-start;
-  text-decoration: underline 4px #4472C4;
-  font-weight: lighter;
-}
 #bonjourElan{
   display: flex;
-  justify-content: flex-start;
-  font-weight: bolder;
   font-size: 40px;
+  font-weight: bolder;
+  justify-content: flex-start;
   text-align: left;
 }
 .messageWelcome{
-  width:100%;
-  margin-top:20px;
   margin-bottom: 10px;
-  margin-left:90px;
+  margin-top:20px;
+  width:90%;
 }
 #vosRemboursement{
-  margin-top:70px;
-  width:90%;
-  background-color:#0C75B7;
-  height:35px;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding-left:10px;
+  background-color:#348AA7;
   color:white;
+  display: flex;
+  font-size:20px;
+  font-weight:bolder;
+  height:35px;
+  justify-content: space-around;
+  margin-right: 10px;
+  margin-top:70px;
+  width:100%;
+}
+#welcomeElan{
+  display:flex;
+  font-weight: lighter;
+  justify-content: flex-start;
+  text-decoration: underline 4px #348AA7;
 }
 #whiteCal{
+  cursor: pointer;
   height:25px;
   margin-right:10px;
-  cursor: pointer;
-}
-
-@media (max-width: 600px) {
-  .messageWelcome{
-    width:100%;
-    margin-top:20px;
-    margin-bottom: 10px;
-    margin-left:20px;
-    margin-right:20px;
-  }
-  #vosRemboursement{
-    margin-top:70px;
-    width:100%;
-    background-color:#0C75B7;
-    height:35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left:10px;
-    color:white;
-  }
 }

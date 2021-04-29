@@ -1,72 +1,46 @@
-.login {
-  padding-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  width: 90%;
-}
 .bigLogo{
   width: 20vh;
 }
-.login h1{
-  font-weight: bold;
-  color: #4472C4;
-}
-.login input{
-  border:1px solid #BE9B07;
-  outline:none;
-}
-.why{
-  width: 90%;
-  border-radius: 5px 5px 0 0;
-  background: white;
-  font-size: x-large;
-  }
-.info{
-  color: #4472C4;
-  width: 90%;
-  background: #dff0ff;
-}
-.info span{
-  color: #4472C4;
-  font-weight: bold;
-}
 .bottom{
+  align-items: center;
+  background: white;
+  border-radius: 0 0 5px 5px;
+  color: #348AA7;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  color: #4472C4;
   font-weight: bold;
-  background: white;
-  width: 90%;
-  padding-bottom: 2rem;
-  border-radius: 0 0 5px 5px;
   margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  width: 90%;
 }
 .bottom a{
-  text-decoration: none;
-  color: #ffffff;
-  background: #4472C4;
-  padding: 0.6rem;
+  background: #348AA7;
   border-radius: 0.6rem;
+  color: #ffffff;
+  padding: 0.6rem;
+  text-decoration: none;
 }
-.straight{
-  margin-top: 3rem;
-  width: 85%;
-  border: 3px solid #BE9B07;
-  border-radius: 3px;
-}
-  .connexion button{
+.connexion button{
   margin: 1rem;
   border: none;
   color: #ffffff;
-  background: #4472C4;
+  background: #348AA7;
   padding: 0.6rem;
   border-radius: 0.6rem;
   cursor: pointer;
   margin: 1rem;
+}
+.connect p, .connect a{
+  color: #BE9B07;
+}
+.info{
+  background: #dff0ff;
+  color: #348AA7;
+  width: 90%;
+}
+.info span{
+  color: #348AA7;
+  font-weight: bold;
 }
 .line{
   border-radius: 5px;
@@ -75,17 +49,43 @@
   margin: 2rem 0 2rem 0;
   width: 70%;
 }
-.subscribe a{
-  font-weight: bolder;
-  text-decoration: none;
-  color: #ffffff;
-  background: #4472C4;
-  padding: 0.6rem;
-  border-radius: 0.6rem;
+.login {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  padding-top: 1rem;
+  width: 90%;
 }
-.connect p, .connect a{
-  color: #BE9B07;
+.login h1{
+  font-weight: bold;
+  color: #348AA7;
+}
+.login input{
+  border:1px solid #BE9B07;
+  outline:none;
+}
+.straight{
+  margin-top: 3rem;
+  width: 85%;
+  border: 3px solid #BE9B07;
+  border-radius: 3px;
 }
 .subscribe{
   margin-bottom: 1rem;
+}
+.subscribe a{
+  background: #348AA7;
+  border-radius: 0.6rem;
+  color: #ffffff;
+  font-weight: bolder;
+  padding: 0.6rem;
+  text-decoration: none;
+}
+.why{
+  font-size: x-large;
+  background: white;
+  border-radius: 5px 5px 0 0;
+  width: 90%;
 }

@@ -4,9 +4,9 @@ import axios from 'axios'
 import './Form.css'
 
 const FormAdminNotifications = () => {
-  const [type, setType] = useState('')
-  const [notif, setNotif] = useState('')
   const [message, setMessage] = useState(null)
+  const [notif, setNotif] = useState('')
+  const [type, setType] = useState('')
 
   const notifPost = {
     type: type,
@@ -24,7 +24,7 @@ const FormAdminNotifications = () => {
     axios
       .post('http://localhost:3000/notifications', notifPost)
       .then(res => {
-        setMessage(res.data)
+        setMessage(res.data + ' ' + type)
       })
       .catch(e => {
         console.error(e)
@@ -37,42 +37,43 @@ const FormAdminNotifications = () => {
       <h1>Création de notification</h1>
       {message ? <div>{message}</div> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          <legend>Informations sur la notification</legend>
-          <div className='formData'>
-            <label htmlFor='type'>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='type'>
               Type de message<span> * </span>
-            </label>
+            </legend>
             <input
               type='text'
               id='type'
               name='type'
+              placeholder='ex: Manque dossier || non reçu'
               onChange={handleChange}
               required
               value={type}
             />
-          </div>
-          <div className='formData'>
-            <label htmlFor='message'>
+          </fieldset>
+          <fieldset className='formData'>
+            <legend htmlFor='message'>
               Message<span> * </span>
-            </label>
-            <textarea
-              type='textarea'
+            </legend>
+            <input
+              type='text'
               id='message'
               name='message'
+              placeholder='Action pour régler le problème'
               onChange={handleChange}
               required
               value={notif}
             />
-          </div>
+          </fieldset>
           <hr />
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
-            <input type='submit' value='Envoyer' />
+            <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

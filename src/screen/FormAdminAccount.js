@@ -1,14 +1,12 @@
 import { useState } from 'react'
 import axios from 'axios'
 
-import logo from '../data/images/logo_elan.png'
-
 import './Form.css'
 
 const FormAdminAccount = () => {
-  const [message, setMessage] = useState(null)
   const [accountName, setAccountName] = useState('')
   const [login, setLogin] = useState('')
+  const [message, setMessage] = useState(null)
   const [password, setPassword] = useState('')
   const allPost = {
     Account_name: accountName,
@@ -29,7 +27,7 @@ const FormAdminAccount = () => {
     axios
       .post('http://localhost:3000/Account', allPost)
       .then(res => {
-        setMessage(res.data)
+        setMessage(res.data + ' ' + accountName)
       })
       .catch(e => {
         setMessage(`Erreur lors de la création : ${e.message}`)
@@ -38,67 +36,67 @@ const FormAdminAccount = () => {
 
   return (
     <div className='form'>
-      <img src={logo} className='bigLogo' />
       <div className='formTitle'>
-        <h1 id='titreForm'> Création de compte</h1>
+        <h1>Création d&apos;un compte utilisateur</h1>
       </div>
       {message ? <p>{message}</p> : null}
-      <p id='pointChargement'>
-        •<span id='spanChargement'>•••</span>
-      </p>
       <form onSubmit={submitForm}>
-        <div className='formData'>
-          <fieldset>
-            <legend>
+        <div className='containerAdmin'>
+          <fieldset className='formData'>
+            <legend htmlFor='name'>
               Nom<span> * </span>
             </legend>
             <input
               type='text'
               id='name'
               name='name'
+              placeholder='minimum 2 caractères'
               onChange={handleChange}
               required
               value={accountName}
             />
           </fieldset>
-        </div>
-        <div className='formData'>
-          <fieldset>
-            <legend>
+          <fieldset className='formData'>
+            <legend htmlFor='name'>
               Email<span> * </span>
             </legend>
             <input
               type='text'
               id='email'
               name='email'
+              placeholder='exemple@mail.com'
               onChange={handleChange}
               required
               value={login}
             />
           </fieldset>
-        </div>
-        <div className='formData'>
-          <fieldset>
-            <legend>
+          <fieldset className='formData'>
+            <legend htmlFor='name'>
               Mot de passe<span> * </span>
             </legend>
             <input
               id='password'
               name='password'
+              placeholder='minimum 10 caractères'
               onChange={handleChange}
               required
               value={password}
-            />{' '}
+            />
           </fieldset>
-        </div>
-        <p id='pObligatoire'>
-          <span> * </span> Obligatoire
-        </p>
-        <div className='formData'>
-          <input id='btnEnvoyer' type='submit' value='Valider le profil' />
+          <p>
+            <span> * </span> Obligatoire
+          </p>
+          <div className='formData'>
+            <input
+              className='btnEnvoyer'
+              type='submit'
+              value='Valider le profil'
+            />
+          </div>
         </div>
       </form>
     </div>
   )
 }
+
 export default FormAdminAccount

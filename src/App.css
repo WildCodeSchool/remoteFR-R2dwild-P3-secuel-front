@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 
 .App{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
   align-items: center;
   background: url("./data/images/unknown.png"), linear-gradient(#85a8bf, rgba(255, 255, 255, 0));
   background-size:cover;
   background-position:center;
   background-attachment: fixed;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: 'Nunito';
+  min-height: 100vh;
+  text-align: center;
+}
+
+.appAdmin{
+  size : 100vh;
+  background-color:white;
 }

@@ -1,31 +1,37 @@
-// import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import './Intro.css'
+
 import logo from '../data/images/logo_elan.png'
 import why from '../data/images/why.png'
 
-const Intro = () => {
-  // const [username, setUserName] = useState()
-  // const [password, setPassword] = useState()
+const Intro = visitor => {
+  const handleChange = e => {
+    if (e.target.value.includes('@')) {
+      visitor.setVisitor(e.target.value.match(/^([^@]*)@/)[1])
+    }
+  }
+
   return (
     <div className='login'>
       <img src={logo} className='bigLogo' />
       <div>
-        <h1>Optez pour une vision claire</h1>
-        <p>de votre gestion de santé</p>
+        <h1 id='optezVision'>Optez pour une vision claire</h1>
+        <p id='claireSanté'>de votre gestion de santé</p>
       </div>
-      <h1>Se connecter</h1>
-      <form>
+      <form id='formConnexion'>
         <label>
           <p>Identifiant</p>
-          <input type='text' /*onChange={e => setUserName(e.target.value)}*/ />
+          <input
+            type='text'
+            id='inputIdentifiant'
+            placeholder='votremail@exemple.com'
+            onChange={handleChange}
+          />
         </label>
         <label>
           <p>Mot de passe</p>
-          <input
-            type='password' /*onChange={e => setPassword(e.target.value)}*/
-          />
+          <input type='password' placeholder='votre mot de passe' />
         </label>
         <div className='connexion'>
           <Link to='/home'>
@@ -75,4 +81,5 @@ const Intro = () => {
     </div>
   )
 }
+
 export default Intro

@@ -1,12 +1,11 @@
-/* eslint-disable react/no-unescaped-entities */
 import { useState } from 'react'
 import axios from 'axios'
 
 import './Form.css'
 
 const FormAdminHealthInsurance = () => {
-  const [name, setName] = useState('')
   const [message, setMessage] = useState(null)
+  const [name, setName] = useState('')
   const allPost = {
     insurance_name: name
   }
@@ -18,9 +17,9 @@ const FormAdminHealthInsurance = () => {
   const submitForm = e => {
     e.preventDefault()
     axios
-      .post('localhost:3000/health_insurance', allPost)
+      .post('http://localhost:3000/health_insurance', allPost)
       .then(res => {
-        setMessage(res.data)
+        setMessage(res.data + ' ' + name)
       })
       .catch(e => {
         console.error(e)
@@ -30,31 +29,33 @@ const FormAdminHealthInsurance = () => {
 
   return (
     <div className='form'>
-      <h1>Création d'un institut</h1>
+      <h1>Création d&apos;un institut</h1>
       {message ? <p>{message}</p> : null}
       <form onSubmit={submitForm}>
-        <fieldset>
-          <legend>information sur l'institut : </legend>
+        <div className='containerAdmin'>
           <div className='formData'>
-            <label htmlFor='name'>
-              Nom de l'institut<span> * </span>
-            </label>
-            <input
-              type='text'
-              id='name'
-              name='name'
-              onChange={handleChange}
-              required
-              value={name}
-            />
+            <fieldset>
+              <legend htmlFor='name'>
+                Nom de l&apos;institut<span> * </span>
+              </legend>
+              <input
+                type='text'
+                id='name'
+                name='name'
+                placeholder='minimum X caractères'
+                onChange={handleChange}
+                required
+                value={name}
+              />
+            </fieldset>
           </div>
           <p>
-            <span> * </span> required.
+            <span> * </span> Obligatoire
           </p>
           <div className='formData'>
-            <input type='submit' value='Envoyer' />
+            <input className='btnEnvoyer' type='submit' value='Envoyer' />
           </div>
-        </fieldset>
+        </div>
       </form>
     </div>
   )

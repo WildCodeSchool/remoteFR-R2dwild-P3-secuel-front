@@ -1,42 +1,69 @@
 .addSecu{
+  align-items: center;
+  background: white;
+  border-radius:5px;
+  color: #348AA7;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  color: #4472C4;
-  background: white;
-  width: 90%;
-  padding-bottom: 2rem;
-  border-radius:5px;
   margin: auto;
-}
-.addSecu span{
-  color: #4472C4;
-  font-weight: bold;
+  padding-bottom: 2rem;
+  width: 90%;
 }
 .addSecu a{
-  width:150px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #ffffff;
   background: #BE9B07;
-  padding: 0.6rem;
   border-radius: 0.6rem;
+  color: #ffffff;
+  font-weight: bold;
   margin-top: 2rem;
+  padding: 0.6rem;
+  text-decoration: none;
+  width:150px;
+}
+.addSecu fieldset{
+  width: 80%;
+  color:black;
+  border:1px solid #BE9B07;
+  padding:0;
+  margin:10px;
+  display: flex;
+  justify-content: flex-start;
+}
+.addSecu legend{
+  text-align: left;
+  font-size:13px;
+}
+.addSecu input{
+  border:none;
+  /* border:1px solid #BE9B07; */
+  /* margin-top:5px; */
+  outline:none;
+  cursor: text;
+  height: 25px;
+  padding-left:5px;
+  margin:0px;
+  width: 100%;
 }
 .addSecu label, .addSecu input{
   color: #BE9B07;
 }
-.addSecu input{
-  margin-top:5px;
-  border:1px solid #BE9B07;
-  outline:none;
+.addSecu span{
+  color: #348AA7;
+  font-weight: bold;
 }
 .forbidden{
-  margin-top: 2rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: #ffffff;
   background: #BE9B07;
-  padding: 0.6rem;
   border-radius: 0.6rem;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 2rem;
+  padding: 0.6rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.addSecu .spanEtoile{
+color:red;
+font-weight: normal;
+}
+.addSecu .textObligatoire{
+color:black;
 }

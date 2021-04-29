@@ -1,27 +1,27 @@
+.addsecu a {
+  color: #BE9B07;
+}
 .congratulation{
+  align-items: center;
+  background: white;
+  border-radius:5px;
+  color: #348AA7;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  color: #4472C4;
-  background: white;
-  width: 90%;
-  padding-bottom: 2rem;
-  border-radius:5px;
   margin: auto;
+  padding-bottom: 2rem;
+  width: 90%;
 }
 .congratulation span{
-  color: #4472C4;
+  color: #348AA7;
   font-weight: bold;
 }
 .link a{
-  margin-top: 2rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: #ffffff;
   background: #BE9B07;
-  padding: 0.6rem;
   border-radius: 0.6rem;
-}
-.addsecu a {
-  color: #BE9B07;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 2rem;
+  padding: 0.6rem;
+  text-decoration: none;
 }

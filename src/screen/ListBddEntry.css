@@ -1,0 +1,29 @@
+.buttonGradient {
+  background-image: linear-gradient(to right, #83a4d4 0%, #b6fbff  51%, #83a4d4  100%);
+  background-size: 200% auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #eee;
+  color: black;            
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  width: 20%;
+}
+.buttonGradient:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.buttonList {
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+.buttonList button {
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 1px;
+}

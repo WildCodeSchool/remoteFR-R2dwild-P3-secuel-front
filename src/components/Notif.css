@@ -1,0 +1,38 @@
+.containerNotifs{
+  width:40%;
+  height: 30vh;
+}
+.insuredcolor {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  font-size: bold;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+}
+
+.notifBack {
+  background: white;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.notifBack p{
+  margin:5px;
+}
+.notifBack:last-child{
+  margin-right:15px;
+}
+
+
+@media (max-width: 600px){
+  .containerNotifs{
+    width:90%;
+    height: 25vh;
+  }
+}

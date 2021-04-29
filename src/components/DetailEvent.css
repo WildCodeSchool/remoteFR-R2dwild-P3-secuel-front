@@ -1,3 +1,120 @@
+.cardDetail {
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  height: 80%;
+  justify-content: space-between;
+  line-height : 20px;
+  padding: 15px;
+  width: 60%;
+}
+.donut {
+  width: 500px;
+  } 
+.emoji {
+  font-size: x-large;
+}
+.explanations {
+  border-right : 2px solid grey;
+  width: 400px;
+  }
+.greenValue {
+  color: #8db38b;
+  display: flex;
+  justify-content: center;
+  }
 .infoCard{
+  align-items: center;
   color:#BE9B07;
+  display: flex;
+  justify-content: center;
+  margin : 5px;
+}
+img {
+  margin : 10px
+}
+.noShow{
+  align-items: center;
+  background-color: rgb(93, 104, 116);
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  font-size: x-large;
+  height: 300px;
+  justify-content: center;
+  line-height: normal;
+  margin: 15px;
+  padding: 15px;
+  width: 400px;
+}
+.patchGreen {
+  border-radius: 50%;
+  background-color : #8db38b;
+  height: 20px;
+  margin-right: 5px;
+  width: 20px;
+}
+.patchMutu {
+  border-radius: 50%;
+  background-color : #348AA7;
+  height: 20px;
+  margin-right: 5px;
+  width: 20px;
+}
+.patchSecu {
+  border-radius: 50%;
+  background-color : #8ecae6;
+  height: 20px;
+  margin-right: 5px;
+  width: 20px;
+}
+.patchReste {
+  border-radius: 50%;
+  background-color : #ffb703;
+  height: 20px;
+  margin-right: 5px;
+  width: 20px;
+}
+.pInfoCard {
+  margin: 5px;
+}
+.strongInfoCard {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 900px) {
+  .cardDetail {
+    flex-direction: column;
+    height: 530px;
+    line-height: 20px;
+    width: 80%;
+  }
+  .donut {
+    width: 400px;
+    } 
+  .explanations {
+    align-items: center;
+    border-right : none;
+    border-bottom : 2px solid grey;
+    display: flex;
+    flex-direction: column;
+    margin : 10px;
+    width: 300px;
+  }
+  .infoCard {
+    font-size: smaller;
+  }
+  .noShow{
+    font-size: 1rem;
+    width: 90%;
+  }
+  .pInfoCard {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+  .strongInfoCard {
+    font-size: smaller;
+  }
 }

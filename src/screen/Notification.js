@@ -1,69 +1,72 @@
-import eventArray from '../data/fakejson/fakedata.json'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import Notif from '../components/Notif'
 import NotificationCompo from '../components/NotifCompo'
 
-import 'react-datepicker/dist/react-datepicker.css'
 import './Notification.css'
+import 'react-datepicker/dist/react-datepicker.css'
 
 const Notification = () => {
-  const statusNotif =
-    eventArray.filter(
-      data => data['prénom'] === 'Marie' && data['ENVOI DE NOTIFICATION']
-    ) != ''
-      ? eventArray.filter(
-          data => data['prénom'] === 'Marie' && data['ENVOI DE NOTIFICATION']
-        ).length
-      : 'aucune'
+  const [notifs, setNotif] = useState(null)
+  const [alert, setAlert] = useState(null)
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/notif_insured/1')
+      .then(res => res.data)
+      .then(data => setNotif(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+    axios
+      .get('http://localhost:3000/medical_events/notif')
+      .then(res => res.data)
+      .then(data => setAlert(data))
+      .catch(e => {
+        console.log(`Erreur lors de la reception : ${e.message}`)
+      })
+  }, [])
 
   return (
-    <div>
-      <div className='notifBody'>
-        <h1 id='titreNotif'>Vos Notifications</h1>
-        <h1>
-          <span style={{ color: 'blue' }}>
-            {eventArray[1]['prénom'] + '   ' + eventArray[1]['Nom']}
-          </span>
-        </h1>
+    <div className='notifBody'>
+      <h1 id='titreNotif'>Vos Notifications</h1>
+      {notifs ? (
+        <div className='notifs'>
+          {notifs.map(notif => (
+            <Notif key={notif.notifications_id_Notification} notif={notif} />
+          ))}
+        </div>
+      ) : null}
 
-        <div className='notifNumber'>
-          Vous avez {'   '}
-          {statusNotif}
-          {'   '}
-          notification(s)
-        </div>
-        {/* Légende des vignettes  */}
-        <ul className='legendRaw'>
-          <ul className='starNText'>
-            <li className='starGreen'></li>
-            <li className='textLegend'>Tout va bien !</li>
-          </ul>
-          <ul className='starNText'>
-            <li className='starYellow'></li>
-            <li className='textLegend'>
-              C&apos;est un peu long donc voyons ce qu&apos;il se passe
-            </li>
-          </ul>
-          <ul className='starNText'>
-            <li className='starRed'></li>
-            <li className='textLegend'>Il y a un petit soucis</li>
-          </ul>
+      {/* Légende des vignettes  */}
+      <ul className='legendRaw'>
+        <ul className='starNText'>
+          <li className='starGreen'></li>
+          <li className='textLegend'>Tout va bien !</li>
         </ul>
-        <div>
-          {eventArray
-            .filter(data => data['prénom'] === 'Jean')
-            .map(notif => (
+        <ul className='starNText'>
+          <li className='starYellow'></li>
+          <li className='textLegend'>C&apos;est un peu long, voyons ça</li>
+        </ul>
+        <ul className='starNText'>
+          <li className='starRed'></li>
+          <li className='textLegend'>Il y a un problème</li>
+        </ul>
+      </ul>
+      <div className='notifMap'>
+        {alert
+          ? alert.map(medevent => (
               <NotificationCompo
-                acteType={notif['Type acte']}
-                firstName={notif['prénom']}
-                payer={notif['Payeur']}
-                notifDate={notif['date acte médicale']}
-                status={notif['Statut du dossier']}
-                incident={notif['RECUPERATION TYPE INCIDENT']}
-                actorName={notif['Nom professionnel de santé']}
-                key={notif.id}
-                id={notif.id}
+                acteType={medevent.speciality_name}
+                firstName={medevent.firstname}
+                payer={medevent.insurance_name}
+                notifDate={new Date(medevent.Date_Refund).toLocaleDateString()}
+                status={[medevent.secu_status, medevent.insurance_status]}
+                actorName={medevent.pro_name}
+                key={medevent.id_refund}
               />
-            ))}
-        </div>
+            ))
+          : null}
       </div>
     </div>
   )

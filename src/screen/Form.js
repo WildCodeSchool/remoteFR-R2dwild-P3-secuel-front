@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router'
 import axios from 'axios'
+
+import './Form.css'
+
 import FlecheGold from '../data/images/Flechegold.png'
 import logo from '../data/images/logo_elan.png'
-import './Form.css'
 
 const Form = visitor => {
   const [accountName, setAccountName] = useState('')
@@ -42,7 +44,9 @@ const Form = visitor => {
 
   return (
     <div className='form'>
-      <img src={logo} className='bigLogo' />
+      <div className='bigLogoDiv'>
+        <img src={logo} id='bigLogo' />
+      </div>
       <div className='formTitle'>
         <a href='Javascript:history.go(-1)'>
           <img src={FlecheGold} id='flechegold' />
@@ -51,7 +55,7 @@ const Form = visitor => {
       </div>
       <p id='connaissance'>Commençons par faire connaissance</p>
       <p id='pointChargement'>
-        •<span id='spanChargement'>•••</span>
+        •<span id='spanChargement'>••••</span>
       </p>
       <form onSubmit={submitForm}>
         <div className='formData'>
@@ -90,6 +94,7 @@ const Form = visitor => {
               Mot de passe<span> * </span>{' '}
             </legend>
             <input
+              type='password'
               id='password'
               name='password'
               onChange={handleChange}
@@ -102,10 +107,15 @@ const Form = visitor => {
           <span> * </span> Obligatoire
         </p>
         <div className='formData'>
-          <input id='btnEnvoyer' type='submit' value='Valider le profil' />
+          <input
+            className='btnEnvoyer'
+            type='submit'
+            value='Valider le profil'
+          />
         </div>
       </form>
     </div>
   )
 }
+
 export default Form
